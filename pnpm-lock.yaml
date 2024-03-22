@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@t3-oss/env-nextjs':
+    specifier: ^0.9.2
+    version: 0.9.2(typescript@5.4.3)(zod@3.22.4)
+  lucide-react:
+    specifier: ^0.360.0
+    version: 0.360.0(react@18.2.0)
   next:
     specifier: 14.1.4
     version: 14.1.4(react-dom@18.2.0)(react@18.2.0)
@@ -14,8 +20,14 @@ dependencies:
   react-dom:
     specifier: ^18
     version: 18.2.0(react@18.2.0)
+  zod:
+    specifier: ^3.22.4
+    version: 3.22.4
 
 devDependencies:
+  '@biomejs/biome':
+    specifier: 1.6.1
+    version: 1.6.1
   '@types/node':
     specifier: ^20
     version: 20.11.30
@@ -44,6 +56,94 @@ packages:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
     dev: true
+
+  /@biomejs/biome@1.6.1:
+    resolution: {integrity: sha512-SILQvA2S0XeaOuu1bivv6fQmMo7zMfr2xqDEN+Sz78pGbAKZnGmg0emsXjQWoBY/RVm9kPCgX+aGEpZZTYaM7w==}
+    engines: {node: '>=14.*'}
+    hasBin: true
+    requiresBuild: true
+    optionalDependencies:
+      '@biomejs/cli-darwin-arm64': 1.6.1
+      '@biomejs/cli-darwin-x64': 1.6.1
+      '@biomejs/cli-linux-arm64': 1.6.1
+      '@biomejs/cli-linux-arm64-musl': 1.6.1
+      '@biomejs/cli-linux-x64': 1.6.1
+      '@biomejs/cli-linux-x64-musl': 1.6.1
+      '@biomejs/cli-win32-arm64': 1.6.1
+      '@biomejs/cli-win32-x64': 1.6.1
+    dev: true
+
+  /@biomejs/cli-darwin-arm64@1.6.1:
+    resolution: {integrity: sha512-KlvY00iB9T/vFi4m/GXxEyYkYnYy6aw06uapzUIIdiMMj7I/pmZu7CsZlzWdekVD0j+SsQbxdZMsb0wPhnRSsg==}
+    engines: {node: '>=14.*'}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@biomejs/cli-darwin-x64@1.6.1:
+    resolution: {integrity: sha512-jP4E8TXaQX5e3nvRJSzB+qicZrdIDCrjR0sSb1DaDTx4JPZH5WXq/BlTqAyWi3IijM+IYMjWqAAK4kOHsSCzxw==}
+    engines: {node: '>=14.*'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@biomejs/cli-linux-arm64-musl@1.6.1:
+    resolution: {integrity: sha512-YdkDgFecdHJg7PJxAMaZIixVWGB6St4yH08BHagO0fEhNNiY8cAKEVo2mcXlsnEiTMpeSEAY9VxLUrVT3IVxpw==}
+    engines: {node: '>=14.*'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@biomejs/cli-linux-arm64@1.6.1:
+    resolution: {integrity: sha512-nxD1UyX3bWSl/RSKlib/JsOmt+652/9yieogdSC/UTLgVCZYOF7u8L/LK7kAa0Y4nA8zSPavAQTgko7mHC2ObA==}
+    engines: {node: '>=14.*'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@biomejs/cli-linux-x64-musl@1.6.1:
+    resolution: {integrity: sha512-aSISIDmxq04NNy7tm4x9rBk2vH0ub2VDIE4outEmdC2LBtEJoINiphlZagx/FvjbsqUfygent9QUSn0oREnAXg==}
+    engines: {node: '>=14.*'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@biomejs/cli-linux-x64@1.6.1:
+    resolution: {integrity: sha512-BYAzenlMF3QdngjNFw9QVBXKGNzeecqwF3pwDgUGEvU7OJpn1/lyVkJVxYPtVGRNdjQ9e6l/s8NjKuBpW/ZR4Q==}
+    engines: {node: '>=14.*'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@biomejs/cli-win32-arm64@1.6.1:
+    resolution: {integrity: sha512-/eCHQKZ1kEawUpkSuXq4urtxMsD1P1678OPG3zNKt3ru16AqqspLdO3jzBe3k74xCPYnQ36e9Yqc97Mo0qgPtg==}
+    engines: {node: '>=14.*'}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@biomejs/cli-win32-x64@1.6.1:
+    resolution: {integrity: sha512-5TUZbzBwnDLFxLVGEPsorNi6eC2Gt+z4Oei9Qvq0M/4c4/mjZ96ABgwao/tMxf4ZBr/qyy2YdvF+gX9Rc+xC0A==}
+    engines: {node: '>=14.*'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /@isaacs/cliui@8.0.2:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -204,6 +304,33 @@ packages:
     resolution: {integrity: sha512-E4KcWTpoLHqwPHLxidpOqQbcrZVgi0rsmmZXUle1jXmJfuIf/UWpczUJ7MZZ5tlxytgJXyp0w4PGkkeLiuIdZw==}
     dependencies:
       tslib: 2.6.2
+    dev: false
+
+  /@t3-oss/env-core@0.9.2(typescript@5.4.3)(zod@3.22.4):
+    resolution: {integrity: sha512-KgWXljUTHgO3o7GMZQPAD5+P+HqpauMNNHowlm7V2b9IeMitSUpNKwG6xQrup/xARWHTdxRVIl0mSI4wCevQhQ==}
+    peerDependencies:
+      typescript: '>=5.0.0'
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      typescript: 5.4.3
+      zod: 3.22.4
+    dev: false
+
+  /@t3-oss/env-nextjs@0.9.2(typescript@5.4.3)(zod@3.22.4):
+    resolution: {integrity: sha512-dklHrgKLESStNVB67Jdbu6osxDYA+xNKaPBRerlnkEvzbCccSKMvZENx6EZebJuR4snqB3/yRykNMn/bdIAyiQ==}
+    peerDependencies:
+      typescript: '>=5.0.0'
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@t3-oss/env-core': 0.9.2(typescript@5.4.3)(zod@3.22.4)
+      typescript: 5.4.3
+      zod: 3.22.4
     dev: false
 
   /@types/node@20.11.30:
@@ -586,6 +713,14 @@ packages:
     resolution: {integrity: sha512-2bIM8x+VAf6JT4bKAljS1qUWgMsqZRPGJS6FSahIMPVvctcNhyVp7AJu7quxOW9jwkryBReKZY5tY5JYv2n/7Q==}
     engines: {node: 14 || >=16.14}
     dev: true
+
+  /lucide-react@0.360.0(react@18.2.0):
+    resolution: {integrity: sha512-MskvbEsAhD2zxgx/I05vXq1cjFQXrmhL97YFIi4wSaKH793ZMvU/Com4d+DE7OB3QMmZig1fY1q94aTX5skozw==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
@@ -1019,7 +1154,6 @@ packages:
     resolution: {integrity: sha512-KrPd3PKaCLr78MalgiwJnA25Nm8HAmdwN3mYUYZgG/wizIo9EainNVQI9/yDavtVFRN2h3k8uf3GLHuhDMgEHg==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
@@ -1071,3 +1205,7 @@ packages:
     engines: {node: '>= 14'}
     hasBin: true
     dev: true
+
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+    dev: false

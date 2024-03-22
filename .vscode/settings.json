@@ -1,0 +1,10 @@
+{
+	"editor.defaultFormatter": "biomejs.biome",
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"editor.codeActionsOnSave": {
+		"quickfix.biome": "always"
+	},
+	"cSpell.words": ["Linkedin", "LINKEDIN"]
+}
