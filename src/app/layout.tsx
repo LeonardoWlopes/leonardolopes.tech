@@ -9,6 +9,7 @@ import bottomBackground from '@/assets/bottom-background.svg'
 //components
 import Image from 'next/image'
 import { Header } from '@/components/header'
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -47,6 +48,8 @@ export default function RootLayout({
 					alt=""
 					draggable={false}
 				/>
+
+				<Analytics />
 			</body>
 		</html>
 	)
