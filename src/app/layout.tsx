@@ -13,7 +13,7 @@ import { Header } from '@/components/header'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-	title: 'Leonardo Lopes',
+	title: 'Leonardo Lopes | Engenheiro de Software Full Stack',
 	description: '',
 }
 
@@ -30,7 +30,12 @@ export default function RootLayout({
 					`relative min-h-screen overflow-x-hidden bg-main-bg px-4 py-8 antialiased items-center flex flex-col ${inter.className}`
 				}
 			>
-				<Image className="absolute top-0" src={topBackground} alt="" />
+				<Image
+					className="absolute top-0"
+					src={topBackground}
+					alt=""
+					draggable={false}
+				/>
 
 				<Header />
 
@@ -40,6 +45,7 @@ export default function RootLayout({
 					className="absolute bottom-0"
 					src={bottomBackground}
 					alt=""
+					draggable={false}
 				/>
 			</body>
 		</html>

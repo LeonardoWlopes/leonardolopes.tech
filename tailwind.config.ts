@@ -13,6 +13,7 @@ const config: Config = {
 				'main-bg': 'var(--main-bg)',
 				'light-gray': '#C5C5C5',
 				'dark-gray': '#808080',
+				onyx: "#181818"
 			},
 			maxWidth: {
 				limit: '1110px',

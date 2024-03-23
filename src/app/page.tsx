@@ -1,4 +1,10 @@
+// components
+import { Button } from '@/components/button'
 import { CodeXml } from 'lucide-react'
+import Link from 'next/link'
+
+// utils
+import { env } from '@/env'
 
 export default function Home() {
 	return (
@@ -11,7 +17,7 @@ export default function Home() {
 					</strong>
 				</h1>
 
-				<p className="z-10 max-w-[730px] text-start text-dark-gray text-sm md:text-lg">
+				<p className="z-10 mb-10 max-w-[730px] text-start text-dark-gray text-sm md:text-lg">
 					Engenheiro de Software Full Stack especializado em
 					desenvolver soluções digitais escaláveis e performáticas.
 					Com experiência em desenvolvimento frontend e backend, meu
@@ -19,7 +25,15 @@ export default function Home() {
 					mobile.
 				</p>
 
-				<CodeXml className="absolute right-0 hidden h-80 w-80 text-dark-gray/5 sm:block" />
+				<div className="flex gap-4">
+					<Link href={env.CV_URL} target="_blank">
+						<Button className="">Veja meu currículo</Button>
+					</Link>
+
+					{/* <Button>Entre em contato</Button> */}
+				</div>
+
+				<CodeXml className="absolute right-0 hidden h-80 w-80 text-dark-gray/20 sm:block" />
 			</section>
 		</main>
 	)
