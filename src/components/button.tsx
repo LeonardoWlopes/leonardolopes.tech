@@ -24,7 +24,7 @@ export function Button({
 		<button
 			type={type}
 			className={twMerge(
-				'flex cursor-pointer gap-2 rounded-lg px-8 py-[20px] font-medium text-dark-gray transition-all duration-200 ease-in-out',
+				'flex cursor-pointer justify-center gap-2 rounded-lg px-8 py-[20px] font-medium text-dark-gray transition-all duration-200 ease-in-out',
 				VARIANTS[variant],
 				className,
 			)}
