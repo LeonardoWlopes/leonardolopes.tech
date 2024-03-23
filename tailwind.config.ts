@@ -12,6 +12,7 @@ const config: Config = {
 			colors: {
 				'main-bg': 'var(--main-bg)',
 				'light-gray': '#C5C5C5',
+				'medium-gray': 'rgba(128, 128, 128, 0.5)',
 				'dark-gray': '#808080',
 				onyx: '#181818',
 			},
