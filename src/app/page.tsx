@@ -1,15 +1,22 @@
 // components
 import { Button } from '@/components/button'
+import { KnowCard } from '@/components/know-card'
 import { CodeXml } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
+
+//assets
+import blink from '@/assets/images/avatar-blink.png'
+import notebook from '@/assets/icons/notebook.svg'
+import techStack from '@/assets/images/tech-stack.png'
 
 // utils
 import { env } from '@/env'
 
 export default function Home() {
 	return (
-		<main className="w-full max-w-limit">
-			<section className="relative flex flex-col">
+		<main className="flex w-full max-w-limit flex-col">
+			<section className="relative mb-32 flex flex-col sm:mb-60">
 				<h1 className="mb-8 font-bold text-4xl text-dark-gray md:text-6xl">
 					Eu sou <br />
 					<strong className="font-bold text-white">
@@ -34,6 +41,51 @@ export default function Home() {
 				</div>
 
 				<CodeXml className="absolute right-0 hidden h-80 w-80 text-dark-gray/20 sm:block" />
+			</section>
+
+			<section>
+				<h2 className="mb-8 text-center font-bold text-4xl text-white md:text-start">
+					Conheça-me
+				</h2>
+
+				<div className="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2">
+					<KnowCard
+						title="Sobre"
+						description="Quem eu sou e o que eu faço"
+						href="/about"
+					>
+						<Image
+							className="m-auto h-1/2 object-contain sm:h-2/3"
+							src={blink}
+							alt="iphone memoji"
+						/>
+					</KnowCard>
+
+					<KnowCard
+						title="Notebook"
+						description="Meus pensamentos, ideias e aprendizados"
+						href="/notebook"
+					>
+						<Image
+							className=""
+							src={notebook}
+							alt="notebook image"
+							width={230}
+						/>
+					</KnowCard>
+
+					<KnowCard
+						title="Tecnologias"
+						description="As tecnologias que eu uso e recomendo"
+						href="/tech"
+					>
+						<Image
+							className="object-cover"
+							src={techStack}
+							alt="iphone memoji"
+						/>
+					</KnowCard>
+				</div>
 			</section>
 		</main>
 	)

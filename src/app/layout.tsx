@@ -42,7 +42,7 @@ export default function RootLayout({
 				{children}
 
 				<Image
-					className="absolute bottom-0"
+					className="-z-10 absolute bottom-0"
 					src={bottomBackground}
 					alt=""
 					draggable={false}
