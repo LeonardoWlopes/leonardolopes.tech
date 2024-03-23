@@ -16,7 +16,7 @@ const config: Config = {
 				onyx: '#181818',
 			},
 			maxWidth: {
-				limit: '1110px',
+				limit: '1024px',
 			},
 		},
 	},

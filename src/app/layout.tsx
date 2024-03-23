@@ -10,7 +10,7 @@ import bottomBackground from '@/assets/bottom-background.svg'
 import Image from 'next/image'
 import { Header } from '@/components/header'
 import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -51,7 +51,7 @@ export default function RootLayout({
 				/>
 
 				<Analytics />
-                <SpeedInsights />
+				<SpeedInsights />
 			</body>
 		</html>
 	)

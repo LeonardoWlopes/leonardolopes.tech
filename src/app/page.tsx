@@ -7,8 +7,8 @@ import Image from 'next/image'
 
 //assets
 import blink from '@/assets/images/avatar-blink.png'
-import notebook from '@/assets/icons/notebook.svg'
-import techStack from '@/assets/images/tech-stack.png'
+//import notebook from '@/assets/icons/notebook.svg'
+//import techStack from '@/assets/images/tech-stack.png'
 
 // utils
 import { env } from '@/env'
@@ -34,58 +34,68 @@ export default function Home() {
 
 				<div className="flex gap-4">
 					<Link href={env.CV_URL} target="_blank">
-						<Button className="">Veja meu currículo</Button>
+						<Button>Veja meu currículo</Button>
 					</Link>
 
-					{/* <Button>Entre em contato</Button> */}
+					<Link href={'/about'}>
+						<abbr title="Calma la, ainda to trabalhando nisso!">
+							<Button
+								disabled
+								className="cursor-not-allowed opacity-70"
+								variant="secondary"
+							>
+								Entre em contato
+							</Button>
+						</abbr>
+					</Link>
 				</div>
 
 				<CodeXml className="absolute right-0 hidden h-80 w-80 text-dark-gray/20 sm:block" />
 			</section>
 
-			<section>
+			<section className="grid grid-cols-1 gap-4 md:grid-cols-2">
 				<h2 className="mb-8 text-center font-bold text-4xl text-white md:text-start">
 					Conheça-me
 				</h2>
 
-				<div className="grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2">
-					<KnowCard
-						title="Sobre"
-						description="Quem eu sou e o que eu faço"
-						href="/about"
-					>
-						<Image
-							className="m-auto h-1/2 object-contain sm:h-2/3"
-							src={blink}
-							alt="iphone memoji"
-						/>
-					</KnowCard>
+				<span />
 
-					<KnowCard
-						title="Notebook"
-						description="Meus pensamentos, ideias e aprendizados"
-						href="/notebook"
-					>
-						<Image
-							className=""
-							src={notebook}
-							alt="notebook image"
-							width={230}
-						/>
-					</KnowCard>
+				<KnowCard
+					title="Sobre"
+					description="Quem eu sou e o que eu faço"
+					href="/about"
+				>
+					<Image
+						className="m-auto h-1/2 object-contain sm:h-2/3"
+						src={blink}
+						alt="iphone memoji"
+					/>
+				</KnowCard>
 
-					<KnowCard
-						title="Tecnologias"
-						description="As tecnologias que eu uso e recomendo"
-						href="/tech"
-					>
-						<Image
-							className="object-cover"
-							src={techStack}
-							alt="iphone memoji"
-						/>
-					</KnowCard>
-				</div>
+				{/* <KnowCard
+					title="Notebook"
+					description="Meus pensamentos, ideias e aprendizados"
+					href="/notebook"
+				>
+					<Image
+						className=""
+						src={notebook}
+						alt="notebook image"
+						width={230}
+					/>
+				</KnowCard> */}
+
+				{/* <KnowCard
+					title="Tecnologias"
+					description="As tecnologias que eu uso e recomendo"
+					href="/tech"
+				>
+					<Image
+						className="object-cover"
+						src={techStack}
+						alt="iphone memoji"
+					/>
+				</KnowCard> */}
 			</section>
 		</main>
 	)
