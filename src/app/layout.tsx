@@ -15,8 +15,12 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-	title: 'Leonardo Lopes | Engenheiro de Software Full Stack',
-	description: '',
+	title: {
+		default: 'Leonardo Lopes | Engenheiro de Software Full Stack',
+		template: 'Leonardo Lopes | %s',
+	},
+	description:
+		'Bem-vindo ao meu espaço digital! Sou o Léo, engenheiro de software apaixonado por criar soluções inovadoras e funcionais para desafios tecnológicos. Este é o meu cantinho na web, onde compartilho meu portfólio, experiências e insights sobre o mundo da programação e desenvolvimento de software.',
 }
 
 export default function RootLayout({

@@ -11,13 +11,6 @@ import signature from '@/assets/icons/signature.svg'
 // utils
 import { env } from '@/env'
 
-//types
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-	title: "Sobre"
-}
-
 export default function About() {
 	return (
 		<main className="flex w-full max-w-limit flex-col">
