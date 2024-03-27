@@ -7,6 +7,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
 	title: 'Tecnologias',
+	description: 'Conheça as tecnologias que utilizo no meu dia a dia.',
 }
 
 export default function Tech() {
@@ -23,9 +24,9 @@ export default function Tech() {
 			<hr className="my-8 border-white/10 md:my-16" />
 
 			<div className="flex flex-col gap-8">
-				<h3 className="text-center font-bold text-3xl text-dark-gray sm:text-start">
+				{/* <h3 className="text-center font-bold text-3xl text-dark-gray sm:text-start">
 					Desenvolvimento
-				</h3>
+				</h3> */}
 
 				<div className="grid grid-cols-1 place-items-center gap-4 md:grid-cols-3 sm:grid-cols-2">
 					{DEVELOPMENT_CARDS.map((tech) => (

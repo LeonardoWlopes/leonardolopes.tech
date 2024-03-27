@@ -16,6 +16,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
 	title: 'Sobre',
+	description: 'Conheça um pouco mais sobre minha trajetória profissional e pessoal.',
 }
 
 export default function About() {
