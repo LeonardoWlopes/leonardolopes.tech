@@ -13,7 +13,7 @@ export function Header() {
 			<div className="flex items-center">
 				<ul className="flex items-center gap-10">
 					{LINKS.map(({ href, label }) => (
-						<li>
+						<li key={href}>
 							<Link
 								className="font-medium text-base text-light-gray active:text-white hover:text-light-gray/80"
 								href={href}

@@ -15,7 +15,7 @@ import { env } from '@/env'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-	title: "Sobre"
+	title: 'Sobre',
 }
 
 export default function About() {
@@ -88,7 +88,10 @@ export default function About() {
 							LinkedIn
 						</Link>
 						. E se preferir um contato mais direto, mande-me um{' '}
-						<Link href={env.CONTACT_EMAIL} target="_blank">
+						<Link
+							href={`mailto:${env.CONTACT_EMAIL}`}
+							target="_blank"
+						>
 							e-mail
 						</Link>{' '}
 						para iniciarmos uma conversa.

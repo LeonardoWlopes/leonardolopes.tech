@@ -6,7 +6,7 @@ export const env = createEnv({
 		LINKEDIN_URL: z.string().url(),
 		GITHUB_URL: z.string().url(),
 		INSTAGRAM_URL: z.string().url(),
-		CONTACT_EMAIL: z.string(),
+		CONTACT_EMAIL: z.string().email(),
 		CV_URL: z.string().url(),
 	},
 

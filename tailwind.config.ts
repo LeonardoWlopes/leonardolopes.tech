@@ -15,6 +15,7 @@ const config: Config = {
 				'medium-gray': 'rgba(128, 128, 128, 0.5)',
 				'dark-gray': '#808080',
 				onyx: '#181818',
+				'card-border': '#383737'
 			},
 			maxWidth: {
 				limit: '1024px',
