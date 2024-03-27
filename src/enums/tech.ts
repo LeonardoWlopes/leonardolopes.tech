@@ -1,3 +1,16 @@
 export enum ETechCategory {
 	LANGUAGE = 'Linguagem',
+	LIBRARY = 'Lib',
+	FRAMEWORK = 'Framework',
+	TOOL = 'Ferramenta',
+	VERSION_CONTROL = 'Controle de Versão',
+	EDITOR = 'Editor',
+	VALIDATION = 'Validação',
+	GLOBAL_STATE = 'Estado Global',
+	MOBILE = 'Mobile',
+	RUNTIME = 'Runtime',
+	CSS = 'CSS',
+	ORM = 'ORM',
+	DATABASE = 'Banco de Dados',
+	TESTING = 'Testes',
 }

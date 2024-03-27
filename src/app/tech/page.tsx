@@ -1,23 +1,15 @@
-import { TechCard, type ITechCardProps } from '@/components/tech-card'
-import { TECHNOLOGIES } from '@/utils/mock'
+//components
+import { TechCard } from '@/components/tech-card'
+import { DEVELOPMENT_CARDS } from '@/utils/mock'
+
+//types
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+	title: 'Tecnologias',
+}
 
 export default function Tech() {
-	const groups = Object.values(
-		TECHNOLOGIES.reduce(
-			(acc, item: ITechCardProps) => {
-				const category = item.category
-				if (!acc[category]) {
-					acc[category] = { category, items: [] }
-				}
-				acc[category].items.push(item)
-				return acc
-			},
-			{} as Record<string, { category: string; items: ITechCardProps[] }>,
-		),
-	)
-
-	console.log(groups)
-
 	return (
 		<main className="flex w-full max-w-limit flex-col">
 			<h1 className="mb-3 font-bold text-4xl text-white md:text-6xl sm:text-5xl">
@@ -30,19 +22,17 @@ export default function Tech() {
 
 			<hr className="my-8 border-white/10 md:my-16" />
 
-			{groups.map(({ category, items }) => (
-				<div className="flex flex-col gap-8" key={category}>
-					<h3 className='text-center font-bold text-3xl text-dark-gray sm:text-start'>
-						{category}
-					</h3>
+			<div className="flex flex-col gap-8">
+				<h3 className="text-center font-bold text-3xl text-dark-gray sm:text-start">
+					Desenvolvimento
+				</h3>
 
-					<div className='grid grid-cols-1 place-items-center gap-4 md:grid-cols-3 sm:grid-cols-2'>
-						{items.map((tech) => (
-							<TechCard key={tech.name} {...tech} />
-						))}
-					</div>
+				<div className="grid grid-cols-1 place-items-center gap-4 md:grid-cols-3 sm:grid-cols-2">
+					{DEVELOPMENT_CARDS.map((tech) => (
+						<TechCard key={tech.name} {...tech} />
+					))}
 				</div>
-			))}
+			</div>
 		</main>
 	)
 }
