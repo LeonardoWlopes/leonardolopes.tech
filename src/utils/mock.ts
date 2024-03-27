@@ -73,7 +73,7 @@ export const DEVELOPMENT_CARDS: ITechCardProps[] = [
 		category: ETechCategory.MOBILE,
 	},
 	{
-		name: 'React Hook Form',
+		name: 'Hook Form',
 		image: hookForm,
 		category: ETechCategory.VALIDATION,
 	},

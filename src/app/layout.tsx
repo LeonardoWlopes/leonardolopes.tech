@@ -31,10 +31,8 @@ export default function RootLayout({
 	return (
 		<html lang="pt-BR" className="dark">
 			<body
-				className={
-					// biome-ignore lint/nursery/useSortedClasses: This is a false positive
-					`relative min-h-screen overflow-x-hidden bg-main-bg px-4 py-8 antialiased items-center flex flex-col ${inter.className}`
-				}
+				// biome-ignore lint/nursery/useSortedClasses: This is a false positive
+				className={`relative flex min-h-screen flex-col items-center overflow-x-hidden bg-main-bg px-4 pt-24 pb-32 antialiased sm:py-8 ${inter.className}`}
 			>
 				<Image
 					className="absolute top-0"
