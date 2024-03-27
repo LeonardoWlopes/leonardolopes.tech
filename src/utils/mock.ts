@@ -4,6 +4,7 @@ import { ETechCategory } from '@/enums/tech'
 //assets
 import javascript from '@/assets/icons/javascript.svg'
 import typescript from '@/assets/icons/typescript.svg'
+import python from '@/assets/icons/python.svg'
 import react from '@/assets/icons/react.svg'
 import next from '@/assets/icons/next.svg'
 import expo from '@/assets/icons/expo.svg'
@@ -23,8 +24,8 @@ import zod from '@/assets/icons/zod.svg'
 import vite from '@/assets/icons/vite.svg'
 import vitest from '@/assets/icons/vitest.svg'
 import jest from '@/assets/icons/jest.svg'
+import cypress from '@/assets/icons/cypress.svg'
 import docker from '@/assets/icons/docker.svg'
-
 
 export const DEVELOPMENT_CARDS: ITechCardProps[] = [
 	{
@@ -35,6 +36,11 @@ export const DEVELOPMENT_CARDS: ITechCardProps[] = [
 	{
 		name: 'Typescript',
 		image: typescript,
+		category: ETechCategory.LANGUAGE,
+	},
+	{
+		name: 'Python',
+		image: python,
 		category: ETechCategory.LANGUAGE,
 	},
 	{
@@ -140,6 +146,11 @@ export const DEVELOPMENT_CARDS: ITechCardProps[] = [
 	{
 		name: 'Vitest',
 		image: vitest,
+		category: ETechCategory.TESTING,
+	},
+	{
+		name: 'Cypress',
+		image: cypress,
 		category: ETechCategory.TESTING,
 	},
 ]
