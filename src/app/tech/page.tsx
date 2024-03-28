@@ -28,7 +28,7 @@ export default function Tech() {
 					Desenvolvimento
 				</h3> */}
 
-				<div className='grid grid-cols-1 place-items-center gap-4 md:grid-cols-3 sm:grid-cols-2'>
+				<div className="grid grid-cols-1 place-items-center gap-4 md:grid-cols-3 sm:grid-cols-2">
 					{DEVELOPMENT_CARDS.map((tech) => (
 						<TechCard key={tech.name} {...tech} />
 					))}

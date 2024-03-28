@@ -17,7 +17,7 @@ export default function Home() {
 	return (
 		<main className="flex w-full max-w-limit flex-col">
 			<section className="relative mb-32 flex flex-col sm:mb-60">
-				<h1 className='mb-8 font-bold text-4xl text-dark-gray md:text-6xl sm:text-5xl'>
+				<h1 className="mb-8 font-bold text-4xl text-dark-gray md:text-6xl sm:text-5xl">
 					Eu sou <br />
 					<strong className="font-bold text-white">
 						Leonardo Lopes
@@ -32,7 +32,7 @@ export default function Home() {
 					mobile.
 				</p>
 
-				<div className='m-auto flex max-w-64 flex-col gap-4 sm:m-0 sm:max-w-full sm:flex-row'>
+				<div className="m-auto flex max-w-64 flex-col gap-4 sm:m-0 sm:max-w-full sm:flex-row">
 					<Link href={env.CV_URL} target="_blank">
 						<Button className="w-full">Veja meu currículo</Button>
 					</Link>
