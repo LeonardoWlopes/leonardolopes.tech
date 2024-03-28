@@ -1,11 +1,11 @@
 // components
 import { Timer } from '@/components/timer'
-import { Button } from '@/components/button'
+//import { Button } from '@/components/button'
 import Image from 'next/image'
 import Link from 'next/link'
 
 //assets
-import { FastForward } from 'lucide-react'
+//import { FastForward } from 'lucide-react'
 import signature from '@/assets/icons/signature.svg'
 
 // utils
@@ -121,7 +121,7 @@ export default function About() {
 						alt="leonardo lopes"
 					/>
 
-					<abbr title="Calma la, ainda to trabalhando nisso!">
+					{/* <abbr title="Calma la, ainda to trabalhando nisso!">
 						<Button
 							className="cursor-not-allowed opacity-70"
 							disabled
@@ -129,7 +129,7 @@ export default function About() {
 							<FastForward />
 							Entre em contato
 						</Button>
-					</abbr>
+					</abbr> */}
 				</div>
 			</div>
 		</main>

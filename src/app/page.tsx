@@ -37,7 +37,7 @@ export default function Home() {
 						<Button className="w-full">Veja meu currículo</Button>
 					</Link>
 
-					<Link href={'/about'}>
+					{/* <Link href={'/about'}>
 						<abbr title="Calma la, ainda to trabalhando nisso!">
 							<Button
 								disabled
@@ -47,7 +47,7 @@ export default function Home() {
 								Entre em contato
 							</Button>
 						</abbr>
-					</Link>
+					</Link> */}
 				</div>
 
 				<CodeXml className="absolute right-0 hidden h-80 w-80 text-dark-gray/20 sm:block" />
