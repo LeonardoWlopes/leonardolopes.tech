@@ -1,5 +1,1 @@
-if which pnpm > /dev/null; then
-	pnpm run lint
-else
-	npm run lint
-fi
+pnpm run lint
