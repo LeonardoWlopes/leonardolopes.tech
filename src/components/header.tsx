@@ -5,12 +5,13 @@ import Link from 'next/link'
 import { env } from '@/env'
 
 // assets
-import { Linkedin, Github, Home, UserRound, Atom } from 'lucide-react'
+import { Linkedin, Github, Home, UserRound, Atom, Mail } from 'lucide-react'
 
 const LINKS = [
 	{ label: 'Home', href: '/', Icon: Home },
 	{ label: 'Sobre', href: '/about', Icon: UserRound },
 	{ label: 'Tecnologias', href: '/technologies', Icon: Atom },
+	{ label: 'Contato', href: '/contact', Icon: Mail },
 ]
 
 export function Header() {

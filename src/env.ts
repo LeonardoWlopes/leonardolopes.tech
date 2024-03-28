@@ -10,7 +10,9 @@ export const env = createEnv({
 		CV_URL: z.string().url(),
 	},
 
-	client: {},
+	client: {
+		NEXT_PUBLIC_CONTACT_NUMBER: z.string(),
+	},
 
 	runtimeEnv: {
 		LINKEDIN_URL: process.env.LINKEDIN_URL,
@@ -18,5 +20,6 @@ export const env = createEnv({
 		CV_URL: process.env.CV_URL,
 		INSTAGRAM_URL: process.env.INSTAGRAM_URL,
 		CONTACT_EMAIL: process.env.CONTACT_EMAIL,
+		NEXT_PUBLIC_CONTACT_NUMBER: process.env.NEXT_PUBLIC_CONTACT_NUMBER,
 	},
 })
