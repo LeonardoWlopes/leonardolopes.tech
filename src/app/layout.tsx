@@ -35,10 +35,11 @@ export default function RootLayout({
 				className={`relative flex min-h-screen flex-col items-center overflow-x-hidden bg-main-bg px-4 pt-24 pb-32 antialiased sm:py-8 ${inter.className}`}
 			>
 				<Image
-					className="absolute top-0"
+					className="-z-10 absolute top-0 max-w-screen-2xl"
 					src={topBackground}
 					alt=""
 					draggable={false}
+					priority
 				/>
 
 				<Header />
@@ -46,10 +47,11 @@ export default function RootLayout({
 				{children}
 
 				<Image
-					className="-z-10 absolute bottom-0"
+					className="-z-10 absolute bottom-0 max-w-screen-2xl"
 					src={bottomBackground}
 					alt=""
 					draggable={false}
+					priority
 				/>
 
 				<Analytics />
