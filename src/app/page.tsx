@@ -8,7 +8,7 @@ import Image from 'next/image'
 //assets
 import blink from '@/assets/images/avatar-blink.png'
 //import notebook from '@/assets/icons/notebook.svg'
-//import techStack from '@/assets/images/tech-stack.png'
+import techStack from '@/assets/images/tech-stack.png'
 
 // utils
 import { env } from '@/env'
@@ -17,7 +17,7 @@ export default function Home() {
 	return (
 		<main className="flex w-full max-w-limit flex-col">
 			<section className="relative mb-32 flex flex-col sm:mb-60">
-				<h1 className="mb-8 font-bold sm:text-5xl text-4xl text-dark-gray md:text-6xl">
+				<h1 className="mb-8 font-bold text-4xl text-dark-gray md:text-6xl sm:text-5xl">
 					Eu sou <br />
 					<strong className="font-bold text-white">
 						Leonardo Lopes
@@ -32,7 +32,7 @@ export default function Home() {
 					mobile.
 				</p>
 
-				<div className="flex gap-4 m-auto sm:m-0 flex-col sm:flex-row max-w-64 sm:max-w-full">
+				<div className="m-auto flex max-w-64 flex-col gap-4 sm:m-0 sm:max-w-full sm:flex-row">
 					<Link href={env.CV_URL} target="_blank">
 						<Button className="w-full">Veja meu currículo</Button>
 					</Link>
@@ -85,7 +85,7 @@ export default function Home() {
 					/>
 				</KnowCard> */}
 
-				{/* <KnowCard
+				<KnowCard
 					title="Tecnologias"
 					description="As tecnologias que eu uso e recomendo"
 					href="/tech"
@@ -93,9 +93,9 @@ export default function Home() {
 					<Image
 						className="object-cover"
 						src={techStack}
-						alt="iphone memoji"
+						alt="technologies layout"
 					/>
-				</KnowCard> */}
+				</KnowCard>
 			</section>
 		</main>
 	)

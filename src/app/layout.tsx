@@ -15,8 +15,12 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-	title: 'Leonardo Lopes | Engenheiro de Software Full Stack',
-	description: '',
+	title: {
+		default: 'Leonardo Lopes | Engenheiro de Software Full Stack',
+		template: 'Leonardo Lopes | %s',
+	},
+	description:
+		'Bem-vindo ao meu espaço digital! Sou o Léo, engenheiro de software apaixonado por criar soluções inovadoras e funcionais para desafios tecnológicos. Este é o meu cantinho na web, onde compartilho meu portfólio, experiências e insights sobre o mundo da programação e desenvolvimento de software.',
 }
 
 export default function RootLayout({
@@ -27,10 +31,8 @@ export default function RootLayout({
 	return (
 		<html lang="pt-BR" className="dark">
 			<body
-				className={
-					// biome-ignore lint/nursery/useSortedClasses: This is a false positive
-					`relative min-h-screen overflow-x-hidden bg-main-bg px-4 py-8 antialiased items-center flex flex-col ${inter.className}`
-				}
+				// biome-ignore lint/nursery/useSortedClasses: This is a false positive
+				className={`relative flex min-h-screen flex-col items-center overflow-x-hidden bg-main-bg px-4 pt-24 pb-32 antialiased sm:py-8 ${inter.className}`}
 			>
 				<Image
 					className="absolute top-0"

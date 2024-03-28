@@ -11,6 +11,15 @@ import signature from '@/assets/icons/signature.svg'
 // utils
 import { env } from '@/env'
 
+//types
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+	title: 'Sobre',
+	description:
+		'Conheça um pouco mais sobre minha trajetória profissional e pessoal.',
+}
+
 export default function About() {
 	return (
 		<main className="flex w-full max-w-limit flex-col">
@@ -81,7 +90,10 @@ export default function About() {
 							LinkedIn
 						</Link>
 						. E se preferir um contato mais direto, mande-me um{' '}
-						<Link href={env.CONTACT_EMAIL} target="_blank">
+						<Link
+							href={`mailto:${env.CONTACT_EMAIL}`}
+							target="_blank"
+						>
 							e-mail
 						</Link>{' '}
 						para iniciarmos uma conversa.
