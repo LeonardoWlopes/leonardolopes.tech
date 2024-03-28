@@ -10,7 +10,7 @@ import { Linkedin, Github, Home, UserRound, Atom } from 'lucide-react'
 const LINKS = [
 	{ label: 'Home', href: '/', Icon: Home },
 	{ label: 'Sobre', href: '/about', Icon: UserRound },
-	{ label: 'Tecnologias', href: '/tech', Icon: Atom },
+	{ label: 'Tecnologias', href: '/technologies', Icon: Atom },
 ]
 
 export function Header() {

@@ -88,7 +88,7 @@ export default function Home() {
 				<KnowCard
 					title="Tecnologias"
 					description="As tecnologias que eu uso e recomendo"
-					href="/tech"
+					href="/technologies"
 				>
 					<Image
 						className="object-cover"
