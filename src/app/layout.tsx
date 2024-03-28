@@ -35,7 +35,7 @@ export default function RootLayout({
 				className={`relative flex min-h-screen flex-col items-center overflow-x-hidden bg-main-bg px-4 pt-24 pb-32 antialiased sm:py-8 ${inter.className}`}
 			>
 				<Image
-					className="-z-10 absolute top-0 max-w-screen-2xl"
+					className='-z-10 absolute top-0 w-full max-w-screen-2xl object-none'
 					src={topBackground}
 					alt=""
 					draggable={false}
@@ -47,7 +47,7 @@ export default function RootLayout({
 				{children}
 
 				<Image
-					className="-z-10 absolute bottom-0 max-w-screen-2xl"
+					className='-z-10 absolute bottom-0 w-full max-w-screen-2xl object-none'
 					src={bottomBackground}
 					alt=""
 					draggable={false}

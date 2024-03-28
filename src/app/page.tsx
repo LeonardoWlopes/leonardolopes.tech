@@ -7,7 +7,6 @@ import Image from 'next/image'
 
 //assets
 import blink from '@/assets/images/avatar-blink.png'
-//import notebook from '@/assets/icons/notebook.svg'
 import techStack from '@/assets/images/tech-stack.png'
 
 // utils
@@ -37,17 +36,14 @@ export default function Home() {
 						<Button className="w-full">Veja meu currículo</Button>
 					</Link>
 
-					{/* <Link href={'/about'}>
-						<abbr title="Calma la, ainda to trabalhando nisso!">
-							<Button
-								disabled
-								className="w-full cursor-not-allowed opacity-70"
-								variant="secondary"
-							>
-								Entre em contato
-							</Button>
-						</abbr>
-					</Link> */}
+					<Link href={'/contact'}>
+						<Button
+							className="w-full cursor-not-allowed opacity-70"
+							variant="secondary"
+						>
+							Entre em contato
+						</Button>
+					</Link>
 				</div>
 
 				<CodeXml className="absolute right-0 hidden h-80 w-80 text-dark-gray/20 sm:block" />
