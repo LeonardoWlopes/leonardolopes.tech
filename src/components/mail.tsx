@@ -4,12 +4,10 @@ import type { FormEvent } from 'react'
 // components
 import { Button } from './button'
 
-// hooks
-import { useRouter } from 'next/navigation'
+// utils
+import { env } from '@/env'
 
 export function Mail() {
-	const router = useRouter()
-
 	function handleSubmit(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault()
 		const formData = new FormData(e.target as HTMLFormElement)
@@ -19,7 +17,7 @@ export function Mail() {
 			`Olá, meu nome é ${data.name} e eu gostaria de falar sobre *${data.subject}*.\n\n${data.content}`,
 		)
 
-		const url = `https://wa.me/5516991308051?text=${content}`
+		const url = `https://wa.me/${env.NEXT_PUBLIC_CONTACT_NUMBER}?text=${content}`
 
 		window.open(url)
 	}
