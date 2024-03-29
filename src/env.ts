@@ -8,6 +8,8 @@ export const env = createEnv({
 		INSTAGRAM_URL: z.string().url(),
 		CONTACT_EMAIL: z.string().email(),
 		CV_URL: z.string().url(),
+		APP_URL: z.string().url(),
+		AVATAR_URL: z.string().url(),
 	},
 
 	client: {
@@ -21,5 +23,7 @@ export const env = createEnv({
 		INSTAGRAM_URL: process.env.INSTAGRAM_URL,
 		CONTACT_EMAIL: process.env.CONTACT_EMAIL,
 		NEXT_PUBLIC_CONTACT_NUMBER: process.env.NEXT_PUBLIC_CONTACT_NUMBER,
+		APP_URL: process.env.APP_URL,
+		AVATAR_URL: process.env.AVATAR_URL,
 	},
 })

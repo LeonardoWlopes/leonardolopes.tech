@@ -13,8 +13,10 @@ export function Mail() {
 		const formData = new FormData(e.target as HTMLFormElement)
 		const data = Object.fromEntries(formData)
 
+		const subject = data.subject.toString().trim().replace(/\s/g, '%20')
+
 		const content = encodeURI(
-			`Olá, meu nome é ${data.name} e eu gostaria de falar sobre *${data.subject}*.\n\n${data.content}`,
+			`Olá, meu nome é ${data.name} e eu gostaria de falar sobre *${subject}*.\n\n${data.content}`,
 		)
 
 		const url = `https://wa.me/${env.NEXT_PUBLIC_CONTACT_NUMBER}?text=${content}`

@@ -118,16 +118,18 @@ export default function About() {
 				<div className="flex flex-col items-center">
 					<Image
 						className="mb-20 aspect-[9/12] w-56 rounded-lg object-cover"
-						src={'https://github.com/leonardowlopes.png'}
+						src={env.AVATAR_URL}
 						width={460}
 						height={460}
 						alt="Leonardo lopes"
 					/>
 
-					<Button className="cursor-not-allowed opacity-70" disabled>
-						<FastForward />
-						Entre em contato
-					</Button>
+					<Link href={'/contact'}>
+						<Button>
+							<FastForward />
+							Entre em contato
+						</Button>
+					</Link>
 				</div>
 			</div>
 		</main>

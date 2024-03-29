@@ -12,6 +12,9 @@ import { Header } from '@/components/header'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
+// utils
+import { env } from '@/env'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -21,6 +24,19 @@ export const metadata: Metadata = {
 	},
 	description:
 		'Bem-vindo ao meu espaço digital! Sou o Léo, engenheiro de software apaixonado por criar soluções inovadoras e funcionais para desafios tecnológicos. Este é o meu cantinho na web, onde compartilho meu portfólio, experiências e insights sobre o mundo da programação e desenvolvimento de software.',
+	openGraph: {
+		type: 'website',
+		locale: 'pt_BR',
+		url: env.APP_URL,
+		images: [
+			{
+				url: env.AVATAR_URL,
+				width: 460,
+				height: 460,
+				alt: 'Leonardo Lopes | Engenheiro de Software Full Stack',
+			},
+		],
+	},
 }
 
 export default function RootLayout({
