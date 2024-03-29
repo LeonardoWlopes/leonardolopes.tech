@@ -10,6 +10,7 @@ export const env = createEnv({
 		CV_URL: z.string().url(),
 		APP_URL: z.string().url(),
 		AVATAR_URL: z.string().url(),
+		GOOGLE_ANALYTICS_ID: z.string(),
 	},
 
 	client: {
@@ -25,5 +26,6 @@ export const env = createEnv({
 		NEXT_PUBLIC_CONTACT_NUMBER: process.env.NEXT_PUBLIC_CONTACT_NUMBER,
 		APP_URL: process.env.APP_URL,
 		AVATAR_URL: process.env.AVATAR_URL,
+		GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
 	},
 })

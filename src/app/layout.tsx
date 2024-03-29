@@ -11,6 +11,7 @@ import Image from 'next/image'
 import { Header } from '@/components/header'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 // utils
 import { env } from '@/env'
@@ -72,6 +73,7 @@ export default function RootLayout({
 
 				<Analytics />
 				<SpeedInsights />
+				<GoogleAnalytics gaId={env.GOOGLE_ANALYTICS_ID} />
 			</body>
 		</html>
 	)
