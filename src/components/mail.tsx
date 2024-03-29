@@ -4,12 +4,10 @@ import type { FormEvent } from 'react'
 // components
 import { Button } from './button'
 
-// hooks
-import { useRouter } from 'next/navigation'
+// utils
+import { env } from '@/env'
 
 export function Mail() {
-	const router = useRouter()
-
 	function handleSubmit(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault()
 		const formData = new FormData(e.target as HTMLFormElement)
@@ -21,10 +19,9 @@ export function Mail() {
 			`Olá, meu nome é ${data.name} e eu gostaria de falar sobre *${subject}*.\n\n${data.content}`,
 		)
 
-		const url = `https://wa.me/5516991308051?text=${content}`
-		console.log(url)
+		const url = `https://wa.me/${env.NEXT_PUBLIC_CONTACT_NUMBER}?text=${content}`
 
-		router.push(url)
+		window.open(url)
 	}
 
 	return (
@@ -32,19 +29,19 @@ export function Mail() {
 			onSubmit={handleSubmit}
 			className="flex w-full flex-col overflow-hidden rounded-xl border border-card-border bg-onyx"
 		>
-			<div className="flex h-[54px] items-center justify-start border-card-border/60 border-b p-4">
-				<div className="flex items-center gap-2">
+			<div className="relative flex h-[54px] items-center justify-center border-card-border/60 border-b p-4">
+				<div className="absolute left-4 flex items-center gap-2">
 					<div className="h-3 w-3 rounded-full border border-[#D62929] bg-[#F63636]" />
 					<div className="h-3 w-3 rounded-full border border-[#CEA435] bg-[#F6C136]" />
 					<div className="h-3 w-3 rounded-full border border-[#53CC28] bg-[#68F636]" />
 				</div>
 
-				<h3 className="m-auto font-medium text-base text-white">
+				<h3 className="font-medium text-base text-white">
 					Nova Mensagem
 				</h3>
 			</div>
 
-			<div className="flex flex-col px-8 py-3">
+			<div className="flex flex-col px-4 py-3 sm:px-8">
 				<div className="flex w-full items-center">
 					<label
 						className="mr-2 font-medium text-base text-white"
@@ -57,7 +54,9 @@ export function Mail() {
 						type="text"
 						name="name"
 						placeholder="Seu nome"
+						autoComplete="off"
 						id="input-name"
+						required
 					/>
 				</div>
 
@@ -75,7 +74,9 @@ export function Mail() {
 						type="text"
 						name="subject"
 						placeholder="Assunto"
+						autoComplete="off"
 						id="input-subject"
+						required
 					/>
 				</div>
 
@@ -84,7 +85,9 @@ export function Mail() {
 				<textarea
 					className="mb-6 h-80 w-full resize-none rounded-xl bg-main-bg p-6 font-normal text-base text-white outline-card-border placeholder:text-medium-gray"
 					name="content"
+					autoComplete="off"
 					placeholder="Escreva sua mensagem aqui..."
+					required
 				/>
 
 				<Button className="self-end" type="submit">
