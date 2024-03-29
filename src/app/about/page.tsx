@@ -124,10 +124,12 @@ export default function About() {
 						alt="Leonardo lopes"
 					/>
 
-					<Button className="cursor-not-allowed opacity-70" disabled>
-						<FastForward />
-						Entre em contato
-					</Button>
+					<Link href={'/contact'}>
+						<Button>
+							<FastForward />
+							Entre em contato
+						</Button>
+					</Link>
 				</div>
 			</div>
 		</main>
