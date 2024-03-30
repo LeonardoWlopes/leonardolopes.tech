@@ -59,7 +59,9 @@ export function Footer() {
 						<ul className="flex flex-col gap-3">
 							{ELSE_WHERE_LINKS.map(({ href, label }) => (
 								<li key={label}>
-									<Link href={href}>{label}</Link>
+									<Link href={href} target="_blank">
+										{label}
+									</Link>
 								</li>
 							))}
 						</ul>
