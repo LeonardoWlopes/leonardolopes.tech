@@ -1,14 +1,24 @@
 //components
 import { TechCard } from '@/components/tech-card'
-import { DEVELOPMENT_CARDS } from '@/utils/mock'
 
 //types
 import type { Metadata } from 'next'
 
+//utils
+import { DEVELOPMENT_CARDS } from '@/utils/mock'
+
+//next
 export const metadata: Metadata = {
 	title: 'Tecnologias',
 	description: 'Conheça as tecnologias que utilizo no meu dia a dia.',
 }
+
+const CATEGORIES = [
+	{
+		name: 'Desenvolvimento',
+		items: DEVELOPMENT_CARDS,
+	},
+]
 
 export default function Tech() {
 	return (
@@ -24,15 +34,19 @@ export default function Tech() {
 			<hr className="my-8 border-white/10 md:my-16" />
 
 			<div className="flex flex-col gap-8">
-				{/* <h3 className="text-center font-bold text-3xl text-dark-gray sm:text-start">
-					Desenvolvimento
-				</h3> */}
+				{CATEGORIES.map(({ items, name }) => (
+					<div className="flex flex-col gap-8" key={name}>
+						{/* <h3 className="text-center font-bold text-3xl text-dark-gray sm:text-start">
+							{name}
+						</h3> */}
 
-				<div className="grid grid-cols-1 place-items-center gap-4 md:grid-cols-3 sm:grid-cols-2">
-					{DEVELOPMENT_CARDS.map((tech) => (
-						<TechCard key={tech.name} {...tech} />
-					))}
-				</div>
+						<div className="grid grid-cols-1 place-items-center gap-4 md:grid-cols-3 sm:grid-cols-2">
+							{items.map((tech) => (
+								<TechCard key={tech.name} {...tech} />
+							))}
+						</div>
+					</div>
+				))}
 			</div>
 		</main>
 	)

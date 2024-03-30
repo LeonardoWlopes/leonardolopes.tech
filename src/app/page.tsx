@@ -37,10 +37,7 @@ export default function Home() {
 					</Link>
 
 					<Link href={'/contact'}>
-						<Button
-							className="w-full cursor-not-allowed opacity-70"
-							variant="secondary"
-						>
+						<Button className="w-full" variant="secondary">
 							Entre em contato
 						</Button>
 					</Link>
