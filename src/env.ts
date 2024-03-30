@@ -15,11 +15,15 @@ export const env = createEnv({
 
 	client: {
 		NEXT_PUBLIC_CONTACT_NUMBER: z.string(),
+		NEXT_PUBLIC_LINKEDIN_URL: z.string().url(),
+		NEXT_PUBLIC_GITHUB_URL: z.string().url(),
 	},
 
 	runtimeEnv: {
-		LINKEDIN_URL: process.env.LINKEDIN_URL,
-		GITHUB_URL: process.env.GITHUB_URL,
+		LINKEDIN_URL: process.env.NEXT_PUBLIC_GITHUB_URL,
+		GITHUB_URL: process.env.NEXT_PUBLIC_LINKEDIN_URL,
+		NEXT_PUBLIC_GITHUB_URL: process.env.NEXT_PUBLIC_GITHUB_URL,
+		NEXT_PUBLIC_LINKEDIN_URL: process.env.NEXT_PUBLIC_LINKEDIN_URL,
 		CV_URL: process.env.CV_URL,
 		INSTAGRAM_URL: process.env.INSTAGRAM_URL,
 		CONTACT_EMAIL: process.env.CONTACT_EMAIL,

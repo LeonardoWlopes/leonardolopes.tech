@@ -25,7 +25,7 @@ export const revalidate = 60 * 60 * 12 // 12 hours
 
 export default function About() {
 	return (
-		<main className="flex w-full max-w-limit flex-col">
+		<div className="flex w-full max-w-limit flex-col">
 			<h1 className="mb-3 font-bold text-4xl text-white md:text-6xl sm:text-5xl">
 				Um pouco sobre min
 			</h1>
@@ -132,6 +132,6 @@ export default function About() {
 					</Link>
 				</div>
 			</div>
-		</main>
+		</div>
 	)
 }

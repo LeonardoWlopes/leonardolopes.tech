@@ -83,7 +83,7 @@ export function Mail() {
 				<hr className="my-8 border-white/10" />
 
 				<textarea
-					className="mb-6 h-80 w-full resize-none rounded-xl bg-main-bg p-6 font-normal text-base text-white outline-card-border placeholder:text-medium-gray"
+					className="mb-6 h-52 w-full resize-none rounded-xl bg-main-bg p-6 font-normal text-base text-white outline-card-border sm:h-80 placeholder:text-medium-gray"
 					name="content"
 					autoComplete="off"
 					placeholder="Escreva sua mensagem aqui..."

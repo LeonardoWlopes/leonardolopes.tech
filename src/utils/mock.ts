@@ -1,3 +1,5 @@
+// types
+import type { IContactLink } from '@/interfaces/contact'
 import type { ITechCardProps } from '@/components/tech-card'
 import { ETechCategory } from '@/enums/tech'
 
@@ -26,6 +28,10 @@ import vitest from '@/assets/icons/vitest.svg'
 import jest from '@/assets/icons/jest.svg'
 import cypress from '@/assets/icons/cypress.svg'
 import docker from '@/assets/icons/docker.svg'
+import { Linkedin, Github, Mail } from 'lucide-react'
+
+// utils
+import { env } from '@/env'
 
 export const DEVELOPMENT_CARDS: ITechCardProps[] = [
 	{
@@ -177,5 +183,20 @@ export const DEVELOPMENT_CARDS: ITechCardProps[] = [
 		image: cypress,
 		category: ETechCategory.TESTING,
 		link: 'https://www.cypress.io/',
+	},
+]
+
+export const CONTACT_LINKS: IContactLink[] = [
+	{
+		href: `mailto:${env.CONTACT_EMAIL}`,
+		Icon: Mail,
+	},
+	{
+		href: env.LINKEDIN_URL,
+		Icon: Linkedin,
+	},
+	{
+		href: env.GITHUB_URL,
+		Icon: Github,
 	},
 ]

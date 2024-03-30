@@ -22,7 +22,7 @@ const CATEGORIES = [
 
 export default function Tech() {
 	return (
-		<main className="flex w-full max-w-limit flex-col">
+		<div className="flex w-full max-w-limit flex-col">
 			<h1 className="mb-3 font-bold text-4xl text-white md:text-6xl sm:text-5xl">
 				Tecnologias
 			</h1>
@@ -48,6 +48,6 @@ export default function Tech() {
 					</div>
 				))}
 			</div>
-		</main>
+		</div>
 	)
 }

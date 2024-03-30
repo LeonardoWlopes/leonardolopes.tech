@@ -1,7 +1,7 @@
 // components
 import { Button } from '@/components/button'
 import { KnowCard } from '@/components/know-card'
-import { CodeXml } from 'lucide-react'
+import { CodeXml, FastForward } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -14,7 +14,7 @@ import { env } from '@/env'
 
 export default function Home() {
 	return (
-		<main className="flex w-full max-w-limit flex-col">
+		<div className="flex w-full max-w-limit flex-col">
 			<section className="relative mb-32 flex flex-col sm:mb-60">
 				<h1 className="mb-8 font-bold text-4xl text-dark-gray md:text-6xl sm:text-5xl">
 					Eu sou <br />
@@ -46,7 +46,7 @@ export default function Home() {
 				<CodeXml className="absolute right-0 hidden h-80 w-80 text-dark-gray/20 sm:block" />
 			</section>
 
-			<section className="grid grid-cols-1 gap-4 md:grid-cols-2">
+			<section className="mb-24 grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2 md:justify-items-start">
 				<h2 className="mb-8 text-center font-bold text-4xl text-white md:text-start">
 					Conheça-me
 				</h2>
@@ -90,6 +90,26 @@ export default function Home() {
 					/>
 				</KnowCard>
 			</section>
-		</main>
+
+			<section className="flex flex-col items-center justify-between gap-8 md:flex-row">
+				<div className="flex max-w-[500px] flex-col gap-2">
+					<h2 className="font-bold text-4xl text-white">
+						Vamos trabalhar juntos?
+					</h2>
+
+					<p className="text-start text-dark-gray text-sm md:text-lg">
+						Gostaria de discutir a oportunidade de criar algo
+						incrível juntos? estou pronto se você estiver.
+					</p>
+				</div>
+
+				<Link href={'/contact'}>
+					<Button>
+						<FastForward />
+						Entre em contato
+					</Button>
+				</Link>
+			</section>
+		</div>
 	)
 }
