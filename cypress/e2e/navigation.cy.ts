@@ -15,7 +15,7 @@ describe('header', () => {
 
 			cy.wrap($link).as('link').click()
 
-			cy.location('pathname', { timeout: 2000 }).should('include', href)
+			cy.location('pathname').should('include', href)
 		})
 	})
 
@@ -39,7 +39,7 @@ describe('footer', () => {
 
 			cy.wrap($link).as('link').click()
 
-			cy.location('pathname', { timeout: 2000 }).should('include', href)
+			cy.location('pathname').should('include', href)
 		})
 	})
 
@@ -65,7 +65,7 @@ describe('/', () => {
 
 			currentButton.click()
 
-			cy.location('pathname', { timeout: 2000 }).should(
+			cy.location('pathname').should(
 				'include',
 				'/contact',
 			)
@@ -86,7 +86,7 @@ describe('/', () => {
 
 			currentCard.click()
 
-			cy.location('pathname', { timeout: 2000 }).should('include', link)
+			cy.location('pathname').should('include', link)
 
 			cy.go('back')
 		}
