@@ -44,7 +44,10 @@ export function Footer() {
 					<div className="flex flex-col">
 						<span className="mb-8 text-white">Links</span>
 
-						<ul className="flex flex-col gap-3">
+						<ul
+							className="flex flex-col gap-3"
+							data-cy="footer-navigation"
+						>
 							{NAV_LINKS.map(({ href, label }) => (
 								<li key={label}>
 									<Link href={href}>{label}</Link>
@@ -56,7 +59,10 @@ export function Footer() {
 					<div className="flex flex-col">
 						<span className="mb-8 text-white">Fora Daqui</span>
 
-						<ul className="flex flex-col gap-3">
+						<ul
+							className="flex flex-col gap-3"
+							data-cy="footer-external-links"
+						>
 							{ELSE_WHERE_LINKS.map(({ href, label }) => (
 								<li key={label}>
 									<Link href={href} target="_blank">

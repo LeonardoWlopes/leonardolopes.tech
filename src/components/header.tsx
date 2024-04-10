@@ -26,7 +26,10 @@ export function Header() {
 	return (
 		<header className="fixed bottom-8 z-10 flex w-[calc(100vw-32px)] max-w-limit justify-between rounded-xl border border-[#5E5E5E]/10 bg-[#181818]/60 p-4 text-light-gray backdrop-blur-sm sm:top-6 sm:bottom-[unset] sm:mb-32 sm:bg-[#181818]/30">
 			<div className="flex flex-1 items-center">
-				<ul className="flex flex-1 justify-evenly gap-10 sm:items-center sm:justify-start">
+				<ul
+					className="flex flex-1 justify-evenly gap-10 sm:items-center sm:justify-start"
+					data-cy="header-navigation"
+				>
 					{NAV_LINKS.map(({ href, label, Icon }) => {
 						const isActive = path === href
 
@@ -56,7 +59,10 @@ export function Header() {
 				</ul>
 			</div>
 
-			<div className="hidden items-center gap-6 sm:flex">
+			<div
+				className="hidden items-center gap-6 sm:flex"
+				data-cy="header-external-links"
+			>
 				<Link href={env.NEXT_PUBLIC_LINKEDIN_URL} target="_blank">
 					<Linkedin />
 				</Link>

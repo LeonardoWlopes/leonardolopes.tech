@@ -8,7 +8,9 @@
 		"start": "next start",
 		"lint": "biome check . --apply",
 		"check": "knip",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"cy:open": "cypress open",
+		"cy:run": "cypress run"
 	},
 	"dependencies": {
 		"@next/third-parties": "^14.1.4",

@@ -21,6 +21,7 @@ export function KnowCard({
 		<Link
 			className="relative flex aspect-square w-full max-w-[500px] flex-col items-center overflow-hidden rounded-[40px] bg-[#151515] pt-16 shadow-2xl"
 			href={href}
+			data-cy="know-card"
 		>
 			<span className="mb-4 font-extrabold text-[32px] text-white">
 				{title}

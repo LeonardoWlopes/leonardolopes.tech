@@ -23,7 +23,7 @@ export default function Home() {
 					</strong>
 				</h1>
 
-				<p className="z-10 mb-10 max-w-[730px] text-start text-dark-gray text-sm md:text-lg">
+				<p className="mb-10 max-w-[730px] text-start text-dark-gray text-sm md:text-lg">
 					Engenheiro de Software Full Stack especializado em
 					desenvolver soluções digitais escaláveis e performáticas.
 					Com experiência em desenvolvimento frontend e backend, meu
@@ -33,11 +33,13 @@ export default function Home() {
 
 				<div className="m-auto flex max-w-64 flex-col gap-4 sm:m-0 sm:max-w-full sm:flex-row">
 					<Link href={env.CV_URL} target="_blank">
-						<Button className="w-full">Veja meu currículo</Button>
+						<Button className="w-full" data-cy="resume-button">
+							Veja meu currículo
+						</Button>
 					</Link>
 
 					<Link href={'/contact'}>
-						<Button className="w-full" variant="secondary">
+						<Button className="w-full" variant="secondary" data-cy="contact-button">
 							Entre em contato
 						</Button>
 					</Link>
@@ -104,7 +106,7 @@ export default function Home() {
 				</div>
 
 				<Link href={'/contact'}>
-					<Button>
+					<Button data-cy="contact-button">
 						<FastForward />
 						Entre em contato
 					</Button>
