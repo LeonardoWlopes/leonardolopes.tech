@@ -39,7 +39,11 @@ export default function Home() {
 					</Link>
 
 					<Link href={'/contact'}>
-						<Button className="w-full" variant="secondary" data-cy="contact-button">
+						<Button
+							className="w-full"
+							variant="secondary"
+							data-cy="contact-button"
+						>
 							Entre em contato
 						</Button>
 					</Link>

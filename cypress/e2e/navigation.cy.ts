@@ -92,3 +92,5 @@ describe('/', () => {
 		}
 	})
 })
+
+//TODO: add tests for /about, /technologies, /contact
