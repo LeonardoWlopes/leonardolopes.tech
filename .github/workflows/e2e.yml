@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  intall-dependecies:
+  install-dependencies:
     runs-on: ubuntu-latest
 
     steps:
@@ -39,10 +39,24 @@ jobs:
         run: pnpm install
 
   build: 
-    needs: intall-dependecies
+    needs: install-dependencies
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
       - name: build
         run: pnpm run build
 
@@ -51,6 +65,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
       - name: start
         run: pnpm run start
 
@@ -59,6 +87,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
       - name: test
         run: pnpm run cy:run
-    
