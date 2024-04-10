@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  install-dependencies:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -38,68 +38,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-  build: 
-    needs: install-dependencies
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - uses: pnpm/action-setup@v3
-        name: Install pnpm
-        with:
-          version: 8
-          run_install: false
-
-      - name: build
+      - name: Build
         run: pnpm run build
 
-  start:
-    needs: build
-    runs-on: ubuntu-latest
+      - name: Start
+        run: pnpm run start & sleep 5
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - uses: pnpm/action-setup@v3
-        name: Install pnpm
-        with:
-          version: 8
-          run_install: false
-
-      - name: start
-        run: pnpm run start
-
-  test:
-    needs: start
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - uses: pnpm/action-setup@v3
-        name: Install pnpm
-        with:
-          version: 8
-          run_install: false
-
-      - name: test
+      - name: Test
         run: pnpm run cy:run
