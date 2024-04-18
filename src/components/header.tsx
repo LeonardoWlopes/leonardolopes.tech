@@ -8,7 +8,15 @@ import { env } from '@/env'
 import { twMerge } from 'tailwind-merge'
 
 // assets
-import { Linkedin, Github, Home, UserRound, Atom, Mail } from 'lucide-react'
+import {
+	Linkedin,
+	Github,
+	Home,
+	UserRound,
+	Atom,
+	Mail,
+	Rocket,
+} from 'lucide-react'
 
 // next
 import { usePathname } from 'next/navigation'
@@ -18,6 +26,7 @@ const NAV_LINKS = [
 	{ label: 'Sobre', href: '/about', Icon: UserRound },
 	{ label: 'Tecnologias', href: '/technologies', Icon: Atom },
 	{ label: 'Contato', href: '/contact', Icon: Mail },
+	{ label: 'Projetos', href: '/projects', Icon: Rocket },
 ]
 
 export function Header() {

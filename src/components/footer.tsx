@@ -13,6 +13,7 @@ const NAV_LINKS = [
 	{ label: 'Sobre', href: '/about' },
 	{ label: 'Tecnologias', href: '/technologies' },
 	{ label: 'Contato', href: '/contact' },
+	{ label: 'Projetos', href: '/projects' },
 ]
 
 const ELSE_WHERE_LINKS = [

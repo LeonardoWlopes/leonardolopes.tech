@@ -43,10 +43,14 @@ export default function About() {
 					</span>
 
 					<p className="mb-8 text-dark-gray">
-						E aí! Sou o Léo, engenheiro de software FullStack do
-						interior de São Paulo. Aqui, entre bits e bytes, sou o
-						cara que faz a mágica acontecer! Fanático por tecnologia
-						desde que me entendo por gente.
+						E aí! Sou o{' '}
+						<strong className='text-sm text-white sm:text-base'>
+							Léo
+						</strong>
+						, engenheiro de software FullStack do interior de São
+						Paulo. Aqui, entre bits e bytes, sou o cara que faz a
+						mágica acontecer! Fanático por tecnologia desde que me
+						entendo por gente.
 					</p>
 
 					<span className="mb-2 font-semibold text-dark-gray/40 uppercase">

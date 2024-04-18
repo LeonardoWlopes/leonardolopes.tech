@@ -8,7 +8,7 @@ describe('header', () => {
 
 		const links = navigation.find('a')
 
-		links.should('have.length', 4)
+		links.should('have.length', 5)
 
 		links.each(($link) => {
 			const href = new URL($link.prop('href')).pathname
@@ -32,7 +32,7 @@ describe('footer', () => {
 
 		const links = footer.find('a')
 
-		links.should('have.length', 4)
+		links.should('have.length', 5)
 
 		links.each(($link) => {
 			const href = new URL($link.prop('href')).pathname
@@ -65,10 +65,7 @@ describe('/', () => {
 
 			currentButton.click()
 
-			cy.location('pathname').should(
-				'include',
-				'/contact',
-			)
+			cy.location('pathname').should('include', '/contact')
 
 			cy.go('back')
 		})
