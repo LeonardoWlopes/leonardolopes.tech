@@ -1,13 +1,12 @@
 // components
 import { Button } from '@/components/button'
 import { KnowCard } from '@/components/know-card'
-import { CodeXml } from 'lucide-react'
+import { CodeXml, FastForward } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
 //assets
 import blink from '@/assets/images/avatar-blink.png'
-//import notebook from '@/assets/icons/notebook.svg'
 import techStack from '@/assets/images/tech-stack.png'
 
 // utils
@@ -15,16 +14,16 @@ import { env } from '@/env'
 
 export default function Home() {
 	return (
-		<main className="flex w-full max-w-limit flex-col">
+		<div className="flex w-full max-w-limit flex-col">
 			<section className="relative mb-32 flex flex-col sm:mb-60">
-				<h1 className='mb-8 font-bold text-4xl text-dark-gray md:text-6xl sm:text-5xl'>
+				<h1 className="mb-8 font-bold text-4xl text-dark-gray md:text-6xl sm:text-5xl">
 					Eu sou <br />
 					<strong className="font-bold text-white">
 						Leonardo Lopes
 					</strong>
 				</h1>
 
-				<p className="z-10 mb-10 max-w-[730px] text-start text-dark-gray text-sm md:text-lg">
+				<p className="mb-10 max-w-[730px] text-start text-dark-gray text-sm md:text-lg">
 					Engenheiro de Software Full Stack especializado em
 					desenvolver soluções digitais escaláveis e performáticas.
 					Com experiência em desenvolvimento frontend e backend, meu
@@ -32,28 +31,28 @@ export default function Home() {
 					mobile.
 				</p>
 
-				<div className='m-auto flex max-w-64 flex-col gap-4 sm:m-0 sm:max-w-full sm:flex-row'>
+				<div className="m-auto flex max-w-64 flex-col gap-4 sm:m-0 sm:max-w-full sm:flex-row">
 					<Link href={env.CV_URL} target="_blank">
-						<Button className="w-full">Veja meu currículo</Button>
+						<Button className="w-full" data-cy="resume-button">
+							Veja meu currículo
+						</Button>
 					</Link>
 
-					<Link href={'/about'}>
-						<abbr title="Calma la, ainda to trabalhando nisso!">
-							<Button
-								disabled
-								className="w-full cursor-not-allowed opacity-70"
-								variant="secondary"
-							>
-								Entre em contato
-							</Button>
-						</abbr>
+					<Link href={'/contact'}>
+						<Button
+							className="w-full"
+							variant="secondary"
+							data-cy="contact-button"
+						>
+							Entre em contato
+						</Button>
 					</Link>
 				</div>
 
 				<CodeXml className="absolute right-0 hidden h-80 w-80 text-dark-gray/20 sm:block" />
 			</section>
 
-			<section className="grid grid-cols-1 gap-4 md:grid-cols-2">
+			<section className="mb-24 grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2 md:justify-items-start">
 				<h2 className="mb-8 text-center font-bold text-4xl text-white md:text-start">
 					Conheça-me
 				</h2>
@@ -88,7 +87,7 @@ export default function Home() {
 				<KnowCard
 					title="Tecnologias"
 					description="As tecnologias que eu uso e recomendo"
-					href="/tech"
+					href="/technologies"
 				>
 					<Image
 						className="object-cover"
@@ -97,6 +96,26 @@ export default function Home() {
 					/>
 				</KnowCard>
 			</section>
-		</main>
+
+			<section className="flex flex-col items-center justify-between gap-8 md:flex-row">
+				<div className="flex max-w-[500px] flex-col gap-2">
+					<h2 className="font-bold text-4xl text-white">
+						Vamos trabalhar juntos?
+					</h2>
+
+					<p className="text-start text-dark-gray text-sm md:text-lg">
+						Gostaria de discutir a oportunidade de criar algo
+						incrível juntos? estou pronto se você estiver.
+					</p>
+				</div>
+
+				<Link href={'/contact'}>
+					<Button data-cy="contact-button">
+						<FastForward />
+						Entre em contato
+					</Button>
+				</Link>
+			</section>
+		</div>
 	)
 }

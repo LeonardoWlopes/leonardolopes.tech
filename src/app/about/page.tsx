@@ -14,13 +14,18 @@ import { env } from '@/env'
 //types
 import type { Metadata } from 'next'
 
+// next
 export const metadata: Metadata = {
 	title: 'Sobre',
+	description:
+		'Conheça um pouco mais sobre minha trajetória profissional e pessoal.',
 }
+
+export const revalidate = 60 * 60 * 12 // 12 hours
 
 export default function About() {
 	return (
-		<main className="flex w-full max-w-limit flex-col">
+		<div className="flex w-full max-w-limit flex-col">
 			<h1 className="mb-3 font-bold text-4xl text-white md:text-6xl sm:text-5xl">
 				Um pouco sobre min
 			</h1>
@@ -113,23 +118,20 @@ export default function About() {
 				<div className="flex flex-col items-center">
 					<Image
 						className="mb-20 aspect-[9/12] w-56 rounded-lg object-cover"
-						src={'https://github.com/leonardowlopes.png'}
+						src={env.AVATAR_URL}
 						width={460}
 						height={460}
-						alt="leonardo lopes"
+						alt="Leonardo lopes"
 					/>
 
-					<abbr title="Calma la, ainda to trabalhando nisso!">
-						<Button
-							className="cursor-not-allowed opacity-70"
-							disabled
-						>
+					<Link href={'/contact'}>
+						<Button>
 							<FastForward />
 							Entre em contato
 						</Button>
-					</abbr>
+					</Link>
 				</div>
 			</div>
-		</main>
+		</div>
 	)
 }
