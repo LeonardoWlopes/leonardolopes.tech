@@ -2,17 +2,17 @@
 import Image, { type StaticImageData } from 'next/image'
 
 // types
-import type { ETechCategory } from '@/enums/tech'
+import type { ETechTag } from '@/enums/tech'
 import Link from 'next/link'
 
 export interface ITechCardProps {
 	name: string
 	image: string | StaticImageData
-	category: ETechCategory
+	tag: ETechTag
 	link?: string
 }
 
-export function TechCard({ category, image, name, link }: ITechCardProps) {
+export function TechCard({ tag, image, name, link }: ITechCardProps) {
 	function Card() {
 		return (
 			<div className="relative flex w-full gap-3 rounded-3xl border border-card-border bg-onyx p-4 sm:min-h-[300px] sm:flex-col md:p-6">
@@ -30,7 +30,7 @@ export function TechCard({ category, image, name, link }: ITechCardProps) {
 					</span>
 
 					<span className="rounded-3xl border border-dark-gray/90 px-2 py-1 text-center font-normal text-dark-gray text-xs">
-						{category}
+						{tag}
 					</span>
 				</div>
 			</div>

@@ -65,10 +65,7 @@ describe('/', () => {
 
 			currentButton.click()
 
-			cy.location('pathname').should(
-				'include',
-				'/contact',
-			)
+			cy.location('pathname').should('include', '/contact')
 
 			cy.go('back')
 		})
