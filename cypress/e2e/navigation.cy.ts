@@ -46,7 +46,7 @@ describe('footer', () => {
 	it('should have external links', () => {
 		const footer = cy.get('[data-cy=footer-external-links]')
 
-		footer.find('a').should('have.length', 3)
+		footer.find('a').should('have.length', 4)
 	})
 })
 
