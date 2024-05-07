@@ -17,6 +17,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 // utils
 import { env } from '@/env'
 import { twMerge } from 'tailwind-merge'
+import { CONSTANTS } from '@/utils/constants'
 
 // next
 const inter = Inter({ subsets: ['latin'] })
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
 		url: env.APP_URL,
 		images: [
 			{
-				url: env.AVATAR_URL,
+				url: CONSTANTS.AVATAR_URL,
 				width: 460,
 				height: 460,
 				alt: 'Leonardo Lopes | Engenheiro de Software Full Stack',

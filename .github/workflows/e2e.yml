@@ -45,11 +45,9 @@ jobs:
           echo NEXT_PUBLIC_LINKEDIN_URL=${{ secrets.NEXT_PUBLIC_LINKEDIN_URL }} >> .env
           echo NEXT_PUBLIC_GITHUB_URL=${{ secrets.NEXT_PUBLIC_GITHUB_URL }} >> .env
           echo INSTAGRAM_URL=${{ secrets.INSTAGRAM_URL }} >> .env
-          echo CONTACT_EMAIL=${{ secrets.CONTACT_EMAIL }} >> .env
           echo CV_URL=${{ secrets.CV_URL }} >> .env
           echo NEXT_PUBLIC_CONTACT_NUMBER=${{ secrets.NEXT_PUBLIC_CONTACT_NUMBER }} >> .env
           echo GOOGLE_ANALYTICS_ID=${{ secrets.GOOGLE_ANALYTICS_ID }} >> .env
-          echo AVATAR_URL=${{ secrets.AVATAR_URL }} >> .env
           echo APP_URL=${{ secrets.APP_URL }} >> .env
 
       - name: Build

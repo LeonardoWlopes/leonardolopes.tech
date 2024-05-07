@@ -4,8 +4,8 @@
 import Link from 'next/link'
 
 // utils
-import { env } from '@/env'
 import { twMerge } from 'tailwind-merge'
+import { CONSTANTS } from '@/utils/constants'
 
 // assets
 import { Linkedin, Github, Home, UserRound, Atom, Mail } from 'lucide-react'
@@ -63,11 +63,11 @@ export function Header() {
 				className="hidden items-center gap-6 sm:flex"
 				data-cy="header-external-links"
 			>
-				<Link href={env.NEXT_PUBLIC_LINKEDIN_URL} target="_blank">
+				<Link href={CONSTANTS.LINKEDIN_URL} target="_blank">
 					<Linkedin />
 				</Link>
 
-				<Link href={env.NEXT_PUBLIC_GITHUB_URL} target="_blank">
+				<Link href={CONSTANTS.GITHUB_URL} target="_blank">
 					<Github />
 				</Link>
 			</div>

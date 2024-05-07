@@ -6,7 +6,7 @@ import Link from 'next/link'
 import signature from '@/assets/icons/signature.svg'
 
 // utils
-import { env } from '@/env'
+import { CONSTANTS } from '@/utils/constants'
 
 const NAV_LINKS = [
 	{ label: 'Home', href: '/' },
@@ -16,9 +16,10 @@ const NAV_LINKS = [
 ]
 
 const ELSE_WHERE_LINKS = [
-	{ label: 'Github', href: env.GITHUB_URL },
-	{ label: 'LinkedIn', href: env.LINKEDIN_URL },
-	{ label: 'Email', href: `mailto:${env.CONTACT_EMAIL}` },
+	{ label: 'Github', href: CONSTANTS.GITHUB_URL },
+	{ label: 'LinkedIn', href: CONSTANTS.LINKEDIN_URL },
+	{ label: 'Email', href: `mailto:${CONSTANTS.CONTACT_EMAIL}` },
+	{ label: 'Instagram', href: CONSTANTS.INSTAGRAM_URL },
 ]
 
 export function Footer() {
@@ -31,7 +32,7 @@ export function Footer() {
 					<Image src={signature} alt="Leonardo Lopes" width={200} />
 
 					<p className="mb-8 text-medium-gray text-sm sm:mb-auto">
-						Obrigado por vir ^_^
+						Obrigado por vir 😁
 					</p>
 
 					<p className="text-medium-gray text-sm">

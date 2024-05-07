@@ -9,7 +9,7 @@ import { FastForward } from 'lucide-react'
 import signature from '@/assets/icons/signature.svg'
 
 // utils
-import { env } from '@/env'
+import { CONSTANTS } from '@/utils/constants'
 
 //types
 import type { Metadata } from 'next'
@@ -83,18 +83,18 @@ export default function About() {
 					<p className="mb-12 text-dark-gray [&>a]:text-white [&>a]:underline">
 						Se quiser acompanhar mais de perto o que faço, sinta-se
 						à vontade para me seguir no
-						<Link href={env.INSTAGRAM_URL} target="_blank">
+						<Link href={CONSTANTS.INSTAGRAM_URL} target="_blank">
 							{' '}
 							Instagram
 						</Link>
 						. Para conhecer mais sobre minha trajetória
 						profissional, dê uma olhada no meu{' '}
-						<Link href={env.LINKEDIN_URL} target="_blank">
+						<Link href={CONSTANTS.LINKEDIN_URL} target="_blank">
 							LinkedIn
 						</Link>
 						. E se preferir um contato mais direto, mande-me um{' '}
 						<Link
-							href={`mailto:${env.CONTACT_EMAIL}`}
+							href={`mailto:${CONSTANTS.CONTACT_EMAIL}`}
 							target="_blank"
 						>
 							e-mail
@@ -118,7 +118,7 @@ export default function About() {
 				<div className="flex flex-col items-center">
 					<Image
 						className="mb-20 aspect-[9/12] w-56 rounded-lg object-cover"
-						src={env.AVATAR_URL}
+						src={CONSTANTS.AVATAR_URL}
 						width={460}
 						height={460}
 						alt="Leonardo lopes"

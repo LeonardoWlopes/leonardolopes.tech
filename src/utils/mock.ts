@@ -30,9 +30,10 @@ import cypress from '@/assets/icons/cypress.svg'
 import docker from '@/assets/icons/docker.svg'
 import rust from '@/assets/icons/rust.svg'
 import bun from '@/assets/icons/bun.svg'
-import { Linkedin, Github, Mail } from 'lucide-react'
+import { Linkedin, Github, Mail, Instagram, MessageCircle } from 'lucide-react'
 
 // utils
+import { CONSTANTS } from './constants'
 import { env } from '@/env'
 
 export const DEVELOPMENT_CARDS: ITechCardList[] = [
@@ -230,15 +231,23 @@ export const DEVELOPMENT_CARDS: ITechCardList[] = [
 
 export const CONTACT_LINKS: IContactLink[] = [
 	{
-		href: `mailto:${env.CONTACT_EMAIL}`,
+		href: `mailto:${CONSTANTS.CONTACT_EMAIL}`,
 		Icon: Mail,
 	},
 	{
-		href: env.LINKEDIN_URL,
+		href: CONSTANTS.LINKEDIN_URL,
 		Icon: Linkedin,
 	},
 	{
-		href: env.GITHUB_URL,
+		href: CONSTANTS.GITHUB_URL,
 		Icon: Github,
+	},
+	{
+		href: CONSTANTS.INSTAGRAM_URL,
+		Icon: Instagram,
+	},
+	{
+		href: `https://wa.me/${env.NEXT_PUBLIC_CONTACT_NUMBER}`,
+		Icon: MessageCircle,
 	},
 ]
