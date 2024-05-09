@@ -43,7 +43,7 @@ export function Footer() {
 
 				<div className="flex gap-16 text-base text-light-gray sm:gap-32">
 					<div className="flex flex-col">
-						<span className="mb-8 text-white">Links</span>
+						<span className="mb-8 text-secondary">Links</span>
 
 						<ul
 							className="flex flex-col gap-3"
@@ -58,7 +58,7 @@ export function Footer() {
 					</div>
 
 					<div className="flex flex-col">
-						<span className="mb-8 text-white">Fora Daqui</span>
+						<span className="mb-8 text-secondary">Fora Daqui</span>
 
 						<ul
 							className="flex flex-col gap-3"

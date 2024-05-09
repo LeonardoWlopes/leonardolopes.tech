@@ -36,7 +36,7 @@ export function Mail() {
 					<div className="h-3 w-3 rounded-full border border-[#53CC28] bg-[#68F636]" />
 				</div>
 
-				<h3 className="font-medium text-base text-white">
+				<h3 className="font-medium text-base text-secondary">
 					Nova Mensagem
 				</h3>
 			</div>
@@ -44,7 +44,7 @@ export function Mail() {
 			<div className="flex flex-col px-4 py-3 sm:px-8">
 				<div className="flex w-full items-center">
 					<label
-						className="mr-2 font-medium text-base text-white"
+						className="mr-2 font-medium text-base text-secondary"
 						htmlFor="input-name"
 					>
 						Nome:
@@ -64,7 +64,7 @@ export function Mail() {
 
 				<div className="flex w-full items-center">
 					<label
-						className="mr-2 font-medium text-base text-white"
+						className="mr-2 font-medium text-base text-secondary"
 						htmlFor="input-name"
 					>
 						Assunto:
@@ -83,7 +83,7 @@ export function Mail() {
 				<hr className="my-8 border-white/10" />
 
 				<textarea
-					className="mb-6 h-52 w-full resize-none rounded-xl bg-main-bg p-6 font-normal text-base text-white outline-card-border sm:h-80 placeholder:text-medium-gray"
+					className="mb-6 h-52 w-full resize-none rounded-xl bg-main-bg p-6 font-normal text-base text-secondary outline-card-border sm:h-80 placeholder:text-medium-gray"
 					name="content"
 					autoComplete="off"
 					placeholder="Escreva sua mensagem aqui..."

@@ -26,7 +26,7 @@ export const revalidate = 60 * 60 * 12 // 12 hours
 export default function About() {
 	return (
 		<div className="flex w-full max-w-limit flex-col">
-			<h1 className="mb-3 font-bold text-4xl text-white md:text-6xl sm:text-5xl">
+			<h1 className="mb-3 font-bold text-4xl text-secondary md:text-6xl sm:text-5xl">
 				Um pouco sobre min
 			</h1>
 
@@ -38,22 +38,22 @@ export default function About() {
 
 			<div className="grid gap-2 md:grid-cols-[2fr_1fr]">
 				<div className="mb-8 text-justify text-sm md:mb-0 sm:text-base">
-					<span className="mb-2 font-semibold text-dark-gray/40 uppercase">
+					<span className="mb-2 font-semibold text-primary/40 uppercase">
 						quem eu sou
 					</span>
 
-					<p className="mb-8 text-dark-gray">
+					<p className="mb-8 text-primary">
 						E aí! Sou o Léo, engenheiro de software FullStack do
 						interior de São Paulo. Aqui, entre bits e bytes, sou o
 						cara que faz a mágica acontecer! Fanático por tecnologia
 						desde que me entendo por gente.
 					</p>
 
-					<span className="mb-2 font-semibold text-dark-gray/40 uppercase">
+					<span className="mb-2 font-semibold text-primary/40 uppercase">
 						O que eu faço
 					</span>
 
-					<p className="mb-8 text-dark-gray">
+					<p className="mb-8 text-primary">
 						Em uma jornada de <Timer /> repleta de descobertas, me
 						apaixonei por diversas tecnologias, mas atualmente sou
 						especializado em TypeScript, React, React Native e
@@ -65,11 +65,11 @@ export default function About() {
 						programador quanto como líder.
 					</p>
 
-					<span className="mb-2 font-semibold text-dark-gray/40 uppercase">
+					<span className="mb-2 font-semibold text-primary/40 uppercase">
 						E fora do código?
 					</span>
 
-					<p className="mb-12 text-dark-gray">
+					<p className="mb-12 text-primary">
 						Nas raras ocasiões em que não estou codando, aproveito
 						para cuidar da minha saúde física e mental, seja
 						treinando e passeando com o amor da minha vida (meu dog)
@@ -80,7 +80,7 @@ export default function About() {
 						promovam bem-estar em todos os aspectos.
 					</p>
 
-					<p className="mb-12 text-dark-gray [&>a]:text-white [&>a]:underline">
+					<p className="mb-12 text-primary [&>a]:text-secondary [&>a]:underline">
 						Se quiser acompanhar mais de perto o que faço, sinta-se
 						à vontade para me seguir no
 						<Link href={CONSTANTS.INSTAGRAM_URL} target="_blank">
@@ -102,7 +102,7 @@ export default function About() {
 						para iniciarmos uma conversa.
 					</p>
 
-					<p className="mb-8 text-dark-gray">
+					<p className="mb-8 text-primary">
 						Vamos construir algo incrível juntos?
 					</p>
 

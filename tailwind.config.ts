@@ -11,6 +11,10 @@ const config: Config = {
 		extend: {
 			colors: {
 				'main-bg': 'var(--main-bg)',
+				primary: 'var(--primary)',
+				secondary: 'var(--secondary)',
+				'primary-border': 'var(--primary-border)',
+
 				'light-gray': '#C5C5C5',
 				'medium-gray': 'rgba(128, 128, 128, 0.5)',
 				'dark-gray': '#808080',

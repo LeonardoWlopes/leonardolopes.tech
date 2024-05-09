@@ -23,11 +23,11 @@ export function KnowCard({
 			href={href}
 			data-cy="know-card"
 		>
-			<span className="mb-4 font-extrabold text-[32px] text-white">
+			<span className="mb-4 font-extrabold text-[32px] text-secondary">
 				{title}
 			</span>
 
-			<p className="mb-auto text-center font-medium text-base text-dark-gray">
+			<p className="mb-auto text-center font-medium text-base text-primary">
 				{description}
 			</p>
 

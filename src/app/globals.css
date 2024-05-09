@@ -1,13 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
-  :root {
-    --main-bg: #FBFBFB
-  }
- 
-  .dark {
-    --main-bg: #0D0D0D
-  }
+	:root {
+		--main-bg: #FBFBFB;
+		--primary: ffffff;
+		--secondary: #ffffff;
+		--primary-border: ffffff
+	}
+
+	.dark {
+		--main-bg: #0D0D0D;
+		--primary: #808080;
+		--secondary: #ffffff;
+		--primary-border: #5E5E5e1a
+	}
 }

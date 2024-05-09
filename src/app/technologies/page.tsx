@@ -48,7 +48,7 @@ const CATEGORIES = [
 export default function Tech() {
 	return (
 		<div className="flex w-full max-w-limit flex-col">
-			<h1 className="mb-3 font-bold text-4xl text-white md:text-6xl sm:text-5xl">
+			<h1 className="mb-3 font-bold text-4xl text-secondary md:text-6xl sm:text-5xl">
 				Tecnologias
 			</h1>
 
@@ -66,7 +66,7 @@ export default function Tech() {
 
 					return (
 						<div className="flex flex-col gap-8" key={name}>
-							<h3 className="text-center font-bold text-3xl text-dark-gray sm:text-start">
+							<h3 className="text-center font-bold text-3xl text-primary sm:text-start">
 								{name}
 							</h3>
 
