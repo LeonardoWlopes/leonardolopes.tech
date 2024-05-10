@@ -16,14 +16,14 @@ export default function Home() {
 	return (
 		<div className="flex w-full max-w-limit flex-col">
 			<section className="relative mb-32 flex flex-col sm:mb-60">
-				<h1 className="mb-8 font-bold text-4xl text-primary md:text-6xl sm:text-5xl">
+				<h1 className="mb-8 font-bold text-4xl text-dark-gray md:text-6xl sm:text-5xl">
 					Eu sou <br />
-					<strong className="font-bold text-secondary">
+					<strong className="font-bold text-primary">
 						Leonardo Lopes
 					</strong>
 				</h1>
 
-				<p className="mb-10 max-w-[730px] text-start text-primary text-sm md:text-lg">
+				<p className="mb-10 max-w-[730px] text-start text-dark-gray text-sm md:text-lg">
 					Engenheiro de Software Full Stack especializado em
 					desenvolver soluções digitais escaláveis e performáticas.
 					Com experiência em desenvolvimento frontend e backend, meu
@@ -33,7 +33,7 @@ export default function Home() {
 
 				<div className="m-auto flex max-w-64 flex-col gap-4 sm:m-0 sm:max-w-full sm:flex-row">
 					<Link href={env.CV_URL} target="_blank">
-						<Button className="w-full" data-cy="resume-button">
+						<Button className="w-full"  data-cy="resume-button">
 							Veja meu currículo
 						</Button>
 					</Link>
@@ -49,7 +49,7 @@ export default function Home() {
 					</Link>
 				</div>
 
-				<CodeXml className="absolute right-0 hidden h-80 w-80 text-primary opacity-20 sm:block" />
+				<CodeXml className="absolute right-0 hidden h-80 w-80 text-primary opacity-10 sm:block" />
 			</section>
 
 			<section className="mb-24 grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2 md:justify-items-start">
@@ -103,7 +103,7 @@ export default function Home() {
 						Vamos trabalhar juntos?
 					</h2>
 
-					<p className="text-start text-primary text-sm md:text-lg">
+					<p className="text-start text-dark-gray text-sm md:text-lg">
 						Gostaria de discutir a oportunidade de criar algo
 						incrível juntos? estou pronto se você estiver.
 					</p>

@@ -11,15 +11,16 @@ const config: Config = {
 		extend: {
 			colors: {
 				'main-bg': 'var(--main-bg)',
+				card: 'var(--card)',
+
 				primary: 'var(--primary)',
-				secondary: 'var(--secondary)',
 				'primary-border': 'var(--primary-border)',
 
-				'light-gray': '#C5C5C5',
-				'medium-gray': 'rgba(128, 128, 128, 0.5)',
 				'dark-gray': '#808080',
+				'medium-gray': '#80808080',
+				'light-gray': '#C5C5C5',
 				onyx: '#181818',
-				'card-border': '#383737',
+				'faint-white': '#F3F3F3',
 			},
 			maxWidth: {
 				limit: '1024px',

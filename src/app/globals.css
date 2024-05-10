@@ -5,15 +5,15 @@
 @layer base {
 	:root {
 		--main-bg: #FBFBFB;
-		--primary: ffffff;
-		--secondary: #ffffff;
-		--primary-border: ffffff
+		--primary: #181818;
+		--primary-border: #ffffff40;
+		--card: #f5f5f5;
 	}
 
 	.dark {
 		--main-bg: #0D0D0D;
-		--primary: #808080;
-		--secondary: #ffffff;
-		--primary-border: #5E5E5e1a
+		--primary: #ffffff;
+		--primary-border: #5353534d;
+		--card: #151515;
 	}
 }

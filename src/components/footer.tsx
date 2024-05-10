@@ -26,16 +26,16 @@ export function Footer() {
 	const currentYear = new Date().getFullYear()
 
 	return (
-		<footer className="flex w-full justify-center border-white/10 border-t px-4 pt-8 pb-24 sm:pb-11">
+		<footer className="flex w-full justify-center border-primary-border border-t px-4 pt-8 pb-24 sm:pb-11">
 			<div className="flex w-full max-w-limit flex-col-reverse justify-between gap-8 md:flex-row">
 				<div className="flex flex-col">
 					<Image src={signature} alt="Leonardo Lopes" width={200} />
 
-					<p className="mb-8 text-medium-gray text-sm sm:mb-auto">
+					<p className="mb-8 text-onyx dark:text-dark-gray/50 text-sm sm:mb-auto">
 						Obrigado por vir 😁
 					</p>
 
-					<p className="text-medium-gray text-sm">
+					<p className="text-onyx dark:text-dark-gray/50 text-sm">
 						© {currentYear} Leonardo Lopes. Todos os direitos
 						reservados.
 					</p>
@@ -43,7 +43,7 @@ export function Footer() {
 
 				<div className="flex gap-16 text-base text-light-gray sm:gap-32">
 					<div className="flex flex-col">
-						<span className="mb-8 text-secondary">Links</span>
+						<span className="mb-8 dark:text-primary font-bold text-onyx">Links</span>
 
 						<ul
 							className="flex flex-col gap-3"
@@ -51,14 +51,19 @@ export function Footer() {
 						>
 							{NAV_LINKS.map(({ href, label }) => (
 								<li key={label}>
-									<Link href={href}>{label}</Link>
+									<Link
+										className="dark:text-light-gray text-onyx"
+										href={href}
+									>
+										{label}
+									</Link>
 								</li>
 							))}
 						</ul>
 					</div>
 
 					<div className="flex flex-col">
-						<span className="mb-8 text-secondary">Fora Daqui</span>
+						<span className="mb-8 dark:text-primary font-bold text-onyx">Fora Daqui</span>
 
 						<ul
 							className="flex flex-col gap-3"
@@ -66,7 +71,11 @@ export function Footer() {
 						>
 							{ELSE_WHERE_LINKS.map(({ href, label }) => (
 								<li key={label}>
-									<Link href={href} target="_blank">
+									<Link
+										className="dark:text-light-gray text-onyx"
+										href={href}
+										target="_blank"
+									>
 										{label}
 									</Link>
 								</li>
