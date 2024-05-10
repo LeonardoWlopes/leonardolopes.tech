@@ -19,7 +19,7 @@ export function KnowCard({
 }: IKnowCardProps) {
 	return (
 		<Link
-			className='relative flex aspect-square w-full max-w-[500px] flex-col items-center overflow-hidden rounded-[40px] bg-card pt-16 shadow-2xl'
+			className="relative flex aspect-square w-full max-w-[500px] flex-col items-center overflow-hidden rounded-[40px] bg-card pt-16 shadow-2xl"
 			href={href}
 			data-cy="know-card"
 		>

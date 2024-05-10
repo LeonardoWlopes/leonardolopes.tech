@@ -22,7 +22,7 @@ export function ThemeSwitch() {
 	return (
 		<div className="text-primary dark:text-light-gray">
 			<Moon
-				className='hidden cursor-pointer dark:flex'
+				className="hidden cursor-pointer dark:flex"
 				onClick={handleLightTheme}
 			/>
 

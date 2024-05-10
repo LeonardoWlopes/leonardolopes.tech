@@ -31,11 +31,11 @@ export function Footer() {
 				<div className="flex flex-col">
 					<Image src={signature} alt="Leonardo Lopes" width={200} />
 
-					<p className="mb-8 text-onyx dark:text-dark-gray/50 text-sm sm:mb-auto">
+					<p className="mb-8 text-onyx text-sm sm:mb-auto dark:text-dark-gray/50">
 						Obrigado por vir 😁
 					</p>
 
-					<p className="text-onyx dark:text-dark-gray/50 text-sm">
+					<p className="text-onyx text-sm dark:text-dark-gray/50">
 						© {currentYear} Leonardo Lopes. Todos os direitos
 						reservados.
 					</p>
@@ -43,7 +43,9 @@ export function Footer() {
 
 				<div className="flex gap-16 text-base text-light-gray sm:gap-32">
 					<div className="flex flex-col">
-						<span className="mb-8 dark:text-primary font-bold text-onyx">Links</span>
+						<span className="mb-8 font-bold text-onyx dark:text-primary">
+							Links
+						</span>
 
 						<ul
 							className="flex flex-col gap-3"
@@ -52,7 +54,7 @@ export function Footer() {
 							{NAV_LINKS.map(({ href, label }) => (
 								<li key={label}>
 									<Link
-										className="dark:text-light-gray text-onyx"
+										className="text-onyx dark:text-light-gray"
 										href={href}
 									>
 										{label}
@@ -63,7 +65,9 @@ export function Footer() {
 					</div>
 
 					<div className="flex flex-col">
-						<span className="mb-8 dark:text-primary font-bold text-onyx">Fora Daqui</span>
+						<span className="mb-8 font-bold text-onyx dark:text-primary">
+							Fora Daqui
+						</span>
 
 						<ul
 							className="flex flex-col gap-3"
@@ -72,7 +76,7 @@ export function Footer() {
 							{ELSE_WHERE_LINKS.map(({ href, label }) => (
 								<li key={label}>
 									<Link
-										className="dark:text-light-gray text-onyx"
+										className="text-onyx dark:text-light-gray"
 										href={href}
 										target="_blank"
 									>

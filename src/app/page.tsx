@@ -33,7 +33,7 @@ export default function Home() {
 
 				<div className="m-auto flex max-w-64 flex-col gap-4 sm:m-0 sm:max-w-full sm:flex-row">
 					<Link href={env.CV_URL} target="_blank">
-						<Button className="w-full"  data-cy="resume-button">
+						<Button className="w-full" data-cy="resume-button">
 							Veja meu currículo
 						</Button>
 					</Link>

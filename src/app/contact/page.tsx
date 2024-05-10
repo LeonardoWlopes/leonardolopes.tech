@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function Contact() {
 	return (
 		<div className="flex w-full max-w-limit flex-col">
-			<h1 className="mb-3 font-bold text-4xl text-secondary md:text-6xl sm:text-5xl">
+			<h1 className="mb-3 font-bold text-4xl text-primary md:text-6xl sm:text-5xl">
 				Entre em contato
 			</h1>
 
