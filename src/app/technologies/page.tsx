@@ -48,7 +48,7 @@ const CATEGORIES = [
 export default function Tech() {
 	return (
 		<div className="flex w-full max-w-limit flex-col">
-			<h1 className="mb-3 font-bold text-4xl text-white md:text-6xl sm:text-5xl">
+			<h1 className="mb-3 font-bold text-4xl text-primary md:text-6xl sm:text-5xl">
 				Tecnologias
 			</h1>
 
@@ -56,7 +56,7 @@ export default function Tech() {
 				Linguagens, frameworks, ferramentas e outras coisas que eu uso
 			</h2>
 
-			<hr className="my-8 border-white/10 md:my-16" />
+			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 
 			<div className="flex flex-col gap-8">
 				{CATEGORIES.map(({ name, category }) => {
@@ -66,7 +66,7 @@ export default function Tech() {
 
 					return (
 						<div className="flex flex-col gap-8" key={name}>
-							<h3 className="text-center font-bold text-3xl text-dark-gray sm:text-start">
+							<h3 className="font-bold text-3xl text-light-gray sm:text-start dark:text-dark-gray">
 								{name}
 							</h3>
 

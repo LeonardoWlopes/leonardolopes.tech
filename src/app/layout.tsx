@@ -19,6 +19,9 @@ import { env } from '@/env'
 import { twMerge } from 'tailwind-merge'
 import { CONSTANTS } from '@/utils/constants'
 
+// providers
+import { ThemeProvider } from '@/providers/theme-provider'
+
 // next
 const inter = Inter({ subsets: ['latin'] })
 
@@ -50,7 +53,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="pt-BR" className="dark">
+		<html lang="pt-BR" className="dark" style={{ colorScheme: 'dark' }}>
 			<body
 				className={twMerge(
 					'relative flex min-h-screen flex-col items-center overflow-x-hidden bg-main-bg antialiased',
@@ -65,13 +68,15 @@ export default function RootLayout({
 					priority
 				/>
 
-				<Header />
+				<ThemeProvider>
+					<Header />
 
-				<main className="flex w-full max-w-limit flex-col px-4 pt-24 pb-32 sm:pt-48">
-					{children}
-				</main>
+					<main className="flex w-full max-w-limit flex-col px-4 pt-24 pb-32 sm:pt-48">
+						{children}
+					</main>
 
-				<Footer />
+					<Footer />
+				</ThemeProvider>
 
 				<Image
 					className="-z-10 -bottom-1 absolute w-full max-w-screen-2xl object-none"

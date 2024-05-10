@@ -27,16 +27,16 @@ export function Mail() {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="flex w-full flex-col overflow-hidden rounded-xl border border-card-border bg-onyx"
+			className="flex w-full flex-col overflow-hidden rounded-xl border border-card-border bg-card dark:bg-onyx"
 		>
-			<div className="relative flex h-[54px] items-center justify-center border-card-border/60 border-b p-4">
+			<div className="relative flex h-[54px] items-center justify-center border-card-border border-b p-4">
 				<div className="absolute left-4 flex items-center gap-2">
 					<div className="h-3 w-3 rounded-full border border-[#D62929] bg-[#F63636]" />
 					<div className="h-3 w-3 rounded-full border border-[#CEA435] bg-[#F6C136]" />
 					<div className="h-3 w-3 rounded-full border border-[#53CC28] bg-[#68F636]" />
 				</div>
 
-				<h3 className="font-medium text-base text-white">
+				<h3 className="font-medium text-base text-secondary">
 					Nova Mensagem
 				</h3>
 			</div>
@@ -44,11 +44,12 @@ export function Mail() {
 			<div className="flex flex-col px-4 py-3 sm:px-8">
 				<div className="flex w-full items-center">
 					<label
-						className="mr-2 font-medium text-base text-white"
+						className="mr-2 font-medium text-base text-secondary"
 						htmlFor="input-name"
 					>
 						Nome:
 					</label>
+
 					<input
 						className="w-full border-none bg-inherit text-medium-gray outline-none placeholder:text-medium-gray/60"
 						type="text"
@@ -60,11 +61,11 @@ export function Mail() {
 					/>
 				</div>
 
-				<hr className="my-3 border-white/10" />
+				<hr className="my-3 border-light-gray dark:border-white/10" />
 
 				<div className="flex w-full items-center">
 					<label
-						className="mr-2 font-medium text-base text-white"
+						className="mr-2 font-medium text-base text-secondary"
 						htmlFor="input-name"
 					>
 						Assunto:
@@ -80,17 +81,17 @@ export function Mail() {
 					/>
 				</div>
 
-				<hr className="my-8 border-white/10" />
+				<hr className="my-8 border-light-gray dark:border-white/10" />
 
 				<textarea
-					className="mb-6 h-52 w-full resize-none rounded-xl bg-main-bg p-6 font-normal text-base text-white outline-card-border sm:h-80 placeholder:text-medium-gray"
+					className="mb-6 h-52 w-full resize-none rounded-xl bg-main-bg p-6 font-normal text-base text-secondary outline-card-border sm:h-80 placeholder:text-medium-gray"
 					name="content"
 					autoComplete="off"
 					placeholder="Escreva sua mensagem aqui..."
 					required
 				/>
 
-				<Button className="self-end" type="submit">
+				<Button className="self-end py-3" type="submit">
 					Enviar
 				</Button>
 			</div>

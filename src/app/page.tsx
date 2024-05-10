@@ -18,7 +18,7 @@ export default function Home() {
 			<section className="relative mb-32 flex flex-col sm:mb-60">
 				<h1 className="mb-8 font-bold text-4xl text-dark-gray md:text-6xl sm:text-5xl">
 					Eu sou <br />
-					<strong className="font-bold text-white">
+					<strong className="font-bold text-primary">
 						Leonardo Lopes
 					</strong>
 				</h1>
@@ -49,11 +49,11 @@ export default function Home() {
 					</Link>
 				</div>
 
-				<CodeXml className="absolute right-0 hidden h-80 w-80 text-dark-gray/20 sm:block" />
+				<CodeXml className="absolute right-0 hidden h-80 w-80 text-primary opacity-10 sm:block" />
 			</section>
 
 			<section className="mb-24 grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2 md:justify-items-start">
-				<h2 className="mb-8 text-center font-bold text-4xl text-white md:text-start">
+				<h2 className="mb-8 text-center font-bold text-4xl text-secondary md:text-start">
 					Conheça-me
 				</h2>
 
@@ -99,7 +99,7 @@ export default function Home() {
 
 			<section className="flex flex-col items-center justify-between gap-8 md:flex-row">
 				<div className="flex max-w-[500px] flex-col gap-2">
-					<h2 className="font-bold text-4xl text-white">
+					<h2 className="font-bold text-4xl text-secondary">
 						Vamos trabalhar juntos?
 					</h2>
 
