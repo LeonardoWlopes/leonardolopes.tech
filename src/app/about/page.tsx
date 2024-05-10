@@ -34,7 +34,7 @@ export default function About() {
 				Quem eu sou e o que faço
 			</h2>
 
-			<hr className="my-8 border-white/10 md:my-16" />
+			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 
 			<div className="grid gap-2 md:grid-cols-[2fr_1fr]">
 				<div className="mb-8 flex flex-col text-justify text-sm md:mb-0 sm:text-base">

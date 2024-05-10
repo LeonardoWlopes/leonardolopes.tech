@@ -27,14 +27,14 @@ export default function Contact() {
 				para bater um papo
 			</h2>
 
-			<hr className="my-8 border-white/10 md:my-16" />
+			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 
 			<Mail />
 
 			<div className="mt-16 flex items-center justify-center gap-8">
 				{CONTACT_LINKS.map(({ href, Icon }) => (
 					<Link
-						className="h-6 w-6 text-light-gray"
+						className="h-6 w-6 text-primary opacity-80"
 						key={href}
 						href={href}
 						target="_blank"

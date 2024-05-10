@@ -56,7 +56,7 @@ export default function Tech() {
 				Linguagens, frameworks, ferramentas e outras coisas que eu uso
 			</h2>
 
-			<hr className="my-8 border-white/10 md:my-16" />
+			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 
 			<div className="flex flex-col gap-8">
 				{CATEGORIES.map(({ name, category }) => {

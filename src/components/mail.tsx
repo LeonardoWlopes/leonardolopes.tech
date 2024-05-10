@@ -27,9 +27,9 @@ export function Mail() {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="flex w-full flex-col overflow-hidden rounded-xl border border-card-border bg-onyx"
+			className="flex w-full flex-col overflow-hidden rounded-xl border border-card-border bg-card dark:bg-onyx"
 		>
-			<div className="relative flex h-[54px] items-center justify-center border-card-border/60 border-b p-4">
+			<div className="relative flex h-[54px] items-center justify-center border-card-border border-b p-4">
 				<div className="absolute left-4 flex items-center gap-2">
 					<div className="h-3 w-3 rounded-full border border-[#D62929] bg-[#F63636]" />
 					<div className="h-3 w-3 rounded-full border border-[#CEA435] bg-[#F6C136]" />
@@ -49,6 +49,7 @@ export function Mail() {
 					>
 						Nome:
 					</label>
+
 					<input
 						className="w-full border-none bg-inherit text-medium-gray outline-none placeholder:text-medium-gray/60"
 						type="text"
@@ -60,7 +61,7 @@ export function Mail() {
 					/>
 				</div>
 
-				<hr className="my-3 border-white/10" />
+				<hr className="my-3 border-light-gray dark:border-white/10" />
 
 				<div className="flex w-full items-center">
 					<label
@@ -80,7 +81,7 @@ export function Mail() {
 					/>
 				</div>
 
-				<hr className="my-8 border-white/10" />
+				<hr className="my-8 border-light-gray dark:border-white/10" />
 
 				<textarea
 					className="mb-6 h-52 w-full resize-none rounded-xl bg-main-bg p-6 font-normal text-base text-secondary outline-card-border sm:h-80 placeholder:text-medium-gray"
@@ -90,7 +91,7 @@ export function Mail() {
 					required
 				/>
 
-				<Button className="self-end" type="submit">
+				<Button className="self-end py-3" type="submit">
 					Enviar
 				</Button>
 			</div>
