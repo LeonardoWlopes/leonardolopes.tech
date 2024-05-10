@@ -30,7 +30,7 @@ export default function About() {
 				Um pouco sobre min
 			</h1>
 
-			<h2 className="dark:text-medium-gray md:text-2xl sm:text-xl">
+			<h2 className="text-medium-gray md:text-2xl sm:text-xl">
 				Quem eu sou e o que faço
 			</h2>
 
@@ -49,7 +49,7 @@ export default function About() {
 						desde que me entendo por gente.
 					</p>
 
-					<span className='mb-1 font-semibold text-onyx uppercase dark:text-medium-gray'>
+					<span className="mb-1 font-semibold text-onyx uppercase dark:text-medium-gray">
 						O que eu faço
 					</span>
 
@@ -65,7 +65,7 @@ export default function About() {
 						programador quanto como líder.
 					</p>
 
-					<span className='mb-1 font-semibold text-onyx uppercase dark:text-medium-gray'>
+					<span className="mb-1 font-semibold text-onyx uppercase dark:text-medium-gray">
 						E fora do código?
 					</span>
 
@@ -80,7 +80,7 @@ export default function About() {
 						promovam bem-estar em todos os aspectos.
 					</p>
 
-					<p className='mb-12 [&>a]:text-primary dark:text-dark-gray [&>a]:underline'>
+					<p className="mb-12 [&>a]:text-primary dark:text-dark-gray [&>a]:underline">
 						Se quiser acompanhar mais de perto o que faço, sinta-se
 						à vontade para me seguir no
 						<Link href={CONSTANTS.INSTAGRAM_URL} target="_blank">

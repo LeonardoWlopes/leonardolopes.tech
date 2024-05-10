@@ -66,7 +66,7 @@ export default function Tech() {
 
 					return (
 						<div className="flex flex-col gap-8" key={name}>
-							<h3 className="text-center font-bold text-3xl text-primary sm:text-start">
+							<h3 className="text-center font-bold text-3xl text-light-gray sm:text-start dark:text-dark-gray">
 								{name}
 							</h3>
 
