@@ -5,7 +5,7 @@ import { Mail } from '@/components/mail'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
-// icons
+// utils
 import { CONTACT_LINKS } from '@/utils/mock'
 
 // next

@@ -3,19 +3,13 @@ import Link from 'next/link'
 
 // utils
 import { CONSTANTS } from '@/utils/constants'
+import { NAV_LINKS } from '@/utils/mock'
 
 // assets
-import { Linkedin, Github, Home, UserRound, Atom, Mail } from 'lucide-react'
+import { Linkedin, Github } from 'lucide-react'
 
 // components
 import { ThemeSwitch } from './theme-switch'
-
-const NAV_LINKS = [
-	{ label: 'Home', href: '/', Icon: Home },
-	{ label: 'Sobre', href: '/about', Icon: UserRound },
-	{ label: 'Tecnologias', href: '/technologies', Icon: Atom },
-	{ label: 'Contato', href: '/contact', Icon: Mail },
-]
 
 export function Header() {
 	return (

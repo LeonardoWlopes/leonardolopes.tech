@@ -30,7 +30,17 @@ import cypress from '@/assets/icons/cypress.svg'
 import docker from '@/assets/icons/docker.svg'
 import rust from '@/assets/icons/rust.svg'
 import bun from '@/assets/icons/bun.svg'
-import { Linkedin, Github, Mail, Instagram, MessageCircle } from 'lucide-react'
+import {
+	Linkedin,
+	Github,
+	Mail,
+	Instagram,
+	MessageCircle,
+	Home,
+	UserRound,
+	Atom,
+	Briefcase,
+} from 'lucide-react'
 
 // utils
 import { CONSTANTS } from './constants'
@@ -250,4 +260,12 @@ export const CONTACT_LINKS: IContactLink[] = [
 		href: `https://wa.me/${env.NEXT_PUBLIC_CONTACT_NUMBER}`,
 		Icon: MessageCircle,
 	},
+]
+
+export const NAV_LINKS = [
+	{ label: 'Home', href: '/', Icon: Home },
+	{ label: 'Sobre', href: '/about', Icon: UserRound },
+	{ label: 'Experiencias', href: '/experiences', Icon: Briefcase },
+	{ label: 'Tecnologias', href: '/technologies', Icon: Atom },
+	{ label: 'Contato', href: '/contact', Icon: Mail },
 ]
