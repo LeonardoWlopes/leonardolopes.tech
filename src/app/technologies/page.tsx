@@ -1,5 +1,6 @@
 // components
 import { TechCard } from '@/components/tech-card'
+import { PageTitle, PageSubtitle } from '@/components/typography'
 
 // types
 import type { Metadata } from 'next'
@@ -48,13 +49,11 @@ const CATEGORIES = [
 export default function Tech() {
 	return (
 		<div className="flex w-full max-w-limit flex-col">
-			<h1 className="mb-3 font-bold text-4xl text-primary md:text-6xl sm:text-5xl">
-				Tecnologias
-			</h1>
+			<PageTitle className="mb-3">Tecnologias</PageTitle>
 
-			<h2 className="text-medium-gray md:text-2xl sm:text-xl">
+			<PageSubtitle>
 				Linguagens, frameworks, ferramentas e outras coisas que eu uso
-			</h2>
+			</PageSubtitle>
 
 			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 

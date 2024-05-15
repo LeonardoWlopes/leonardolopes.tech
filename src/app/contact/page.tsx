@@ -1,4 +1,5 @@
 // components
+import { PageTitle, PageSubtitle } from '@/components/typography'
 import { Mail } from '@/components/mail'
 
 // types
@@ -18,14 +19,12 @@ export const metadata: Metadata = {
 export default function Contact() {
 	return (
 		<div className="flex w-full max-w-limit flex-col">
-			<h1 className="mb-3 font-bold text-4xl text-primary md:text-6xl sm:text-5xl">
-				Entre em contato
-			</h1>
+			<PageTitle className="mb-3">Entre em contato</PageTitle>
 
-			<h2 className="text-medium-gray md:text-2xl sm:text-xl">
+			<PageSubtitle>
 				Para discutir oportunidades de colaboração, projetos ou apenas
 				para bater um papo
-			</h2>
+			</PageSubtitle>
 
 			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 

@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 // components
 import { Experience } from '@/components/experience'
 import { Timer } from '@/components/timer'
+import { PageTitle, PageSubtitle } from '@/components/typography'
 
 // utils
 import { EXPERIENCES } from '@/utils/mock'
@@ -21,13 +22,9 @@ export const revalidate = 60 * 60 * 12 // 12 hours
 export default function Experiencies() {
 	return (
 		<div className="flex w-full max-w-limit flex-col">
-			<h1 className="mb-3 font-bold text-4xl text-primary md:text-6xl sm:text-5xl">
-				Experiencias
-			</h1>
+			<PageTitle className="mb-3">Experiencias</PageTitle>
 
-			<h2 className="text-medium-gray md:text-2xl sm:text-xl">
-				Minha trajetória profissional até aqui
-			</h2>
+			<PageSubtitle>Minha trajetória profissional até aqui</PageSubtitle>
 
 			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 
