@@ -3,19 +3,13 @@ import Link from 'next/link'
 
 // utils
 import { CONSTANTS } from '@/utils/constants'
+import { NAV_LINKS } from '@/utils/mock'
 
 // assets
-import { Linkedin, Github, Home, UserRound, Atom, Mail } from 'lucide-react'
+import { Linkedin, Github } from 'lucide-react'
 
 // components
 import { ThemeSwitch } from './theme-switch'
-
-const NAV_LINKS = [
-	{ label: 'Home', href: '/', Icon: Home },
-	{ label: 'Sobre', href: '/about', Icon: UserRound },
-	{ label: 'Tecnologias', href: '/technologies', Icon: Atom },
-	{ label: 'Contato', href: '/contact', Icon: Mail },
-]
 
 export function Header() {
 	return (
@@ -49,7 +43,7 @@ export function Header() {
 			</div>
 
 			<div
-				className="hidden items-center gap-6 text-primary sm:flex dark:text-light-gray"
+				className="hidden items-center gap-6 text-primary md:flex dark:text-light-gray"
 				data-cy="header-external-links"
 			>
 				<Link href={CONSTANTS.LINKEDIN_URL} target="_blank">
@@ -61,9 +55,9 @@ export function Header() {
 				</Link>
 			</div>
 
-			<div className="mx-6 w-[1px] border dark:border-primary-border" />
+			<div className="mx-6 hidden w-[1px] border sm:flex dark:border-primary-border" />
 
-			<ThemeSwitch />
+			<ThemeSwitch className="hidden sm:flex" />
 		</header>
 	)
 }

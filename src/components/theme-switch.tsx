@@ -8,7 +8,15 @@ import { Moon, Sun } from 'lucide-react'
 // hooks
 import { useTheme } from 'next-themes'
 
-export function ThemeSwitch() {
+// utils
+import { twMerge } from 'tailwind-merge'
+
+// types
+interface IThemeSwitchProps {
+	className?: string
+}
+
+export function ThemeSwitch({ className }: IThemeSwitchProps) {
 	const { setTheme } = useTheme()
 
 	const handleDarkTheme = useCallback(() => {
@@ -20,7 +28,9 @@ export function ThemeSwitch() {
 	}, [])
 
 	return (
-		<div className="text-primary dark:text-light-gray">
+		<div
+			className={twMerge('text-primary dark:text-light-gray', className)}
+		>
 			<Moon
 				className="hidden cursor-pointer dark:flex"
 				onClick={handleLightTheme}

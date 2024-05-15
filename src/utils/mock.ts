@@ -1,6 +1,7 @@
 // types
 import type { IContactLink } from '@/interfaces/contact'
 import type { ITechCardList } from '@/interfaces/tech'
+import type { IExperience } from '@/interfaces/experience'
 import { ETechCategory, ETechTag } from '@/enums/tech'
 
 //assets
@@ -30,11 +31,30 @@ import cypress from '@/assets/icons/cypress.svg'
 import docker from '@/assets/icons/docker.svg'
 import rust from '@/assets/icons/rust.svg'
 import bun from '@/assets/icons/bun.svg'
-import { Linkedin, Github, Mail, Instagram, MessageCircle } from 'lucide-react'
+
+import build from '@/assets/images/buildbox.jpeg'
+import nkey from '@/assets/images/nkey.jpeg'
+import genezys from '@/assets/images/genezys.jpeg'
+import modu from '@/assets/images/modu.jpeg'
+import inceres from '@/assets/images/inceres.jpeg'
+import primepass from '@/assets/images/primepass.jpeg'
+
+import {
+	Linkedin,
+	Github,
+	Mail,
+	Instagram,
+	MessageCircle,
+	Home,
+	UserRound,
+	Atom,
+	Briefcase,
+} from 'lucide-react'
 
 // utils
 import { CONSTANTS } from './constants'
 import { env } from '@/env'
+import { parseISO } from 'date-fns'
 
 export const DEVELOPMENT_CARDS: ITechCardList[] = [
 	{
@@ -249,5 +269,82 @@ export const CONTACT_LINKS: IContactLink[] = [
 	{
 		href: `https://wa.me/${env.NEXT_PUBLIC_CONTACT_NUMBER}`,
 		Icon: MessageCircle,
+	},
+]
+
+export const NAV_LINKS = [
+	{ label: 'Home', href: '/', Icon: Home },
+	{ label: 'Sobre', href: '/about', Icon: UserRound },
+	{ label: 'Experiencias', href: '/experiences', Icon: Briefcase },
+	{ label: 'Tecnologias', href: '/technologies', Icon: Atom },
+	{ label: 'Contato', href: '/contact', Icon: Mail },
+]
+
+export const EXPERIENCES: IExperience[] = [
+	{
+		company: 'Buildbox',
+		description:
+			'Atuo no desenvolvimento, manutenção e aprimoramento de aplicativos, portais, sistemas e sites para os clientes da empresa. Responsável por garantir soluções tecnológicas eficientes e atualizadas, visando atender às necessidades específicas de cada cliente e promover uma experiência do usuário excepcional.',
+		icon: build,
+		role: {
+			title: 'Fullstack Developer',
+			startDate: parseISO('2022-04-01'),
+			endDate: null,
+		},
+	},
+	{
+		company: 'Nkey',
+		description:
+			'Desempenhei um papel crucial na concepção e desenvolvimento do sistema utilizado pela Poliedro Sistema de Ensino. Responsável por distribuir conteúdos, a plataforma atendeu mais de 580 unidades em todo o território brasileiro durante o meu envolvimento no projeto.',
+		icon: nkey,
+		role: {
+			title: 'Frontend Developer',
+			startDate: parseISO('2022-08-01'),
+			endDate: parseISO('2022-11-01'),
+		},
+	},
+	{
+		company: 'Genezys Global Tech',
+		description:
+			'Encarregado do desenvolvimento dos websites de diversos produtos da empresa, todos centrados em tecnologia web3 e criptoativos. Desenvolvi interfaces envolventes e funcionais, garantindo uma presença online impactante para cada produto. Mantive-me atualizado com as últimas tendências em tecnologia blockchain, web3 e criptoativos, assegurando a integração eficaz desses elementos nos sites dos produtos.',
+		icon: genezys,
+		role: {
+			title: 'Frontend Developer',
+			startDate: new Date('2022-03-01'),
+			endDate: new Date('2022-06-01'),
+		},
+	},
+	{
+		company: 'MODU Gestão do Cuidado',
+		description:
+			'Desenvolvi de forma independente e do zero uma parte significativa do sistema atualmente utilizado pelo complexo Wanda Horta. Esta solução abrange a gestão de pacientes, funcionários, vendas e receitas. Meu trabalho incluiu a concepção, implementação e otimização do sistema para atender às necessidades específicas da instituição, demonstrando habilidades sólidas em desenvolvimento e solução de problemas.',
+		icon: modu,
+		role: {
+			title: 'Frontend Developer',
+			startDate: new Date('2021-08-01'),
+			endDate: new Date('2022-03-10'),
+		},
+	},
+	{
+		company: 'inCeres',
+		description:
+			'Desenvolvi e aprimorei o aplicativo utilizado pelos clientes da empresa, proporcionando acesso fácil a informações detalhadas sobre suas fazendas, colheitas e talhões. Implementei funcionalidades que integravam mapas e gráficos, oferecendo uma visão intuitiva e abrangente. Trabalhei para garantir uma experiência do usuário eficiente, facilitando o acesso e interpretação de dados cruciais.',
+		icon: inceres,
+		role: {
+			title: 'Mobile Developer',
+			startDate: new Date('2020-12-10'),
+			endDate: new Date('2021-06-01'),
+		},
+	},
+	{
+		company: 'Primepass',
+		description:
+			'Desenvolvi e mantive interfaces no aplicativo PrimePass usando React Native. Contribuí para a experiência do usuário e a consistência visual, colaborando proativamente com a equipe. Mantive-me atualizado com as melhores práticas, otimizando o desempenho para garantir a qualidade do produto.',
+		icon: primepass,
+		role: {
+			title: 'Mobile Developer',
+			startDate: new Date('2020-6-1'),
+			endDate: new Date('2020-12-10'),
+		},
 	},
 ]

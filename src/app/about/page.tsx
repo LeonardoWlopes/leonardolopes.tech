@@ -18,7 +18,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
 	title: 'Sobre',
 	description:
-		'Conheça um pouco mais sobre minha trajetória profissional e pessoal.',
+		'Conheça um pouco mais sobre mim, minhas experiências e projetos',
 }
 
 export const revalidate = 60 * 60 * 12 // 12 hours
