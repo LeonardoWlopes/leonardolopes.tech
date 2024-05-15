@@ -43,7 +43,7 @@ export function Header() {
 			</div>
 
 			<div
-				className="hidden items-center gap-6 text-primary sm:flex dark:text-light-gray"
+				className="hidden items-center gap-6 text-primary md:flex dark:text-light-gray"
 				data-cy="header-external-links"
 			>
 				<Link href={CONSTANTS.LINKEDIN_URL} target="_blank">
@@ -55,9 +55,9 @@ export function Header() {
 				</Link>
 			</div>
 
-			<div className="mx-6 w-[1px] border dark:border-primary-border" />
+			<div className="mx-6 hidden w-[1px] border sm:flex dark:border-primary-border" />
 
-			<ThemeSwitch />
+			<ThemeSwitch className="hidden sm:flex" />
 		</header>
 	)
 }

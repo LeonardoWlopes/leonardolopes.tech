@@ -11,7 +11,7 @@ import { twMerge } from 'tailwind-merge'
 export const metadata: Metadata = {
 	title: 'Experiencias',
 	description:
-		'Conheça um pouco mais sobre mim, minhas experiências e projetos',
+		'Conheça um pouco mais sobre minha trajetória profissional e pessoal.',
 }
 
 export default function Experiencies() {
@@ -27,10 +27,10 @@ export default function Experiencies() {
 
 			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 
-			<div className={'relative flex min-h-screen flex-col gap-2'}>
+			<div className={'relative flex flex-col gap-8 sm:gap-2'}>
 				<div
 					className={
-						'absolute left-1/2 h-full w-[1px] bg-primary-border'
+						'absolute left-1/2 hidden h-full w-[1px] bg-primary-border sm:flex'
 					}
 				/>
 
@@ -42,14 +42,16 @@ export default function Experiencies() {
 							key={experience.company}
 							className={twMerge(
 								'relative flex items-center',
-								isEven ? 'flex-row' : 'flex-row-reverse',
+								isEven ? 'flex-row' : 'sm:flex-row-reverse',
 							)}
 						>
-							<div className="absolute left-[calc(50%-7.5px)] h-4 w-4 rounded-full border border-primary-border bg-main-bg" />
+							<div className="absolute left-[calc(50%-7.5px)] hidden h-4 w-4 items-center justify-center rounded-full border border-primary-border bg-main-bg sm:flex">
+								<div className="h-1/3 w-1/3 rounded-full bg-primary-border" />
+							</div>
 
 							<Experience
 								experience={experience}
-								className={twMerge('max-w-[calc(50%-15px)]')}
+								className={twMerge('sm:max-w-[calc(50%-15px)]')}
 							/>
 						</div>
 					)
