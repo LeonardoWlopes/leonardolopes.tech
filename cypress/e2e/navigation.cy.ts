@@ -8,7 +8,7 @@ describe('header', () => {
 
 		const links = navigation.find('a')
 
-		links.should('have.length', 4)
+		links.should('have.length', 5)
 
 		links.each(($link) => {
 			const href = new URL($link.prop('href')).pathname
