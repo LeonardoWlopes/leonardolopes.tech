@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 //components
 import { Experience } from '@/components/experience'
+import { Timer } from '@/components/timer'
 
 //utils
 import { EXPERIENCES } from '@/utils/mock'
@@ -27,10 +28,12 @@ export default function Experiencies() {
 
 			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 
-			<div className={'relative flex flex-col gap-8 sm:gap-2'}>
+			<div
+				className={'relative flex flex-col items-center gap-8 sm:gap-2'}
+			>
 				<div
 					className={
-						'absolute left-1/2 hidden h-full w-[1px] bg-primary-border sm:flex'
+						'absolute hidden h-full w-[1px] bg-primary-border sm:flex'
 					}
 				/>
 
@@ -56,6 +59,10 @@ export default function Experiencies() {
 						</div>
 					)
 				})}
+
+				<span className="z-10 mt-4 rounded-md border border-primary-border bg-main-bg px-3 py-2 text-dark-gray text-sm">
+					Há <Timer />
+				</span>
 			</div>
 		</div>
 	)
