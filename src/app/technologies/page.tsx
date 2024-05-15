@@ -1,14 +1,14 @@
-//components
+// components
 import { TechCard } from '@/components/tech-card'
 
-//types
+// types
 import type { Metadata } from 'next'
 import { ETechCategory } from '@/enums/tech'
 
-//utils
+// utils
 import { DEVELOPMENT_CARDS } from '@/utils/mock'
 
-//next
+// next
 export const metadata: Metadata = {
 	title: 'Tecnologias',
 	description: 'Conheça as tecnologias que utilizo no meu dia a dia.',

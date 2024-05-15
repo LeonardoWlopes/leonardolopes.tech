@@ -1,19 +1,22 @@
 // types
 import type { Metadata } from 'next'
 
-//components
+// components
 import { Experience } from '@/components/experience'
 import { Timer } from '@/components/timer'
 
-//utils
+// utils
 import { EXPERIENCES } from '@/utils/mock'
 import { twMerge } from 'tailwind-merge'
 
+// next
 export const metadata: Metadata = {
 	title: 'Experiencias',
 	description:
 		'Conheça um pouco mais sobre minha trajetória profissional e pessoal.',
 }
+
+export const revalidate = 60 * 60 * 12 // 12 hours
 
 export default function Experiencies() {
 	return (

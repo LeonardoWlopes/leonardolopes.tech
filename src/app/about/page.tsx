@@ -4,14 +4,14 @@ import { Button } from '@/components/button'
 import Image from 'next/image'
 import Link from 'next/link'
 
-//assets
+// assets
 import { FastForward } from 'lucide-react'
 import signature from '@/assets/icons/signature.svg'
 
 // utils
 import { CONSTANTS } from '@/utils/constants'
 
-//types
+// types
 import type { Metadata } from 'next'
 
 // next
