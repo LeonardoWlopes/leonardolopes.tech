@@ -1,13 +1,14 @@
 // components
 import { Button } from '@/components/button'
 import { KnowCard } from '@/components/know-card'
-import { CodeXml, FastForward } from 'lucide-react'
+import { PageTitle } from '@/components/typography'
 import Link from 'next/link'
 import Image from 'next/image'
 
 //assets
 import blink from '@/assets/images/avatar-blink.png'
 import techStack from '@/assets/images/tech-stack.png'
+import { CodeXml, FastForward } from 'lucide-react'
 
 // utils
 import { env } from '@/env'
@@ -16,12 +17,12 @@ export default function Home() {
 	return (
 		<div className="flex w-full max-w-limit flex-col">
 			<section className="relative mb-32 flex flex-col sm:mb-60">
-				<h1 className="mb-8 font-bold text-4xl text-dark-gray md:text-6xl sm:text-5xl">
+				<PageTitle className="mb-8 text-dark-gray">
 					Eu sou <br />
 					<strong className="font-bold text-primary">
 						Leonardo Lopes
 					</strong>
-				</h1>
+				</PageTitle>
 
 				<p className="mb-10 max-w-[730px] text-start text-dark-gray text-sm md:text-lg">
 					Engenheiro de Software Full Stack especializado em

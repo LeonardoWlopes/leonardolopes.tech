@@ -7,13 +7,7 @@ import signature from '@/assets/icons/signature.svg'
 
 // utils
 import { CONSTANTS } from '@/utils/constants'
-
-const NAV_LINKS = [
-	{ label: 'Home', href: '/' },
-	{ label: 'Sobre', href: '/about' },
-	{ label: 'Tecnologias', href: '/technologies' },
-	{ label: 'Contato', href: '/contact' },
-]
+import { NAV_LINKS } from '@/utils/mock'
 
 const ELSE_WHERE_LINKS = [
 	{ label: 'Github', href: CONSTANTS.GITHUB_URL },

@@ -1,17 +1,18 @@
 // components
 import { Timer } from '@/components/timer'
 import { Button } from '@/components/button'
+import { PageSubtitle, PageTitle } from '@/components/typography'
 import Image from 'next/image'
 import Link from 'next/link'
 
-//assets
+// assets
 import { FastForward } from 'lucide-react'
 import signature from '@/assets/icons/signature.svg'
 
 // utils
 import { CONSTANTS } from '@/utils/constants'
 
-//types
+// types
 import type { Metadata } from 'next'
 
 // next
@@ -26,13 +27,9 @@ export const revalidate = 60 * 60 * 12 // 12 hours
 export default function About() {
 	return (
 		<div className="flex w-full max-w-limit flex-col">
-			<h1 className="mb-3 font-bold text-4xl text-primary md:text-6xl sm:text-5xl">
-				Um pouco sobre min
-			</h1>
+			<PageTitle className="mb-3">Um pouco sobre min</PageTitle>
 
-			<h2 className="text-medium-gray md:text-2xl sm:text-xl">
-				Quem eu sou e o que faço
-			</h2>
+			<PageSubtitle>Quem eu sou e o que faço</PageSubtitle>
 
 			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 
