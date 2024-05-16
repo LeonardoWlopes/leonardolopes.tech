@@ -1,3 +1,5 @@
+import { NAV_LINKS } from '../../src/utils/mock'
+
 beforeEach(() => {
 	cy.visit('/')
 })
@@ -8,7 +10,7 @@ describe('header', () => {
 
 		const links = navigation.find('a')
 
-		links.should('have.length', 5)
+		links.should('have.length', NAV_LINKS)
 
 		links.each(($link) => {
 			const href = new URL($link.prop('href')).pathname
