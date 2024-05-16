@@ -30,6 +30,7 @@ export function ThemeSwitch({ className }: IThemeSwitchProps) {
 	return (
 		<div
 			className={twMerge('text-primary dark:text-light-gray', className)}
+			data-cy="theme-switch"
 		>
 			<Moon
 				className="hidden cursor-pointer dark:flex"
