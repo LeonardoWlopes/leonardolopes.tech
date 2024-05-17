@@ -280,6 +280,13 @@ export const NAV_LINKS = [
 	{ label: 'Contato', href: '/contact', Icon: Mail },
 ]
 
+export const ELSE_WHERE_LINKS = [
+	{ label: 'Github', href: CONSTANTS.GITHUB_URL },
+	{ label: 'LinkedIn', href: CONSTANTS.LINKEDIN_URL },
+	{ label: 'Email', href: `mailto:${CONSTANTS.CONTACT_EMAIL}` },
+	{ label: 'Instagram', href: CONSTANTS.INSTAGRAM_URL },
+]
+
 export const EXPERIENCES: IExperience[] = [
 	{
 		company: 'Buildbox',

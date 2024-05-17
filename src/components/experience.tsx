@@ -10,8 +10,9 @@ import Image from 'next/image'
 //types
 import type { IExperience } from '@/interfaces/experience'
 
-interface IExperienceProps extends Pick<HTMLDivElement, 'className'> {
+export interface IExperienceProps {
 	experience: IExperience
+	className?: string
 }
 
 export function Experience({ experience, className }: IExperienceProps) {
@@ -40,17 +41,21 @@ export function Experience({ experience, className }: IExperienceProps) {
 		.join(' ')
 
 	return (
-		<div className={twMerge('flex gap-2', className)}>
+		<div className={twMerge('flex gap-2', className)} data-cy="experience">
 			<Image
 				className="aspect-square h-12 w-12 rounded-md object-cover"
 				src={experience.icon}
 				alt={experience.company}
 				width={48}
 				height={48}
+				data-cy="experience-logo"
 			/>
 
 			<div className="flex flex-col">
-				<h3 className="font-bold text-lg text-primary">
+				<h3
+					className="font-bold text-lg text-primary"
+					data-cy="experience-title"
+				>
 					{experience.company}
 					{' - '}
 					<strong className="font-bold text-base">
@@ -58,12 +63,18 @@ export function Experience({ experience, className }: IExperienceProps) {
 					</strong>
 				</h3>
 
-				<span className="mb-3 text-dark-gray text-sm">
+				<span
+					className="mb-3 text-dark-gray text-sm"
+					data-cy="experience-date"
+				>
 					{`${startDate} - ${endDate} · ${timeParts}
 					`}
 				</span>
 
-				<p className="w-full text-primary text-sm">
+				<p
+					className="w-full text-primary text-sm"
+					data-cy="experience-description"
+				>
 					{experience.description}
 				</p>
 			</div>

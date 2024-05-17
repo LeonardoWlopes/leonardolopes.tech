@@ -6,15 +6,7 @@ import Link from 'next/link'
 import signature from '@/assets/icons/signature.svg'
 
 // utils
-import { CONSTANTS } from '@/utils/constants'
-import { NAV_LINKS } from '@/utils/mock'
-
-const ELSE_WHERE_LINKS = [
-	{ label: 'Github', href: CONSTANTS.GITHUB_URL },
-	{ label: 'LinkedIn', href: CONSTANTS.LINKEDIN_URL },
-	{ label: 'Email', href: `mailto:${CONSTANTS.CONTACT_EMAIL}` },
-	{ label: 'Instagram', href: CONSTANTS.INSTAGRAM_URL },
-]
+import { ELSE_WHERE_LINKS, NAV_LINKS } from '@/utils/mock'
 
 export function Footer() {
 	const currentYear = new Date().getFullYear()
