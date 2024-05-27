@@ -6,7 +6,7 @@
 	"editor.codeActionsOnSave": {
 		"quickfix.biome": "always"
 	},
-	"cSpell.words": ["Buildbox", "Linkedin", "LINKEDIN"],
+	"cSpell.words": ["Buildbox", "Linkedin", "LINKEDIN", "obiwan"],
 	"[typescript]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},

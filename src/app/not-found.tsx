@@ -1,17 +1,28 @@
+// components
+import { Button } from '@/components/button'
+import { PageTitle } from '@/components/typography'
+import Link from 'next/link'
+import Image from 'next/image'
+
+//assets
+import obiwan from '@/assets/icons/obiwan.svg'
+
 export default function NotFound() {
 	return (
-		<main className="flex items-center justify-center">
-			<div className="text-center">
-				<h1 className="font-bold text-6xl text-light-gray">404</h1>
+		<div className="flex w-full max-w-limit flex-col items-center">
+			<PageTitle className="mb-3">404</PageTitle>
 
-				<p className="text-2xl text-light-gray/50">
-					Página não encontrada
-				</p>
+			<p className="mb-8 text-xl">
+				Estes não são os droides que você procura
+			</p>
 
-				<p className="mt-4 text-gray-600">
-					Desculpe, a página que você está procurando não existe.
-				</p>
-			</div>
-		</main>
+			<Image src={obiwan} alt="Obi-Wan" />
+
+			<hr className="my-8 w-full border-black/10 md:my-16 dark:border-white/10" />
+
+			<Link href="/">
+				<Button className="w-full">Voltar para a página inicial</Button>
+			</Link>
+		</div>
 	)
 }

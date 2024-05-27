@@ -70,13 +70,13 @@ export default function RootLayout({
 
 				<ThemeProvider>
 					<Header />
-
-					<main className="flex w-full max-w-limit flex-col px-4 pt-24 pb-32 sm:pt-48">
-						{children}
-					</main>
-
-					<Footer />
 				</ThemeProvider>
+
+				<main className="flex w-full max-w-limit flex-col px-4 pt-24 pb-32 sm:pt-48">
+					{children}
+				</main>
+
+				<Footer />
 
 				<Image
 					className="-z-10 -bottom-1 absolute w-full max-w-screen-2xl object-none"
