@@ -5,6 +5,7 @@ export interface IExperience {
 	company: string
 	icon: StaticImageData
 	description: string
+	link?: string
 }
 
 interface IExperienceRole {

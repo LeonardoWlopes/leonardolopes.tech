@@ -6,6 +6,7 @@ import { ptBR } from 'date-fns/locale'
 
 //components
 import Image from 'next/image'
+import Link from 'next/link'
 
 //types
 import type { IExperience } from '@/interfaces/experience'
@@ -17,13 +18,11 @@ export interface IExperienceProps {
 
 export function Experience({ experience, className }: IExperienceProps) {
 	const startDate = format(experience.role.startDate, 'MMM yyyy', {
-		//@ts-ignore - locale is not in the types
 		locale: ptBR,
 	})
 
 	const endDate = experience.role.endDate
 		? format(experience.role.endDate, 'MMM yyyy', {
-				//@ts-ignore - locale is not in the types
 				locale: ptBR,
 		  })
 		: 'o momento'
@@ -40,28 +39,55 @@ export function Experience({ experience, className }: IExperienceProps) {
 		.filter(Boolean)
 		.join(' ')
 
+	const haveLink = !!experience.link
+
 	return (
 		<div className={twMerge('flex gap-2', className)} data-cy="experience">
-			<Image
-				className="aspect-square h-12 w-12 rounded-md object-cover"
-				src={experience.icon}
-				alt={experience.company}
-				width={48}
-				height={48}
-				data-cy="experience-logo"
-			/>
+			<Link
+				className={twMerge(
+					'h-12 w-full max-w-12 overflow-hidden rounded-md',
+					!haveLink && 'pointer-events-none',
+				)}
+				aria-disabled={!haveLink}
+				tabIndex={!haveLink ? -1 : undefined}
+				href={experience.link || ''}
+				target="_blank"
+			>
+				<Image
+					className="object-cover"
+					src={experience.icon}
+					alt={experience.company}
+					width={48}
+					height={48}
+					data-cy="experience-logo"
+				/>
+			</Link>
 
 			<div className="flex flex-col">
-				<h3
-					className="font-bold text-lg text-primary"
-					data-cy="experience-title"
+				<Link
+					className={twMerge(
+						'w-fit',
+						!haveLink && 'pointer-events-none',
+					)}
+					aria-disabled={!haveLink}
+					tabIndex={!haveLink ? -1 : undefined}
+					href={experience.link || ''}
+					target="_blank"
 				>
-					{experience.company}
-					{' - '}
-					<strong className="font-bold text-base">
-						{experience.role.title}
-					</strong>
-				</h3>
+					<h3
+						className={twMerge(
+							'font-bold text-lg text-primary',
+							haveLink && 'hover:text-sky-400',
+						)}
+						data-cy="experience-title"
+					>
+						{experience.company}
+						{' - '}
+						<strong className="font-bold text-base">
+							{experience.role.title}
+						</strong>
+					</h3>
+				</Link>
 
 				<span
 					className="mb-3 text-dark-gray text-sm"

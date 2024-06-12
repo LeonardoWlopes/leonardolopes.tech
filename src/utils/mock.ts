@@ -56,7 +56,7 @@ import { CONSTANTS } from './constants'
 import { env } from '@/env'
 import { parseISO } from 'date-fns'
 
-export const DEVELOPMENT_CARDS: ITechCardList[] = [
+export const TECH_CARDS: ITechCardList[] = [
 	{
 		name: 'Javascript',
 		image: javascript,
@@ -298,6 +298,7 @@ export const EXPERIENCES: IExperience[] = [
 			startDate: parseISO('2022-04-01'),
 			endDate: null,
 		},
+		link: 'https://buildbox.com.br/?utm_source=leo-gratis',
 	},
 	{
 		company: 'Nkey',

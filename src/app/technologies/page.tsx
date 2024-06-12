@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 import { ETechCategory } from '@/enums/tech'
 
 // utils
-import { DEVELOPMENT_CARDS } from '@/utils/mock'
+import { TECH_CARDS } from '@/utils/mock'
 
 // next
 export const metadata: Metadata = {
@@ -59,7 +59,7 @@ export default function Tech() {
 
 			<div className="flex flex-col gap-8">
 				{CATEGORIES.map(({ name, category }) => {
-					const items = DEVELOPMENT_CARDS.filter(
+					const items = TECH_CARDS.filter(
 						(card) => card.category === category,
 					)
 
