@@ -13,7 +13,14 @@ import { CodeXml, FastForward } from 'lucide-react'
 // utils
 import { env } from '@/env'
 
+// hooks
+import { useTranslations } from 'next-intl'
+
 export default function Home() {
+	const t = useTranslations()
+
+	console.log(t('title'))
+
 	return (
 		<div className="flex w-full max-w-limit flex-col">
 			<section className="relative mb-32 flex flex-col sm:mb-60">

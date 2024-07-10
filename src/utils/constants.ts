@@ -5,3 +5,5 @@ export const CONSTANTS = {
 	LINKEDIN_URL: 'https://www.linkedin.com/in/leonardowilliamlopes/',
 	INSTAGRAM_URL: 'https://www.instagram.com/leonardowlopes/',
 }
+
+export const LOCALES = ['pt-BR', 'en']

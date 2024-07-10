@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -18,9 +19,12 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import { env } from '@/env'
 import { twMerge } from 'tailwind-merge'
 import { CONSTANTS } from '@/utils/constants'
+import { getMessages } from 'next-intl/server'
+import { getCurrentLocale } from '@/utils/locale'
 
 // providers
 import { ThemeProvider } from '@/providers/theme-provider'
+import { NextIntlClientProvider } from 'next-intl'
 
 // next
 const inter = Inter({ subsets: ['latin'] })
@@ -47,13 +51,18 @@ export const metadata: Metadata = {
 	},
 }
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: Readonly<{
-	children: React.ReactNode
+	children: ReactNode
 }>) {
+
+	const locale = getCurrentLocale()
+
+	const messages = await getMessages()
+
 	return (
-		<html lang="pt-BR" className="dark" style={{ colorScheme: 'dark' }}>
+		<html lang={locale} className="dark" style={{ colorScheme: 'dark' }}>
 			<body
 				className={twMerge(
 					'relative flex min-h-screen flex-col items-center overflow-x-hidden bg-main-bg antialiased',
@@ -68,15 +77,17 @@ export default function RootLayout({
 					priority
 				/>
 
-				<ThemeProvider>
-					<Header />
-				</ThemeProvider>
+				<NextIntlClientProvider messages={messages}>
+					<ThemeProvider>
+						<Header />
+					</ThemeProvider>
 
-				<main className="flex w-full max-w-limit flex-col px-4 pt-24 pb-32 sm:pt-48">
-					{children}
-				</main>
+					<main className="flex w-full max-w-limit flex-col px-4 pt-24 pb-32 sm:pt-48">
+						{children}
+					</main>
 
-				<Footer />
+					<Footer />
+				</NextIntlClientProvider>
 
 				<Image
 					className="-z-10 -bottom-1 absolute w-full max-w-screen-2xl object-none"
