@@ -13,7 +13,7 @@ import { getTranslations } from 'next-intl/server'
 import { useTranslations } from 'next-intl'
 
 export async function generateMetadata(): Promise<Metadata> {
-	const t = await getTranslations('technologies.meta')
+	const t = await getTranslations('technologies._meta')
 
 	return {
 		title: t('title'),
@@ -22,18 +22,13 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Tech() {
-
 	const t = useTranslations('technologies')
 
 	return (
 		<div className="flex w-full max-w-limit flex-col">
-			<PageTitle className="mb-3">
-				{t('title')}
-			</PageTitle>
+			<PageTitle className="mb-3">{t('title')}</PageTitle>
 
-			<PageSubtitle>
-				{t('subtitle')}
-			</PageSubtitle>
+			<PageSubtitle>{t('subtitle')}</PageSubtitle>
 
 			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 

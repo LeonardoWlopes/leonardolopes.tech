@@ -34,7 +34,7 @@ const inter = Inter({ subsets: ['latin'] })
 export async function generateMetadata(): Promise<Metadata> {
 	const locale = getCurrentLocale()
 
-	const t = await getTranslations('meta')
+	const t = await getTranslations('_meta')
 
 	return {
 		title: {

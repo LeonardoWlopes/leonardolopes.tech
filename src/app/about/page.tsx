@@ -21,7 +21,7 @@ import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 
 export async function generateMetadata(): Promise<Metadata> {
-	const t = await getTranslations('about.meta')
+	const t = await getTranslations('about._meta')
 
 	return {
 		title: t('title'),

@@ -83,7 +83,6 @@ export const TECH_CATEGORIES = [
 	},
 ] as const
 
-
 export const TECH_CARDS: ITechCardList[] = [
 	{
 		name: 'Javascript',

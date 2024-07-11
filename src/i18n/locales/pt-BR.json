@@ -1,10 +1,15 @@
 {
+	"_meta": {
+		"description": "Bem-vindo ao meu espaço digital! Sou o Léo, engenheiro de software apaixonado por criar soluções inovadoras e funcionais para desafios tecnológicos. Este é o meu cantinho na web, onde compartilho meu portfólio, experiências e insights sobre o mundo da programação e desenvolvimento de software.",
+		"template": "Leonardo Lopes | %s",
+		"title": "Leonardo Lopes | Engenheiro de Software Full Stack"
+	},
 	"about": {
-		"button": "Entre em contato",
-		"meta": {
+		"_meta": {
 			"description": "Conheça um pouco mais sobre mim, minhas experiências, habilidades e objetivos profissionais.",
 			"title": "Sobre"
 		},
+		"button": "Entre em contato",
 		"my_future": {
 			"content": "Tenho grandes ambições e luto por elas todos os dias. Quero ser referência no que faço e ser conhecido na comunidade DEV, aspirando me tornar um GitHub Star um dia assim como meus ídolos. Além disso, tenho o sonho de trabalhar no exterior, seja remotamente ou presencialmente ja que uma das minhas maiores metas de vida é morar no Canadá.",
 			"title": "MEU FUTURO"
@@ -74,37 +79,32 @@
 		"description": "Engenheiro de Software Full Stack especializado em desenvolver soluções digitais escaláveis e performáticas. Com experiência em desenvolvimento frontend e backend, meu foco está na criação de aplicativos modernos para web e mobile.",
 		"title": "Eu sou <break></break> <highlight>Leonardo Lopes</highlight>"
 	},
-	"meta": {
-		"description": "Bem-vindo ao meu espaço digital! Sou o Léo, engenheiro de software apaixonado por criar soluções inovadoras e funcionais para desafios tecnológicos. Este é o meu cantinho na web, onde compartilho meu portfólio, experiências e insights sobre o mundo da programação e desenvolvimento de software.",
-		"template": "Leonardo Lopes | %s",
-		"title": "Leonardo Lopes | Engenheiro de Software Full Stack"
-	},
 	"technologies": {
-		"meta": {
+		"_meta": {
 			"description": "Conheça as tecnologias que domino e utilizo em meus projetos, desde linguagens de programação até frameworks e bibliotecas.",
 			"title": "Tecnologias"
 		},
-		"title": "Tecnologias",
-		"subtitle": "Linguagens, frameworks, ferramentas e outras coisas que eu uso",
-		"languages": "Linguagens",
-		"frameworks": "Frameworks",
-		"libraries": "Bibliotecas",
-		"tools": "Ferramentas",
-		"databases": "Bancos de Dados",
-		"tests": "Testes",
 		"cards": {
+			"css": "CSS",
+			"database": "Bancos de Dados",
+			"framework": "Framework",
+			"global-state": "Estado Global",
 			"language": "Linguagem",
 			"library": "Biblioteca",
-			"framework": "Framework",
-			"tool": "Ferramenta",
-			"validation": "Validação",
-			"global-state": "Estado Global",
 			"mobile": "Mobile",
-			"runtime": "Runtime JS",
-			"css": "CSS",
 			"orm": "ORM",
-			"database": "Bancos de Dados",
-			"testing": "Teste"
-		}
+			"runtime": "Runtime JS",
+			"testing": "Teste",
+			"tool": "Ferramenta",
+			"validation": "Validação"
+		},
+		"databases": "Bancos de Dados",
+		"frameworks": "Frameworks",
+		"languages": "Linguagens",
+		"libraries": "Bibliotecas",
+		"subtitle": "Linguagens, frameworks, ferramentas e outras coisas que eu uso",
+		"tests": "Testes",
+		"title": "Tecnologias",
+		"tools": "Ferramentas"
 	}
 }
