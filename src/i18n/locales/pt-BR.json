@@ -1,4 +1,30 @@
 {
+	"about": {
+		"button": "Entre em contato",
+		"meta": {
+			"description": "Conheça um pouco mais sobre mim, minhas experiências, habilidades e objetivos profissionais.",
+			"title": "Sobre"
+		},
+		"my_future": {
+			"content": "Tenho grandes ambições e luto por elas todos os dias. Quero ser referência no que faço e ser conhecido na comunidade DEV, aspirando me tornar um GitHub Star. Além disso, tenho o sonho de trabalhar no exterior, seja remotamente ou presencialmente, e uma das minhas maiores metas de vida é morar no Canadá.",
+			"title": "MEU FUTURO"
+		},
+		"outside_work": {
+			"content": "Nos raros momentos em que não estou mexendo com código, seja em projetos pessoais ou estudando, adoro assistir filmes, séries e animes. Faço exercícios todos os dias para manter o corpo e a mente saudáveis, passo ótimos momentos com meus amigos e mimo muito meu husky siberiano. E claro, jogo videogame sempre que posso!",
+			"title": "E FORA DO CÓDIGO?"
+		},
+		"slug": "Vamos construir algo incrível juntos?",
+		"subtitle": "Quem eu sou e o que faço",
+		"title": "Um pouco sobre min",
+		"what_i_do": {
+			"content": "Desenvolvo soluções digitais escaláveis e performáticas, com experiência em desenvolvimento FrontEnd, Backend e Mobile, já desenvolvi diversos tipos de projetos, tanto de forma independente quanto em equipe. Minha experiência abrange desde Web3 e criptoativos até landing pages, blogs, sistemas de gestão, e-commerces, aplicativos de notícias e vendas, entre outros. Além disso, atuei várias vezes como líder em times de desenvolvimento, revisando código, arquitetando soluções e orientando os membros da minha equipe.",
+			"title": "O QUE EU FAÇO"
+		},
+		"who_i_am": {
+			"content": "E aí! Sou o Léo, engenheiro de software FullStack do interior de São Paulo, apaixonado por tecnologia. Tenho {age} anos e <time></time> de experiência no mercado, além de estar cursando Análise e Desenvolvimento de Sistemas.",
+			"title": "QUEM EU SOU"
+		}
+	},
 	"footer": {
 		"copy": "© {year} Leonardo Lopes. Todos os direitos reservados.",
 		"external_links": {
@@ -52,31 +78,5 @@
 		"description": "Bem-vindo ao meu espaço digital! Sou o Léo, engenheiro de software apaixonado por criar soluções inovadoras e funcionais para desafios tecnológicos. Este é o meu cantinho na web, onde compartilho meu portfólio, experiências e insights sobre o mundo da programação e desenvolvimento de software.",
 		"template": "Leonardo Lopes | %s",
 		"title": "Leonardo Lopes | Engenheiro de Software Full Stack"
-	},
-	"about": {
-		"meta": {
-			"title": "Sobre",
-			"description": "Conheça um pouco mais sobre mim, minhas experiências, habilidades e objetivos profissionais."
-		},
-		"title": "Um pouco sobre min",
-		"subtitle": "Quem eu sou e o que faço",
-		"slug": "Vamos construir algo incrível juntos?",
-		"who_i_am": {
-			"title": "QUEM EU SOU",
-			"content": "E aí! Sou o Léo, engenheiro de software FullStack do interior de São Paulo, apaixonado por tecnologia. Tenho {age} anos e <time></time> de experiência no mercado, além de estar cursando Análise e Desenvolvimento de Sistemas."
-		},
-		"what_i_do": {
-			"title": "O QUE EU FAÇO",
-			"content": "Desenvolvo soluções digitais escaláveis e performáticas, com experiência em desenvolvimento FrontEnd, Backend e Mobile, já desenvolvi diversos tipos de projetos, tanto de forma independente quanto em equipe. Minha experiência abrange desde Web3 e criptoativos até landing pages, blogs, sistemas de gestão, e-commerces, aplicativos de notícias e vendas, entre outros. Além disso, atuei várias vezes como líder em times de desenvolvimento, revisando código, arquitetando soluções e orientando os membros da minha equipe."
-		},
-		"outside_work": {
-			"title": "E FORA DO CÓDIGO?",
-			"content": "Nos raros momentos em que não estou mexendo com código, seja em projetos pessoais ou estudando, adoro assistir filmes, séries e animes. Faço exercícios todos os dias para manter o corpo e a mente saudáveis, passo ótimos momentos com meus amigos e mimo muito meu husky siberiano. E claro, jogo videogame sempre que posso!"
-		},
-		"my_future": {
-			"title": "MEU FUTURO",
-			"content": "Tenho grandes ambições e luto por elas todos os dias. Quero ser referência no que faço e ser conhecido na comunidade DEV, aspirando me tornar um GitHub Star. Além disso, tenho o sonho de trabalhar no exterior, seja remotamente ou presencialmente, e uma das minhas maiores metas de vida é morar no Canadá."
-		},
-		"button": "Entre em contato"
 	}
 }

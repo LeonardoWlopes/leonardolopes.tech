@@ -1,4 +1,4 @@
-import { parseISO } from "date-fns"
+import { parseISO } from 'date-fns'
 
 export const CONSTANTS = {
 	AVATAR_URL: 'https://github.com/LeonardoWlopes.png',
