@@ -7,6 +7,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "biome check . --apply",
+		"lint-i18n": "tsx ./src/utils/lint-i18n.ts",
 		"check": "knip",
 		"prepare": "husky install",
 		"cy:open": "cypress open",
@@ -40,6 +41,7 @@
 		"knip": "^5.25.1",
 		"postcss": "^8",
 		"tailwindcss": "^3.3.0",
+		"tsx": "^4.16.2",
 		"typescript": "^5"
 	}
 }

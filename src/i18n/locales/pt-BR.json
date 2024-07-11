@@ -1,56 +1,56 @@
 {
-	"meta": {
-		"title": "Leonardo Lopes | Engenheiro de Software Full Stack",
-		"template": "Leonardo Lopes | %s",
-		"description": "Bem-vindo ao meu espaço digital! Sou o Léo, engenheiro de software apaixonado por criar soluções inovadoras e funcionais para desafios tecnológicos. Este é o meu cantinho na web, onde compartilho meu portfólio, experiências e insights sobre o mundo da programação e desenvolvimento de software."
+	"footer": {
+		"copy": "© {year} Leonardo Lopes. Todos os direitos reservados.",
+		"external_links": {
+			"email": "Email",
+			"github": "GitHub",
+			"instagram": "Instagram",
+			"linkedin": "LinkedIn",
+			"title": "Fora Daqui"
+		},
+		"gratings": "Obrigado por vir 😁",
+		"links": {
+			"about": "Sobre",
+			"contact": "Contato",
+			"experience": "Experiências",
+			"home": "Home",
+			"tech": "Tecnologias",
+			"title": "Links"
+		}
+	},
+	"header": {
+		"about": "Sobre",
+		"contact": "Contato",
+		"experience": "Experiências",
+		"home": "Home",
+		"tech": "Tecnologias"
 	},
 	"home": {
-		"title": "Eu sou <break></break> <highlight>Leonardo Lopes</highlight>",
-		"description": "Engenheiro de Software Full Stack especializado em desenvolver soluções digitais escaláveis e performáticas. Com experiência em desenvolvimento frontend e backend, meu foco está na criação de aplicativos modernos para web e mobile.",
 		"about": {
-			"title": "Conheça-me",
 			"me": {
-				"title": "Sobre",
-				"subtitle": "Quem sou e o que faço"
+				"subtitle": "Quem sou e o que faço",
+				"title": "Sobre"
 			},
 			"tech": {
-				"title": "Tecnologias",
-				"subtitle": "Ferramentas e linguagens que domino"
-			}
-		},
-		"contact": {
-			"title": "Vamos trabalhar juntos?",
-			"subtitle": "Gostaria de discutir a oportunidade de criar algo incrível juntos? estou pronto se você estiver."
+				"subtitle": "Ferramentas e linguagens que domino",
+				"title": "Tecnologias"
+			},
+			"title": "Conheça-me"
 		},
 		"buttons": {
 			"download_resume": "Veja meu currículo",
 			"get_in_touch": "Entre em contato"
-		}
-	},
-	"header": {
-		"home": "Home",
-		"about": "Sobre",
-		"experience": "Experiências",
-		"tech": "Tecnologias",
-		"contact": "Contato"
-	},
-	"footer": {
-		"gratings": "Obrigado por vir 😁",
-		"copy": "© {year} Leonardo Lopes. Todos os direitos reservados.",
-		"links": {
-			"title": "Links",
-			"home": "Home",
-			"about": "Sobre",
-			"experience": "Experiências",
-			"tech": "Tecnologias",
-			"contact": "Contato"
 		},
-		"external_links": {
-			"title": "Fora Daqui",
-			"github": "GitHub",
-			"linkedin": "LinkedIn",
-			"email": "Email",
-			"instagram": "Instagram"
-		}
+		"contact": {
+			"subtitle": "Gostaria de discutir a oportunidade de criar algo incrível juntos? estou pronto se você estiver.",
+			"title": "Vamos trabalhar juntos?"
+		},
+		"description": "Engenheiro de Software Full Stack especializado em desenvolver soluções digitais escaláveis e performáticas. Com experiência em desenvolvimento frontend e backend, meu foco está na criação de aplicativos modernos para web e mobile.",
+		"title": "Eu sou <break></break> <highlight>Leonardo Lopes</highlight>"
+	},
+	"meta": {
+		"description": "Bem-vindo ao meu espaço digital! Sou o Léo, engenheiro de software apaixonado por criar soluções inovadoras e funcionais para desafios tecnológicos. Este é o meu cantinho na web, onde compartilho meu portfólio, experiências e insights sobre o mundo da programação e desenvolvimento de software.",
+		"template": "Leonardo Lopes | %s",
+		"title": "Leonardo Lopes | Engenheiro de Software Full Stack"
 	}
 }

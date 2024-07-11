@@ -20,6 +20,9 @@
 				"noUnusedVariables": "warn",
 				"useExhaustiveDependencies": "off"
 			},
+			"complexity": {
+				"noStaticOnlyClass": "off"
+			},
 			"nursery": {
 				"useSortedClasses": "warn"
 			}
