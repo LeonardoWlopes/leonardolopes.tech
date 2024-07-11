@@ -7,12 +7,21 @@
 		"quickfix.biome": "always"
 	},
 	"cSpell.words": [
+		"buildbox",
 		"Buildbox",
+		"criptoativos",
+		"genezys",
+		"Genezys",
+		"genzys",
+		"inceres",
 		"instagram",
 		"linkedin",
 		"Linkedin",
 		"LINKEDIN",
-		"obiwan"
+		"modu",
+		"nkey",
+		"obiwan",
+		"primepass"
 	],
 	"[typescript]": {
 		"editor.defaultFormatter": "biomejs.biome"

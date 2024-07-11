@@ -317,8 +317,7 @@ export const ELSE_WHERE_LINKS = [
 export const EXPERIENCES: IExperience[] = [
 	{
 		company: 'Buildbox',
-		description:
-			'Atuo no desenvolvimento, manutenção e aprimoramento de aplicativos, portais, sistemas e sites para os clientes da empresa. Responsável por garantir soluções tecnológicas eficientes e atualizadas, visando atender às necessidades específicas de cada cliente e promover uma experiência do usuário excepcional.',
+		description: 'buildbox-description',
 		icon: build,
 		role: {
 			title: 'Fullstack Developer',
@@ -329,8 +328,7 @@ export const EXPERIENCES: IExperience[] = [
 	},
 	{
 		company: 'Nkey',
-		description:
-			'Desempenhei um papel crucial na concepção e desenvolvimento do sistema utilizado pela Poliedro Sistema de Ensino. Responsável por distribuir conteúdos, a plataforma atendeu mais de 580 unidades em todo o território brasileiro durante o meu envolvimento no projeto.',
+		description: 'nkey-description',
 		icon: nkey,
 		role: {
 			title: 'Frontend Developer',
@@ -340,8 +338,7 @@ export const EXPERIENCES: IExperience[] = [
 	},
 	{
 		company: 'Genezys Global Tech',
-		description:
-			'Encarregado do desenvolvimento dos websites de diversos produtos da empresa, todos centrados em tecnologia web3 e criptoativos. Desenvolvi interfaces envolventes e funcionais, garantindo uma presença online impactante para cada produto. Mantive-me atualizado com as últimas tendências em tecnologia blockchain, web3 e criptoativos, assegurando a integração eficaz desses elementos nos sites dos produtos.',
+		description: 'genzys-description',
 		icon: genezys,
 		role: {
 			title: 'Frontend Developer',
@@ -351,8 +348,7 @@ export const EXPERIENCES: IExperience[] = [
 	},
 	{
 		company: 'MODU Gestão do Cuidado',
-		description:
-			'Desenvolvi de forma independente e do zero uma parte significativa do sistema atualmente utilizado pelo complexo Wanda Horta. Esta solução abrange a gestão de pacientes, funcionários, vendas e receitas. Meu trabalho incluiu a concepção, implementação e otimização do sistema para atender às necessidades específicas da instituição, demonstrando habilidades sólidas em desenvolvimento e solução de problemas.',
+		description: 'modu-description',
 		icon: modu,
 		role: {
 			title: 'Frontend Developer',
@@ -362,8 +358,7 @@ export const EXPERIENCES: IExperience[] = [
 	},
 	{
 		company: 'inCeres',
-		description:
-			'Desenvolvi e aprimorei o aplicativo utilizado pelos clientes da empresa, proporcionando acesso fácil a informações detalhadas sobre suas fazendas, colheitas e talhões. Implementei funcionalidades que integravam mapas e gráficos, oferecendo uma visão intuitiva e abrangente. Trabalhei para garantir uma experiência do usuário eficiente, facilitando o acesso e interpretação de dados cruciais.',
+		description: 'inceres-description',
 		icon: inceres,
 		role: {
 			title: 'Mobile Developer',
@@ -373,8 +368,7 @@ export const EXPERIENCES: IExperience[] = [
 	},
 	{
 		company: 'Primepass',
-		description:
-			'Desenvolvi e mantive interfaces no aplicativo PrimePass usando React Native. Contribuí para a experiência do usuário e a consistência visual, colaborando proativamente com a equipe. Mantive-me atualizado com as melhores práticas, otimizando o desempenho para garantir a qualidade do produto.',
+		description: 'primepass-description',
 		icon: primepass,
 		role: {
 			title: 'Mobile Developer',
@@ -382,4 +376,4 @@ export const EXPERIENCES: IExperience[] = [
 			endDate: new Date('2020-12-10'),
 		},
 	},
-]
+] as const

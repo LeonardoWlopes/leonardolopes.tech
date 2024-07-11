@@ -4,12 +4,15 @@ import { twMerge } from 'tailwind-merge'
 import { addMonths, format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 
-//components
+// components
 import Image from 'next/image'
 import Link from 'next/link'
 
-//types
+// types
 import type { IExperience } from '@/interfaces/experience'
+
+// hooks
+import { useTranslations } from 'next-intl'
 
 export interface IExperienceProps {
 	experience: IExperience
@@ -17,6 +20,8 @@ export interface IExperienceProps {
 }
 
 export function Experience({ experience, className }: IExperienceProps) {
+	const t = useTranslations('experiences')
+
 	const startDate = format(experience.role.startDate, 'MMM yyyy', {
 		locale: ptBR,
 	})
@@ -101,7 +106,7 @@ export function Experience({ experience, className }: IExperienceProps) {
 					className="w-full text-primary text-sm"
 					data-cy="experience-description"
 				>
-					{experience.description}
+					{t(experience.description as never)}
 				</p>
 			</div>
 		</div>
