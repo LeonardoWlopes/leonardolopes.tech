@@ -1,6 +1,5 @@
 import { LOCALES } from '@/utils/constants'
 import { headers } from 'next/headers'
-
 import { ptBR, enUS } from 'date-fns/locale'
 
 export function getCurrentLocale() {
