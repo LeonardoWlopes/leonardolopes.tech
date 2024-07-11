@@ -69,7 +69,7 @@ export default function About() {
 						{t('outside_work.title')}
 					</span>
 
-					<p className="mb-12 dark:text-dark-gray">
+					<p className="mb-8 dark:text-dark-gray">
 						{t('outside_work.content')}
 					</p>
 
@@ -77,7 +77,7 @@ export default function About() {
 						{t('my_future.title')}
 					</span>
 
-					<p className="mb-12 dark:text-dark-gray">
+					<p className="mb-8 dark:text-dark-gray">
 						{t('my_future.content')}
 					</p>
 
