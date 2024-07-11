@@ -7,7 +7,12 @@ import { Button } from './button'
 // utils
 import { env } from '@/env'
 
+// hooks
+import { useTranslations } from 'next-intl'
+
 export function Mail() {
+	const t = useTranslations('contact.form')
+
 	function handleSubmit(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault()
 		const formData = new FormData(e.target as HTMLFormElement)
@@ -16,7 +21,11 @@ export function Mail() {
 		const subject = data.subject.toString().trim().replace(/\s/g, '%20')
 
 		const content = encodeURI(
-			`Olá, meu nome é ${data.name} e eu gostaria de falar sobre *${subject}*.\n\n${data.content}`,
+			t('message', {
+				name: data.name.toString(),
+				subject,
+				message: data.content.toString(),
+			}),
 		)
 
 		const url = `https://wa.me/${env.NEXT_PUBLIC_CONTACT_NUMBER}?text=${content}`
@@ -37,7 +46,7 @@ export function Mail() {
 				</div>
 
 				<h3 className="font-medium text-base text-secondary">
-					Nova Mensagem
+					{t('title')}
 				</h3>
 			</div>
 
@@ -47,14 +56,14 @@ export function Mail() {
 						className="mr-2 font-medium text-base text-secondary"
 						htmlFor="input-name"
 					>
-						Nome:
+						{t('name_label')}:
 					</label>
 
 					<input
 						className="w-full border-none bg-inherit text-medium-gray outline-none placeholder:text-medium-gray/60"
 						type="text"
 						name="name"
-						placeholder="Seu nome"
+						placeholder={t('name_placeholder')}
 						autoComplete="off"
 						id="input-name"
 						required
@@ -68,13 +77,13 @@ export function Mail() {
 						className="mr-2 font-medium text-base text-secondary"
 						htmlFor="input-name"
 					>
-						Assunto:
+						{t('subject_label')}:
 					</label>
 					<input
 						className="w-full border-none bg-inherit text-medium-gray outline-none placeholder:text-medium-gray/60"
 						type="text"
 						name="subject"
-						placeholder="Assunto"
+						placeholder={t('subject_placeholder')}
 						autoComplete="off"
 						id="input-subject"
 						required
@@ -87,12 +96,12 @@ export function Mail() {
 					className="mb-6 h-52 w-full resize-none rounded-xl bg-main-bg p-6 font-normal text-base text-secondary outline-card-border sm:h-80 placeholder:text-medium-gray"
 					name="content"
 					autoComplete="off"
-					placeholder="Escreva sua mensagem aqui..."
+					placeholder={t('form_placeholder')}
 					required
 				/>
 
 				<Button className="self-end py-3" type="submit">
-					Enviar
+					{t('send')}
 				</Button>
 			</div>
 		</form>

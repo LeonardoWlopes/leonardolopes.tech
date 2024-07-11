@@ -8,23 +8,28 @@ import Link from 'next/link'
 
 // utils
 import { CONTACT_LINKS } from '@/utils/mock'
+import { getTranslations } from 'next-intl/server'
 
-// next
-export const metadata: Metadata = {
-	title: 'Contato',
-	description:
-		'Entre em contato comigo para discutir oportunidades de colaboração, projetos ou apenas para bater um papo.',
+// hooks
+import { useTranslations } from 'next-intl'
+
+export async function generateMetadata(): Promise<Metadata> {
+	const t = await getTranslations('contact._meta')
+
+	return {
+		title: t('title'),
+		description: t('description'),
+	}
 }
 
 export default function Contact() {
+	const t = useTranslations('contact')
+
 	return (
 		<div className="flex w-full max-w-limit flex-col">
-			<PageTitle className="mb-3">Entre em contato</PageTitle>
+			<PageTitle className="mb-3">{t('title')}</PageTitle>
 
-			<PageSubtitle>
-				Para discutir oportunidades de colaboração, projetos ou apenas
-				para bater um papo
-			</PageSubtitle>
+			<PageSubtitle>{t('subtitle')}</PageSubtitle>
 
 			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 

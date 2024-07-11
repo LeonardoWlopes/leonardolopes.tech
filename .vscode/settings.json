@@ -6,7 +6,23 @@
 	"editor.codeActionsOnSave": {
 		"quickfix.biome": "always"
 	},
-	"cSpell.words": ["Buildbox", "Linkedin", "LINKEDIN", "obiwan"],
+	"cSpell.words": [
+		"buildbox",
+		"Buildbox",
+		"criptoativos",
+		"genezys",
+		"Genezys",
+		"genzys",
+		"inceres",
+		"instagram",
+		"linkedin",
+		"Linkedin",
+		"LINKEDIN",
+		"modu",
+		"nkey",
+		"obiwan",
+		"primepass"
+	],
 	"[typescript]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},

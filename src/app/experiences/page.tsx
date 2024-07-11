@@ -9,22 +9,30 @@ import { PageTitle, PageSubtitle } from '@/components/typography'
 // utils
 import { EXPERIENCES } from '@/utils/mock'
 import { twMerge } from 'tailwind-merge'
+import { getTranslations } from 'next-intl/server'
 
-// next
-export const metadata: Metadata = {
-	title: 'Experiencias',
-	description:
-		'Conheça um pouco mais sobre minha trajetória profissional e pessoal.',
+// hooks
+import { useTranslations } from 'next-intl'
+
+export async function generateMetadata(): Promise<Metadata> {
+	const t = await getTranslations('experiences._meta')
+
+	return {
+		title: t('title'),
+		description: t('description'),
+	}
 }
 
 export const revalidate = 60 * 60 * 12 // 12 hours
 
 export default function Experiencies() {
+	const t = useTranslations('experiences')
+
 	return (
 		<div className="flex w-full max-w-limit flex-col">
-			<PageTitle className="mb-3">Experiencias</PageTitle>
+			<PageTitle className="mb-3">{t('title')}</PageTitle>
 
-			<PageSubtitle>Minha trajetória profissional até aqui</PageSubtitle>
+			<PageSubtitle>{t('subtitle')}</PageSubtitle>
 
 			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 
@@ -44,7 +52,7 @@ export default function Experiencies() {
 						<div
 							key={experience.company}
 							className={twMerge(
-								'relative flex items-center',
+								'relative flex w-full items-center',
 								isEven ? 'flex-row' : 'sm:flex-row-reverse',
 							)}
 						>

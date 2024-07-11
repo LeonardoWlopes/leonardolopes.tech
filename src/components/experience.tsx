@@ -2,14 +2,17 @@
 import { calculateTime } from '@/utils/time'
 import { twMerge } from 'tailwind-merge'
 import { addMonths, format } from 'date-fns'
-import { ptBR } from 'date-fns/locale'
 
-//components
+// components
 import Image from 'next/image'
 import Link from 'next/link'
 
-//types
+// types
 import type { IExperience } from '@/interfaces/experience'
+
+// hooks
+import { useTranslations } from 'next-intl'
+import { getDateFnsLocale } from '@/utils/locale'
 
 export interface IExperienceProps {
 	experience: IExperience
@@ -17,15 +20,19 @@ export interface IExperienceProps {
 }
 
 export function Experience({ experience, className }: IExperienceProps) {
+	const t = useTranslations('experiences')
+
+	const locale = getDateFnsLocale()
+
 	const startDate = format(experience.role.startDate, 'MMM yyyy', {
-		locale: ptBR,
+		locale,
 	})
 
 	const endDate = experience.role.endDate
 		? format(experience.role.endDate, 'MMM yyyy', {
-				locale: ptBR,
+				locale,
 		  })
-		: 'o momento'
+		: t('present')
 
 	const { months, years } = calculateTime(
 		experience.role.startDate,
@@ -101,7 +108,7 @@ export function Experience({ experience, className }: IExperienceProps) {
 					className="w-full text-primary text-sm"
 					data-cy="experience-description"
 				>
-					{experience.description}
+					{t(experience.description as never)}
 				</p>
 			</div>
 		</div>

@@ -13,29 +13,34 @@ import { CodeXml, FastForward } from 'lucide-react'
 // utils
 import { env } from '@/env'
 
+// hooks
+import { useTranslations } from 'next-intl'
+
 export default function Home() {
+	const t = useTranslations('home')
+
 	return (
 		<div className="flex w-full max-w-limit flex-col">
 			<section className="relative mb-32 flex flex-col sm:mb-60">
 				<PageTitle className="mb-8 text-dark-gray">
-					Eu sou <br />
-					<strong className="font-bold text-primary">
-						Leonardo Lopes
-					</strong>
+					{t.rich('title', {
+						break: () => <br />,
+						highlight: (chunk) => (
+							<strong className="font-bold text-primary">
+								{chunk}
+							</strong>
+						),
+					})}
 				</PageTitle>
 
 				<p className="mb-10 max-w-[730px] text-start text-dark-gray text-sm md:text-lg">
-					Engenheiro de Software Full Stack especializado em
-					desenvolver soluções digitais escaláveis e performáticas.
-					Com experiência em desenvolvimento frontend e backend, meu
-					foco está na criação de aplicativos modernos para web e
-					mobile.
+					{t('description')}
 				</p>
 
 				<div className="m-auto flex max-w-64 flex-col gap-4 sm:m-0 sm:max-w-full sm:flex-row">
 					<Link href={env.CV_URL} target="_blank">
 						<Button className="w-full" data-cy="resume-button">
-							Veja meu currículo
+							{t('buttons.download_resume')}
 						</Button>
 					</Link>
 
@@ -45,7 +50,7 @@ export default function Home() {
 							variant="secondary"
 							data-cy="contact-button"
 						>
-							Entre em contato
+							{t('buttons.get_in_touch')}
 						</Button>
 					</Link>
 				</div>
@@ -55,14 +60,14 @@ export default function Home() {
 
 			<section className="mb-24 grid grid-cols-1 justify-items-center gap-4 md:grid-cols-2 md:justify-items-start">
 				<h2 className="mb-8 text-center font-bold text-4xl text-secondary md:text-start">
-					Conheça-me
+					{t('about.title')}
 				</h2>
 
 				<span />
 
 				<KnowCard
-					title="Sobre"
-					description="Quem eu sou e o que eu faço"
+					title={t('about.me.title')}
+					description={t('about.me.subtitle')}
 					href="/about"
 				>
 					<Image
@@ -86,8 +91,8 @@ export default function Home() {
 				</KnowCard> */}
 
 				<KnowCard
-					title="Tecnologias"
-					description="As tecnologias que eu uso e recomendo"
+					title={t('about.tech.title')}
+					description={t('about.tech.subtitle')}
 					href="/technologies"
 				>
 					<Image
@@ -101,19 +106,18 @@ export default function Home() {
 			<section className="flex flex-col items-center justify-between gap-8 md:flex-row">
 				<div className="flex max-w-[500px] flex-col gap-2">
 					<h2 className="font-bold text-4xl text-secondary">
-						Vamos trabalhar juntos?
+						{t('contact.title')}
 					</h2>
 
 					<p className="text-start text-dark-gray text-sm md:text-lg">
-						Gostaria de discutir a oportunidade de criar algo
-						incrível juntos? estou pronto se você estiver.
+						{t('contact.subtitle')}
 					</p>
 				</div>
 
 				<Link href={'/contact'}>
 					<Button data-cy="contact-button">
 						<FastForward />
-						Entre em contato
+						{t('buttons.get_in_touch')}
 					</Button>
 				</Link>
 			</section>

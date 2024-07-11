@@ -1,10 +1,11 @@
 import type { StaticImageData } from 'next/image'
+import type pt from '@/i18n/locales/pt-BR.json'
 
 export interface IExperience {
 	role: IExperienceRole
 	company: string
 	icon: StaticImageData
-	description: string
+	description: keyof typeof pt.experiences
 	link?: string
 }
 

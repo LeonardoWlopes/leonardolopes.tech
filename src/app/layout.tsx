@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -18,42 +18,57 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import { env } from '@/env'
 import { twMerge } from 'tailwind-merge'
 import { CONSTANTS } from '@/utils/constants'
+import { getMessages, getTranslations } from 'next-intl/server'
+import { getCurrentLocale } from '@/utils/locale'
 
 // providers
 import { ThemeProvider } from '@/providers/theme-provider'
+import { NextIntlClientProvider } from 'next-intl'
+
+// types
+import type { Metadata } from 'next'
 
 // next
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-	title: {
-		default: 'Leonardo Lopes | Engenheiro de Software Full Stack',
-		template: 'Leonardo Lopes | %s',
-	},
-	description:
-		'Bem-vindo ao meu espaço digital! Sou o Léo, engenheiro de software apaixonado por criar soluções inovadoras e funcionais para desafios tecnológicos. Este é o meu cantinho na web, onde compartilho meu portfólio, experiências e insights sobre o mundo da programação e desenvolvimento de software.',
-	openGraph: {
-		type: 'website',
-		locale: 'pt_BR',
-		url: env.APP_URL,
-		images: [
-			{
-				url: CONSTANTS.AVATAR_URL,
-				width: 460,
-				height: 460,
-				alt: 'Leonardo Lopes | Engenheiro de Software Full Stack',
-			},
-		],
-	},
+export async function generateMetadata(): Promise<Metadata> {
+	const locale = getCurrentLocale()
+
+	const t = await getTranslations('_meta')
+
+	return {
+		title: {
+			default: t('title'),
+			template: t('template'),
+		},
+		description: t('description'),
+		openGraph: {
+			type: 'website',
+			locale,
+			url: env.APP_URL,
+			images: [
+				{
+					url: CONSTANTS.AVATAR_URL,
+					width: 460,
+					height: 460,
+					alt: t('title'),
+				},
+			],
+		},
+	}
 }
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: Readonly<{
-	children: React.ReactNode
+	children: ReactNode
 }>) {
+	const locale = getCurrentLocale()
+
+	const messages = await getMessages()
+
 	return (
-		<html lang="pt-BR" className="dark" style={{ colorScheme: 'dark' }}>
+		<html lang={locale} className="dark" style={{ colorScheme: 'dark' }}>
 			<body
 				className={twMerge(
 					'relative flex min-h-screen flex-col items-center overflow-x-hidden bg-main-bg antialiased',
@@ -68,15 +83,17 @@ export default function RootLayout({
 					priority
 				/>
 
-				<ThemeProvider>
-					<Header />
-				</ThemeProvider>
+				<NextIntlClientProvider messages={messages}>
+					<ThemeProvider>
+						<Header />
+					</ThemeProvider>
 
-				<main className="flex w-full max-w-limit flex-col px-4 pt-24 pb-32 sm:pt-48">
-					{children}
-				</main>
+					<main className="flex w-full max-w-limit flex-col px-4 pt-24 pb-32 sm:pt-48">
+						{children}
+					</main>
 
-				<Footer />
+					<Footer />
+				</NextIntlClientProvider>
 
 				<Image
 					className="-z-10 -bottom-1 absolute w-full max-w-screen-2xl object-none"
