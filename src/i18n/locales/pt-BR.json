@@ -48,6 +48,15 @@
 		"subtitle": "Vamos construir algo incrível juntos?",
 		"title": "Contato"
 	},
+	"dates": {
+		"and": "e",
+		"day": "dia",
+		"days": "dias",
+		"month": "mês",
+		"months": "meses",
+		"year": "ano",
+		"years": "anos"
+	},
 	"experiences": {
 		"_meta": {
 			"description": "Conheça minha trajetória profissional, projetos e experiências que me tornaram o profissional que sou hoje.",
@@ -58,6 +67,7 @@
 		"inceres-description": "Desenvolvi de forma independente e do zero uma parte significativa do sistema atualmente utilizado pelo complexo Wanda Horta. Esta solução abrange a gestão de pacientes, funcionários, vendas e receitas. Meu trabalho incluiu a concepção, implementação e otimização do sistema para atender às necessidades específicas da instituição, demonstrando habilidades sólidas em desenvolvimento e solução de problemas.",
 		"modu-description": "Desenvolvi de forma independente e do zero uma parte significativa do sistema atualmente utilizado pelo complexo Wanda Horta. Esta solução abrange a gestão de pacientes, funcionários, vendas e receitas. Meu trabalho incluiu a concepção, implementação e otimização do sistema para atender às necessidades específicas da instituição, demonstrando habilidades sólidas em desenvolvimento e solução de problemas.",
 		"nkey-description": "Desempenhei um papel crucial na concepção e desenvolvimento do sistema utilizado pela Poliedro Sistema de Ensino. Responsável por distribuir conteúdos, a plataforma atendeu mais de 580 unidades em todo o território brasileiro durante o meu envolvimento no projeto.",
+		"present": "atual",
 		"primepass-description": "Desenvolvi e mantive interfaces no aplicativo PrimePass usando React Native. Contribuí para a experiência do usuário e a consistência visual, colaborando proativamente com a equipe. Mantive-me atualizado com as melhores práticas, otimizando o desempenho para garantir a qualidade do produto.",
 		"subtitle": "Minhas experiências profissionais até agora",
 		"title": "Experiências"

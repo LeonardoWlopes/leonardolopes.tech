@@ -1,6 +1,8 @@
 import { LOCALES } from '@/utils/constants'
 import { headers } from 'next/headers'
 
+import { ptBR, enUS } from 'date-fns/locale'
+
 export function getCurrentLocale() {
 	const headersList = headers()
 	const acceptedLanguage = headersList.get('accept-language') || ''
@@ -19,4 +21,17 @@ export function getCurrentLocale() {
 	}
 
 	return locale
+}
+
+export function getDateFnsLocale() {
+	const locale = getCurrentLocale()
+
+	switch (locale) {
+		case 'pt-BR':
+			return ptBR
+		case 'en':
+			return enUS
+		default:
+			return ptBR
+	}
 }

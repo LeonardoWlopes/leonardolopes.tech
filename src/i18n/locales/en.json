@@ -1,3 +1,152 @@
 {
-	"title": "Hello world!"
+	"_meta": {
+		"description": "Welcome to my digital space! I'm Leo, a software engineer passionate about creating innovative and functional solutions for technological challenges. This is my corner on the web where I share my portfolio, experiences, and insights about the world of programming and software development.",
+		"template": "Leonardo Lopes | %s",
+		"title": "Leonardo Lopes | Full Stack Software Engineer"
+	},
+	"about": {
+		"_meta": {
+			"description": "Get to know a little more about me, my experiences, skills, and professional goals.",
+			"title": "About"
+		},
+		"button": "Get in touch",
+		"my_future": {
+			"content": "I have great ambitions and fight for them every day. I want to be a reference in what I do and be known in the DEV community, aspiring to become a GitHub Star one day just like my idols. Moreover, I have the dream of working abroad, whether remotely or in person, as one of my biggest life goals is to live in Canada.",
+			"title": "MY FUTURE"
+		},
+		"outside_work": {
+			"content": "In the rare moments when I'm not dealing with code, whether in personal projects or studying, I love watching movies, series, and animes. I exercise every day to keep my body and mind healthy, spend great moments with my friends, and pamper my Siberian Husky a lot. And of course, I play video games whenever I can!",
+			"title": "AND OUTSIDE OF CODE?"
+		},
+		"slug": "Let's build something amazing together?",
+		"subtitle": "Who I am and what I do",
+		"title": "A little about me",
+		"what_i_do": {
+			"content": "I develop scalable and high-performance digital solutions, with experience in FrontEnd, Backend, and Mobile development. I have developed various types of projects, both independently and in teams. My experience ranges from Web3 and crypto assets to landing pages, blogs, management systems, e-commerce, news, and sales applications, among others. Additionally, I have often acted as a leader in development teams, reviewing code, architecting solutions, and guiding my team members.",
+			"title": "WHAT I DO"
+		},
+		"who_i_am": {
+			"content": "Hey! I'm Leo, a FullStack software engineer from the interior of São Paulo and passionate about technology. I am {age} years old with <time></time> of market experience, and I am currently studying Systems Analysis and Development.",
+			"title": "WHO I AM"
+		}
+	},
+	"contact": {
+		"_meta": {
+			"description": "Contact me to discuss collaboration opportunities, projects, or just to chat.",
+			"title": "Contact"
+		},
+		"form": {
+			"form_placeholder": "Write your message here...",
+			"message": "Hello, my name is {name} and I would like to talk about *{subject}*. \n\n{message}",
+			"name_label": "Name",
+			"name_placeholder": "Your name",
+			"send": "Send",
+			"subject_label": "Subject",
+			"subject_placeholder": "What do you want to talk about?",
+			"title": "New message"
+		},
+		"subtitle": "Let's build something amazing together?",
+		"title": "Contact"
+	},
+	"dates": {
+		"and": "and",
+		"day": "day",
+		"days": "days",
+		"month": "month",
+		"months": "months",
+		"year": "year",
+		"years": "years"
+	},
+	"experiences": {
+		"_meta": {
+			"description": "Get to know my professional journey, projects, and experiences that made me the professional I am today.",
+			"title": "Experiences"
+		},
+		"buildbox-description": "I work on the development, maintenance, and improvement of applications, portals, systems, and websites for the company's clients. Responsible for ensuring efficient and up-to-date technological solutions, aiming to meet the specific needs of each client and promote an exceptional user experience.",
+		"genzys-description": "Responsible for developing the websites for various company products, all focused on web3 technology and crypto assets. I developed engaging and functional interfaces, ensuring an impactful online presence for each product. I kept up to date with the latest trends in blockchain, web3, and crypto asset technology, ensuring effective integration of these elements into the product websites.",
+		"inceres-description": "I independently developed a significant part of the system currently used by the Wanda Horta complex from scratch. This solution covers the management of patients, employees, sales, and revenue. My work included designing, implementing, and optimizing the system to meet the specific needs of the institution, demonstrating strong skills in development and problem-solving.",
+		"modu-description": "I independently developed a significant part of the system currently used by the Wanda Horta complex from scratch. This solution covers the management of patients, employees, sales, and revenue. My work included designing, implementing, and optimizing the system to meet the specific needs of the institution, demonstrating strong skills in development and problem-solving.",
+		"nkey-description": "I played a crucial role in designing and developing the system used by Poliedro Sistema de Ensino. Responsible for distributing content, the platform served over 580 units throughout Brazil during my involvement in the project.",
+		"present": "present",
+		"primepass-description": "I developed and maintained interfaces in the PrimePass app using React Native. I contributed to the user experience and visual consistency, proactively collaborating with the team. I kept up to date with best practices, optimizing performance to ensure product quality.",
+		"subtitle": "My professional experiences so far",
+		"title": "Experiences"
+	},
+	"footer": {
+		"copy": "© {year} Leonardo Lopes. All rights reserved.",
+		"external_links": {
+			"email": "Email",
+			"github": "GitHub",
+			"instagram": "Instagram",
+			"linkedin": "LinkedIn",
+			"title": "Elsewhere"
+		},
+		"gratings": "Thank you for visiting 😁",
+		"links": {
+			"about": "About",
+			"contact": "Contact",
+			"experience": "Experiences",
+			"home": "Home",
+			"tech": "Technologies",
+			"title": "Links"
+		}
+	},
+	"header": {
+		"about": "About",
+		"contact": "Contact",
+		"experience": "Experiences",
+		"home": "Home",
+		"tech": "Technologies"
+	},
+	"home": {
+		"about": {
+			"me": {
+				"subtitle": "Who I am and what I do",
+				"title": "About"
+			},
+			"tech": {
+				"subtitle": "Tools and languages I master",
+				"title": "Technologies"
+			},
+			"title": "Get to know me"
+		},
+		"buttons": {
+			"download_resume": "Check my resume",
+			"get_in_touch": "Get in touch"
+		},
+		"contact": {
+			"subtitle": "Would you like to discuss the opportunity to create something amazing together? I'm ready if you are.",
+			"title": "Let's work together?"
+		},
+		"description": "Full Stack Software Engineer specializing in developing scalable and high-performance digital solutions. With experience in frontend and backend development, my focus is on creating modern web and mobile applications.",
+		"title": "I am <break></break> <highlight>Leonardo Lopes</highlight>"
+	},
+	"technologies": {
+		"_meta": {
+			"description": "Get to know the technologies I master and use in my projects, from programming languages to frameworks and libraries.",
+			"title": "Technologies"
+		},
+		"cards": {
+			"css": "CSS",
+			"database": "Databases",
+			"framework": "Framework",
+			"global-state": "Global State",
+			"language": "Language",
+			"library": "Library",
+			"mobile": "Mobile",
+			"orm": "ORM",
+			"runtime": "JS Runtime",
+			"testing": "Testing",
+			"tool": "Tool",
+			"validation": "Validation"
+		},
+		"databases": "Databases",
+		"frameworks": "Frameworks",
+		"languages": "Languages",
+		"libraries": "Libraries",
+		"subtitle": "Languages, frameworks, tools, and other things I use",
+		"tests": "Tests",
+		"title": "Technologies",
+		"tools": "Tools"
+	}
 }
