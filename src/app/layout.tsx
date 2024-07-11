@@ -25,10 +25,13 @@ import { getCurrentLocale } from '@/utils/locale'
 import { ThemeProvider } from '@/providers/theme-provider'
 import { NextIntlClientProvider } from 'next-intl'
 
+// types
+import type { Metadata } from 'next'
+
 // next
 const inter = Inter({ subsets: ['latin'] })
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
 	const locale = getCurrentLocale()
 
 	const t = await getTranslations('meta')
