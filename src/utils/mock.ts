@@ -56,6 +56,34 @@ import { CONSTANTS } from './constants'
 import { env } from '@/env'
 import { parseISO } from 'date-fns'
 
+export const TECH_CATEGORIES = [
+	{
+		name: 'languages',
+		category: ETechCategory.LANGUAGE,
+	},
+	{
+		name: 'frameworks',
+		category: ETechCategory.FRAMEWORK,
+	},
+	{
+		name: 'libraries',
+		category: ETechCategory.LIBRARY,
+	},
+	{
+		name: 'tools',
+		category: ETechCategory.TOOL,
+	},
+	{
+		name: 'databases',
+		category: ETechCategory.DATABASE,
+	},
+	{
+		name: 'tests',
+		category: ETechCategory.TESTING,
+	},
+] as const
+
+
 export const TECH_CARDS: ITechCardList[] = [
 	{
 		name: 'Javascript',
@@ -168,14 +196,14 @@ export const TECH_CARDS: ITechCardList[] = [
 		image: node,
 		tag: ETechTag.RUNTIME,
 		link: 'https://nodejs.org/',
-		category: ETechCategory.RUNTIME,
+		category: ETechCategory.TOOL,
 	},
 	{
 		name: 'Bun',
 		image: bun,
 		tag: ETechTag.RUNTIME,
 		link: 'https://bun.sh/',
-		category: ETechCategory.RUNTIME,
+		category: ETechCategory.TOOL,
 	},
 	{
 		name: 'Express',

@@ -6,7 +6,7 @@
 			"title": "Sobre"
 		},
 		"my_future": {
-			"content": "Tenho grandes ambições e luto por elas todos os dias. Quero ser referência no que faço e ser conhecido na comunidade DEV, aspirando me tornar um GitHub Star. Além disso, tenho o sonho de trabalhar no exterior, seja remotamente ou presencialmente, e uma das minhas maiores metas de vida é morar no Canadá.",
+			"content": "Tenho grandes ambições e luto por elas todos os dias. Quero ser referência no que faço e ser conhecido na comunidade DEV, aspirando me tornar um GitHub Star um dia assim como meus ídolos. Além disso, tenho o sonho de trabalhar no exterior, seja remotamente ou presencialmente ja que uma das minhas maiores metas de vida é morar no Canadá.",
 			"title": "MEU FUTURO"
 		},
 		"outside_work": {
@@ -21,7 +21,7 @@
 			"title": "O QUE EU FAÇO"
 		},
 		"who_i_am": {
-			"content": "E aí! Sou o Léo, engenheiro de software FullStack do interior de São Paulo, apaixonado por tecnologia. Tenho {age} anos e <time></time> de experiência no mercado, além de estar cursando Análise e Desenvolvimento de Sistemas.",
+			"content": "E aí! Sou o Léo, engenheiro de software FullStack do interior de São Paulo e apaixonado por tecnologia. Tenho {age} anos de idade e <time></time> de experiência no mercado, além de estar cursando Análise e Desenvolvimento de Sistemas.",
 			"title": "QUEM EU SOU"
 		}
 	},
@@ -78,5 +78,33 @@
 		"description": "Bem-vindo ao meu espaço digital! Sou o Léo, engenheiro de software apaixonado por criar soluções inovadoras e funcionais para desafios tecnológicos. Este é o meu cantinho na web, onde compartilho meu portfólio, experiências e insights sobre o mundo da programação e desenvolvimento de software.",
 		"template": "Leonardo Lopes | %s",
 		"title": "Leonardo Lopes | Engenheiro de Software Full Stack"
+	},
+	"technologies": {
+		"meta": {
+			"description": "Conheça as tecnologias que domino e utilizo em meus projetos, desde linguagens de programação até frameworks e bibliotecas.",
+			"title": "Tecnologias"
+		},
+		"title": "Tecnologias",
+		"subtitle": "Linguagens, frameworks, ferramentas e outras coisas que eu uso",
+		"languages": "Linguagens",
+		"frameworks": "Frameworks",
+		"libraries": "Bibliotecas",
+		"tools": "Ferramentas",
+		"databases": "Bancos de Dados",
+		"tests": "Testes",
+		"cards": {
+			"language": "Linguagem",
+			"library": "Biblioteca",
+			"framework": "Framework",
+			"tool": "Ferramenta",
+			"validation": "Validação",
+			"global-state": "Estado Global",
+			"mobile": "Mobile",
+			"runtime": "Runtime JS",
+			"css": "CSS",
+			"orm": "ORM",
+			"database": "Bancos de Dados",
+			"testing": "Teste"
+		}
 	}
 }

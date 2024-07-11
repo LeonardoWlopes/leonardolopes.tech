@@ -5,6 +5,9 @@ import Link from 'next/link'
 // types
 import type { ETechTag } from '@/enums/tech'
 
+// utils
+import { useTranslations } from 'next-intl'
+
 export interface ITechCardProps {
 	name: string
 	image: string | StaticImageData
@@ -13,6 +16,8 @@ export interface ITechCardProps {
 }
 
 export function TechCard({ tag, image, name, link }: ITechCardProps) {
+	const t = useTranslations('technologies.cards')
+
 	function Card() {
 		return (
 			<div className="relative flex w-full gap-3 rounded-3xl border border-card-border bg-faint-white p-4 sm:min-h-[300px] sm:flex-col dark:bg-onyx md:p-6">
@@ -30,7 +35,7 @@ export function TechCard({ tag, image, name, link }: ITechCardProps) {
 					</span>
 
 					<span className="rounded-3xl border border-card-border px-2 py-1 text-center font-normal text-dark-gray text-xs dark:border-dark-gray/90 dark:text-dark-gray">
-						{tag}
+						{t(tag)}
 					</span>
 				</div>
 			</div>
