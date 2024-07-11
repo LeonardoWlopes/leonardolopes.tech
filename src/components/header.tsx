@@ -11,7 +11,12 @@ import { Linkedin, Github } from 'lucide-react'
 // components
 import { ThemeSwitch } from './theme-switch'
 
+// hooks
+import { useTranslations } from 'next-intl'
+
 export function Header() {
+	const t = useTranslations('header')
+
 	return (
 		<header className="fixed bottom-8 z-50 flex w-[calc(100vw-32px)] max-w-limit justify-between rounded-xl border border-primary-border bg-white/60 p-4 text-light-gray backdrop-blur-sm sm:top-6 sm:bottom-[unset] sm:mb-32 dark:bg-onyx/60 dark:sm:bg-onyx/30 sm:bg-white/30">
 			<div className="flex flex-1 items-center">
@@ -29,10 +34,10 @@ export function Header() {
 									href={href}
 								>
 									<span className="hidden sm:flex">
-										{label}
+										{t(label)}
 									</span>
 
-									<abbr title={label}>
+									<abbr title={t(label)}>
 										<Icon className="sm:hidden" />
 									</abbr>
 								</Link>

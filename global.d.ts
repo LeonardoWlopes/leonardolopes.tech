@@ -1,4 +1,4 @@
-import type pt from "@/i18n/locales/pt-BR.json"
+import type pt from '@/i18n/locales/pt-BR.json'
 
 type Messages = typeof pt
 

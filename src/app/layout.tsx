@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react'
-import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -19,7 +18,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import { env } from '@/env'
 import { twMerge } from 'tailwind-merge'
 import { CONSTANTS } from '@/utils/constants'
-import { getMessages } from 'next-intl/server'
+import { getMessages, getTranslations } from 'next-intl/server'
 import { getCurrentLocale } from '@/utils/locale'
 
 // providers
@@ -29,26 +28,31 @@ import { NextIntlClientProvider } from 'next-intl'
 // next
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-	title: {
-		default: 'Leonardo Lopes | Engenheiro de Software Full Stack',
-		template: 'Leonardo Lopes | %s',
-	},
-	description:
-		'Bem-vindo ao meu espaço digital! Sou o Léo, engenheiro de software apaixonado por criar soluções inovadoras e funcionais para desafios tecnológicos. Este é o meu cantinho na web, onde compartilho meu portfólio, experiências e insights sobre o mundo da programação e desenvolvimento de software.',
-	openGraph: {
-		type: 'website',
-		locale: 'pt_BR',
-		url: env.APP_URL,
-		images: [
-			{
-				url: CONSTANTS.AVATAR_URL,
-				width: 460,
-				height: 460,
-				alt: 'Leonardo Lopes | Engenheiro de Software Full Stack',
-			},
-		],
-	},
+export async function generateMetadata() {
+	const locale = getCurrentLocale()
+
+	const t = await getTranslations('meta')
+
+	return {
+		title: {
+			default: t('title'),
+			template: t('template'),
+		},
+		description: t('description'),
+		openGraph: {
+			type: 'website',
+			locale,
+			url: env.APP_URL,
+			images: [
+				{
+					url: CONSTANTS.AVATAR_URL,
+					width: 460,
+					height: 460,
+					alt: t('title'),
+				},
+			],
+		},
+	}
 }
 
 export default async function RootLayout({
@@ -56,7 +60,6 @@ export default async function RootLayout({
 }: Readonly<{
 	children: ReactNode
 }>) {
-
 	const locale = getCurrentLocale()
 
 	const messages = await getMessages()

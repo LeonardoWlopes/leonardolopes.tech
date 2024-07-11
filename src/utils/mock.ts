@@ -273,19 +273,19 @@ export const CONTACT_LINKS: IContactLink[] = [
 ]
 
 export const NAV_LINKS = [
-	{ label: 'Home', href: '/', Icon: Home },
-	{ label: 'Sobre', href: '/about', Icon: UserRound },
-	{ label: 'Experiencias', href: '/experiences', Icon: Briefcase },
-	{ label: 'Tecnologias', href: '/technologies', Icon: Atom },
-	{ label: 'Contato', href: '/contact', Icon: Mail },
-]
+	{ label: 'home', href: '/', Icon: Home },
+	{ label: 'about', href: '/about', Icon: UserRound },
+	{ label: 'experience', href: '/experiences', Icon: Briefcase },
+	{ label: 'tech', href: '/technologies', Icon: Atom },
+	{ label: 'contact', href: '/contact', Icon: Mail },
+] as const
 
 export const ELSE_WHERE_LINKS = [
-	{ label: 'Github', href: CONSTANTS.GITHUB_URL },
-	{ label: 'LinkedIn', href: CONSTANTS.LINKEDIN_URL },
-	{ label: 'Email', href: `mailto:${CONSTANTS.CONTACT_EMAIL}` },
-	{ label: 'Instagram', href: CONSTANTS.INSTAGRAM_URL },
-]
+	{ label: 'github', href: CONSTANTS.GITHUB_URL },
+	{ label: 'linkedin', href: CONSTANTS.LINKEDIN_URL },
+	{ label: 'email', href: `mailto:${CONSTANTS.CONTACT_EMAIL}` },
+	{ label: 'instagram', href: CONSTANTS.INSTAGRAM_URL },
+] as const
 
 export const EXPERIENCES: IExperience[] = [
 	{

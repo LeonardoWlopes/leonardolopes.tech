@@ -8,7 +8,12 @@ import signature from '@/assets/icons/signature.svg'
 // utils
 import { ELSE_WHERE_LINKS, NAV_LINKS } from '@/utils/mock'
 
+// hooks
+import { useTranslations } from 'next-intl'
+
 export function Footer() {
+	const t = useTranslations('footer')
+
 	const currentYear = new Date().getFullYear()
 
 	return (
@@ -18,19 +23,20 @@ export function Footer() {
 					<Image src={signature} alt="Leonardo Lopes" width={200} />
 
 					<p className="mb-8 text-onyx text-sm sm:mb-auto dark:text-dark-gray/50">
-						Obrigado por vir 😁
+						{t('gratings')}
 					</p>
 
 					<p className="text-onyx text-sm dark:text-dark-gray/50">
-						© {currentYear} Leonardo Lopes. Todos os direitos
-						reservados.
+						{t('copy', {
+							year: currentYear,
+						})}
 					</p>
 				</div>
 
 				<div className="flex gap-16 text-base text-light-gray sm:gap-32">
 					<div className="flex flex-col">
 						<span className="mb-8 font-bold text-onyx dark:text-primary">
-							Links
+							{t('links.title')}
 						</span>
 
 						<ul
@@ -43,7 +49,7 @@ export function Footer() {
 										className="text-onyx dark:text-light-gray"
 										href={href}
 									>
-										{label}
+										{t(`links.${label}`)}
 									</Link>
 								</li>
 							))}
@@ -52,7 +58,7 @@ export function Footer() {
 
 					<div className="flex flex-col">
 						<span className="mb-8 font-bold text-onyx dark:text-primary">
-							Fora Daqui
+							{t('external_links.title')}
 						</span>
 
 						<ul
@@ -66,7 +72,7 @@ export function Footer() {
 										href={href}
 										target="_blank"
 									>
-										{label}
+										{t(`external_links.${label}`)}
 									</Link>
 								</li>
 							))}
