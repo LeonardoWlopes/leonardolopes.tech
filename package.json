@@ -6,7 +6,7 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "biome check . --apply",
+		"lint": "biome check . --apply && pnpm run lint-i18n",
 		"lint-i18n": "tsx ./src/utils/lint-i18n.ts",
 		"check": "knip",
 		"prepare": "husky install",

@@ -30,6 +30,38 @@
 			"title": "QUEM EU SOU"
 		}
 	},
+	"contact": {
+		"_meta": {
+			"description": "Entre em contato comigo para discutir oportunidades de colaboração, projetos ou apenas para bater um papo.",
+			"title": "Contato"
+		},
+		"form": {
+			"form_placeholder": "Escreva sua mensagem aqui...",
+			"message": "Olá, me chamo {name} e gostaria de falar sobre *{subject}*. \n\n{message}",
+			"name_label": "Nome",
+			"name_placeholder": "Seu nome",
+			"send": "Enviar",
+			"subject_label": "Assunto",
+			"subject_placeholder": "Sobre o que você quer falar?",
+			"title": "Nova mensagem"
+		},
+		"subtitle": "Vamos construir algo incrível juntos?",
+		"title": "Contato"
+	},
+	"experiences": {
+		"_meta": {
+			"description": "Conheça minha trajetória profissional, projetos e experiências que me tornaram o profissional que sou hoje.",
+			"title": "Experiências"
+		},
+		"buildbox-description": "Atuo no desenvolvimento, manutenção e aprimoramento de aplicativos, portais, sistemas e sites para os clientes da empresa. Responsável por garantir soluções tecnológicas eficientes e atualizadas, visando atender às necessidades específicas de cada cliente e promover uma experiência do usuário excepcional.",
+		"genzys-description": "Encarregado do desenvolvimento dos websites de diversos produtos da empresa, todos centrados em tecnologia web3 e criptoativos. Desenvolvi interfaces envolventes e funcionais, garantindo uma presença online impactante para cada produto. Mantive-me atualizado com as últimas tendências em tecnologia blockchain, web3 e criptoativos, assegurando a integração eficaz desses elementos nos sites dos produtos.",
+		"inceres-description": "Desenvolvi de forma independente e do zero uma parte significativa do sistema atualmente utilizado pelo complexo Wanda Horta. Esta solução abrange a gestão de pacientes, funcionários, vendas e receitas. Meu trabalho incluiu a concepção, implementação e otimização do sistema para atender às necessidades específicas da instituição, demonstrando habilidades sólidas em desenvolvimento e solução de problemas.",
+		"modu-description": "Desenvolvi de forma independente e do zero uma parte significativa do sistema atualmente utilizado pelo complexo Wanda Horta. Esta solução abrange a gestão de pacientes, funcionários, vendas e receitas. Meu trabalho incluiu a concepção, implementação e otimização do sistema para atender às necessidades específicas da instituição, demonstrando habilidades sólidas em desenvolvimento e solução de problemas.",
+		"nkey-description": "Desempenhei um papel crucial na concepção e desenvolvimento do sistema utilizado pela Poliedro Sistema de Ensino. Responsável por distribuir conteúdos, a plataforma atendeu mais de 580 unidades em todo o território brasileiro durante o meu envolvimento no projeto.",
+		"primepass-description": "Desenvolvi e mantive interfaces no aplicativo PrimePass usando React Native. Contribuí para a experiência do usuário e a consistência visual, colaborando proativamente com a equipe. Mantive-me atualizado com as melhores práticas, otimizando o desempenho para garantir a qualidade do produto.",
+		"subtitle": "Minhas experiências profissionais até agora",
+		"title": "Experiências"
+	},
 	"footer": {
 		"copy": "© {year} Leonardo Lopes. Todos os direitos reservados.",
 		"external_links": {
@@ -106,19 +138,5 @@
 		"tests": "Testes",
 		"title": "Tecnologias",
 		"tools": "Ferramentas"
-	},
-	"experiences": {
-		"_meta": {
-			"description": "Conheça minha trajetória profissional, projetos e experiências que me tornaram o profissional que sou hoje.",
-			"title": "Experiências"
-		},
-		"subtitle": "Minhas experiências profissionais até agora",
-		"title": "Experiências",
-		"buildbox-description": "Atuo no desenvolvimento, manutenção e aprimoramento de aplicativos, portais, sistemas e sites para os clientes da empresa. Responsável por garantir soluções tecnológicas eficientes e atualizadas, visando atender às necessidades específicas de cada cliente e promover uma experiência do usuário excepcional.",
-		"nkey-description": "Desempenhei um papel crucial na concepção e desenvolvimento do sistema utilizado pela Poliedro Sistema de Ensino. Responsável por distribuir conteúdos, a plataforma atendeu mais de 580 unidades em todo o território brasileiro durante o meu envolvimento no projeto.",
-		"genzys-description": "Encarregado do desenvolvimento dos websites de diversos produtos da empresa, todos centrados em tecnologia web3 e criptoativos. Desenvolvi interfaces envolventes e funcionais, garantindo uma presença online impactante para cada produto. Mantive-me atualizado com as últimas tendências em tecnologia blockchain, web3 e criptoativos, assegurando a integração eficaz desses elementos nos sites dos produtos.",
-		"modu-description": "Desenvolvi de forma independente e do zero uma parte significativa do sistema atualmente utilizado pelo complexo Wanda Horta. Esta solução abrange a gestão de pacientes, funcionários, vendas e receitas. Meu trabalho incluiu a concepção, implementação e otimização do sistema para atender às necessidades específicas da instituição, demonstrando habilidades sólidas em desenvolvimento e solução de problemas.",
-		"inceres-description": "Desenvolvi de forma independente e do zero uma parte significativa do sistema atualmente utilizado pelo complexo Wanda Horta. Esta solução abrange a gestão de pacientes, funcionários, vendas e receitas. Meu trabalho incluiu a concepção, implementação e otimização do sistema para atender às necessidades específicas da instituição, demonstrando habilidades sólidas em desenvolvimento e solução de problemas.",
-		"primepass-description": "Desenvolvi e mantive interfaces no aplicativo PrimePass usando React Native. Contribuí para a experiência do usuário e a consistência visual, colaborando proativamente com a equipe. Mantive-me atualizado com as melhores práticas, otimizando o desempenho para garantir a qualidade do produto."
 	}
 }

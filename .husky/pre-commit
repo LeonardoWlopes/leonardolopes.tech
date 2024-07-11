@@ -1,1 +1,1 @@
-pnpm run lint && pnpm run lint-i18n
+pnpm run lint
