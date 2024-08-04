@@ -1,4 +1,0 @@
-- [ ] Melhorar gradiente de fundo
-- [ ] adicionar testes com cypress
-- [ ] pagina de contato
-- [ ] adicionar google analytics
