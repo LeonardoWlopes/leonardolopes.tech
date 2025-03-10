@@ -2,7 +2,7 @@
 import { Button } from '@/components/button'
 import { KnowCard } from '@/components/know-card'
 import { PageTitle } from '@/components/typography'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 
 //assets
@@ -11,7 +11,7 @@ import techStack from '@/assets/images/tech-stack.png'
 import { CodeXml, FastForward } from 'lucide-react'
 
 // utils
-import { env } from '@/env'
+import { env } from '@/utils/env'
 
 // hooks
 import { useTranslations } from 'next-intl'

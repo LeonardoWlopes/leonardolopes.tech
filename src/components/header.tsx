@@ -1,5 +1,5 @@
 // components
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 
 // utils
 import { CONSTANTS } from '@/utils/constants'
@@ -18,7 +18,7 @@ export function Header() {
 	const t = useTranslations('header')
 
 	return (
-		<header className="fixed bottom-8 z-50 flex w-[calc(100vw-32px)] max-w-limit justify-between rounded-xl border border-primary-border bg-white/60 p-4 text-light-gray backdrop-blur-sm sm:top-6 sm:bottom-[unset] sm:mb-32 dark:bg-onyx/60 dark:sm:bg-onyx/30 sm:bg-white/30">
+		<header className="fixed bottom-8 z-50 flex w-[calc(100vw-32px)] max-w-limit justify-between rounded-xl border border-primary-border bg-white/60 p-4 text-light-gray backdrop-blur-sm sm:top-6 sm:bottom-[unset] sm:mb-32 sm:bg-white/30 dark:bg-onyx/60 dark:sm:bg-onyx/30">
 			<div className="flex flex-1 items-center">
 				<ul
 					className="flex flex-1 justify-evenly gap-10 sm:items-center sm:justify-start"
@@ -29,7 +29,7 @@ export function Header() {
 							<li key={href}>
 								<Link
 									className={
-										'font-medium text-base text-primary dark:hover:text-light-gray/80 dark:text-light-gray hover:text-primary/80'
+										'font-medium text-base text-primary hover:text-primary/80 dark:text-light-gray dark:hover:text-light-gray/80'
 									}
 									href={href}
 								>

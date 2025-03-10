@@ -1,6 +1,6 @@
 // components
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
-import Link from 'next/link'
 
 // assets
 import signature from '@/assets/icons/signature.svg'

@@ -1,10 +1,10 @@
 // components
 import { PageTitle, PageSubtitle } from '@/components/typography'
 import { Mail } from '@/components/mail'
+import { Link } from '@/i18n/navigation'
 
 // types
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
 // utils
 import { CONTACT_LINKS } from '@/utils/mock'

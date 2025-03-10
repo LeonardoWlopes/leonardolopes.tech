@@ -1,0 +1,22 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      run: pnpm lint-staged
+    verify-types:
+      run: pnpm tsc
+pre-push:
+  parallel: true
+  commands:
+    test:
+      run: pnpm test
+    verify-types:
+      run: pnpm tsc
+    lint:
+      run: pnpm lint-staged
+    commit-lint:
+      run: pnpm dlx commitlint --from=HEAD~1
+commit-msg:
+  commands:
+    commit-lint:
+      run: pnpm dlx commitlint --edit {0}

@@ -9,4 +9,4 @@ export const CONSTANTS = {
 	BIRTHDAY: parseISO('2003-11-10T00:00:00Z'),
 }
 
-export const LOCALES = ['pt-BR', 'en']
+export const LOCALES = ['pt', 'en']

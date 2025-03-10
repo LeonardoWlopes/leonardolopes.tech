@@ -1,25 +1,24 @@
-import type { ReactNode } from 'react'
 import { Inter } from 'next/font/google'
+import type { ReactNode } from 'react'
 import './globals.css'
 
 // assets
-import topBackground from '@/assets/top-background.svg'
 import bottomBackground from '@/assets/bottom-background.svg'
+import topBackground from '@/assets/top-background.svg'
 
 // components
-import Image from 'next/image'
-import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
+import { Header } from '@/components/header'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import Image from 'next/image'
 
 // utils
-import { env } from '@/env'
-import { twMerge } from 'tailwind-merge'
+import { env } from '@/utils/env'
 import { CONSTANTS } from '@/utils/constants'
 import { getMessages, getTranslations } from 'next-intl/server'
-import { getCurrentLocale } from '@/utils/locale'
+import { twMerge } from 'tailwind-merge'
 
 // providers
 import { ThemeProvider } from '@/providers/theme-provider'
@@ -27,13 +26,13 @@ import { NextIntlClientProvider } from 'next-intl'
 
 // types
 import type { Metadata } from 'next'
+import { routing } from '@/i18n/routing'
+import { notFound } from 'next/navigation'
 
 // next
 const inter = Inter({ subsets: ['latin'] })
 
 export async function generateMetadata(): Promise<Metadata> {
-	const locale = getCurrentLocale()
-
 	const t = await getTranslations('_meta')
 
 	return {
@@ -44,7 +43,6 @@ export async function generateMetadata(): Promise<Metadata> {
 		description: t('description'),
 		openGraph: {
 			type: 'website',
-			locale,
 			url: env.APP_URL,
 			images: [
 				{
@@ -60,10 +58,16 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function RootLayout({
 	children,
+	params,
 }: Readonly<{
 	children: ReactNode
+	params: Promise<{ locale: string }>
 }>) {
-	const locale = getCurrentLocale()
+	const { locale } = await params
+
+	if (!routing.locales.includes(locale as 'pt')) {
+		notFound()
+	}
 
 	const messages = await getMessages()
 

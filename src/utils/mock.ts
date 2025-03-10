@@ -53,7 +53,7 @@ import {
 
 // utils
 import { CONSTANTS } from './constants'
-import { env } from '@/env'
+import { env } from '@/utils/env'
 import { parseISO } from 'date-fns'
 
 export const TECH_CATEGORIES = [

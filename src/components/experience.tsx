@@ -1,3 +1,5 @@
+import { use } from 'react'
+
 // utils
 import { calculateTime } from '@/utils/time'
 import { twMerge } from 'tailwind-merge'
@@ -5,7 +7,7 @@ import { addMonths, format } from 'date-fns'
 
 // components
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 
 // types
 import type { IExperience } from '@/interfaces/experience'
@@ -22,7 +24,7 @@ export interface IExperienceProps {
 export function Experience({ experience, className }: IExperienceProps) {
 	const t = useTranslations('experiences')
 
-	const locale = getDateFnsLocale()
+	const locale = use(getDateFnsLocale())
 
 	const startDate = format(experience.role.startDate, 'MMM yyyy', {
 		locale,
@@ -31,7 +33,7 @@ export function Experience({ experience, className }: IExperienceProps) {
 	const endDate = experience.role.endDate
 		? format(experience.role.endDate, 'MMM yyyy', {
 				locale,
-		  })
+			})
 		: t('present')
 
 	const { months, years } = calculateTime(

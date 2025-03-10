@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 
 // components
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 
 // types
 interface IKnowCardProps {

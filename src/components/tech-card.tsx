@@ -1,6 +1,6 @@
 // components
 import Image, { type StaticImageData } from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 
 // types
 import type { ETechTag } from '@/enums/tech'
@@ -20,7 +20,7 @@ export function TechCard({ tag, image, name, link }: ITechCardProps) {
 
 	function Card() {
 		return (
-			<div className="relative flex w-full gap-3 rounded-3xl border border-card-border bg-faint-white p-4 sm:min-h-[300px] sm:flex-col dark:bg-onyx md:p-6">
+			<div className="relative flex w-full gap-3 rounded-3xl border border-card-border bg-faint-white p-4 sm:min-h-[300px] sm:flex-col md:p-6 dark:bg-onyx">
 				<Image
 					className="aspect-square h-14 w-14 rounded-xl sm:m-auto sm:h-[100px] sm:w-[100px]"
 					src={image}

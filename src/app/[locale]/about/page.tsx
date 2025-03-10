@@ -2,8 +2,8 @@
 import { Timer } from '@/components/timer'
 import { Button } from '@/components/button'
 import { PageSubtitle, PageTitle } from '@/components/typography'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
-import Link from 'next/link'
 
 // assets
 import { FastForward } from 'lucide-react'
@@ -45,7 +45,7 @@ export default function About() {
 			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 
 			<div className="grid gap-2 md:grid-cols-[2fr_1fr]">
-				<div className="mb-8 flex flex-col text-justify text-sm md:mb-0 sm:text-base">
+				<div className="mb-8 flex flex-col text-justify text-sm sm:text-base md:mb-0">
 					<span className="mb-1 font-semibold text-onyx uppercase dark:text-medium-gray">
 						{t('who_i_am.title')}
 					</span>

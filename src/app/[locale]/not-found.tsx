@@ -1,7 +1,7 @@
 // components
 import { Button } from '@/components/button'
 import { PageTitle } from '@/components/typography'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 
 //assets

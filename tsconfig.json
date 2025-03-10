@@ -19,11 +19,12 @@
 		],
 		"paths": {
 			"@/*": ["./src/*"]
-		}
+		},
+		"target": "ES2017"
 	},
 	"include": [
 		"next-env.d.ts",
-		"global.d.ts",
+		"src/types/*",
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts"

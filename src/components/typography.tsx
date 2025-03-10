@@ -10,7 +10,7 @@ export function PageTitle({ children, className }: ITypographyProps) {
 	return (
 		<h1
 			className={twMerge(
-				'font-bold text-4xl text-primary md:text-6xl sm:text-5xl',
+				'font-bold text-4xl text-primary sm:text-5xl md:text-6xl',
 				className,
 			)}
 		>
@@ -23,7 +23,7 @@ export function PageSubtitle({ children, className }: ITypographyProps) {
 	return (
 		<h2
 			className={twMerge(
-				'text-medium-gray md:text-2xl sm:text-xl',
+				'text-medium-gray sm:text-xl md:text-2xl',
 				className,
 			)}
 		>

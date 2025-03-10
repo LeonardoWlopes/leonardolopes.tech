@@ -5,7 +5,7 @@ import type { FormEvent } from 'react'
 import { Button } from './button'
 
 // utils
-import { env } from '@/env'
+import { env } from '@/utils/env'
 
 // hooks
 import { useTranslations } from 'next-intl'
@@ -93,7 +93,7 @@ export function Mail() {
 				<hr className="my-8 border-light-gray dark:border-white/10" />
 
 				<textarea
-					className="mb-6 h-52 w-full resize-none rounded-xl bg-main-bg p-6 font-normal text-base text-secondary outline-card-border sm:h-80 placeholder:text-medium-gray"
+					className="mb-6 h-52 w-full resize-none rounded-xl bg-main-bg p-6 font-normal text-base text-secondary outline-card-border placeholder:text-medium-gray sm:h-80"
 					name="content"
 					autoComplete="off"
 					placeholder={t('form_placeholder')}

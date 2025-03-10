@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.6.1/schema.json",
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
 	"organizeImports": {
 		"enabled": false
 	},
@@ -25,6 +25,15 @@
 			},
 			"nursery": {
 				"useSortedClasses": "warn"
+			},
+			"suspicious": {
+				"noAssignInExpressions": "off",
+				"noConsole": "error"
+			},
+			"style": {
+				"useExportType": "warn",
+				"useImportType": "warn",
+				"noNonNullAssertion": "off"
 			}
 		}
 	},

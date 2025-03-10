@@ -1,5 +1,5 @@
 import type { StaticImageData } from 'next/image'
-import type pt from '@/i18n/locales/pt-BR.json'
+import type pt from '@/i18n/languages/pt.json'
 
 export interface IExperience {
 	role: IExperienceRole

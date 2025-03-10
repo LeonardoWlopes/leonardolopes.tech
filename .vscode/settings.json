@@ -1,32 +1,47 @@
 {
-	"editor.defaultFormatter": "biomejs.biome",
-	"[typescriptreact]": {
+	"[javascript]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
-	"editor.codeActionsOnSave": {
-		"quickfix.biome": "always"
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
 	},
-	"cSpell.words": [
-		"buildbox",
-		"Buildbox",
-		"criptoativos",
-		"genezys",
-		"Genezys",
-		"genzys",
-		"inceres",
-		"instagram",
-		"linkedin",
-		"Linkedin",
-		"LINKEDIN",
-		"modu",
-		"nkey",
-		"obiwan",
-		"primepass"
-	],
+	"[markdown]": {
+		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+	},
 	"[typescript]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
-	"[css]": {
-		"editor.defaultFormatter": "vscode.css-language-features"
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"cSpell.words": [
+		"lactalis",
+		"lefthook",
+		"partialize",
+		"precocerto",
+		"sonner"
+	],
+	"editor.codeActionsOnSave": {
+		"source.organizeImports.biome": "explicit"
+	},
+	"editor.detectIndentation": false,
+	"editor.guides.bracketPairs": "active",
+	"editor.linkedEditing": true,
+	"editor.renderControlCharacters": true,
+	"editor.renderWhitespace": "all",
+	"editor.tabSize": 4,
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.patterns": {
+		".editorconfig": "biome*, lefthook*, commitlint*,.lintstagedrc",
+		".env": ".env*",
+		".gitignore": ".git*",
+		"package.json": "tsconfig*, pnpm-lock*, .nvmrc, .releaserc, *.config.mjs, *.config.ts"
+	},
+	"i18n-ally.keystyle": "flat",
+	"i18n-ally.localesPaths": ["**/languages/**"],
+	"i18n-ally.sourceLanguage": "pt",
+	"cSpell.language": "en,pt-BR",
+	"workbench.editorAssociations": {
+		"*.svg": "default"
 	}
 }
