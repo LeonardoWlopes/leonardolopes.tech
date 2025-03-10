@@ -29,8 +29,6 @@ export async function generateMetadata(): Promise<Metadata> {
 	}
 }
 
-export const revalidate = 60 * 60 * 12 // 12 hours
-
 export default function About() {
 	const t = useTranslations('about')
 
