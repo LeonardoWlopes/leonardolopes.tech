@@ -1,5 +1,5 @@
 beforeEach(() => {
-	cy.visit('/')
+	cy.visit('/pt')
 })
 
 describe('header', () => {
@@ -79,7 +79,7 @@ describe('/', () => {
 		const links = ['/about', '/technologies']
 
 		for (const link of links) {
-			const currentCard = cy.get(`[data-cy=know-card][href="${link}"]`)
+			const currentCard = cy.get(`[data-cy=know-card][href="/pt${link}"]`)
 
 			currentCard.click()
 
