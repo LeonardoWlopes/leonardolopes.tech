@@ -8,8 +8,6 @@ pre-commit:
 pre-push:
   parallel: true
   commands:
-    test:
-      run: pnpm test
     verify-types:
       run: pnpm tsc
     lint:

@@ -35,7 +35,7 @@
 		".editorconfig": "biome*, lefthook*, commitlint*,.lintstagedrc",
 		".env": ".env*",
 		".gitignore": ".git*",
-		"package.json": "tsconfig*, pnpm-lock*, .nvmrc, .releaserc, *.config.mjs, *.config.ts"
+		"package.json": "tsconfig*, pnpm-lock*, .nvmrc, .releaserc, *.config.mjs, *.config.js"
 	},
 	"i18n-ally.keystyle": "flat",
 	"i18n-ally.localesPaths": ["**/languages/**"],
