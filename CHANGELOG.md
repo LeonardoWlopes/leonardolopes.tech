@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.0.0...v1.0.1) (2025-03-10)
+
+
+### Bug Fixes
+
+* build ([456ccde](https://github.com/LeonardoWlopes/leonardolopes.tech/commit/456ccdecb62a7e9c4b49d3eb75f9bbf298050d79))
+
 # 1.0.0 (2024-08-04)
 
 
