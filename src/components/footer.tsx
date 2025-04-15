@@ -1,14 +1,7 @@
-// components
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
-
-// assets
 import signature from '@/assets/icons/signature.svg'
-
-// utils
 import { ELSE_WHERE_LINKS, NAV_LINKS } from '@/utils/mock'
-
-// hooks
 import { useTranslations } from 'next-intl'
 
 export function Footer() {

@@ -48,7 +48,7 @@ export default function Experiencies() {
 
 					return (
 						<div
-							key={experience.company}
+							key={experience.company.name}
 							className={twMerge(
 								'relative flex w-full items-center',
 								isEven ? 'flex-row' : 'sm:flex-row-reverse',

@@ -33,7 +33,7 @@ class JsonSorter {
 		const __dirname = path.dirname(__filename)
 		const __rootPath = path.resolve(__dirname, '../')
 
-		const directoryPath = path.join(__rootPath, './i18n/locales')
+		const directoryPath = path.join(__rootPath, './i18n/languages')
 
 		fs.readdir(directoryPath, (err, files) => {
 			if (err) {
