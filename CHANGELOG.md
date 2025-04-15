@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.0.1...v1.1.0) (2025-04-15)
+
+
+### Features
+
+* update experience mock and component ([4b23fd2](https://github.com/LeonardoWlopes/leonardolopes.tech/commit/4b23fd2b310e0421fb9c6d87be3378c14695bd9a))
+
 ## [1.0.1](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.0.0...v1.0.1) (2025-03-10)
 
 
