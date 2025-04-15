@@ -1,12 +1,6 @@
-// components
 import Image, { type StaticImageData } from 'next/image'
-import { Link } from '@/i18n/navigation'
-
-// types
+import Link from 'next/link'
 import type { ETechTag } from '@/enums/tech'
-
-// utils
-import { useTranslations } from 'next-intl'
 
 export interface ITechCardProps {
 	name: string
@@ -16,8 +10,6 @@ export interface ITechCardProps {
 }
 
 export function TechCard({ tag, image, name, link }: ITechCardProps) {
-	const t = useTranslations('technologies.cards')
-
 	function Card() {
 		return (
 			<div className="relative flex w-full gap-3 rounded-3xl border border-card-border bg-faint-white p-4 sm:min-h-[300px] sm:flex-col md:p-6 dark:bg-onyx">
@@ -30,12 +22,12 @@ export function TechCard({ tag, image, name, link }: ITechCardProps) {
 				/>
 
 				<div className="flex w-full items-center justify-between gap-2 sm:absolute sm:bottom-6 sm:left-0 sm:px-6">
-					<span className="font-bold text-base text-secondary sm:text-lg">
+					<span className="font-bold text-base text-secondary capitalize sm:text-lg">
 						{name}
 					</span>
 
-					<span className="rounded-3xl border border-card-border px-2 py-1 text-center font-normal text-dark-gray text-xs dark:border-dark-gray/90 dark:text-dark-gray">
-						{t(tag)}
+					<span className="rounded-3xl border border-card-border px-2 py-1 text-center font-normal text-dark-gray text-xs capitalize dark:border-dark-gray/90 dark:text-dark-gray">
+						{tag}
 					</span>
 				</div>
 			</div>

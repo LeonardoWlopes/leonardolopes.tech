@@ -4,11 +4,10 @@ import { twMerge } from 'tailwind-merge'
 import { addMonths, format } from 'date-fns'
 import Image from 'next/image'
 import type { IExperience, IExperienceRole } from '@/interfaces/experience'
-import { useTranslations } from 'next-intl'
 import { getDateFnsLocale } from '@/utils/locale'
 import Link from 'next/link'
 
-const EXPERIENCE_HEIGHT = 400
+const EXPERIENCE_HEIGHT = 40000
 
 export interface IExperienceProps {
 	experience: IExperience
@@ -74,7 +73,7 @@ export function Experience({ experience, className }: IExperienceProps) {
 							)}
 						</div>
 
-						<div className="pointer-events-none absolute right-0 bottom-0 left-0 h-16 bg-gradient-to-t from-main-bg to-transparent" />
+						<div className="pointer-events-none absolute right-0 bottom-0 left-0 h-24 bg-gradient-to-t from-main-bg to-transparent" />
 					</div>
 				</div>
 			</div>
@@ -83,7 +82,6 @@ export function Experience({ experience, className }: IExperienceProps) {
 }
 
 function RoleInfo({ role }: IRoleInfoProps) {
-	const t = useTranslations('experiences')
 	const locale = use(getDateFnsLocale())
 
 	function formatDate(date: Date) {
@@ -105,7 +103,7 @@ function RoleInfo({ role }: IRoleInfoProps) {
 
 	function formatDateRange(startDate: Date, endDate: Date | null) {
 		return `${formatDate(startDate)} - ${
-			endDate ? formatDate(endDate) : t('present')
+			endDate ? formatDate(endDate) : 'present'
 		}`
 	}
 
@@ -117,14 +115,13 @@ function RoleInfo({ role }: IRoleInfoProps) {
 					role.endDate,
 				)}`}
 			</span>
+
 			<p className="text-primary text-sm">{role.description}</p>
 		</>
 	)
 }
 
 function SingleRole({ role }: ISingleRoleProps) {
-	const t = useTranslations('experiences')
-
 	const locale = use(getDateFnsLocale())
 
 	function formatDate(date: Date) {
@@ -146,7 +143,7 @@ function SingleRole({ role }: ISingleRoleProps) {
 
 	function formatDateRange(startDate: Date, endDate: Date | null) {
 		return `${formatDate(startDate)} - ${
-			endDate ? formatDate(endDate) : t('present')
+			endDate ? formatDate(endDate) : 'present'
 		}`
 	}
 
@@ -161,6 +158,7 @@ function SingleRole({ role }: ISingleRoleProps) {
 					role.endDate,
 				)}`}
 			</span>
+
 			<p
 				className="w-full text-primary text-sm"
 				data-cy="experience-description"
@@ -173,12 +171,13 @@ function SingleRole({ role }: ISingleRoleProps) {
 
 function MultipleRoles({ roles }: IMultipleRolesProps) {
 	return (
-		<div className="flex flex-col gap-2">
+		<div className="flex flex-col gap-6">
 			{roles.map((role) => (
 				<div key={role.title} className="flex flex-col">
 					<span className="font-bold text-base text-primary">
 						{role.title}
 					</span>
+
 					<RoleInfo role={role} />
 				</div>
 			))}

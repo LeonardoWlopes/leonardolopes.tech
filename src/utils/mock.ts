@@ -296,18 +296,18 @@ export const CONTACT_LINKS: IContactLink[] = [
 ]
 
 export const NAV_LINKS = [
-	{ label: 'home', href: '/', Icon: Home },
-	{ label: 'about', href: '/about', Icon: UserRound },
-	{ label: 'experience', href: '/experiences', Icon: Briefcase },
-	{ label: 'tech', href: '/technologies', Icon: Atom },
-	{ label: 'contact', href: '/contact', Icon: Mail },
-] as const
+	{ label: 'Home', href: '/', Icon: Home },
+	{ label: 'About', href: '/about', Icon: UserRound },
+	{ label: 'Experiences', href: '/experiences', Icon: Briefcase },
+	{ label: 'Technologies', href: '/technologies', Icon: Atom },
+	{ label: 'Contact', href: '/contact', Icon: Mail },
+]
 
 export const ELSE_WHERE_LINKS = [
-	{ label: 'github', href: CONSTANTS.GITHUB_URL },
-	{ label: 'linkedin', href: CONSTANTS.LINKEDIN_URL },
-	{ label: 'email', href: `mailto:${CONSTANTS.CONTACT_EMAIL}` },
-	{ label: 'instagram', href: CONSTANTS.INSTAGRAM_URL },
+	{ label: 'GitHub', href: CONSTANTS.GITHUB_URL },
+	{ label: 'LinkedIn', href: CONSTANTS.LINKEDIN_URL },
+	{ label: 'Email', href: `mailto:${CONSTANTS.CONTACT_EMAIL}` },
+	{ label: 'Instagram', href: CONSTANTS.INSTAGRAM_URL },
 ] as const
 
 export const EXPERIENCES: IExperience[] = [
@@ -337,7 +337,7 @@ export const EXPERIENCES: IExperience[] = [
 				startDate: parseISO('2023-05-01'),
 				endDate: parseISO('2024-11-01'),
 				description:
-					'Grupo Petrópolis is a leading insurance company in Brazil, providing a wide range of insurance products and services to individuals and businesses. My team is responsible for developing and maintaining an innovative app that assists the pricing team in managing products across various segments in all 27 states of Brazil while accounting for the complexities of state-specific taxes.',
+					"Grupo Petrópolis is one of Brazil’s largest beverage companies, generating over $2 billion in annual revenue and serving 700,000+ customers nationwide. The company's core sales operations rely on a mobile application that handles 97% of its total revenue, making performance and reliability critical to its success. As a key contributor, I led initiatives that boosted system performance, optimized key processes, and enhanced user experience, directly impacting the company’s primary revenue stream.",
 			},
 			{
 				title: 'Middle FullStack Engineer @MSD',
@@ -382,7 +382,7 @@ export const EXPERIENCES: IExperience[] = [
 	},
 	{
 		company: {
-			name: 'MODU Gestão do Cuidado',
+			name: 'MODU',
 			icon: modu,
 		},
 		roles: [
@@ -391,22 +391,22 @@ export const EXPERIENCES: IExperience[] = [
 				startDate: parseISO('2021-08-01'),
 				endDate: parseISO('2022-03-10'),
 				description:
-					'Developed a comprehensive platform for managing elderly care services, including features for scheduling appointments, tracking patient progress, and integrating with third-party healthcare providers. Implemented responsive design and user-friendly interfaces to enhance the overall user experience.',
+					'Led the frontend development of a healthcare management system used by Wanda Horta Health Complex, a multidisciplinary medical institution. Focused on performance, usability, and scalability, ensuring efficient management of patients, staff, sales, and revenue',
 			},
 		],
 	},
 	{
 		company: {
 			name: 'Frelance',
-			icon: build,
+			icon: expo,
 		},
 		roles: [
 			{
 				title: 'Junior Mobile Engineer',
-				startDate: parseISO('2021-08-01'),
-				endDate: parseISO('2022-03-10'),
+				startDate: parseISO('2020-06-01'),
+				endDate: parseISO('2021-07-10'),
 				description:
-					'Developed a comprehensive platform for managing elderly care services, including features for scheduling appointments, tracking patient progress, and integrating with third-party healthcare providers. Implemented responsive design and user-friendly interfaces to enhance the overall user experience.',
+					'Worked as a React Native developer, contributing to various mobile applications in different industries. Developed new features, optimized performance, and maintained existing apps, gaining hands-on experience in the full mobile development lifecycle.',
 			},
 		],
 	},

@@ -1,12 +1,9 @@
-import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import signature from '@/assets/icons/signature.svg'
 import { ELSE_WHERE_LINKS, NAV_LINKS } from '@/utils/mock'
-import { useTranslations } from 'next-intl'
+import Link from 'next/link'
 
 export function Footer() {
-	const t = useTranslations('footer')
-
 	const currentYear = new Date().getFullYear()
 
 	return (
@@ -16,20 +13,19 @@ export function Footer() {
 					<Image src={signature} alt="Leonardo Lopes" width={200} />
 
 					<p className="mb-8 text-onyx text-sm sm:mb-auto dark:text-dark-gray/50">
-						{t('gratings')}
+						Thank you for visiting 😁
 					</p>
 
 					<p className="text-onyx text-sm dark:text-dark-gray/50">
-						{t('copy', {
-							year: currentYear,
-						})}
+						Copyright © {currentYear} Leonardo Lopes. All rights
+						reserved.
 					</p>
 				</div>
 
 				<div className="flex gap-16 text-base text-light-gray sm:gap-32">
 					<div className="flex flex-col">
 						<span className="mb-8 font-bold text-onyx dark:text-primary">
-							{t('links.title')}
+							Links
 						</span>
 
 						<ul
@@ -39,10 +35,10 @@ export function Footer() {
 							{NAV_LINKS.map(({ href, label }) => (
 								<li key={label}>
 									<Link
-										className="text-onyx dark:text-light-gray"
+										className="text-onyx capitalize dark:text-light-gray"
 										href={href}
 									>
-										{t(`links.${label}`)}
+										{label}
 									</Link>
 								</li>
 							))}
@@ -51,7 +47,7 @@ export function Footer() {
 
 					<div className="flex flex-col">
 						<span className="mb-8 font-bold text-onyx dark:text-primary">
-							{t('external_links.title')}
+							Elsewhere
 						</span>
 
 						<ul
@@ -65,7 +61,7 @@ export function Footer() {
 										href={href}
 										target="_blank"
 									>
-										{t(`external_links.${label}`)}
+										{label}
 									</Link>
 								</li>
 							))}
