@@ -1,36 +1,22 @@
-// types
 import type { Metadata } from 'next'
-
-// components
 import { Experience } from '@/components/experience'
 import { Timer } from '@/components/timer'
 import { PageTitle, PageSubtitle } from '@/components/typography'
-
-// utils
 import { EXPERIENCES } from '@/utils/mock'
 import { twMerge } from 'tailwind-merge'
-import { getTranslations } from 'next-intl/server'
 
-// hooks
-import { useTranslations } from 'next-intl'
-
-export async function generateMetadata(): Promise<Metadata> {
-	const t = await getTranslations('experiences._meta')
-
-	return {
-		title: t('title'),
-		description: t('description'),
-	}
+export const metadata: Metadata = {
+	title: 'Experiences',
+	description:
+		'Get to know my professional journey, projects, and experiences that made me the professional I am today.',
 }
 
 export default function Experiencies() {
-	const t = useTranslations('experiences')
-
 	return (
 		<div className="flex w-full max-w-limit flex-col">
-			<PageTitle className="mb-3">{t('title')}</PageTitle>
+			<PageTitle className="mb-3">Experiences</PageTitle>
 
-			<PageSubtitle>{t('subtitle')}</PageSubtitle>
+			<PageSubtitle>My professional experiences so far</PageSubtitle>
 
 			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 
@@ -48,7 +34,7 @@ export default function Experiencies() {
 
 					return (
 						<div
-							key={experience.company}
+							key={experience.company.name}
 							className={twMerge(
 								'relative flex w-full items-center',
 								isEven ? 'flex-row' : 'sm:flex-row-reverse',

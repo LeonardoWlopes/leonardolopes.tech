@@ -1,35 +1,21 @@
-// components
 import { PageTitle, PageSubtitle } from '@/components/typography'
 import { Mail } from '@/components/mail'
-import { Link } from '@/i18n/navigation'
-
-// types
+import Link from 'next/link'
 import type { Metadata } from 'next'
-
-// utils
 import { CONTACT_LINKS } from '@/utils/mock'
-import { getTranslations } from 'next-intl/server'
 
-// hooks
-import { useTranslations } from 'next-intl'
-
-export async function generateMetadata(): Promise<Metadata> {
-	const t = await getTranslations('contact._meta')
-
-	return {
-		title: t('title'),
-		description: t('description'),
-	}
+export const metadata: Metadata = {
+	title: 'Contact',
+	description:
+		'Contact me to discuss collaboration opportunities, projects, or just to chat.',
 }
 
 export default function Contact() {
-	const t = useTranslations('contact')
-
 	return (
 		<div className="flex w-full max-w-limit flex-col">
-			<PageTitle className="mb-3">{t('title')}</PageTitle>
+			<PageTitle className="mb-3">Contact</PageTitle>
 
-			<PageSubtitle>{t('subtitle')}</PageSubtitle>
+			<PageSubtitle>Let's build something amazing together?</PageSubtitle>
 
 			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 

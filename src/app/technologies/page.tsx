@@ -1,34 +1,22 @@
-// components
 import { TechCard } from '@/components/tech-card'
 import { PageTitle, PageSubtitle } from '@/components/typography'
-
-// types
 import type { Metadata } from 'next'
-
-// utils
 import { TECH_CARDS, TECH_CATEGORIES } from '@/utils/mock'
-import { getTranslations } from 'next-intl/server'
 
-// hooks
-import { useTranslations } from 'next-intl'
-
-export async function generateMetadata(): Promise<Metadata> {
-	const t = await getTranslations('technologies._meta')
-
-	return {
-		title: t('title'),
-		description: t('description'),
-	}
+export const metadata: Metadata = {
+	title: 'Technologies',
+	description:
+		'Get to know the technologies I master and use in my projects, from programming languages to frameworks and libraries.',
 }
 
 export default function Tech() {
-	const t = useTranslations('technologies')
-
 	return (
 		<div className="flex w-full max-w-limit flex-col">
-			<PageTitle className="mb-3">{t('title')}</PageTitle>
+			<PageTitle className="mb-3">Technologies</PageTitle>
 
-			<PageSubtitle>{t('subtitle')}</PageSubtitle>
+			<PageSubtitle>
+				Languages, frameworks, tools, and other things I use
+			</PageSubtitle>
 
 			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
 
@@ -40,8 +28,8 @@ export default function Tech() {
 
 					return (
 						<div className="flex flex-col gap-8" key={name}>
-							<h3 className="font-bold text-3xl text-light-gray sm:text-start dark:text-dark-gray">
-								{t(name)}
+							<h3 className="font-bold text-3xl text-light-gray capitalize sm:text-start dark:text-dark-gray">
+								{name}
 							</h3>
 
 							<div className="grid grid-cols-1 place-items-center gap-4 sm:grid-cols-2 md:grid-cols-3">

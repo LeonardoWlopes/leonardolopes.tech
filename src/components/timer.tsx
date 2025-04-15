@@ -1,24 +1,15 @@
-// utils
+import { getFirstRole } from '@/utils/role'
 import { calculateTime } from '@/utils/time'
 
-// hooks
-import { useTranslations } from 'next-intl'
-
 export function Timer() {
-	const t = useTranslations('dates')
+	const firstRole = getFirstRole()
 
-	const { years, months, days } = calculateTime(
-		new Date('2020-06-04T00:00:00Z'),
-	)
+	const { years, months, days } = calculateTime(firstRole.startDate)
 
 	const timeParts = [
-		years > 0 ? `${years} ${years === 1 ? t('year') : t('years')}` : null,
-		months > 0
-			? `${months} ${months === 1 ? t('month') : t('months')}`
-			: null,
-		days > 0
-			? `${t('and')} ${days} ${days === 1 ? t('day') : t('days')}`
-			: null,
+		years > 0 ? `${years} ${years === 1 ? 'year' : 'years'}` : null,
+		months > 0 ? `${months} ${months === 1 ? 'month' : 'months'}` : null,
+		days > 0 ? `and ${days} ${days === 1 ? 'day' : 'days'}` : null,
 	]
 		.filter(Boolean)
 		.join(' ')

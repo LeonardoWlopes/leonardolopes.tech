@@ -1,11 +1,8 @@
-// components
 import { Button } from '@/components/button'
 import { PageTitle } from '@/components/typography'
-import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
-
-//assets
 import obiwan from '@/assets/icons/obiwan.svg'
+import Link from 'next/link'
 
 export default function NotFound() {
 	return (

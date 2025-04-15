@@ -1,18 +1,10 @@
 'use client'
+
 import type { FormEvent } from 'react'
-
-// components
 import { Button } from './button'
-
-// utils
 import { env } from '@/utils/env'
 
-// hooks
-import { useTranslations } from 'next-intl'
-
 export function Mail() {
-	const t = useTranslations('contact.form')
-
 	function handleSubmit(e: FormEvent<HTMLFormElement>) {
 		e.preventDefault()
 		const formData = new FormData(e.target as HTMLFormElement)
@@ -21,11 +13,7 @@ export function Mail() {
 		const subject = data.subject.toString().trim().replace(/\s/g, '%20')
 
 		const content = encodeURI(
-			t('message', {
-				name: data.name.toString(),
-				subject,
-				message: data.content.toString(),
-			}),
+			`Hello, my name is ${data.name} and I would like to talk about ${subject}. \n\n${data.content}`,
 		)
 
 		const url = `https://wa.me/${env.NEXT_PUBLIC_CONTACT_NUMBER}?text=${content}`
@@ -46,7 +34,7 @@ export function Mail() {
 				</div>
 
 				<h3 className="font-medium text-base text-secondary">
-					{t('title')}
+					New message
 				</h3>
 			</div>
 
@@ -56,14 +44,14 @@ export function Mail() {
 						className="mr-2 font-medium text-base text-secondary"
 						htmlFor="input-name"
 					>
-						{t('name_label')}:
+						Name
 					</label>
 
 					<input
 						className="w-full border-none bg-inherit text-medium-gray outline-none placeholder:text-medium-gray/60"
 						type="text"
 						name="name"
-						placeholder={t('name_placeholder')}
+						placeholder={'Your name'}
 						autoComplete="off"
 						id="input-name"
 						required
@@ -77,13 +65,14 @@ export function Mail() {
 						className="mr-2 font-medium text-base text-secondary"
 						htmlFor="input-name"
 					>
-						{t('subject_label')}:
+						Subject
 					</label>
+
 					<input
 						className="w-full border-none bg-inherit text-medium-gray outline-none placeholder:text-medium-gray/60"
 						type="text"
 						name="subject"
-						placeholder={t('subject_placeholder')}
+						placeholder={'What do you want to talk about?'}
 						autoComplete="off"
 						id="input-subject"
 						required
@@ -96,12 +85,12 @@ export function Mail() {
 					className="mb-6 h-52 w-full resize-none rounded-xl bg-main-bg p-6 font-normal text-base text-secondary outline-card-border placeholder:text-medium-gray sm:h-80"
 					name="content"
 					autoComplete="off"
-					placeholder={t('form_placeholder')}
+					placeholder={'Write your message here...'}
 					required
 				/>
 
 				<Button className="self-end py-3" type="submit">
-					{t('send')}
+					Send
 				</Button>
 			</div>
 		</form>

@@ -1,9 +1,5 @@
+import Link from 'next/link'
 import type { ReactNode } from 'react'
-
-// components
-import { Link } from '@/i18n/navigation'
-
-// types
 interface IKnowCardProps {
 	title: string
 	description: string

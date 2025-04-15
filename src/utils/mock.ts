@@ -1,10 +1,8 @@
-// types
 import type { IContactLink } from '@/interfaces/contact'
 import type { ITechCardList } from '@/interfaces/tech'
 import type { IExperience } from '@/interfaces/experience'
 import { ETechCategory, ETechTag } from '@/enums/tech'
 
-//assets
 import javascript from '@/assets/icons/javascript.svg'
 import typescript from '@/assets/icons/typescript.svg'
 import python from '@/assets/icons/python.svg'
@@ -36,8 +34,6 @@ import build from '@/assets/images/buildbox.jpeg'
 import nkey from '@/assets/images/nkey.jpeg'
 import genezys from '@/assets/images/genezys.jpeg'
 import modu from '@/assets/images/modu.jpeg'
-import inceres from '@/assets/images/inceres.jpeg'
-import primepass from '@/assets/images/primepass.jpeg'
 
 import {
 	Linkedin,
@@ -300,80 +296,118 @@ export const CONTACT_LINKS: IContactLink[] = [
 ]
 
 export const NAV_LINKS = [
-	{ label: 'home', href: '/', Icon: Home },
-	{ label: 'about', href: '/about', Icon: UserRound },
-	{ label: 'experience', href: '/experiences', Icon: Briefcase },
-	{ label: 'tech', href: '/technologies', Icon: Atom },
-	{ label: 'contact', href: '/contact', Icon: Mail },
-] as const
+	{ label: 'Home', href: '/', Icon: Home },
+	{ label: 'About', href: '/about', Icon: UserRound },
+	{ label: 'Experiences', href: '/experiences', Icon: Briefcase },
+	{ label: 'Technologies', href: '/technologies', Icon: Atom },
+	{ label: 'Contact', href: '/contact', Icon: Mail },
+]
 
 export const ELSE_WHERE_LINKS = [
-	{ label: 'github', href: CONSTANTS.GITHUB_URL },
-	{ label: 'linkedin', href: CONSTANTS.LINKEDIN_URL },
-	{ label: 'email', href: `mailto:${CONSTANTS.CONTACT_EMAIL}` },
-	{ label: 'instagram', href: CONSTANTS.INSTAGRAM_URL },
+	{ label: 'GitHub', href: CONSTANTS.GITHUB_URL },
+	{ label: 'LinkedIn', href: CONSTANTS.LINKEDIN_URL },
+	{ label: 'Email', href: `mailto:${CONSTANTS.CONTACT_EMAIL}` },
+	{ label: 'Instagram', href: CONSTANTS.INSTAGRAM_URL },
 ] as const
 
 export const EXPERIENCES: IExperience[] = [
 	{
-		company: 'Buildbox',
-		description: 'buildbox-description',
-		icon: build,
-		role: {
-			title: 'Fullstack Developer',
-			startDate: parseISO('2022-04-01'),
-			endDate: null,
+		company: {
+			name: 'Buildbox',
+			icon: build,
+			link: 'https://buildbox.com.br/?utm_source=leo-gratis',
 		},
-		link: 'https://buildbox.com.br/?utm_source=leo-gratis',
+		roles: [
+			{
+				title: 'Technical Governance Member',
+				startDate: parseISO('2025-01-01'),
+				endDate: null,
+				description:
+					'As a founding member of the Technical Governance team, I play a key role in defining engineering standards, best practices, and project guidelines that shape the entire technical team’s workflow. My contributions ensure consistency, maintainability, and scalability across projects. Additionally, I am actively involved in the BX++ project, where I provide technical consulting and mentorship to other team members, fostering knowledge-sharing and continuous improvement.',
+			},
+			{
+				title: 'Senior Software Engineer @Lactalis Group',
+				startDate: parseISO('2024-11-01'),
+				endDate: null,
+				description:
+					'Lactalis Group is the world’s largest dairy producer, with a turnover of USD 17 billion and operations in 85 countries, the company is a global leader in cheese, milk, butter, and cream. br My team is responsible for developing and maintaining an innovative app that assists the pricing team in managing products across various segments in all 27 states of Brazil while accounting for the complexities of state-specific taxes.',
+			},
+			{
+				title: 'Senior FullStack Engineer @Grupo Petrópolis',
+				startDate: parseISO('2023-05-01'),
+				endDate: parseISO('2024-11-01'),
+				description:
+					"Grupo Petrópolis is one of Brazil’s largest beverage companies, generating over $2 billion in annual revenue and serving 700,000+ customers nationwide. The company's core sales operations rely on a mobile application that handles 97% of its total revenue, making performance and reliability critical to its success. As a key contributor, I led initiatives that boosted system performance, optimized key processes, and enhanced user experience, directly impacting the company’s primary revenue stream.",
+			},
+			{
+				title: 'Middle FullStack Engineer @MSD',
+				startDate: parseISO('2022-05-01'),
+				endDate: parseISO('2023-05-01'),
+				description:
+					'MSD is a global pharmaceutical company with over 130 years of history, committed to developing innovative medicines and vaccines to improve human and animal health. Operating in more than 140 countries, MSD focuses on breakthrough solutions in oncology, infectious diseases, and chronic conditions.',
+			},
+		],
 	},
 	{
-		company: 'Nkey',
-		description: 'nkey-description',
-		icon: nkey,
-		role: {
-			title: 'Frontend Developer',
-			startDate: parseISO('2022-08-01'),
-			endDate: parseISO('2022-11-01'),
+		company: {
+			name: 'Nkey',
+			icon: nkey,
+			link: 'https://nkey.com.br/',
 		},
+		roles: [
+			{
+				title: 'Middle Frontend Engineer',
+				startDate: parseISO('2022-08-01'),
+				endDate: parseISO('2022-11-01'),
+				description:
+					'Played a key role in designing and developing the content distribution platform for Poliedro Sistema de Ensino, one of Brazil’s leading educational technology providers. Focused on scalability, performance, and system reliability to ensure seamless content delivery.',
+			},
+		],
 	},
 	{
-		company: 'Genezys Global Tech',
-		description: 'genzys-description',
-		icon: genezys,
-		role: {
-			title: 'Frontend Developer',
-			startDate: new Date('2022-03-01'),
-			endDate: new Date('2022-06-01'),
+		company: {
+			name: 'Genezys',
+			icon: genezys,
+			link: 'https://genezys.io/',
 		},
+		roles: [
+			{
+				title: 'Middle Frontend Engineer (Web 3)',
+				startDate: parseISO('2022-02-01'),
+				endDate: parseISO('2022-05-01'),
+				description:
+					'Worked as a React developer on a crypto exchange platform, focusing on frontend development, performance optimization, and user experience improvements. Contributed to building a secure and scalable financial system in a highly regulated industry.',
+			},
+		],
 	},
 	{
-		company: 'MODU Gestão do Cuidado',
-		description: 'modu-description',
-		icon: modu,
-		role: {
-			title: 'Frontend Developer',
-			startDate: new Date('2021-08-01'),
-			endDate: new Date('2022-03-10'),
+		company: {
+			name: 'MODU',
+			icon: modu,
 		},
+		roles: [
+			{
+				title: 'Middle Frontend Engineer',
+				startDate: parseISO('2021-08-01'),
+				endDate: parseISO('2022-03-10'),
+				description:
+					'Led the frontend development of a healthcare management system used by Wanda Horta Health Complex, a multidisciplinary medical institution. Focused on performance, usability, and scalability, ensuring efficient management of patients, staff, sales, and revenue',
+			},
+		],
 	},
 	{
-		company: 'inCeres',
-		description: 'inceres-description',
-		icon: inceres,
-		role: {
-			title: 'Mobile Developer',
-			startDate: new Date('2020-12-10'),
-			endDate: new Date('2021-06-01'),
+		company: {
+			name: 'Frelance',
+			icon: expo,
 		},
+		roles: [
+			{
+				title: 'Junior Mobile Engineer',
+				startDate: parseISO('2020-06-01'),
+				endDate: parseISO('2021-07-10'),
+				description:
+					'Worked as a React Native developer, contributing to various mobile applications in different industries. Developed new features, optimized performance, and maintained existing apps, gaining hands-on experience in the full mobile development lifecycle.',
+			},
+		],
 	},
-	{
-		company: 'Primepass',
-		description: 'primepass-description',
-		icon: primepass,
-		role: {
-			title: 'Mobile Developer',
-			startDate: new Date('2020-6-1'),
-			endDate: new Date('2020-12-10'),
-		},
-	},
-] as const
+]
