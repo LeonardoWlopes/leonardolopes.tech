@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.1.0...v1.2.0) (2025-06-08)
+
+
+### Features
+
+* update home and about content ([89466f9](https://github.com/LeonardoWlopes/leonardolopes.tech/commit/89466f98fafef89f9f82c52b25baaf7f1d71495a))
+
 # [1.1.0](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.0.1...v1.1.0) (2025-04-15)
 
 
