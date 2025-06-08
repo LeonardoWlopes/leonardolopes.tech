@@ -315,7 +315,6 @@ export const EXPERIENCES: IExperience[] = [
 		company: {
 			name: 'Buildbox',
 			icon: build,
-			link: 'https://buildbox.com.br/?utm_source=leo-gratis',
 		},
 		roles: [
 			{
@@ -352,7 +351,6 @@ export const EXPERIENCES: IExperience[] = [
 		company: {
 			name: 'Nkey',
 			icon: nkey,
-			link: 'https://nkey.com.br/',
 		},
 		roles: [
 			{
@@ -368,7 +366,6 @@ export const EXPERIENCES: IExperience[] = [
 		company: {
 			name: 'Genezys',
 			icon: genezys,
-			link: 'https://genezys.io/',
 		},
 		roles: [
 			{

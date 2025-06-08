@@ -9,6 +9,8 @@ import { CONSTANTS } from '@/utils/constants'
 import { differenceInYears } from 'date-fns'
 import type { Metadata } from 'next'
 
+export const revalidate = 60 * 60 * 12 // 12 hours
+
 export const metadata: Metadata = {
 	title: 'About',
 	description:
@@ -33,11 +35,13 @@ export default function About() {
 					</span>
 
 					<p className="mb-8 dark:text-dark-gray">
-						Hey! I'm Leo, a FullStack software engineer from the
-						interior of São Paulo and passionate about technology. I
-						am {age} years old with <Timer /> of market experience,
-						and I am currently studying Systems Analysis and
-						Development.
+						Hey! I'm Leo, a Full Stack Software Engineer from the
+						interior of São Paulo, passionate about technology,
+						performance, and clean architecture. I'm {age} years old
+						with <Timer /> of professional experience and currently
+						study Systems Analysis and Development. I’m recognized
+						for combining technical depth with excellent
+						communication and leadership skills.
 					</p>
 
 					<span className="mb-1 font-semibold text-onyx uppercase dark:text-medium-gray">
@@ -45,15 +49,15 @@ export default function About() {
 					</span>
 
 					<p className="mb-8 dark:text-dark-gray">
-						I develop scalable and high-performance digital
-						solutions, with experience in FrontEnd, Backend, and
-						Mobile development. I have developed various types of
-						projects, both independently and in teams. My experience
-						ranges from Web3 and crypto assets to landing pages,
-						blogs, management systems, e-commerce, news, and sales
-						applications, among others. Additionally, I have often
-						acted as a leader in development teams, reviewing code,
-						architecting solutions, and guiding my team members.
+						I build scalable, high-performance systems across Web,
+						Mobile, and Cloud environments. From architecture to
+						deployment, I’ve led mission-critical projects for
+						global clients like MSD, Grupo Petrópolis, and Lactalis,
+						delivering measurable results in performance and
+						operational efficiency. I frequently act as a Tech Lead,
+						setting engineering standards, mentoring developers, and
+						driving initiatives in CI/CD and infrastructure with AWS
+						and Terraform.
 					</p>
 
 					<span className="mb-1 font-semibold text-onyx uppercase dark:text-medium-gray">
@@ -61,12 +65,11 @@ export default function About() {
 					</span>
 
 					<p className="mb-8 dark:text-dark-gray">
-						In the rare moments when I'm not dealing with code,
-						whether in personal projects or studying, I love
-						watching movies, series, and animes. I exercise every
-						day to keep my body and mind healthy, spend great
-						moments with my friends, and pamper my Siberian Husky a
-						lot. And of course, I play video games whenever I can!
+						When I’m not coding, I’m likely studying, mentoring, or
+						writing. But I also make time for movies, anime,
+						workouts, and caring for my Siberian Husky. I’m a gamer
+						at heart and believe balance is essential for great
+						performance, both human and software.
 					</p>
 
 					<span className="mb-1 font-semibold text-onyx uppercase dark:text-medium-gray">
@@ -74,22 +77,21 @@ export default function About() {
 					</span>
 
 					<p className="mb-8 dark:text-dark-gray">
-						I have great ambitions and fight for them every day. I
-						want to be a reference in what I do and be known in the
-						DEV community, aspiring to become a GitHub Star one day
-						just like my idols. Moreover, I have the dream of
-						working abroad, whether remotely or in person, as one of
-						my biggest life goals is to live in Canada.
+						I aspire to be a technical reference in the community
+						and aim to become a GitHub Star one day. My dream is to
+						work abroad, ideally in Canada, contributing to
+						meaningful products at global scale, sharing knowledge,
+						and continuously evolving alongside world-class
+						professionals.
 					</p>
 
 					<p className="mb-8 dark:text-dark-gray">
-						Let's build something amazing together?
+						Let’s build something fast, scalable, and valuable
+						together?
 					</p>
 
 					<Image
-						style={{
-							transform: 'rotate(-10deg)',
-						}}
+						style={{ transform: 'rotate(-10deg)' }}
 						src={signature}
 						alt="leonardo lopes as signature"
 					/>
@@ -101,7 +103,7 @@ export default function About() {
 						src={CONSTANTS.AVATAR_URL}
 						width={460}
 						height={460}
-						alt="Leonardo lopes"
+						alt="Leonardo Lopes"
 					/>
 
 					<Link href={'/contact'}>

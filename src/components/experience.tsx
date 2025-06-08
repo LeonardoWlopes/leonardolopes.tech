@@ -32,7 +32,11 @@ export function Experience({ experience, className }: IExperienceProps) {
 	)
 
 	return (
-		<Link href="" className={twMerge('overflow-hidden', className)}>
+		<Link
+			className={twMerge('overflow-hidden', className)}
+			href="https://www.linkedin.com/in/leonardowilliamlopes/details/experience/"
+			target="_blank"
+		>
 			<div className={'flex gap-2'} data-cy="experience">
 				<div className="h-12 w-full max-w-12 overflow-hidden rounded-md">
 					<Image

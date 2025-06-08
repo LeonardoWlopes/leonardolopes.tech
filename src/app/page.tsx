@@ -3,10 +3,14 @@ import { KnowCard } from '@/components/know-card'
 import { PageTitle } from '@/components/typography'
 import Link from 'next/link'
 import Image from 'next/image'
-import blink from '@/assets/images/avatar-blink.png'
+import blink from '@/assets/images/memoji.png'
 import techStack from '@/assets/images/tech-stack.png'
+import experiences from '@/assets/images/experiences.png'
+import contact from '@/assets/images/contact.png'
 import { CodeXml, FastForward } from 'lucide-react'
 import { env } from '@/utils/env'
+import { Experience } from '@/components/experience'
+import { EXPERIENCES } from '@/utils/mock'
 
 export default function Home() {
 	return (
@@ -66,18 +70,17 @@ export default function Home() {
 					/>
 				</KnowCard>
 
-				{/* <KnowCard
-					title="Notebook"
-					description="Meus pensamentos, ideias e aprendizados"
-					href="/notebook"
+				<KnowCard
+					title="Experiences"
+					description="My professional journey and achievements"
+					href="/experiences"
 				>
 					<Image
 						className=""
-						src={notebook}
-						alt="notebook image"
-						width={230}
+						src={experiences}
+						alt="experiences image"
 					/>
-				</KnowCard> */}
+				</KnowCard>
 
 				<KnowCard
 					title={'Technologies'}
@@ -90,6 +93,38 @@ export default function Home() {
 						alt="technologies layout"
 					/>
 				</KnowCard>
+
+				<KnowCard
+					title="Contact"
+					description="Let's connect and discuss opportunities"
+					href="/contact"
+				>
+					<Image
+						className="-bottom-14 absolute object-cover"
+						src={contact}
+						alt="contact image"
+					/>
+				</KnowCard>
+			</section>
+
+			<section className="mb-24">
+				<h2 className="mb-8 text-center font-bold text-4xl text-secondary md:text-start">
+					Current Role
+				</h2>
+
+				<div className="relative flex flex-col gap-8">
+					<Experience experience={EXPERIENCES[0]} />
+
+					<div className="z-10 mt-4 flex justify-center">
+						<Link href="/experiences">
+							<Button variant="secondary">
+								View all experiences
+							</Button>
+						</Link>
+					</div>
+
+					<div className="pointer-events-none absolute right-0 bottom-0 left-0 h-32 bg-gradient-to-t from-main-bg to-transparent" />
+				</div>
 			</section>
 
 			<section className="flex flex-col items-center justify-between gap-8 md:flex-row">

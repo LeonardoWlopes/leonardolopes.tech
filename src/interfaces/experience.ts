@@ -3,7 +3,6 @@ import type { StaticImageData } from 'next/image'
 export interface IExperienceCompany {
 	name: string
 	icon: StaticImageData
-	link?: string
 }
 
 export interface IExperienceRole {
