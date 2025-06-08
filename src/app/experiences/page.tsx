@@ -5,7 +5,7 @@ import { PageTitle, PageSubtitle } from '@/components/typography'
 import { EXPERIENCES } from '@/utils/mock'
 import { twMerge } from 'tailwind-merge'
 
-export const revalidate = 60 * 60 * 12 // 12 hours
+export const revalidate = 43200 // 12 hours
 
 export const metadata: Metadata = {
 	title: 'Experiences',
