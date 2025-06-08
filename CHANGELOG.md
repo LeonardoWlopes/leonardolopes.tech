@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.2.0...v1.2.1) (2025-06-08)
+
+
+### Bug Fixes
+
+* **ci:** build pipeline config validation ([a302291](https://github.com/LeonardoWlopes/leonardolopes.tech/commit/a302291c261b23fe92c7e3c40d994dee806f2340))
+
 # [1.2.0](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.1.0...v1.2.0) (2025-06-08)
 
 
