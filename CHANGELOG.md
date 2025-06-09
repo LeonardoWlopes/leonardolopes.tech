@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.2.1...v1.3.0) (2025-06-09)
+
+
+### Features
+
+* improve og image ([7f49a49](https://github.com/LeonardoWlopes/leonardolopes.tech/commit/7f49a49454c82b5b2f14b0994abf1719ad1199af))
+
 ## [1.2.1](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.2.0...v1.2.1) (2025-06-08)
 
 
