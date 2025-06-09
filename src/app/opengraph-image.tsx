@@ -2,6 +2,17 @@ import { env } from '@/utils/env'
 import { ImageResponse } from 'next/og'
 import colors from 'tailwindcss/colors'
 
+export const runtime = 'edge'
+
+export const alt = ''
+
+export const size = {
+	width: 1200,
+	height: 630,
+}
+
+export const contentType = 'image/png'
+
 export default function () {
 	const productImageURL = new URL('memoji.png', env.APP_URL).toString()
 	const gradientImageURL = new URL('gradient.svg', env.APP_URL).toString()
@@ -36,8 +47,7 @@ export default function () {
 			/>
 		</div>,
 		{
-			width: 1200,
-			height: 630,
+			...size,
 		},
 	)
 }

@@ -8,9 +8,7 @@
 		"start": "next start",
 		"lint": "biome check . --write --unsafe",
 		"check": "knip",
-		"prepare": "lefthook install",
-		"cy:open": "cypress open",
-		"cy:run": "cypress run"
+		"prepare": "lefthook install"
 	},
 	"dependencies": {
 		"@next/third-parties": "^14.2.3",
@@ -42,7 +40,6 @@
 		"@types/react": "^19.0.10",
 		"@types/react-dom": "^19.0.4",
 		"autoprefixer": "^10.4.19",
-		"cypress": "^13.10.0",
 		"knip": "^5.25.1",
 		"lefthook": "^1.11.3",
 		"lint-staged": "^15.4.3",
