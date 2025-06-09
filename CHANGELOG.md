@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.3.0...v1.3.1) (2025-06-09)
+
+
+### Bug Fixes
+
+* og image generation ([865ebaf](https://github.com/LeonardoWlopes/leonardolopes.tech/commit/865ebaf82b8db49335417a6453bc86ccc74b8184))
+
 # [1.3.0](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.2.1...v1.3.0) (2025-06-09)
 
 
