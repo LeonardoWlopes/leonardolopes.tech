@@ -18,6 +18,8 @@
 		"lactalis",
 		"lefthook",
 		"LINKEDIN",
+		"memoji",
+		"obiwan",
 		"partialize",
 		"precocerto",
 		"sonner"
@@ -39,10 +41,22 @@
 		"package.json": "tsconfig*, pnpm-lock*, .nvmrc, .releaserc, *.config.mjs, *.config.js"
 	},
 	"i18n-ally.keystyle": "flat",
-	"i18n-ally.localesPaths": ["**/languages/**"],
+	"i18n-ally.localesPaths": [
+		"**/languages/**"
+	],
 	"i18n-ally.sourceLanguage": "pt",
 	"cSpell.language": "en,pt-BR",
 	"workbench.editorAssociations": {
 		"*.svg": "default"
-	}
+	},
+	"tailwindCSS.experimental.classRegex": [
+		[
+			"cva\\(([^)]*)\\)",
+			"[\"'`]([^\"'`]*).*?[\"'`]"
+		],
+		[
+			"cx\\(([^)]*)\\)",
+			"(?:'|\"|`)([^']*)(?:'|\"|`)"
+		]
+	],
 }

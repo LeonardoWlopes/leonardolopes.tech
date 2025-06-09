@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import './globals.css'
 import bottomBackground from '@/assets/bottom-background.svg'
 import topBackground from '@/assets/top-background.svg'
+import memoji from '@/assets/images/memoji.png'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 import { GoogleAnalytics } from '@next/third-parties/google'
@@ -10,7 +11,6 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Image from 'next/image'
 import { env } from '@/utils/env'
-import { CONSTANTS } from '@/utils/constants'
 import { twMerge } from 'tailwind-merge'
 import { ThemeProvider } from '@/providers/theme-provider'
 import type { Metadata } from 'next'
@@ -19,7 +19,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
 	title: {
-		default: 'Leonardo Lopes | Full Stack Software Engineer',
+		default: 'Leonardo Lopes | Software Engineer',
 		template: 'Leonardo Lopes | %s',
 	},
 	description:
@@ -29,10 +29,10 @@ export const metadata: Metadata = {
 		url: env.APP_URL,
 		images: [
 			{
-				url: CONSTANTS.AVATAR_URL,
+				url: memoji.src,
 				width: 460,
 				height: 460,
-				alt: 'Leonardo Lopes | Full Stack Software Engineer',
+				alt: 'Leonardo Lopes | Software Engineer',
 			},
 		],
 	},
