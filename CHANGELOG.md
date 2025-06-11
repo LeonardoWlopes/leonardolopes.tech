@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.3.1...v1.4.0) (2025-06-11)
+
+
+### Features
+
+* add more content ([3fe7e6f](https://github.com/LeonardoWlopes/leonardolopes.tech/commit/3fe7e6f9255b017ab29e2b9cb3df7ddeaf9992ba))
+
 ## [1.3.1](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.3.0...v1.3.1) (2025-06-09)
 
 
