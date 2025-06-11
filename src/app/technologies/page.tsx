@@ -2,6 +2,7 @@ import { TechCard } from '@/components/tech-card'
 import { PageTitle, PageSubtitle } from '@/components/typography'
 import type { Metadata } from 'next'
 import { TECH_CARDS, TECH_CATEGORIES } from '@/utils/mock'
+import { Book } from 'lucide-react'
 
 export const metadata: Metadata = {
 	title: 'Technologies',
@@ -19,6 +20,18 @@ export default function Tech() {
 			</PageSubtitle>
 
 			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
+
+			<div className="mb-8 flex items-center gap-2 text-light-gray text-xs dark:text-dark-gray">
+				<span className="flex items-center gap-2">
+					<Book className="w-5" />
+
+					<span className="flex-1">
+						Technologies marked with this icon indicate personal
+						projects and academic studies, not professional
+						experience
+					</span>
+				</span>
+			</div>
 
 			<div className="flex flex-col gap-8">
 				{TECH_CATEGORIES.map(({ name, category }) => {

@@ -35,13 +35,14 @@ export default function About() {
 					</span>
 
 					<p className="mb-8 dark:text-dark-gray">
-						Hey! I'm Leo, a Full Stack Software Engineer from the
-						interior of São Paulo, passionate about technology,
-						performance, and clean architecture. I'm {age} years old
-						with <Timer /> of professional experience and currently
-						study Systems Analysis and Development. I'm recognized
-						for combining technical depth with excellent
-						communication and leadership skills.
+						Hey! I'm Leo, an Experienced Software Engineer
+						passionate about building scalable, high-performance
+						applications. I'm {age} years old with <Timer /> of
+						professional experience. I'm recognized for combining
+						technical depth with excellent communication and
+						leadership skills, always focused on delivering
+						exceptional results and driving innovation in every
+						project I undertake.
 					</p>
 
 					<span className="mb-1 font-semibold text-onyx uppercase dark:text-medium-gray">
@@ -49,15 +50,23 @@ export default function About() {
 					</span>
 
 					<p className="mb-8 dark:text-dark-gray">
-						I build scalable, high-performance systems across Web,
-						Mobile, and Cloud environments. From architecture to
-						deployment, I've led mission-critical projects for
-						global clients like MSD, Grupo Petrópolis, and Lactalis,
-						delivering measurable results in performance and
-						operational efficiency. I frequently act as a Tech Lead,
-						setting engineering standards, mentoring developers, and
-						driving initiatives in CI/CD and infrastructure with AWS
-						and Terraform.
+						I specialize in Node.js, React, and React Native, with
+						strong skills in system architecture, technical
+						governance, cloud infrastructure (AWS), and CI/CD
+						pipelines. My expertise extends to designing and
+						implementing robust solutions that scale efficiently
+						while maintaining high performance and security
+						standards. I've proven leadership in managing
+						development teams, optimizing mission-critical systems,
+						and delivering business-driven solutions. I'm passionate
+						about learning, mentoring, and fostering engineering
+						excellence in fast-paced environments, always pushing
+						the boundaries of what's possible in software
+						development. I'm the kind of professional you look for
+						when your app or infrastructure isn't delivering the
+						value it should, or when your tech team needs clear
+						standards, processes, and direction that actually make a
+						difference.
 					</p>
 
 					<span className="mb-1 font-semibold text-onyx uppercase dark:text-medium-gray">
@@ -65,11 +74,17 @@ export default function About() {
 					</span>
 
 					<p className="mb-8 dark:text-dark-gray">
-						When I'm not coding, I'm likely studying, mentoring, or
-						writing. But I also make time for movies, anime,
-						workouts, and caring for my Siberian Husky. I'm a gamer
-						at heart and believe balance is essential for great
-						performance, both human and software.
+						I believe that a strong body creates a healthy mind,
+						which is why I'm a dedicated capoeirista and maintain a
+						regular exercise routine. When I'm not coding, you'll
+						find me spending quality time with friends, indulging my
+						Siberian Husky's every whim, or diving deep into gaming.
+						I'm a hardcore gamer who loves spending hours pursuing
+						that elusive 100% achievement completion in games. If
+						you check my Steam achievements, you'll see I've spent
+						countless hours chasing nearly impossible challenges, so
+						you can be sure that no professional challenge will ever
+						shake my determination.
 					</p>
 
 					<span className="mb-1 font-semibold text-onyx uppercase dark:text-medium-gray">
@@ -77,12 +92,14 @@ export default function About() {
 					</span>
 
 					<p className="mb-8 dark:text-dark-gray">
-						I aspire to be a technical reference in the community
-						and aim to become a GitHub Star one day. My dream is to
-						work abroad, ideally in Canada, contributing to
-						meaningful products at global scale, sharing knowledge,
-						and continuously evolving alongside world-class
-						professionals.
+						I aspire to create something truly impactful on a global
+						scale. I want to be able to look at something that
+						everyone knows or uses and say, "I was part of that." I
+						dream of becoming a reference in the tech community and,
+						who knows, maybe one day becoming a GitHub Star. Beyond
+						my professional goals, I have a personal dream of living
+						in a cold country like Canada, experiencing a different
+						culture and way of life.
 					</p>
 
 					<p className="mb-8 dark:text-dark-gray">
@@ -98,20 +115,22 @@ export default function About() {
 				</div>
 
 				<div className="flex flex-col items-center">
-					<Image
-						className="mb-20 aspect-[9/12] w-56 rounded-lg object-cover"
-						src={CONSTANTS.AVATAR_URL}
-						width={460}
-						height={460}
-						alt="Leonardo Lopes"
-					/>
+					<div className="sticky top-24 flex flex-col items-center">
+						<Image
+							className="mb-20 aspect-[9/12] w-56 rounded-lg object-cover"
+							src={CONSTANTS.AVATAR_URL}
+							width={460}
+							height={460}
+							alt="Leonardo Lopes"
+						/>
 
-					<Link href={'/contact'}>
-						<Button>
-							<FastForward />
-							Get in touch
-						</Button>
-					</Link>
+						<Link href={'/contact'}>
+							<Button>
+								<FastForward />
+								Get in touch
+							</Button>
+						</Link>
+					</div>
 				</div>
 			</div>
 		</div>

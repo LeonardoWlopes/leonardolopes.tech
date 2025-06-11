@@ -3,7 +3,6 @@ import type { ReactNode } from 'react'
 import './globals.css'
 import bottomBackground from '@/assets/bottom-background.svg'
 import topBackground from '@/assets/top-background.svg'
-import memoji from '@/assets/images/memoji.png'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 import { GoogleAnalytics } from '@next/third-parties/google'
@@ -27,14 +26,6 @@ export const metadata: Metadata = {
 	openGraph: {
 		type: 'website',
 		url: env.APP_URL,
-		images: [
-			{
-				url: memoji.src,
-				width: 460,
-				height: 460,
-				alt: 'Leonardo Lopes | Software Engineer',
-			},
-		],
 	},
 }
 

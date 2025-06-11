@@ -55,7 +55,7 @@ export default function Experiencies() {
 				})}
 
 				<span className="z-10 mt-4 rounded-md border border-primary-border bg-main-bg px-3 py-2 text-dark-gray text-sm">
-					Há <Timer />
+					<Timer /> ago
 				</span>
 			</div>
 		</div>
