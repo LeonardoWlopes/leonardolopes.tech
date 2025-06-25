@@ -5,13 +5,11 @@ import bottomBackground from '@/assets/bottom-background.svg'
 import topBackground from '@/assets/top-background.svg'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
-import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Image from 'next/image'
 import { env } from '@/utils/env'
 import { twMerge } from 'tailwind-merge'
-import { ThemeProvider } from '@/providers/theme-provider'
 import type { Metadata } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -35,10 +33,10 @@ export default function RootLayout({
 	children: ReactNode
 }>) {
 	return (
-		<html lang="en" className="dark" style={{ colorScheme: 'dark' }}>
+		<html lang="en" className="dark">
 			<body
 				className={twMerge(
-					'relative flex min-h-screen flex-col items-center overflow-x-hidden bg-main-bg antialiased',
+					'relative flex min-h-screen flex-col items-center overflow-x-hidden bg-main-bg text-light-gray antialiased',
 					inter.className,
 				)}
 			>
@@ -50,9 +48,7 @@ export default function RootLayout({
 					priority
 				/>
 
-				<ThemeProvider>
-					<Header />
-				</ThemeProvider>
+				<Header />
 
 				<main className="flex w-full max-w-limit flex-col px-4 pt-24 pb-32 sm:pt-48">
 					{children}
@@ -70,7 +66,6 @@ export default function RootLayout({
 
 				<Analytics />
 				<SpeedInsights />
-				<GoogleAnalytics gaId={env.GOOGLE_ANALYTICS_ID} />
 			</body>
 		</html>
 	)

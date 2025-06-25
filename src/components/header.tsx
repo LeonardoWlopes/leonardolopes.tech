@@ -1,7 +1,6 @@
 import { CONSTANTS } from '@/utils/constants'
 import { NAV_LINKS } from '@/utils/mock'
 import { Linkedin, Github } from 'lucide-react'
-import { ThemeSwitch } from './theme-switch'
 import Link from 'next/link'
 
 export function Header() {
@@ -47,10 +46,6 @@ export function Header() {
 					<Github />
 				</Link>
 			</div>
-
-			<div className="mx-6 hidden w-[1px] border sm:flex dark:border-primary-border" />
-
-			<ThemeSwitch className="hidden sm:flex" />
 		</header>
 	)
 }
