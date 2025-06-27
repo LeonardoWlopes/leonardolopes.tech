@@ -41,7 +41,7 @@ export default function RootLayout({
 				)}
 			>
 				<Image
-					className="-z-10 -top-1 absolute w-full max-w-screen-2xl object-none"
+					className="-z-10 -top-1 absolute w-full max-w-(--breakpoint-2xl) object-none"
 					src={topBackground}
 					alt=""
 					draggable={false}
@@ -57,7 +57,7 @@ export default function RootLayout({
 				<Footer />
 
 				<Image
-					className="-z-10 -bottom-1 absolute w-full max-w-screen-2xl object-none"
+					className="-z-10 -bottom-1 absolute w-full max-w-(--breakpoint-2xl) object-none"
 					src={bottomBackground}
 					alt=""
 					draggable={false}

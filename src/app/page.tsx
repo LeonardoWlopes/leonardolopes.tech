@@ -123,7 +123,7 @@ export default function Home() {
 						</Link>
 					</div>
 
-					<div className="pointer-events-none absolute right-0 bottom-0 left-0 h-32 bg-gradient-to-t from-main-bg to-transparent" />
+					<div className="pointer-events-none absolute right-0 bottom-0 left-0 h-32 bg-linear-to-t from-main-bg to-transparent" />
 				</div>
 			</section>
 

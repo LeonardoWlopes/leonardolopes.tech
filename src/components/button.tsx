@@ -15,7 +15,7 @@ const buttonVariants = cva(
 		variants: {
 			variant: {
 				primary:
-					'bg-gradient-to-b from-[#1a1a1a] to-[#131313] transition-colors duration-500 ease-in-out hover:from-[#131313] hover:to-[#1a1a1a] text-white',
+					'bg-linear-to-b from-[#1a1a1a] to-[#131313] transition-colors duration-500 ease-in-out hover:from-[#131313] hover:to-[#1a1a1a] text-white',
 				secondary:
 					'dark:text-secondary dark:bg-onyx bg-faint-white dark:hover:bg-onyx/80',
 			},

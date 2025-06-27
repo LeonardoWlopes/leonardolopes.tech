@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/performance/noImgElement: This is a valid use case for img element */
 import { env } from '@/utils/env'
 import { ImageResponse } from 'next/og'
 import colors from 'tailwindcss/colors'

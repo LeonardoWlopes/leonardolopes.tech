@@ -1,11 +1,10 @@
-import { use } from 'react'
 import { calculateTime } from '@/utils/time'
 import { twMerge } from 'tailwind-merge'
 import { addMonths, format } from 'date-fns'
 import Image from 'next/image'
 import type { IExperience, IExperienceRole } from '@/interfaces/experience'
-import { getDateFnsLocale } from '@/utils/locale'
 import Link from 'next/link'
+import { DATE_FNS_LOCALE } from '@/utils/constants'
 
 const EXPERIENCE_HEIGHT = 40000
 
@@ -55,6 +54,7 @@ export function Experience({ experience, className }: IExperienceProps) {
 						data-cy="experience-title"
 					>
 						{experience.company.name}
+
 						{sortedRoles.length === 1 && (
 							<>
 								{' - '}
@@ -77,7 +77,7 @@ export function Experience({ experience, className }: IExperienceProps) {
 							)}
 						</div>
 
-						<div className="pointer-events-none absolute right-0 bottom-0 left-0 h-24 bg-gradient-to-t from-main-bg to-transparent" />
+						<div className="pointer-events-none absolute right-0 bottom-0 left-0 h-24 bg-linear-to-t from-main-bg to-transparent" />
 					</div>
 				</div>
 			</div>
@@ -86,10 +86,8 @@ export function Experience({ experience, className }: IExperienceProps) {
 }
 
 function RoleInfo({ role }: IRoleInfoProps) {
-	const locale = use(getDateFnsLocale())
-
 	function formatDate(date: Date) {
-		return format(date, 'MMM yyyy', { locale })
+		return format(date, 'MMM yyyy', { locale: DATE_FNS_LOCALE })
 	}
 
 	function calculateDuration(startDate: Date, endDate: Date | null): string {
@@ -126,10 +124,8 @@ function RoleInfo({ role }: IRoleInfoProps) {
 }
 
 function SingleRole({ role }: ISingleRoleProps) {
-	const locale = use(getDateFnsLocale())
-
 	function formatDate(date: Date) {
-		return format(date, 'MMM yyyy', { locale })
+		return format(date, 'MMM yyyy', { locale: DATE_FNS_LOCALE })
 	}
 
 	function calculateDuration(startDate: Date, endDate: Date | null): string {

@@ -48,7 +48,7 @@ export function Mail() {
 					</label>
 
 					<input
-						className="w-full border-none bg-inherit text-medium-gray outline-none placeholder:text-medium-gray/60"
+						className="w-full border-none bg-inherit text-medium-gray outline-hidden placeholder:text-medium-gray/60"
 						type="text"
 						name="name"
 						placeholder={'Your name'}
@@ -69,7 +69,7 @@ export function Mail() {
 					</label>
 
 					<input
-						className="w-full border-none bg-inherit text-medium-gray outline-none placeholder:text-medium-gray/60"
+						className="w-full border-none bg-inherit text-medium-gray outline-hidden placeholder:text-medium-gray/60"
 						type="text"
 						name="subject"
 						placeholder={'What do you want to talk about?'}

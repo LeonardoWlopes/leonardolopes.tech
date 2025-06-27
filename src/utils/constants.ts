@@ -1,4 +1,5 @@
 import { parseISO } from 'date-fns'
+import { enUS } from 'date-fns/locale/en-US'
 
 export const CONSTANTS = {
 	AVATAR_URL: 'https://github.com/LeonardoWlopes.png',
@@ -9,4 +10,4 @@ export const CONSTANTS = {
 	BIRTHDAY: parseISO('2003-11-10T00:00:00Z'),
 }
 
-export const LOCALES = ['pt', 'en']
+export const DATE_FNS_LOCALE = enUS

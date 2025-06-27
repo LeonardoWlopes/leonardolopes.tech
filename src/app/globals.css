@@ -1,6 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+	--color-main-bg: var(--main-bg);
+	--color-card: var(--card);
+	--color-card-border: var(--card-border);
+	--color-primary: var(--primary);
+	--color-primary-border: var(--primary-border);
+	--color-dark-gray: #808080;
+	--color-medium-gray: #80808080;
+	--color-light-gray: #c5c5c5;
+	--color-onyx: #181818;
+	--color-faint-white: #f3f3f3;
+
+	--container-limit: 1024px;
+}
 
 @layer base {
 	:root {

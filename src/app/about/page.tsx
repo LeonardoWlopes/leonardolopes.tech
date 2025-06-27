@@ -117,7 +117,7 @@ export default function About() {
 				<div className="flex flex-col items-center">
 					<div className="sticky top-24 flex flex-col items-center">
 						<Image
-							className="mb-20 aspect-[9/12] w-56 rounded-lg object-cover"
+							className="mb-20 aspect-9/12 w-56 rounded-lg object-cover"
 							src={CONSTANTS.AVATAR_URL}
 							width={460}
 							height={460}

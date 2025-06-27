@@ -27,7 +27,7 @@ export default function Experiencies() {
 			>
 				<div
 					className={
-						'absolute hidden h-full w-[1px] bg-primary-border sm:flex'
+						'absolute hidden h-full w-px bg-primary-border sm:flex'
 					}
 				/>
 
