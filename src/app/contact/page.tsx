@@ -1,7 +1,7 @@
-import { PageTitle, PageSubtitle } from '@/components/typography'
-import { Mail } from '@/components/mail'
-import Link from 'next/link'
 import type { Metadata } from 'next'
+import Link from 'next/link'
+import { Mail } from '@/components/mail'
+import { PageSubtitle, PageTitle } from '@/components/typography'
 import { CONTACT_LINKS } from '@/utils/mock'
 
 export const metadata: Metadata = {

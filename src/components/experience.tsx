@@ -1,10 +1,10 @@
-import { calculateTime } from '@/utils/time'
-import { twMerge } from 'tailwind-merge'
 import { addMonths, format } from 'date-fns'
 import Image from 'next/image'
-import type { IExperience, IExperienceRole } from '@/interfaces/experience'
 import Link from 'next/link'
+import { twMerge } from 'tailwind-merge'
+import type { IExperience, IExperienceRole } from '@/interfaces/experience'
 import { DATE_FNS_LOCALE } from '@/utils/constants'
+import { calculateTime } from '@/utils/time'
 
 const EXPERIENCE_HEIGHT = 40000
 

@@ -1,8 +1,8 @@
-import { TechCard } from '@/components/tech-card'
-import { PageTitle, PageSubtitle } from '@/components/typography'
-import type { Metadata } from 'next'
-import { TECH_CARDS, TECH_CATEGORIES } from '@/utils/mock'
 import { Book } from 'lucide-react'
+import type { Metadata } from 'next'
+import { TechCard } from '@/components/tech-card'
+import { PageSubtitle, PageTitle } from '@/components/typography'
+import { TECH_CARDS, TECH_CATEGORIES } from '@/utils/mock'
 
 export const metadata: Metadata = {
 	title: 'Technologies',

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
+
 interface IKnowCardProps {
 	title: string
 	description: string

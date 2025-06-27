@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
+import { twMerge } from 'tailwind-merge'
 import { Experience } from '@/components/experience'
 import { Timer } from '@/components/timer'
-import { PageTitle, PageSubtitle } from '@/components/typography'
+import { PageSubtitle, PageTitle } from '@/components/typography'
 import { EXPERIENCES } from '@/utils/mock'
-import { twMerge } from 'tailwind-merge'
 
 export const revalidate = 43200 // 12 hours
 

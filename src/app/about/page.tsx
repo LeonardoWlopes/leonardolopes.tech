@@ -1,13 +1,13 @@
-import { Timer } from '@/components/timer'
-import { Button } from '@/components/button'
-import { PageSubtitle, PageTitle } from '@/components/typography'
-import Link from 'next/link'
-import Image from 'next/image'
-import { FastForward } from 'lucide-react'
-import signature from '@/assets/icons/signature.svg'
-import { CONSTANTS } from '@/utils/constants'
 import { differenceInYears } from 'date-fns'
+import { FastForward } from 'lucide-react'
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import signature from '@/assets/icons/signature.svg'
+import { Button } from '@/components/button'
+import { Timer } from '@/components/timer'
+import { PageSubtitle, PageTitle } from '@/components/typography'
+import { CONSTANTS } from '@/utils/constants'
 
 export const revalidate = 43200 // 12 hours
 

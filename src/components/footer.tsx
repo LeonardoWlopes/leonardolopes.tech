@@ -1,7 +1,7 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import signature from '@/assets/icons/signature.svg'
 import { ELSE_WHERE_LINKS, NAV_LINKS } from '@/utils/mock'
-import Link from 'next/link'
 
 export function Footer() {
 	const currentYear = new Date().getFullYear()

@@ -1,8 +1,8 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import obiwan from '@/assets/images/obiwan.png'
 import { Button } from '@/components/button'
 import { PageTitle } from '@/components/typography'
-import Image from 'next/image'
-import obiwan from '@/assets/images/obiwan.png'
-import Link from 'next/link'
 
 export default function NotFound() {
 	return (

@@ -1,16 +1,16 @@
 import { Inter } from 'next/font/google'
 import type { ReactNode } from 'react'
 import './globals.css'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import { twMerge } from 'tailwind-merge'
 import bottomBackground from '@/assets/bottom-background.svg'
 import topBackground from '@/assets/top-background.svg'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import Image from 'next/image'
 import { env } from '@/utils/env'
-import { twMerge } from 'tailwind-merge'
-import type { Metadata } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
 

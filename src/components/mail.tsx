@@ -1,8 +1,8 @@
 'use client'
 
 import type { FormEvent } from 'react'
-import { Button } from './button'
 import { env } from '@/utils/env'
+import { Button } from './button'
 
 export function Mail() {
 	function handleSubmit(e: FormEvent<HTMLFormElement>) {

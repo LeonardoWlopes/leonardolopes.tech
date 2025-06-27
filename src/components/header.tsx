@@ -1,7 +1,7 @@
+import { Github, Linkedin } from 'lucide-react'
+import Link from 'next/link'
 import { CONSTANTS } from '@/utils/constants'
 import { NAV_LINKS } from '@/utils/mock'
-import { Linkedin, Github } from 'lucide-react'
-import Link from 'next/link'
 
 export function Header() {
 	return (
