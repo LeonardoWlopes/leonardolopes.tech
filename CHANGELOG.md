@@ -1,3 +1,11 @@
+# [1.5.0](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.4.0...v1.5.0) (2025-07-03)
+
+
+### Features
+
+* add more technologies ([7541b75](https://github.com/LeonardoWlopes/leonardolopes.tech/commit/7541b75bab3012378f01dd71147a0d3f1edf4651))
+* updated some icons ([714c687](https://github.com/LeonardoWlopes/leonardolopes.tech/commit/714c687c3fca1701442a2bb4ad2c748885dc24d4))
+
 # [1.4.0](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.3.1...v1.4.0) (2025-06-11)
 
 
