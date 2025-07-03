@@ -46,9 +46,13 @@ export default function Tech() {
 							</h3>
 
 							<div className="grid grid-cols-1 place-items-center gap-4 sm:grid-cols-2 md:grid-cols-3">
-								{items.map((tech) => (
-									<TechCard key={tech.name} {...tech} />
-								))}
+								{items
+									.sort((a, b) =>
+										a.name.localeCompare(b.name),
+									)
+									.map((tech) => (
+										<TechCard key={tech.name} {...tech} />
+									))}
 							</div>
 						</div>
 					)
