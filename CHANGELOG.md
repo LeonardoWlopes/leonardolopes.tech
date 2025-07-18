@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.5.0...v1.6.0) (2025-07-18)
+
+
+### Features
+
+* add schedule link ([63c8e14](https://github.com/LeonardoWlopes/leonardolopes.tech/commit/63c8e14f94fab750f4733ebb389f375bf71364e1))
+
 # [1.5.0](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.4.0...v1.5.0) (2025-07-03)
 
 
