@@ -2,6 +2,7 @@ import { parseISO } from 'date-fns'
 import {
 	Atom,
 	Briefcase,
+	CalendarDays,
 	Github,
 	Home,
 	Instagram,
@@ -675,6 +676,10 @@ export const CONTACT_LINKS: IContactLink[] = [
 	{
 		href: `https://wa.me/${env.NEXT_PUBLIC_CONTACT_NUMBER}`,
 		Icon: MessageCircle,
+	},
+	{
+		href: env.SCHEDULE_LINK,
+		Icon: CalendarDays,
 	},
 ]
 
