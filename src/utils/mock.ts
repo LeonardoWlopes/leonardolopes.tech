@@ -176,7 +176,6 @@ export const TECH_CARDS: ITechCardList[] = [
 		image: go,
 		link: 'https://go.dev/',
 		category: ETechCategory.LANGUAGE,
-		nonProfessional: true,
 	},
 	{
 		name: 'Deno',
@@ -375,7 +374,6 @@ export const TECH_CARDS: ITechCardList[] = [
 		image: bun,
 		link: 'https://bun.sh/',
 		category: ETechCategory.RUNTIME,
-		nonProfessional: true,
 	},
 	{
 		name: 'Express',
@@ -706,21 +704,21 @@ export const EXPERIENCES: IExperience[] = [
 		},
 		roles: [
 			{
-				title: 'Technical Governance Member',
-				startDate: parseISO('2025-01-01'),
+				title: 'Tech Lead @Linda Lifetech',
+				startDate: parseISO('2025-08-01'),
 				endDate: null,
 				description:
-					'As a founding member of the Technical Governance team, I’ve been instrumental in establishing engineering standards, best practices, and project guidelines that define how the entire tech organization operates. My work directly contributes to creating a consistent, maintainable, and scalable development environment across all teams. My responsibilities also include the ideation and implementation of cloud architectures on AWS, internal technical consulting, and development team management, always with a focus on performance, scalability, and long-term sustainability.',
+					"LINDA Lifetech is a revolutionary company developing cutting-edge technology to support the early detection of breast cancer through artificial intelligence and mobile diagnostics. At LINDA, I lead the technical efforts to modernize our platform. I'm currently responsible for migrating our legacy codebase to a modern, scalable architecture. Given the app is already live and used by thousands of users, the migration is being handled incrementally through the implementation of microservices and micro frontends. This allows us to deliver new features safely, without impacting the current production environment.",
 			},
 			{
 				title: 'Senior Software Engineer @Lactalis Group',
 				startDate: parseISO('2024-11-01'),
-				endDate: null,
+				endDate: parseISO('2025-08-01'),
 				description:
 					'Lactalis Group is the world’s largest dairy producer, with operations in 85 countries and a turnover exceeding USD 17 billion. The company is a global leader in cheese, milk, butter, and cream. I was part of the team responsible for developing and maintaining an innovative application designed to support the pricing team in managing products across all 27 Brazilian states. The solution was built to handle the complexities of region-specific taxation, ensuring accurate and efficient pricing operations at a national scale.',
 			},
 			{
-				title: 'Senior FullStack Engineer @Grupo Petrópolis',
+				title: 'Senior Software Engineer @Grupo Petrópolis',
 				startDate: parseISO('2023-05-01'),
 				endDate: parseISO('2024-11-01'),
 				description:
