@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.6.0...v1.7.0) (2026-03-10)
+
+
+### Features
+
+* add google ad sense account to metadata ([f6d96e6](https://github.com/LeonardoWlopes/leonardolopes.tech/commit/f6d96e6c05890f6004ce1ca83d44b9abb22eb832))
+
 # [1.6.0](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.5.0...v1.6.0) (2025-07-18)
 
 
