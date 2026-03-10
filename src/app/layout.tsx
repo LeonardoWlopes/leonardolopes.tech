@@ -25,6 +25,9 @@ export const metadata: Metadata = {
 		type: 'website',
 		url: env.APP_URL,
 	},
+	other: {
+		'google-adsense-account': 'ca-pub-6761410469288549',
+	},
 }
 
 export default function RootLayout({
