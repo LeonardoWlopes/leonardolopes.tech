@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.7.0...v1.8.0) (2026-04-24)
+
+
+### Features
+
+* refresh experience content and improve tech catalog ([2f15610](https://github.com/LeonardoWlopes/leonardolopes.tech/commit/2f156109a561215ccaf362e86dd4e7862648219c))
+
 # [1.7.0](https://github.com/LeonardoWlopes/leonardolopes.tech/compare/v1.6.0...v1.7.0) (2026-03-10)
 
 
