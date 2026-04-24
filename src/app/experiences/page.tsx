@@ -10,7 +10,7 @@ export const revalidate = 43200 // 12 hours
 export const metadata: Metadata = {
 	title: 'Experiences',
 	description:
-		'Get to know my professional journey, projects, and experiences that made me the professional I am today.',
+		'My path so far, the products and teams I’ve worked with, from healthtech and large enterprises to edtech. Hands-on with Go, TypeScript, Node, React, and cloud work at real scale.',
 }
 
 export default function Experiencies() {

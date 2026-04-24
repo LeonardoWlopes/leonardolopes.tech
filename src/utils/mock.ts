@@ -12,6 +12,7 @@ import {
 	UserRound,
 } from 'lucide-react'
 import android from '@/assets/icons/android.svg'
+import apachekafka from '@/assets/icons/apachekafka.svg'
 import apple from '@/assets/icons/apple.svg'
 import aws from '@/assets/icons/aws.svg'
 import bash from '@/assets/icons/bash.svg'
@@ -54,6 +55,7 @@ import ngrok from '@/assets/icons/ngrok.svg'
 import node from '@/assets/icons/node.svg'
 import notion from '@/assets/icons/notion.svg'
 import npm from '@/assets/icons/npm.svg'
+import opentelemetry from '@/assets/icons/opentelemetry.svg'
 import pnpm from '@/assets/icons/pnpm.svg'
 import postgres from '@/assets/icons/postgres.svg'
 import prettier from '@/assets/icons/prettier.svg'
@@ -92,9 +94,7 @@ import windows from '@/assets/icons/windows.svg'
 import yarn from '@/assets/icons/yarn.svg'
 import zod from '@/assets/icons/zod.svg'
 import build from '@/assets/images/buildbox.jpeg'
-import genezys from '@/assets/images/genezys.jpeg'
 import hookForm from '@/assets/images/hook-form.png'
-import modu from '@/assets/images/modu.jpeg'
 import nkey from '@/assets/images/nkey.jpeg'
 import zustand from '@/assets/images/zustand.png'
 import { ETechCategory } from '@/enums/tech'
@@ -107,39 +107,43 @@ import { CONSTANTS } from './constants'
 
 export const TECH_CATEGORIES = [
 	{
-		name: 'languages',
+		name: 'Languages',
 		category: ETechCategory.LANGUAGE,
 	},
 	{
-		name: 'runtimes / bundlers / package managers',
+		name: 'Runtimes',
 		category: ETechCategory.RUNTIME,
 	},
 	{
-		name: 'frameworks',
+		name: 'Build, package managers, and bundlers',
+		category: ETechCategory.BUILD,
+	},
+	{
+		name: 'Frameworks',
 		category: ETechCategory.FRAMEWORK,
 	},
 	{
-		name: 'libraries',
+		name: 'Libraries and UI',
 		category: ETechCategory.LIBRARY,
 	},
 	{
-		name: 'tools',
-		category: ETechCategory.TOOL,
-	},
-	{
-		name: 'databases / orm',
+		name: 'Databases and ORMs',
 		category: ETechCategory.DATABASE,
 	},
 	{
-		name: 'cloud / infra',
-		category: ETechCategory.CLOUD,
-	},
-	{
-		name: 'tests',
+		name: 'Testing',
 		category: ETechCategory.TESTING,
 	},
 	{
-		name: 'OS',
+		name: 'Tooling and DX',
+		category: ETechCategory.TOOL,
+	},
+	{
+		name: 'Cloud, platform, and streaming',
+		category: ETechCategory.CLOUD,
+	},
+	{
+		name: 'Operating systems and devices',
 		category: ETechCategory.OS,
 	},
 ] as const
@@ -172,7 +176,7 @@ export const TECH_CARDS: ITechCardList[] = [
 		nonProfessional: true,
 	},
 	{
-		name: 'Golang',
+		name: 'Go',
 		image: go,
 		link: 'https://go.dev/',
 		category: ETechCategory.LANGUAGE,
@@ -253,7 +257,7 @@ export const TECH_CARDS: ITechCardList[] = [
 	{
 		name: 'Digital Ocean',
 		image: digitalOcean,
-		link: 'https://prettier.io/',
+		link: 'https://www.digitalocean.com/',
 		category: ETechCategory.CLOUD,
 		nonProfessional: true,
 	},
@@ -301,7 +305,7 @@ export const TECH_CARDS: ITechCardList[] = [
 		name: 'Vite',
 		image: vite,
 		link: 'https://vitejs.dev/',
-		category: ETechCategory.RUNTIME,
+		category: ETechCategory.BUILD,
 	},
 	{
 		name: 'React',
@@ -338,6 +342,12 @@ export const TECH_CARDS: ITechCardList[] = [
 		image: expo,
 		link: 'https://expo.dev/',
 		category: ETechCategory.RUNTIME,
+	},
+	{
+		name: 'OpenTelemetry',
+		image: opentelemetry,
+		link: 'https://opentelemetry.io/',
+		category: ETechCategory.TOOL,
 	},
 	{
 		name: 'Hook Form',
@@ -388,6 +398,12 @@ export const TECH_CARDS: ITechCardList[] = [
 		category: ETechCategory.FRAMEWORK,
 	},
 	{
+		name: 'Gin',
+		image: go,
+		link: 'https://gin-gonic.com/',
+		category: ETechCategory.FRAMEWORK,
+	},
+	{
 		name: 'Nest',
 		image: nest,
 		link: 'https://nestjs.com/',
@@ -400,13 +416,19 @@ export const TECH_CARDS: ITechCardList[] = [
 		category: ETechCategory.DATABASE,
 	},
 	{
+		name: 'GORM',
+		image: go,
+		link: 'https://gorm.io/',
+		category: ETechCategory.DATABASE,
+	},
+	{
 		name: 'MongoDB',
 		image: mongo,
 		link: 'https://www.mongodb.com/',
 		category: ETechCategory.DATABASE,
 	},
 	{
-		name: 'PostgresSQL',
+		name: 'PostgreSQL',
 		image: postgres,
 		link: 'https://www.postgresql.org/',
 		category: ETechCategory.DATABASE,
@@ -520,6 +542,12 @@ export const TECH_CARDS: ITechCardList[] = [
 		category: ETechCategory.CLOUD,
 	},
 	{
+		name: 'Apache Kafka',
+		image: apachekafka,
+		link: 'https://kafka.apache.org/',
+		category: ETechCategory.CLOUD,
+	},
+	{
 		name: 'MariaDB',
 		image: mariadb,
 		link: 'https://mariadb.org/',
@@ -541,13 +569,13 @@ export const TECH_CARDS: ITechCardList[] = [
 		name: 'NPM',
 		image: npm,
 		link: 'https://www.npmjs.com/',
-		category: ETechCategory.RUNTIME,
+		category: ETechCategory.BUILD,
 	},
 	{
 		name: 'PNPM',
 		image: pnpm,
 		link: 'https://pnpm.io/',
-		category: ETechCategory.RUNTIME,
+		category: ETechCategory.BUILD,
 	},
 	{
 		name: 'Pulumi',
@@ -602,13 +630,13 @@ export const TECH_CARDS: ITechCardList[] = [
 		name: 'Turbopack',
 		image: turbopack,
 		link: 'https://turbo.build/pack',
-		category: ETechCategory.TOOL,
+		category: ETechCategory.BUILD,
 	},
 	{
 		name: 'Turborepo',
 		image: turborepo,
 		link: 'https://turbo.build/repo',
-		category: ETechCategory.TOOL,
+		category: ETechCategory.BUILD,
 	},
 	{
 		name: 'Twilio',
@@ -644,7 +672,7 @@ export const TECH_CARDS: ITechCardList[] = [
 		name: 'Yarn',
 		image: yarn,
 		link: 'https://yarnpkg.com/',
-		category: ETechCategory.RUNTIME,
+		category: ETechCategory.BUILD,
 	},
 	{
 		name: 'Shadcn',
@@ -705,31 +733,31 @@ export const EXPERIENCES: IExperience[] = [
 		roles: [
 			{
 				title: 'Tech Lead @Linda Lifetech',
-				startDate: parseISO('2025-08-01'),
+				startDate: parseISO('2025-07-01'),
 				endDate: null,
 				description:
-					"LINDA Lifetech is a revolutionary company developing cutting-edge technology to support the early detection of breast cancer through artificial intelligence and mobile diagnostics. At LINDA, I lead the technical efforts to modernize our platform. I'm currently responsible for migrating our legacy codebase to a modern, scalable architecture. Given the app is already live and used by thousands of users, the migration is being handled incrementally through the implementation of microservices and micro frontends. This allows us to deliver new features safely, without impacting the current production environment.",
+					'Healthtech product for early breast-cancer detection using AI, mobile diagnostics, and secure clinical workflows. Led modernization of a live system for thousands of users: zero-downtime migration from a monolith to Go and Node.js/TypeScript microservices, micro frontends, and React Native. Cut cloud cost by about 59% while improving performance and reliability. Introduced OpenTelemetry for tracing, metrics, and security visibility; defined infrastructure as code with Terraform. Built React Native native bridges in Kotlin to integrate external diagnostic hardware.',
 			},
 			{
-				title: 'Senior Software Engineer @Lactalis Group',
+				title: 'Software Engineer @Lactalis Group',
 				startDate: parseISO('2024-11-01'),
 				endDate: parseISO('2025-08-01'),
 				description:
-					'Lactalis Group is the world’s largest dairy producer, with operations in 85 countries and a turnover exceeding USD 17 billion. The company is a global leader in cheese, milk, butter, and cream. I was part of the team responsible for developing and maintaining an innovative application designed to support the pricing team in managing products across all 27 Brazilian states. The solution was built to handle the complexities of region-specific taxation, ensuring accurate and efficient pricing operations at a national scale.',
+					'National pricing platform for the world’s largest dairy company (85+ countries, USD 17B+ turnover), supporting the pricing team across all 27 Brazilian states with regional tax and commercial rules for accurate, auditable national pricing. Node.js, TypeScript, and full-stack collaboration in a large enterprise, domain-driven context.',
 			},
 			{
-				title: 'Senior Software Engineer @Grupo Petrópolis',
+				title: 'Software Engineer @Grupo Petrópolis',
 				startDate: parseISO('2023-05-01'),
 				endDate: parseISO('2024-11-01'),
 				description:
-					'Grupo Petrópolis is one of Brazil’s largest beverage companies, generating over $2 billion in annual revenue and serving more than 700,000 customers nationwide. The company’s core sales operations depend on a mobile application responsible for 97% of total revenue, making performance, stability, and scalability absolutely critical. As a key contributor, I led several strategic initiatives to improve performance, streamline processes, and elevate the user experience, directly impacting the company’s primary revenue channel.',
+					'One of Brazil’s largest beverage companies ($4B+ annual revenue, 700k+ customers), where a mobile app drives about 97% of revenue. Built an internal web platform for managers and supervisors to streamline operations. Cut main app load time by about 50% and reduced resource use by about half on critical paths; improved latency, stability, and mobile UX for high-volume B2B field sales. Stack: React, React Native, and Node.js.',
 			},
 			{
-				title: 'Middle FullStack Engineer @MSD',
+				title: 'Software Engineer @MSD',
 				startDate: parseISO('2022-05-01'),
 				endDate: parseISO('2023-05-01'),
 				description:
-					'MSD is a global pharmaceutical leader with over 130 years of history, operating in more than 140 countries. The company is dedicated to developing innovative medicines and vaccines that advance both human and animal health, with a strong focus on oncology, infectious diseases, and chronic conditions. I was responsible for leading the development of web and mobile interfaces for a custom gamification platform, tailored to enhance internal engagement and strategic alignment at MSD.',
+					'Web and mobile clients for a custom internal gamification platform at a global pharmaceutical company (130+ years, 140+ countries). Delivered the project in about half the estimated time with near-zero production defects. Integrated statistical insights for data-driven decisions and supported internal engagement aligned with company strategy.',
 			},
 		],
 	},
@@ -740,56 +768,26 @@ export const EXPERIENCES: IExperience[] = [
 		},
 		roles: [
 			{
-				title: 'Middle Frontend Engineer',
-				startDate: parseISO('2022-08-01'),
-				endDate: parseISO('2022-11-01'),
-				description:
-					'Played a key role in designing and developing the content distribution platform for Poliedro Sistema de Ensino, one of Brazil’s leading educational technology providers. Focused on scalability, performance, and system reliability to ensure seamless content delivery across a wide network of institutions.',
-			},
-		],
-	},
-	{
-		company: {
-			name: 'Genezys',
-			icon: genezys,
-		},
-		roles: [
-			{
-				title: 'Middle Frontend Engineer (Web 3)',
-				startDate: parseISO('2022-02-01'),
-				endDate: parseISO('2022-05-01'),
-				description:
-					'Worked as a React developer on a crypto exchange platform, focusing on frontend development, performance optimization, and user experience improvements. Contributed to building a secure and scalable financial system in a highly regulated industry.',
-			},
-		],
-	},
-	{
-		company: {
-			name: 'MODU',
-			icon: modu,
-		},
-		roles: [
-			{
-				title: 'Middle Frontend Engineer',
+				title: 'Software Engineer @Poliedro Educacao',
 				startDate: parseISO('2021-08-01'),
-				endDate: parseISO('2022-03-10'),
+				endDate: parseISO('2022-04-30'),
 				description:
-					'Led the frontend development of a healthcare management system used by Wanda Horta Health Complex, a multidisciplinary medical institution. Focused on performance, usability, and scalability, ensuring efficient management of patients, staff, sales, and revenue',
+					'Content distribution platform for Poliedro Sistema de Ensino, a leading Brazilian edtech provider. Designed and built a Go microservice for MP4 ingest, HLS chunking, and adaptive streaming, using Go’s concurrency model for high-throughput parallel encoding. The pipeline served peak load from 580+ teaching units and reduced end-user streaming latency for students and educators nationwide.',
 			},
 		],
 	},
 	{
 		company: {
-			name: 'Frelance',
+			name: 'Freelance',
 			icon: expo,
 		},
 		roles: [
 			{
-				title: 'Junior Mobile Engineer',
+				title: 'Mobile Engineer',
 				startDate: parseISO('2020-06-01'),
-				endDate: parseISO('2021-07-10'),
+				endDate: parseISO('2021-07-31'),
 				description:
-					'Worked as a React Native developer, contributing to various mobile applications in different industries. Developed new features, optimized performance, and maintained existing apps, gaining hands-on experience in the full mobile development lifecycle.',
+					'Multiple client projects across industries, owning requirements through delivery: new features, performance tuning, and production fixes in React Native. Strengthened state management and UI performance, reduced crash rate, and improved responsiveness on client apps. Foundation in mobile architecture and client communication that supported the move into larger product teams.',
 			},
 		],
 	},

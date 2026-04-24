@@ -8,4 +8,5 @@ export enum ETechCategory {
 	RUNTIME = 6,
 	CLOUD = 7,
 	OS = 8,
+	BUILD = 9,
 }

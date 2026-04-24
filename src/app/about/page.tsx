@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import signature from '@/assets/icons/signature.svg'
+import me from '@/assets/images/me.jpg'
 import { Button } from '@/components/button'
 import { Timer } from '@/components/timer'
 import { PageSubtitle, PageTitle } from '@/components/typography'
@@ -50,7 +51,8 @@ export default function About() {
 					</span>
 
 					<p className="mb-8 dark:text-dark-gray">
-						I specialize in Node.js, React, and React Native, with
+						I specialize in Go, Node.js, and TypeScript on the
+						backend, plus React and React Native on the client, with
 						strong skills in system architecture, technical
 						governance, cloud infrastructure (AWS), and CI/CD
 						pipelines. My expertise extends to designing and
@@ -118,7 +120,7 @@ export default function About() {
 					<div className="sticky top-24 flex flex-col items-center">
 						<Image
 							className="mb-20 aspect-9/12 w-56 rounded-lg object-cover"
-							src={CONSTANTS.AVATAR_URL}
+							src={me}
 							width={460}
 							height={460}
 							alt="Leonardo Lopes"
