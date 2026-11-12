@@ -1,54 +1,38 @@
 {
-	"[javascript]": {
-		"editor.defaultFormatter": "biomejs.biome"
-	},
-	"[json]": {
-		"editor.defaultFormatter": "biomejs.biome"
-	},
-	"[markdown]": {
-		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-	},
+	"cSpell.words": ["testid", "oklch", "shadcn", "lefthook", "commitlint"],
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "biomejs.biome",
 	"[typescript]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
-	"cSpell.words": [
-		"lactalis",
-		"lefthook",
-		"LINKEDIN",
-		"memoji",
-		"obiwan",
-		"partialize",
-		"precocerto",
-		"sonner"
-	],
+	"[javascript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
 	"editor.codeActionsOnSave": {
 		"source.organizeImports.biome": "explicit"
 	},
 	"editor.detectIndentation": false,
 	"editor.guides.bracketPairs": "active",
 	"editor.linkedEditing": true,
-	"editor.renderControlCharacters": true,
-	"editor.renderWhitespace": "all",
 	"editor.tabSize": 4,
 	"explorer.fileNesting.enabled": true,
 	"explorer.fileNesting.patterns": {
-		".editorconfig": "biome*, lefthook*, commitlint*,.lintstagedrc",
+		".editorconfig": "biome.*, lefthook*, commitlint*, components.json",
 		".env": ".env*",
 		".gitignore": ".git*",
-		"package.json": "tsconfig*, pnpm-lock*, .nvmrc, .releaserc, *.config.mjs, *.config.js"
-	},
-	"i18n-ally.keystyle": "flat",
-	"i18n-ally.localesPaths": ["**/languages/**"],
-	"i18n-ally.sourceLanguage": "pt",
-	"cSpell.language": "en,pt-BR",
-	"workbench.editorAssociations": {
-		"*.svg": "default"
+		"package.json": "tsconfig*, pnpm*, .nvmrc, .releaserc, next*, vitest*",
+		"README.md": "CHANGELOG*, CLAUDE.md"
 	},
 	"tailwindCSS.experimental.classRegex": [
 		["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-		["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-	]
+		["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+	],
+	"coverage-gutters.coverageFileNames": ["clover.xml"],
+	"typescript.tsdk": "node_modules/typescript/lib"
 }
