@@ -1,6 +1,15 @@
-import type { ITechCardProps } from '@/components/tech-card'
-import type { ETechCategory } from '@/enums/tech'
+import type { StaticImageData } from 'next/image'
+import type { ETechCategory } from '~/enums/tech'
 
-export interface ITechCardList extends ITechCardProps {
+export interface ITech {
+	name: string
+	image: string | StaticImageData
+	link?: string
+	nonProfessional?: boolean
+	category: ETechCategory
+}
+
+export interface ITechCategory {
+	name: string
 	category: ETechCategory
 }

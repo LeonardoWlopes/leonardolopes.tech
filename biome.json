@@ -16,7 +16,9 @@
 			"!!**/.next",
 			"!!**/node_modules",
 			"!!**/coverage",
-			"!!**/temp"
+			"!!**/temp",
+			"!!.claude",
+			"!!skills-lock.json"
 		]
 	},
 	"formatter": {
@@ -69,5 +71,22 @@
 				"organizeImports": "on"
 			}
 		}
-	}
+	},
+	"overrides": [
+		{
+			"includes": [
+				"src/components/ui/laser-flow/**",
+				"src/components/ui/floating-lines/**",
+				"src/components/ui/ghost-fibers/**",
+				"src/components/ui/lightfall/**"
+			],
+			"linter": {
+				"rules": {
+					"correctness": {
+						"useHookAtTopLevel": "off"
+					}
+				}
+			}
+		}
+	]
 }

@@ -3,10 +3,10 @@ import { z } from 'zod'
 
 export const env = createEnv({
 	server: {
-		CV_URL: z.string().url(),
-		APP_URL: z.string().url(),
+		CV_URL: z.url(),
+		APP_URL: z.url(),
 		GOOGLE_ANALYTICS_ID: z.string(),
-		SCHEDULE_LINK: z.string().url(),
+		SCHEDULE_LINK: z.url(),
 	},
 
 	client: {

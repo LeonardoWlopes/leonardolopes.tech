@@ -1,36 +1,832 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
+/* Brand primitives (raw values). Components use the semantic tokens below. */
 @theme {
-	--color-main-bg: var(--main-bg);
-	--color-card: var(--card);
-	--color-card-border: var(--card-border);
-	--color-primary: var(--primary);
-	--color-primary-border: var(--primary-border);
-	--color-dark-gray: #808080;
-	--color-medium-gray: #80808080;
-	--color-light-gray: #c5c5c5;
-	--color-onyx: #181818;
-	--color-faint-white: #f3f3f3;
+	--color-midnight: #030407;
+	--color-cobalt: #1558c9;
+	--color-neon: #2f6bff;
+	--color-neon-soft: #7aa6ff;
 
-	--container-limit: 1024px;
+	--shadow-neon:
+		0 0 28px rgb(47 107 255 / 0.55), 0 0 90px rgb(21 88 201 / 0.4);
+	--shadow-neon-strong:
+		0 0 36px rgb(47 107 255 / 0.7), 0 0 110px rgb(21 88 201 / 0.5);
+	--shadow-neon-dot: 0 0 10px rgb(47 107 255 / 0.9);
+	--shadow-glass-inset: inset 0 1px 0 rgb(255 255 255 / 0.12);
+
+	--container-limit: 64rem;
+}
+
+/* shadcn semantic tokens, exposed as Tailwind utilities */
+@theme inline {
+	--font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+	--font-mono:
+		var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--color-chart-1: var(--chart-1);
+	--color-chart-2: var(--chart-2);
+	--color-chart-3: var(--chart-3);
+	--color-chart-4: var(--chart-4);
+	--color-chart-5: var(--chart-5);
+	--color-sidebar: var(--sidebar);
+	--color-sidebar-foreground: var(--sidebar-foreground);
+	--color-sidebar-primary: var(--sidebar-primary);
+	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+	--color-sidebar-accent: var(--sidebar-accent);
+	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+	--color-sidebar-border: var(--sidebar-border);
+	--color-sidebar-ring: var(--sidebar-ring);
+
+	--radius-sm: calc(var(--radius) * 0.6);
+	--radius-md: calc(var(--radius) * 0.8);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) * 1.4);
+	--radius-2xl: calc(var(--radius) * 1.8);
+	--radius-3xl: calc(var(--radius) * 2.2);
+	--radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+	--radius: 0.625rem;
+	--background: oklch(1 0 0);
+	--foreground: oklch(0.145 0 0);
+	--card: oklch(1 0 0);
+	--card-foreground: oklch(0.145 0 0);
+	--popover: oklch(1 0 0);
+	--popover-foreground: oklch(0.145 0 0);
+	--primary: oklch(0.205 0 0);
+	--primary-foreground: oklch(0.985 0 0);
+	--secondary: oklch(0.97 0 0);
+	--secondary-foreground: oklch(0.205 0 0);
+	--muted: oklch(0.97 0 0);
+	--muted-foreground: oklch(0.556 0 0);
+	--accent: oklch(0.97 0 0);
+	--accent-foreground: oklch(0.205 0 0);
+	--destructive: oklch(0.577 0.245 27.325);
+	--border: oklch(0.922 0 0);
+	--input: oklch(0.922 0 0);
+	--ring: oklch(0.708 0 0);
+	--chart-1: oklch(0.87 0 0);
+	--chart-2: oklch(0.556 0 0);
+	--chart-3: oklch(0.439 0 0);
+	--chart-4: oklch(0.371 0 0);
+	--chart-5: oklch(0.269 0 0);
+	--sidebar: oklch(0.985 0 0);
+	--sidebar-foreground: oklch(0.145 0 0);
+	--sidebar-primary: oklch(0.205 0 0);
+	--sidebar-primary-foreground: oklch(0.985 0 0);
+	--sidebar-accent: oklch(0.97 0 0);
+	--sidebar-accent-foreground: oklch(0.205 0 0);
+	--sidebar-border: oklch(0.922 0 0);
+	--sidebar-ring: oklch(0.708 0 0);
+}
+
+/* Neon on midnight: the site always renders in this theme (html has .dark) */
+.dark {
+	--background: oklch(0.107 0.011 266.5);
+	--foreground: oklch(0.948 0.016 262.8);
+	--card: oklch(0.165 0.022 267.2);
+	--card-foreground: oklch(0.948 0.016 262.8);
+	--popover: oklch(0.165 0.022 267.2);
+	--popover-foreground: oklch(0.948 0.016 262.8);
+	--primary: oklch(0.581 0.229 263.9);
+	--primary-foreground: oklch(0.985 0 0);
+	--secondary: oklch(0.211 0.034 265.6);
+	--secondary-foreground: oklch(0.948 0.016 262.8);
+	--muted: oklch(0.211 0.034 265.6);
+	--muted-foreground: oklch(0.678 0.038 264.3);
+	--accent: oklch(0.211 0.034 265.6);
+	--accent-foreground: oklch(0.948 0.016 262.8);
+	--destructive: oklch(0.704 0.191 22.216);
+	--border: oklch(1 0 0 / 12%);
+	--input: oklch(1 0 0 / 16%);
+	--ring: oklch(0.581 0.229 263.9);
+	--chart-1: oklch(0.731 0.138 263.4);
+	--chart-2: oklch(0.581 0.229 263.9);
+	--chart-3: oklch(0.493 0.188 260.7);
+	--chart-4: oklch(0.371 0.12 262);
+	--chart-5: oklch(0.269 0.06 264);
+	--sidebar: oklch(0.165 0.022 267.2);
+	--sidebar-foreground: oklch(0.948 0.016 262.8);
+	--sidebar-primary: oklch(0.581 0.229 263.9);
+	--sidebar-primary-foreground: oklch(0.985 0 0);
+	--sidebar-accent: oklch(0.211 0.034 265.6);
+	--sidebar-accent-foreground: oklch(0.948 0.016 262.8);
+	--sidebar-border: oklch(1 0 0 / 12%);
+	--sidebar-ring: oklch(0.581 0.229 263.9);
 }
 
 @layer base {
-	:root {
-		--main-bg: #fbfbfb;
-		--primary: #181818;
-		--primary-border: #ebe8e8;
-		--card: #f5f5f5;
-		--card-border: #ebebeb;
+	* {
+		@apply border-border outline-ring/50;
 	}
 
-	.dark {
-		--main-bg: #0d0d0d;
-		--primary: #ffffff;
-		--primary-border: #5353534d;
-		--card: #151515;
-		--card-border: #383737;
+	html {
+		/* Keep focused or anchored content clear of the fixed header and dock */
+		scroll-padding-bottom: 7rem;
+		scrollbar-color: var(--color-cobalt) var(--color-midnight);
+		scrollbar-width: thin;
+		/* The cost slab names this timeline; the header listens to it */
+		timeline-scope: --lit;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+	}
+
+	::selection {
+		background: rgb(47 107 255 / 0.38);
+		color: #ffffff;
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--color-neon-soft);
+		outline-offset: 3px;
+	}
+
+	input,
+	textarea {
+		caret-color: var(--color-neon-soft);
+	}
+
+	@media (min-width: 40rem) {
+		html {
+			scroll-padding-top: 7rem;
+			scroll-padding-bottom: 0;
+		}
+	}
+
+	/* Glide to in-page anchors; route changes stay instant (data-scroll-behavior on <html>) */
+	@media (prefers-reduced-motion: no-preference) {
+		html {
+			scroll-behavior: smooth;
+		}
+	}
+
+	.font-mono {
+		font-feature-settings: "tnum", "zero";
+	}
+}
+
+@layer components {
+	/* Ambient cobalt light behind every page */
+	.page-glow {
+		background:
+			radial-gradient(
+				50% 60% at 50% 0%,
+				rgb(21 88 201 / 0.35),
+				transparent 70%
+			),
+			radial-gradient(
+				30% 40% at 85% 10%,
+				rgb(47 107 255 / 0.18),
+				transparent 70%
+			);
+	}
+
+	/* Thin neon rule, used for timelines and dividers */
+	/* Experience timeline: the rail lights up to the middle of the viewport */
+	.timeline-fill {
+		display: none;
+		background: linear-gradient(
+			to bottom,
+			rgb(47 107 255 / 0.15),
+			var(--color-neon) 70%,
+			var(--color-neon-soft)
+		);
+		box-shadow: 0 0 0.75rem rgb(47 107 255 / 0.55);
+		transform-origin: top;
+	}
+
+	@supports (animation-timeline: view()) {
+		@media (prefers-reduced-motion: no-preference) {
+			.timeline-fill {
+				display: block;
+				animation: fill-down linear both;
+				animation-timeline: view(block 50% 50%);
+				animation-range: cover 0% cover 100%;
+			}
+
+			.timeline-dot {
+				animation: dot-lit linear both;
+				animation-timeline: view(block 50% 50%);
+				animation-range: cover 0% cover 100%;
+			}
+		}
+	}
+
+	.neon-rule {
+		background: linear-gradient(
+			to bottom,
+			rgb(47 107 255 / 0.9),
+			rgb(21 88 201 / 0.25) 60%,
+			transparent
+		);
+		box-shadow: 0 0 12px rgb(47 107 255 / 0.6);
+	}
+
+	/* Saturated glow field, used as the hero background */
+	.neon-mesh {
+		position: relative;
+		isolation: isolate;
+		overflow: hidden;
+		background-color: var(--color-midnight);
+		background-image:
+			radial-gradient(
+				60% 70% at 18% 14%,
+				rgb(21 88 201 / 0.95),
+				transparent 70%
+			),
+			radial-gradient(
+				48% 62% at 88% 28%,
+				rgb(47 107 255 / 0.85),
+				transparent 72%
+			),
+			radial-gradient(
+				55% 55% at 50% 105%,
+				rgb(47 107 255 / 0.7),
+				transparent 70%
+			);
+	}
+
+	.neon-mesh::before {
+		content: "";
+		position: absolute;
+		inset: -20%;
+		z-index: -1;
+		background: radial-gradient(
+			35% 45% at 60% 60%,
+			rgb(21 88 201 / 0.55),
+			transparent 70%
+		);
+		animation: neon-drift 14s ease-in-out infinite alternate;
+	}
+
+	.neon-text {
+		color: #ffffff;
+		text-shadow:
+			0 0 14px rgb(47 107 255 / 0.9),
+			0 0 40px rgb(21 88 201 / 0.85);
+	}
+
+	/* Glass lives only on controls and cards that sit over the glow */
+	.glass-control {
+		background: rgb(255 255 255 / 0.06);
+		border: 1px solid rgb(255 255 255 / 0.16);
+		backdrop-filter: blur(1.125rem) saturate(170%);
+		box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.22);
+	}
+
+	/*
+	 * Light means "running in production now". The only emitter is the cost
+	 * slab: the current job's cloud bill after the migration. On scroll its
+	 * light moves into the glass header; past work stays unlit.
+	 */
+	body:has(.cost-slab) .page-glow {
+		display: none;
+	}
+
+	.cost-slab {
+		view-timeline-name: --lit;
+	}
+
+	.slab-lit {
+		background: linear-gradient(
+			90deg,
+			var(--color-neon),
+			var(--color-neon-soft) 70%,
+			#ffffff
+		);
+		box-shadow:
+			0 0 1.5rem rgb(47 107 255 / 0.65),
+			0 0 4rem rgb(21 88 201 / 0.45);
+		transform-origin: left center;
+		animation: slab-retract 900ms cubic-bezier(0.16, 1, 0.3, 1) 250ms
+			backwards;
+	}
+
+	.slab-pool {
+		background: radial-gradient(
+			closest-side at 50% 0%,
+			rgb(47 107 255 / 0.32),
+			rgb(21 88 201 / 0.12) 55%,
+			transparent
+		);
+		pointer-events: none;
+		animation: fade-in 500ms ease-out 900ms backwards;
+	}
+
+	.slab-cut {
+		animation: fade-in 300ms ease-out 800ms backwards;
+	}
+
+	.slab-label {
+		animation: fade-in 300ms ease-out 1100ms backwards;
+	}
+
+	/* Neon bar: footer and portrait rules */
+	.filament-glow {
+		background: linear-gradient(
+			90deg,
+			var(--color-neon),
+			var(--color-neon-soft)
+		);
+		box-shadow: 0 0 0.75rem rgb(47 107 255 / 0.55);
+	}
+
+	/* Blueprint ground: faint cobalt grid with a pool of light at the start */
+	.blueprint::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		pointer-events: none;
+		background-image:
+			radial-gradient(
+				40% 50% at 12% 20%,
+				rgb(21 88 201 / 0.28),
+				transparent 70%
+			),
+			linear-gradient(rgb(122 166 255 / 0.07) 1px, transparent 1px),
+			linear-gradient(90deg, rgb(122 166 255 / 0.07) 1px, transparent 1px);
+		background-size:
+			100% 100%,
+			4rem 4rem,
+			4rem 4rem;
+		mask: linear-gradient(to bottom, transparent, #000 15%, #000 85%, transparent);
+	}
+
+	.ruler-ticks {
+		background: repeating-linear-gradient(
+			90deg,
+			rgb(255 255 255 / 0.18) 0 1px,
+			transparent 1px calc(100% / 72)
+		);
+	}
+
+	.ruler-span {
+		transform-origin: left center;
+	}
+
+	body:has(.signature-finale, .about-signature) .footer-signature {
+		display: none;
+	}
+
+	.finale-glow {
+		background:
+			radial-gradient(
+				45% 40% at 50% 58%,
+				rgb(21 88 201 / 0.4),
+				transparent 70%
+			),
+			radial-gradient(
+				120% 50% at 50% 115%,
+				rgb(47 107 255 / 0.25),
+				transparent 60%
+			);
+	}
+
+	/* A midnight halo keeps the ink legible over the light */
+	.finale-ink {
+		filter: drop-shadow(0 0 0.4rem rgb(3 4 7 / 0.9));
+	}
+
+	/* Phone hero beam: a soft vertical light, no WebGL */
+	.css-beam {
+		pointer-events: none;
+		background:
+			linear-gradient(
+				90deg,
+				transparent calc(50% - 1px),
+				#ffffff 50%,
+				transparent calc(50% + 1px)
+			),
+			linear-gradient(
+				90deg,
+				transparent calc(50% - 0.3rem),
+				rgb(122 166 255 / 0.8) 50%,
+				transparent calc(50% + 0.3rem)
+			),
+			linear-gradient(90deg, transparent, rgb(47 107 255 / 0.3) 50%, transparent);
+		mask: linear-gradient(to bottom, #000 70%, transparent);
+	}
+
+	/*
+	 * 404 duel: a blue and a red blade crossed in an X. Each ignites once
+	 * (blue first), hums, and they clash every 3.2s with a flare and sparks
+	 * at the crossing. Colors come from --saber-glow / --saber-soft.
+	 */
+	.saber {
+		position: absolute;
+		bottom: 0;
+		width: 4rem;
+		height: 27rem;
+		transform-origin: 50% 100%;
+	}
+
+	.saber-blue {
+		left: -1rem;
+		rotate: 30deg;
+		--saber-glow: 47 107 255;
+		--saber-soft: 122 166 255;
+	}
+
+	.saber-red {
+		right: -1rem;
+		rotate: -30deg;
+		--saber-glow: 255 40 64;
+		--saber-soft: 255 128 140;
+	}
+
+	.saber-blade {
+		background: linear-gradient(90deg, rgb(255 255 255 / 0.6), #ffffff 30%, #ffffff 70%, rgb(255 255 255 / 0.6));
+		box-shadow:
+			0 0 0.5rem #ffffff,
+			0 0 1.25rem rgb(var(--saber-soft)),
+			0 0 3rem rgb(var(--saber-glow) / 0.95),
+			0 0 6rem rgb(var(--saber-glow) / 0.6);
+	}
+
+	.saber-halo {
+		background: radial-gradient(ellipse 50% 50% at 50% 50%, rgb(var(--saber-glow) / 0.5), rgb(var(--saber-glow) / 0.18) 55%, transparent 78%);
+	}
+
+	.saber-hilt {
+		border-radius: 0.1875rem;
+		background:
+			repeating-linear-gradient(to bottom, rgb(3 4 7 / 0.55) 0 2px, transparent 2px 7px) 0 0.75rem / 100% 55% no-repeat,
+			linear-gradient(90deg, #1b1f29, #8e97aa 35%, #e5e9f2 50%, #8e97aa 65%, #1b1f29);
+		box-shadow: 0 0.5rem 1.5rem rgb(3 4 7 / 0.6);
+	}
+
+	.saber-emitter {
+		background: linear-gradient(90deg, #11141c, #5d6578 40%, #b9c0cf 50%, #5d6578 60%, #11141c);
+	}
+
+	.saber-flare {
+		opacity: 0;
+		background: radial-gradient(circle, #ffffff, rgb(255 236 240 / 0.85) 14%, rgb(196 150 255 / 0.4) 34%, transparent 66%);
+	}
+
+	.saber-spark {
+		opacity: 0;
+		background: #ffffff;
+		box-shadow: 0 0 0.5rem rgb(255 210 220 / 0.95);
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		html:not([data-motion="paused"]) .saber-glow {
+			animation: saber-ignite 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both;
+		}
+
+		html:not([data-motion="paused"]) .saber-red .saber-glow {
+			animation-delay: 0.65s;
+		}
+
+		html:not([data-motion="paused"]) .saber-halo {
+			animation: saber-hum 0.16s ease-in-out infinite alternate;
+		}
+
+		html:not([data-motion="paused"]) .saber-blue {
+			animation: saber-clash-blue 3.2s cubic-bezier(0.5, 0, 0.3, 1) 1.4s infinite;
+		}
+
+		html:not([data-motion="paused"]) .saber-red {
+			animation: saber-clash-red 3.2s cubic-bezier(0.5, 0, 0.3, 1) 1.4s infinite;
+		}
+
+		html:not([data-motion="paused"]) .saber-flare {
+			animation: saber-flare 3.2s ease-out 1.4s infinite;
+		}
+
+		html:not([data-motion="paused"]) .saber-spark {
+			animation: saber-spark 3.2s cubic-bezier(0.2, 0.7, 0.4, 1) 1.4s infinite;
+		}
+	}
+
+	@keyframes saber-ignite {
+		from {
+			scale: 1 0;
+		}
+	}
+
+	@keyframes saber-hum {
+		from {
+			opacity: 0.8;
+			scale: 0.94 1;
+		}
+		to {
+			opacity: 1;
+			scale: 1.04 1;
+		}
+	}
+
+	/* Rest crossed, swing into each other, grind, pull back */
+	@keyframes saber-clash-blue {
+		0%,
+		55% {
+			rotate: 30deg;
+		}
+		64% {
+			rotate: 36deg;
+		}
+		66% {
+			rotate: 34deg;
+		}
+		68% {
+			rotate: 35.5deg;
+		}
+		80%,
+		100% {
+			rotate: 30deg;
+		}
+	}
+
+	@keyframes saber-clash-red {
+		0%,
+		55% {
+			rotate: -30deg;
+		}
+		64% {
+			rotate: -36deg;
+		}
+		66% {
+			rotate: -34deg;
+		}
+		68% {
+			rotate: -35.5deg;
+		}
+		80%,
+		100% {
+			rotate: -30deg;
+		}
+	}
+
+	@keyframes saber-flare {
+		0%,
+		62% {
+			opacity: 0;
+			scale: 0.3;
+		}
+		64% {
+			opacity: 1;
+			scale: 1.1;
+		}
+		67% {
+			opacity: 0.7;
+			scale: 0.8;
+		}
+		69%,
+		73% {
+			opacity: 1;
+			scale: 1;
+		}
+		86%,
+		100% {
+			opacity: 0;
+			scale: 1.4;
+		}
+	}
+
+	@keyframes saber-spark {
+		0%,
+		63% {
+			opacity: 0;
+			translate: 0 0;
+		}
+		64% {
+			opacity: 1;
+			translate: 0 0;
+		}
+		78%,
+		100% {
+			opacity: 0;
+			translate: var(--spark-x) var(--spark-y);
+		}
+	}
+
+	/* 3D badge stage: drops in from above once the beam has landed */
+	.badge-stage {
+		animation: stage-drop 1100ms cubic-bezier(0.34, 1.45, 0.64, 1) both;
+	}
+
+	@keyframes stage-drop {
+		from {
+			opacity: 0;
+			translate: 0 -18%;
+		}
+	}
+
+	/* Static badge: drops into place once the beam has landed */
+	.badge-drop {
+		animation: badge-drop 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+	}
+
+	@keyframes badge-drop {
+		from {
+			opacity: 0;
+			translate: -50% calc(-50% - 3rem);
+			rotate: -4deg;
+		}
+	}
+
+	.word-settle {
+		animation: word-settle 1200ms ease-out 900ms backwards;
+	}
+
+	.ledger-row {
+		transition: opacity 260ms cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.ledger:has(.ledger-row:hover) .ledger-row:not(:hover) {
+		opacity: 0.75;
+		transition-duration: 180ms;
+	}
+
+	.nav-pill {
+		transition:
+			translate 320ms cubic-bezier(0.16, 1, 0.3, 1),
+			width 320ms cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	/*
+	 * The header: a thicker frost than .glass-control, a lit top edge and a
+	 * faint cobalt inner glow, so it reads as glass over the page's light.
+	 */
+	.header-glass {
+		backdrop-filter: blur(1.75rem) saturate(180%) brightness(1.06);
+		box-shadow:
+			inset 0 1px 0 rgb(255 255 255 / 0.24),
+			inset 0 -1px 0 rgb(255 255 255 / 0.05),
+			inset 0 0 1.5rem rgb(122 166 255 / 0.07),
+			0 0.75rem 2rem rgb(3 4 7 / 0.45);
+	}
+
+	/* Neon line on the header's lower edge: lights up as the slab's light scrolls into it */
+	.header-rim {
+		position: absolute;
+		inset-inline: 12%;
+		inset-block-end: -1px;
+		height: 1px;
+		pointer-events: none;
+		background: linear-gradient(
+			90deg,
+			transparent,
+			var(--color-neon-soft),
+			transparent
+		);
+		opacity: 0.35;
+	}
+
+	.header-rim::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: inherit;
+		box-shadow: 0 0 1.25rem 0.125rem rgb(47 107 255 / 0.7);
+		opacity: 0;
+	}
+
+	.live-chip {
+		opacity: 0;
+		translate: 0 0.25rem;
+	}
+
+	@supports (animation-timeline: view()) {
+		@media (prefers-reduced-motion: no-preference) {
+			.slab-emission {
+				animation: dim linear both;
+				animation-timeline: --lit;
+				animation-range: exit 0% exit 100%;
+			}
+
+			.ruler-span {
+				animation: draw linear both;
+				animation-timeline: view();
+				animation-range: entry 0% entry 100%;
+			}
+
+		}
+
+		.header-rim::after {
+			animation: fade-in linear both;
+			animation-timeline: --lit;
+			animation-range: exit 0% exit 100%;
+		}
+
+		.live-chip {
+			animation: chip-dock linear both;
+			animation-timeline: --lit;
+			animation-range: exit 40% exit 100%;
+		}
+	}
+
+	@keyframes slab-retract {
+		from {
+			scale: var(--slab-scale) 1;
+		}
+	}
+
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes dim {
+		to {
+			opacity: 0.2;
+		}
+	}
+
+	@keyframes fill-down {
+		from {
+			scale: 1 0;
+		}
+	}
+
+	@keyframes dot-lit {
+		to {
+			background-color: var(--color-neon);
+			border-color: var(--color-neon-soft);
+			box-shadow: var(--shadow-neon-dot);
+		}
+	}
+
+	@keyframes draw {
+		from {
+			scale: 0 1;
+		}
+	}
+
+	@keyframes word-settle {
+		from {
+			color: var(--color-neon-soft);
+		}
+	}
+
+	@keyframes chip-dock {
+		to {
+			opacity: 1;
+			translate: 0 0;
+		}
+	}
+
+	@keyframes neon-drift {
+		from {
+			transform: translate3d(-3%, -2%, 0) scale(1);
+		}
+		to {
+			transform: translate3d(4%, 3%, 0) scale(1.08);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.neon-mesh::before {
+			animation: none;
+		}
+
+		.slab-lit,
+		.slab-pool,
+		.slab-cut,
+		.slab-label,
+		.word-settle {
+			animation: none;
+		}
+
+		.nav-pill {
+			transition: none;
+		}
+
+		.badge-drop,
+		.badge-stage {
+			animation: none;
+		}
+
 	}
 }

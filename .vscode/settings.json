@@ -1,5 +1,12 @@
 {
-	"cSpell.words": ["testid", "oklch", "shadcn", "lefthook", "commitlint"],
+	"cSpell.words": [
+		"commitlint",
+		"geist",
+		"lefthook",
+		"oklch",
+		"shadcn",
+		"testid"
+	],
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "biomejs.biome",
 	"[typescript]": {
@@ -30,9 +37,17 @@
 		"README.md": "CHANGELOG*, CLAUDE.md"
 	},
 	"tailwindCSS.experimental.classRegex": [
-		["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-		["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+		[
+			"cva\\(([^)]*)\\)",
+			"[\"'`]([^\"'`]*).*?[\"'`]"
+		],
+		[
+			"cn\\(([^)]*)\\)",
+			"(?:'|\"|`)([^']*)(?:'|\"|`)"
+		]
 	],
-	"coverage-gutters.coverageFileNames": ["clover.xml"],
+	"coverage-gutters.coverageFileNames": [
+		"clover.xml"
+	],
 	"typescript.tsdk": "node_modules/typescript/lib"
 }
