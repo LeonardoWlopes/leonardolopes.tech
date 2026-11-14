@@ -2,16 +2,18 @@ pre-commit:
   parallel: true
   commands:
     lint:
-      run: pnpm lint-staged
+      run: pnpm lint
     verify-types:
-      run: pnpm tsc
+      run: pnpm check-types
+    test:
+      run: pnpm test:run
 pre-push:
   parallel: true
   commands:
-    verify-types:
-      run: pnpm tsc
+    build:
+      run: pnpm build
     lint:
-      run: pnpm lint-staged
+      run: pnpm lint
     commit-lint:
       run: pnpm dlx commitlint --from=HEAD~1
 commit-msg:

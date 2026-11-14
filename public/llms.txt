@@ -1,0 +1,34 @@
+# Leonardo Lopes
+
+> Tech lead, software engineer and architect from Brazil (UTC−3). Shipping web, backend and mobile systems to production since 2020. Open to full-time, contract and freelance work.
+
+## Highlights
+- At Buildbox (since May 2022): tech lead and member of the tech governance team. Starts new projects on a solid foundation before handing them to a sustain team, and fixes projects with delivery, performance or technical problems; in governance, helps set the processes and technical decisions for the whole tech team and advises projects across the company.
+- Tech Lead at Buildbox for Callink (one of Brazil's largest contact-center groups, 14,000+ employees), since August 2026: leads a team of 7 developers building Horizontes, the company's internal super app, in production, starting with HR and planned to replace every other department's systems. On-premises, fault-tolerant Kubernetes with GitOps deploys; OpenTelemetry with Prometheus, Tempo, Loki and Grafana; NestJS/TypeScript, PostgreSQL, Redis, React and React Native (Expo). A living documentation site, updated daily in a semi-automated way, maps the project end to end and is the core of an AI-assisted development framework.
+- Tech Lead at Buildbox for Linda Lifetech (healthtech, AI breast-cancer detection), August 2025 – August 2026, led the full zero-downtime modernization: monolith to Node.js/TypeScript microservices, AWS to GCP migration with the monthly cloud bill cut by about 38% (from about USD 2,100 to about USD 1,300 a month) and better per-cluster performance, a clinical-trial version launched for clinical studies in Canada, Terraform, React Native with Kotlin native bridges.
+- Grupo Petrópolis (Brazil's largest Brazilian-owned brewer, about USD 4B in yearly revenue): worst-case load time of the field-sales app behind about 97% of that revenue cut from 8 minutes to 1 min 37 s (about 80%); resource use on critical paths halved.
+- Lactalis Group (world's largest dairy group; Brazil's #1 dairy company with 23 factories and 16 brands): national pricing platform across all 27 Brazilian states.
+- MSD Brazil (part of Merck & Co., USD 65B in yearly sales): internal web and mobile gamification platform delivered in about half the estimated time with near-zero production defects.
+- Poliedro (via Nkey): Go service for MP4 to adaptive HLS streaming, 580+ teaching units.
+
+## Experience
+- Tech Lead · Callink (Horizontes) · Buildbox · Aug 2026 – Present
+- Tech Lead · Linda Lifetech · Buildbox · Aug 2025 – Aug 2026
+- Software Engineer · Lactalis Group · Buildbox · Nov 2024 – Aug 2025
+- Software Engineer · Grupo Petrópolis · Buildbox · May 2023 – Nov 2024
+- Software Engineer · MSD Brazil · Buildbox · May 2022 – May 2023
+- Software Engineer · Poliedro Educação · Nkey · Aug 2021 – Apr 2022
+- Mobile Engineer · Freelance · Jun 2020 – Jul 2021
+
+## Contact
+- Availability: open to full-time, contract and freelance work, remote from Brazil (UTC−3, overlapping US East working hours) or relocating anywhere.
+- Languages: English (full professional), Portuguese (native).
+- Email: leonardolopesdeveloper@gmail.com
+- Contact page: https://leonardolopes.tech/contact
+
+## Pages
+- [Home](https://leonardolopes.tech/)
+- [About](https://leonardolopes.tech/about)
+- [Experience](https://leonardolopes.tech/experiences)
+- [Technologies](https://leonardolopes.tech/technologies)
+- [Contact](https://leonardolopes.tech/contact)

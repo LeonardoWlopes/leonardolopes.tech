@@ -2,11 +2,13 @@ import { parseISO } from 'date-fns'
 import { enUS } from 'date-fns/locale/en-US'
 
 export const CONSTANTS = {
-	AVATAR_URL: 'https://github.com/LeonardoWlopes.png',
 	CONTACT_EMAIL: 'leonardolopesdeveloper@gmail.com',
 	GITHUB_URL: 'https://github.com/LeonardoWlopes',
+	REPOSITORY_URL: 'https://github.com/LeonardoWlopes/leonardolopes.tech',
 	LINKEDIN_URL: 'https://www.linkedin.com/in/leonardowilliamlopes/',
 	INSTAGRAM_URL: 'https://www.instagram.com/leonardowlopes/',
+	LINKEDIN_EXPERIENCE_URL:
+		'https://www.linkedin.com/in/leonardowilliamlopes/details/experience/',
 	BIRTHDAY: parseISO('2003-11-10T00:00:00Z'),
 }
 

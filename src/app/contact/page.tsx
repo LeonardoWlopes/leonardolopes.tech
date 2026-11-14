@@ -1,38 +1,10 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { Mail } from '@/components/mail'
-import { PageSubtitle, PageTitle } from '@/components/typography'
-import { CONTACT_LINKS } from '@/utils/mock'
+import { buildPageMetadata } from '~/utils/seo'
 
-export const metadata: Metadata = {
-	title: 'Contact',
+export const metadata = buildPageMetadata({
+	title: 'Contact · Remote Tech Lead from Brazil · Leonardo Lopes',
 	description:
-		'Contact me to discuss collaboration opportunities, projects, or just to chat.',
-}
+		'Hire Leonardo Lopes, a remote software engineer, architect and tech lead in Brazil (UTC−3), open to full-time, contract and freelance work.',
+	path: '/contact',
+})
 
-export default function Contact() {
-	return (
-		<div className="flex w-full max-w-limit flex-col">
-			<PageTitle className="mb-3">Contact</PageTitle>
-
-			<PageSubtitle>Let's build something amazing together?</PageSubtitle>
-
-			<hr className="my-8 border-black/10 md:my-16 dark:border-white/10" />
-
-			<Mail />
-
-			<div className="mt-16 flex items-center justify-center gap-8">
-				{CONTACT_LINKS.map(({ href, Icon }) => (
-					<Link
-						className="h-6 w-6 text-primary opacity-80"
-						key={href}
-						href={href}
-						target="_blank"
-					>
-						<Icon />
-					</Link>
-				))}
-			</div>
-		</div>
-	)
-}
+export { ContactScreen as default } from '~/screens/contact'

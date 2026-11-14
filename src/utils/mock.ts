@@ -1,118 +1,120 @@
 import { parseISO } from 'date-fns'
+import { CalendarDays, Mail, MessageCircle } from 'lucide-react'
+import android from '~/assets/icons/android.svg'
+import apachekafka from '~/assets/icons/apachekafka.svg'
+import apple from '~/assets/icons/apple.svg'
+import aws from '~/assets/icons/aws.svg'
+import azure from '~/assets/icons/azure.svg'
+import bash from '~/assets/icons/bash.svg'
+import biome from '~/assets/icons/biome.svg'
+import bun from '~/assets/icons/bun.svg'
+import chatgpt from '~/assets/icons/chatgpt.svg'
+import claude from '~/assets/icons/claude.svg'
+import cloudflare from '~/assets/icons/cloudflare.svg'
+import cloudwatch from '~/assets/icons/cloudwatch.svg'
+import copilot from '~/assets/icons/copilot.svg'
+import cursor from '~/assets/icons/cursor.svg'
+import cypress from '~/assets/icons/cypress.svg'
+import datadog from '~/assets/icons/datadog.svg'
+import deno from '~/assets/icons/deno.svg'
+import digitalOcean from '~/assets/icons/digital-ocean.svg'
+import docker from '~/assets/icons/docker.svg'
+import docusaurus from '~/assets/icons/docusaurus.svg'
+import drizzle from '~/assets/icons/drizzle.svg'
+import electron from '~/assets/icons/electron.svg'
+import elysiajs from '~/assets/icons/elysiajs.svg'
+import eslint from '~/assets/icons/eslint.svg'
+import expo from '~/assets/icons/expo.svg'
+import express from '~/assets/icons/express.svg'
+import fastify from '~/assets/icons/fastify.svg'
+import figma from '~/assets/icons/figma.svg'
+import firebase from '~/assets/icons/firebase.svg'
+import git from '~/assets/icons/git.svg'
+import github from '~/assets/icons/github.svg'
+import githubActions from '~/assets/icons/github-actions.svg'
+import go from '~/assets/icons/go.svg'
+import googleCloud from '~/assets/icons/google-cloud.svg'
+import grafana from '~/assets/icons/grafana.svg'
+import graphql from '~/assets/icons/graphql.svg'
+import grok from '~/assets/icons/grok.svg'
+import javascript from '~/assets/icons/javascript.svg'
+import jest from '~/assets/icons/jest.svg'
+import jwt from '~/assets/icons/jwt.svg'
+import kotlin from '~/assets/icons/kotlin.svg'
+import kubernetes from '~/assets/icons/kubernetes.svg'
+import linux from '~/assets/icons/linux.svg'
+import loki from '~/assets/icons/loki.svg'
+import mariadb from '~/assets/icons/mariadb.svg'
+import mongo from '~/assets/icons/mongo.svg'
+import mysql from '~/assets/icons/mysql.svg'
+import nest from '~/assets/icons/nest.svg'
+import next from '~/assets/icons/next.svg'
+import ngrok from '~/assets/icons/ngrok.svg'
+import node from '~/assets/icons/node.svg'
+import notion from '~/assets/icons/notion.svg'
+import npm from '~/assets/icons/npm.svg'
+import opentelemetry from '~/assets/icons/opentelemetry.svg'
+import pnpm from '~/assets/icons/pnpm.svg'
+import postgres from '~/assets/icons/postgres.svg'
+import prettier from '~/assets/icons/prettier.svg'
+import prisma from '~/assets/icons/prisma.svg'
+import prometheus from '~/assets/icons/prometheus.svg'
+import pulumi from '~/assets/icons/pulumi.svg'
+import python from '~/assets/icons/python.svg'
+import raycast from '~/assets/icons/raycast.svg'
+import react from '~/assets/icons/react.svg'
+import reactQuery from '~/assets/icons/react-query.svg'
+import redis from '~/assets/icons/redis.svg'
+import rust from '~/assets/icons/rust.svg'
+import sequelize from '~/assets/icons/sequelize.svg'
+import shadcn from '~/assets/icons/shadcn.svg'
+import socketio from '~/assets/icons/socketio.svg'
+import sql from '~/assets/icons/sql.svg'
+import sqlite from '~/assets/icons/sqlite.svg'
+import sst from '~/assets/icons/sst.svg'
+import storybook from '~/assets/icons/storybook.svg'
+import styled from '~/assets/icons/styled-components.svg'
+import supabase from '~/assets/icons/supabase.svg'
+import swagger from '~/assets/icons/swagger.svg'
+import tailwind from '~/assets/icons/tailwind.svg'
+import tauri from '~/assets/icons/tauri.svg'
+import tempo from '~/assets/icons/tempo.svg'
+import terraform from '~/assets/icons/terraform.svg'
+import threejs from '~/assets/icons/threejs.svg'
+import turbopack from '~/assets/icons/turbopack.svg'
+import turborepo from '~/assets/icons/turborepo.svg'
+import twilio from '~/assets/icons/twilio.svg'
+import typescript from '~/assets/icons/typescript.svg'
+import v0 from '~/assets/icons/v0.svg'
+import vercel from '~/assets/icons/vercel.svg'
+import vite from '~/assets/icons/vite.svg'
+import vitest from '~/assets/icons/vitest.svg'
+import vscode from '~/assets/icons/vscode.svg'
+import windows from '~/assets/icons/windows.svg'
+import yarn from '~/assets/icons/yarn.svg'
+import zod from '~/assets/icons/zod.svg'
+import build from '~/assets/images/buildbox.jpeg'
+import hookForm from '~/assets/images/hook-form.png'
+import nkey from '~/assets/images/nkey.jpeg'
+import zustand from '~/assets/images/zustand.png'
 import {
-	Atom,
-	Briefcase,
-	CalendarDays,
-	Github,
-	Home,
-	Instagram,
-	Linkedin,
-	Mail,
-	MessageCircle,
-	UserRound,
-} from 'lucide-react'
-import android from '@/assets/icons/android.svg'
-import apachekafka from '@/assets/icons/apachekafka.svg'
-import apple from '@/assets/icons/apple.svg'
-import aws from '@/assets/icons/aws.svg'
-import bash from '@/assets/icons/bash.svg'
-import biome from '@/assets/icons/biome.svg'
-import bun from '@/assets/icons/bun.svg'
-import chatgpt from '@/assets/icons/chatgpt.svg'
-import claude from '@/assets/icons/claude.svg'
-import cloudflare from '@/assets/icons/cloudflare.svg'
-import copilot from '@/assets/icons/copilot.svg'
-import cursor from '@/assets/icons/cursor.svg'
-import cypress from '@/assets/icons/cypress.svg'
-import deno from '@/assets/icons/deno.svg'
-import digitalOcean from '@/assets/icons/digital-ocean.svg'
-import docker from '@/assets/icons/docker.svg'
-import drizzle from '@/assets/icons/drizzle.svg'
-import electron from '@/assets/icons/electron.svg'
-import elysiajs from '@/assets/icons/elysiajs.svg'
-import eslint from '@/assets/icons/eslint.svg'
-import expo from '@/assets/icons/expo.svg'
-import express from '@/assets/icons/express.svg'
-import fastify from '@/assets/icons/fastify.svg'
-import figma from '@/assets/icons/figma.svg'
-import firebase from '@/assets/icons/firebase.svg'
-import git from '@/assets/icons/git.svg'
-import github from '@/assets/icons/github.svg'
-import githubActions from '@/assets/icons/github-actions.svg'
-import go from '@/assets/icons/go.svg'
-import graphql from '@/assets/icons/graphql.svg'
-import grok from '@/assets/icons/grok.svg'
-import javascript from '@/assets/icons/javascript.svg'
-import jest from '@/assets/icons/jest.svg'
-import jwt from '@/assets/icons/jwt.svg'
-import kubernetes from '@/assets/icons/kubernetes.svg'
-import mariadb from '@/assets/icons/mariadb.svg'
-import mongo from '@/assets/icons/mongo.svg'
-import mysql from '@/assets/icons/mysql.svg'
-import nest from '@/assets/icons/nest.svg'
-import next from '@/assets/icons/next.svg'
-import ngrok from '@/assets/icons/ngrok.svg'
-import node from '@/assets/icons/node.svg'
-import notion from '@/assets/icons/notion.svg'
-import npm from '@/assets/icons/npm.svg'
-import opentelemetry from '@/assets/icons/opentelemetry.svg'
-import pnpm from '@/assets/icons/pnpm.svg'
-import postgres from '@/assets/icons/postgres.svg'
-import prettier from '@/assets/icons/prettier.svg'
-import prisma from '@/assets/icons/prisma.svg'
-import pulumi from '@/assets/icons/pulumi.svg'
-import python from '@/assets/icons/python.svg'
-import raycast from '@/assets/icons/raycast.svg'
-import react from '@/assets/icons/react.svg'
-import reactQuery from '@/assets/icons/react-query.svg'
-import redis from '@/assets/icons/redis.svg'
-import rust from '@/assets/icons/rust.svg'
-import sequelize from '@/assets/icons/sequelize.svg'
-import shadcn from '@/assets/icons/shadcn.svg'
-import socketio from '@/assets/icons/socketio.svg'
-import sqlite from '@/assets/icons/sqlite.svg'
-import sst from '@/assets/icons/sst.svg'
-import storybook from '@/assets/icons/storybook.svg'
-import styled from '@/assets/icons/styled-components.svg'
-import supabase from '@/assets/icons/supabase.svg'
-import swagger from '@/assets/icons/swagger.svg'
-import tailwind from '@/assets/icons/tailwind.svg'
-import tauri from '@/assets/icons/tauri.svg'
-import terraform from '@/assets/icons/terraform.svg'
-import threejs from '@/assets/icons/threejs.svg'
-import turbopack from '@/assets/icons/turbopack.svg'
-import turborepo from '@/assets/icons/turborepo.svg'
-import twilio from '@/assets/icons/twilio.svg'
-import typescript from '@/assets/icons/typescript.svg'
-import ubuntu from '@/assets/icons/ubuntu.svg'
-import v0 from '@/assets/icons/v0.svg'
-import vercel from '@/assets/icons/vercel.svg'
-import vite from '@/assets/icons/vite.svg'
-import vitest from '@/assets/icons/vitest.svg'
-import vscode from '@/assets/icons/vscode.svg'
-import windows from '@/assets/icons/windows.svg'
-import yarn from '@/assets/icons/yarn.svg'
-import zod from '@/assets/icons/zod.svg'
-import build from '@/assets/images/buildbox.jpeg'
-import hookForm from '@/assets/images/hook-form.png'
-import nkey from '@/assets/images/nkey.jpeg'
-import zustand from '@/assets/images/zustand.png'
-import { ETechCategory } from '@/enums/tech'
-import type { IContactLink } from '@/interfaces/contact'
-import type { IExperience } from '@/interfaces/experience'
-import type { ITechCardList } from '@/interfaces/tech'
-import { env } from '@/utils/env'
-// utils
+	GithubIcon,
+	InstagramIcon,
+	LinkedinIcon,
+} from '~/components/brand-icons'
+import { ETechCategory } from '~/enums/tech'
+import type { IContactLink } from '~/interfaces/contact'
+import type { IExperience } from '~/interfaces/experience'
+import type { IOutcome, IStackGroup } from '~/interfaces/outcome'
+import type { ITech } from '~/interfaces/tech'
+import { env } from '~/utils/env'
 import { CONSTANTS } from './constants'
+import { toSlug } from './slug'
 
 export const TECH_CATEGORIES = [
 	{
-		name: 'Languages',
+		name: 'Languages and runtimes',
 		category: ETechCategory.LANGUAGE,
-	},
-	{
-		name: 'Runtimes',
-		category: ETechCategory.RUNTIME,
 	},
 	{
 		name: 'Build, package managers, and bundlers',
@@ -143,20 +145,24 @@ export const TECH_CATEGORIES = [
 		category: ETechCategory.CLOUD,
 	},
 	{
+		name: 'Observability',
+		category: ETechCategory.OBSERVABILITY,
+	},
+	{
 		name: 'Operating systems and devices',
 		category: ETechCategory.OS,
 	},
 ] as const
 
-export const TECH_CARDS: ITechCardList[] = [
+export const TECH_CARDS: ITech[] = [
 	{
-		name: 'Javascript',
+		name: 'JavaScript',
 		image: javascript,
-		link: 'https://developer.mozilla.org/pt-BR/docs/Web/JavaScript',
+		link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
 		category: ETechCategory.LANGUAGE,
 	},
 	{
-		name: 'Typescript',
+		name: 'TypeScript',
 		image: typescript,
 		link: 'https://www.typescriptlang.org/',
 		category: ETechCategory.LANGUAGE,
@@ -176,6 +182,18 @@ export const TECH_CARDS: ITechCardList[] = [
 		nonProfessional: true,
 	},
 	{
+		name: 'Kotlin',
+		image: kotlin,
+		link: 'https://kotlinlang.org/',
+		category: ETechCategory.LANGUAGE,
+	},
+	{
+		name: 'SQL',
+		image: sql,
+		link: 'https://en.wikipedia.org/wiki/SQL',
+		category: ETechCategory.LANGUAGE,
+	},
+	{
 		name: 'Go',
 		image: go,
 		link: 'https://go.dev/',
@@ -185,7 +203,7 @@ export const TECH_CARDS: ITechCardList[] = [
 		name: 'Deno',
 		image: deno,
 		link: 'https://deno.com/',
-		category: ETechCategory.RUNTIME,
+		category: ETechCategory.LANGUAGE,
 		nonProfessional: true,
 	},
 	{
@@ -198,6 +216,18 @@ export const TECH_CARDS: ITechCardList[] = [
 		name: 'AWS',
 		image: aws,
 		link: 'https://aws.amazon.com/',
+		category: ETechCategory.CLOUD,
+	},
+	{
+		name: 'Google Cloud',
+		image: googleCloud,
+		link: 'https://cloud.google.com/',
+		category: ETechCategory.CLOUD,
+	},
+	{
+		name: 'Azure',
+		image: azure,
+		link: 'https://azure.microsoft.com/',
 		category: ETechCategory.CLOUD,
 	},
 	{
@@ -255,7 +285,7 @@ export const TECH_CARDS: ITechCardList[] = [
 		category: ETechCategory.TOOL,
 	},
 	{
-		name: 'Digital Ocean',
+		name: 'DigitalOcean',
 		image: digitalOcean,
 		link: 'https://www.digitalocean.com/',
 		category: ETechCategory.CLOUD,
@@ -314,7 +344,7 @@ export const TECH_CARDS: ITechCardList[] = [
 		category: ETechCategory.LIBRARY,
 	},
 	{
-		name: 'Next JS',
+		name: 'Next.js',
 		image: next,
 		link: 'https://nextjs.org/',
 		category: ETechCategory.FRAMEWORK,
@@ -326,7 +356,7 @@ export const TECH_CARDS: ITechCardList[] = [
 		category: ETechCategory.LIBRARY,
 	},
 	{
-		name: 'Styled Components',
+		name: 'styled-components',
 		image: styled,
 		link: 'https://styled-components.com/',
 		category: ETechCategory.LIBRARY,
@@ -341,16 +371,58 @@ export const TECH_CARDS: ITechCardList[] = [
 		name: 'Expo',
 		image: expo,
 		link: 'https://expo.dev/',
-		category: ETechCategory.RUNTIME,
+		category: ETechCategory.FRAMEWORK,
 	},
 	{
 		name: 'OpenTelemetry',
 		image: opentelemetry,
 		link: 'https://opentelemetry.io/',
-		category: ETechCategory.TOOL,
+		category: ETechCategory.OBSERVABILITY,
 	},
 	{
-		name: 'Hook Form',
+		name: 'Grafana',
+		image: grafana,
+		link: 'https://grafana.com/',
+		category: ETechCategory.OBSERVABILITY,
+	},
+	{
+		name: 'Loki',
+		image: loki,
+		link: 'https://grafana.com/oss/loki/',
+		category: ETechCategory.OBSERVABILITY,
+	},
+	{
+		name: 'Tempo',
+		image: tempo,
+		link: 'https://grafana.com/oss/tempo/',
+		category: ETechCategory.OBSERVABILITY,
+	},
+	{
+		name: 'Prometheus',
+		image: prometheus,
+		link: 'https://prometheus.io/',
+		category: ETechCategory.OBSERVABILITY,
+	},
+	{
+		name: 'Datadog',
+		image: datadog,
+		link: 'https://www.datadoghq.com/',
+		category: ETechCategory.OBSERVABILITY,
+	},
+	{
+		name: 'CloudWatch',
+		image: cloudwatch,
+		link: 'https://aws.amazon.com/cloudwatch/',
+		category: ETechCategory.OBSERVABILITY,
+	},
+	{
+		name: 'Docusaurus',
+		image: docusaurus,
+		link: 'https://docusaurus.io/',
+		category: ETechCategory.FRAMEWORK,
+	},
+	{
+		name: 'React Hook Form',
 		image: hookForm,
 		link: 'https://react-hook-form.com/',
 		category: ETechCategory.LIBRARY,
@@ -374,16 +446,16 @@ export const TECH_CARDS: ITechCardList[] = [
 		category: ETechCategory.LIBRARY,
 	},
 	{
-		name: 'Node',
+		name: 'Node.js',
 		image: node,
 		link: 'https://nodejs.org/',
-		category: ETechCategory.RUNTIME,
+		category: ETechCategory.LANGUAGE,
 	},
 	{
 		name: 'Bun',
 		image: bun,
 		link: 'https://bun.sh/',
-		category: ETechCategory.RUNTIME,
+		category: ETechCategory.LANGUAGE,
 	},
 	{
 		name: 'Express',
@@ -404,7 +476,7 @@ export const TECH_CARDS: ITechCardList[] = [
 		category: ETechCategory.FRAMEWORK,
 	},
 	{
-		name: 'Nest',
+		name: 'NestJS',
 		image: nest,
 		link: 'https://nestjs.com/',
 		category: ETechCategory.FRAMEWORK,
@@ -458,7 +530,7 @@ export const TECH_CARDS: ITechCardList[] = [
 		category: ETechCategory.OS,
 	},
 	{
-		name: 'IOS',
+		name: 'iOS',
 		image: apple,
 		link: 'https://developer.apple.com/',
 		category: ETechCategory.OS,
@@ -566,13 +638,13 @@ export const TECH_CARDS: ITechCardList[] = [
 		category: ETechCategory.TOOL,
 	},
 	{
-		name: 'NPM',
+		name: 'npm',
 		image: npm,
 		link: 'https://www.npmjs.com/',
 		category: ETechCategory.BUILD,
 	},
 	{
-		name: 'PNPM',
+		name: 'pnpm',
 		image: pnpm,
 		link: 'https://pnpm.io/',
 		category: ETechCategory.BUILD,
@@ -645,13 +717,19 @@ export const TECH_CARDS: ITechCardList[] = [
 		category: ETechCategory.CLOUD,
 	},
 	{
-		name: 'Ubuntu',
-		image: ubuntu,
-		link: 'https://ubuntu.com/',
+		name: 'Linux',
+		image: linux,
+		link: 'https://www.kernel.org/',
 		category: ETechCategory.OS,
 	},
 	{
-		name: 'V0',
+		name: 'macOS',
+		image: apple,
+		link: 'https://www.apple.com/macos/',
+		category: ETechCategory.OS,
+	},
+	{
+		name: 'v0',
 		image: v0,
 		link: 'https://v0.dev/',
 		category: ETechCategory.TOOL,
@@ -675,7 +753,7 @@ export const TECH_CARDS: ITechCardList[] = [
 		category: ETechCategory.BUILD,
 	},
 	{
-		name: 'Shadcn',
+		name: 'shadcn/ui',
 		image: shadcn,
 		link: 'https://ui.shadcn.com/',
 		category: ETechCategory.LIBRARY,
@@ -686,35 +764,33 @@ export const CONTACT_LINKS: IContactLink[] = [
 	{
 		href: `mailto:${CONSTANTS.CONTACT_EMAIL}`,
 		Icon: Mail,
-	},
-	{
-		href: CONSTANTS.LINKEDIN_URL,
-		Icon: Linkedin,
-	},
-	{
-		href: CONSTANTS.GITHUB_URL,
-		Icon: Github,
-	},
-	{
-		href: CONSTANTS.INSTAGRAM_URL,
-		Icon: Instagram,
-	},
-	{
-		href: `https://wa.me/${env.NEXT_PUBLIC_CONTACT_NUMBER}`,
-		Icon: MessageCircle,
+		label: 'Email',
 	},
 	{
 		href: env.SCHEDULE_LINK,
 		Icon: CalendarDays,
+		label: 'Schedule a call',
 	},
-]
-
-export const NAV_LINKS = [
-	{ label: 'Home', href: '/', Icon: Home },
-	{ label: 'About', href: '/about', Icon: UserRound },
-	{ label: 'Experiences', href: '/experiences', Icon: Briefcase },
-	{ label: 'Technologies', href: '/technologies', Icon: Atom },
-	{ label: 'Contact', href: '/contact', Icon: Mail },
+	{
+		href: `https://wa.me/${env.NEXT_PUBLIC_CONTACT_NUMBER}`,
+		Icon: MessageCircle,
+		label: 'WhatsApp',
+	},
+	{
+		href: CONSTANTS.LINKEDIN_URL,
+		Icon: LinkedinIcon,
+		label: 'LinkedIn',
+	},
+	{
+		href: CONSTANTS.GITHUB_URL,
+		Icon: GithubIcon,
+		label: 'GitHub',
+	},
+	{
+		href: CONSTANTS.INSTAGRAM_URL,
+		Icon: InstagramIcon,
+		label: 'Instagram',
+	},
 ]
 
 export const ELSE_WHERE_LINKS = [
@@ -730,34 +806,43 @@ export const EXPERIENCES: IExperience[] = [
 			name: 'Buildbox',
 			icon: build,
 		},
+		summary:
+			'Tech lead and member of the tech governance team. I start new projects on a solid foundation before handing them to a sustain team, and I fix projects with delivery, performance or technical problems. In governance, I help set the processes and technical decisions for the whole tech team and advise projects across the company.',
 		roles: [
 			{
-				title: 'Tech Lead @Linda Lifetech',
-				startDate: parseISO('2025-07-01'),
+				title: 'Tech Lead @Callink',
+				startDate: parseISO('2026-08-01'),
 				endDate: null,
 				description:
-					'Healthtech product for early breast-cancer detection using AI, mobile diagnostics, and secure clinical workflows. Led modernization of a live system for thousands of users: zero-downtime migration from a monolith to Go and Node.js/TypeScript microservices, micro frontends, and React Native. Cut cloud cost by about 59% while improving performance and reliability. Introduced OpenTelemetry for tracing, metrics, and security visibility; defined infrastructure as code with Terraform. Built React Native native bridges in Kotlin to integrate external diagnostic hardware.',
+					'Lead a team of 7 developers building Horizontes, the internal super app of Callink, one of Brazil’s largest contact-center groups with more than 14,000 employees. It starts with HR and will replace the systems of every other department; it is the largest and most robust system I have built. It runs on-premises on fault-tolerant Kubernetes, observable end to end with OpenTelemetry. A living documentation site, updated daily and semi-automatically, maps the code and the product and anchors our AI-assisted development framework. Built with NestJS, TypeScript, React and React Native.',
+			},
+			{
+				title: 'Tech Lead @Linda Lifetech',
+				startDate: parseISO('2025-08-01'),
+				endDate: parseISO('2026-08-01'),
+				description:
+					'Led the full modernization of a live healthtech platform for early breast-cancer detection, used by thousands, with zero downtime: from a monolith to Node.js/TypeScript microservices, micro frontends and React Native. Migrated the whole cloud infrastructure from AWS to GCP, cutting the monthly bill by about 38% while raising per-cluster service performance. Built and launched a clinical-trial version of the product for clinical studies in Canada. Defined the infrastructure as code with Terraform and built Kotlin native bridges so the React Native app talks to external diagnostic hardware.',
 			},
 			{
 				title: 'Software Engineer @Lactalis Group',
 				startDate: parseISO('2024-11-01'),
 				endDate: parseISO('2025-08-01'),
 				description:
-					'National pricing platform for the world’s largest dairy company (85+ countries, USD 17B+ turnover), supporting the pricing team across all 27 Brazilian states with regional tax and commercial rules for accurate, auditable national pricing. Node.js, TypeScript, and full-stack collaboration in a large enterprise, domain-driven context.',
+					'Built the national pricing platform for Lactalis, the world’s largest dairy group and Brazil’s #1 dairy company (23 factories, 16 brands such as Parmalat, Président and Itambé), used by the pricing team across all 27 Brazilian states. It applies each state’s tax and commercial rules so national pricing stays accurate and auditable. Built with Node.js and TypeScript in a large, domain-driven codebase.',
 			},
 			{
 				title: 'Software Engineer @Grupo Petrópolis',
 				startDate: parseISO('2023-05-01'),
 				endDate: parseISO('2024-11-01'),
 				description:
-					'One of Brazil’s largest beverage companies ($4B+ annual revenue, 700k+ customers), where a mobile app drives about 97% of revenue. Built an internal web platform for managers and supervisors to streamline operations. Cut main app load time by about 50% and reduced resource use by about half on critical paths; improved latency, stability, and mobile UX for high-volume B2B field sales. Stack: React, React Native, and Node.js.',
+					'Cut the worst-case load time of the main app at Grupo Petrópolis from 8 minutes to 1 min 37 s (about 80%). It is the field-sales app behind about 97% of the revenue of the largest brewer under Brazilian ownership, around USD 4B a year. Also halved resource use on critical paths, improved latency, stability and mobile UX for high-volume B2B sales, and built an internal web platform for managers and supervisors. Built with React, React Native and Node.js.',
 			},
 			{
 				title: 'Software Engineer @MSD',
 				startDate: parseISO('2022-05-01'),
 				endDate: parseISO('2023-05-01'),
 				description:
-					'Web and mobile clients for a custom internal gamification platform at a global pharmaceutical company (130+ years, 140+ countries). Delivered the project in about half the estimated time with near-zero production defects. Integrated statistical insights for data-driven decisions and supported internal engagement aligned with company strategy.',
+					'Built the web and mobile clients of a custom internal gamification platform for MSD Brazil, part of Merck & Co., the 130-year-old pharmaceutical company with USD 65B in yearly sales. Delivered it in about half the estimated time with near-zero production defects, and added statistical insights so the company could track engagement against its strategy.',
 			},
 		],
 	},
@@ -768,11 +853,11 @@ export const EXPERIENCES: IExperience[] = [
 		},
 		roles: [
 			{
-				title: 'Software Engineer @Poliedro Educacao',
+				title: 'Software Engineer @Poliedro Educação',
 				startDate: parseISO('2021-08-01'),
 				endDate: parseISO('2022-04-30'),
 				description:
-					'Content distribution platform for Poliedro Sistema de Ensino, a leading Brazilian edtech provider. Designed and built a Go microservice for MP4 ingest, HLS chunking, and adaptive streaming, using Go’s concurrency model for high-throughput parallel encoding. The pipeline served peak load from 580+ teaching units and reduced end-user streaming latency for students and educators nationwide.',
+					'Designed and built the Go microservice behind the content distribution platform of Poliedro Sistema de Ensino, a leading Brazilian edtech provider: MP4 ingest, HLS chunking and adaptive streaming, using Go’s concurrency model for parallel encoding. The pipeline handled peak load from 580+ teaching units and cut streaming latency for students and educators nationwide.',
 			},
 		],
 	},
@@ -787,8 +872,151 @@ export const EXPERIENCES: IExperience[] = [
 				startDate: parseISO('2020-06-01'),
 				endDate: parseISO('2021-07-31'),
 				description:
-					'Multiple client projects across industries, owning requirements through delivery: new features, performance tuning, and production fixes in React Native. Strengthened state management and UI performance, reduced crash rate, and improved responsiveness on client apps. Foundation in mobile architecture and client communication that supported the move into larger product teams.',
+					'React Native apps for clients across industries, from requirements to delivery: new features, performance tuning and production fixes. Improved state management and UI performance, reduced crash rates and made client apps more responsive. This is where I learned mobile architecture and how to work directly with clients.',
 			},
+		],
+	},
+]
+
+/** Home hero copy, from the owner's confirmed facts and EXPERIENCES */
+export const HOME_HERO = {
+	role: 'Tech Lead · Software Engineer & Architect',
+	current: 'Tech Lead at Buildbox, leading Horizontes, the Callink super app',
+	/** Closing line of the home and the back of the badge */
+	closingLine: 'Send the role or the project.',
+	availability:
+		'Open to full-time, contract and freelance · Remote from Brazil (UTC−3) or relocation',
+	slabCaption:
+		'Monthly cloud bill of the Linda Lifetech platform, from about USD 2,100 to about USD 1,300, after a zero-downtime move from AWS to GCP.',
+}
+
+const roleAnchor = (title: string) => `/experiences#${toSlug(title)}`
+
+export const OUTCOMES: IOutcome[] = [
+	{
+		metric: '7',
+		unit: 'developers I lead',
+		isScope: true,
+		summary:
+			'Internal super app for Callink, HR first and then every department, on on-premises Kubernetes.',
+		role: 'Tech Lead',
+		client: 'Callink',
+		employer: 'Buildbox',
+		period: '2026 – Present',
+		href: roleAnchor('Tech Lead @Callink'),
+		stack: ['NestJS', 'TypeScript', 'Kubernetes', 'OpenTelemetry'],
+		isCurrent: true,
+	},
+	{
+		metric: '−38%',
+		unit: 'cloud cost',
+		summary:
+			'Led a zero-downtime modernization of a live healthtech platform and moved its cloud from AWS to GCP.',
+		role: 'Tech Lead',
+		client: 'Linda Lifetech',
+		employer: 'Buildbox',
+		period: '2025 – 2026',
+		href: roleAnchor('Tech Lead @Linda Lifetech'),
+		stack: [
+			'Node.js',
+			'TypeScript',
+			'React Native',
+			'Kotlin',
+			'Google Cloud',
+			'Terraform',
+		],
+		isFeatured: true,
+		ratio: 0.62,
+	},
+	{
+		metric: '−80%',
+		unit: 'worst-case app load time',
+		summary:
+			'Took the worst-case load of the field-sales app behind about 97% of Grupo Petrópolis’ USD 4B yearly revenue from 8 minutes to 1 min 37 s.',
+		role: 'Software Engineer',
+		client: 'Grupo Petrópolis',
+		employer: 'Buildbox',
+		period: '2023 – 2024',
+		href: roleAnchor('Software Engineer @Grupo Petrópolis'),
+		stack: ['React', 'React Native', 'Node.js'],
+		ratio: 0.5,
+	},
+	{
+		metric: '27',
+		unit: 'Brazilian states, one pricing platform',
+		isScope: true,
+		summary:
+			'National pricing platform with regional tax rules for Lactalis, the largest dairy group in the world.',
+		role: 'Software Engineer',
+		client: 'Lactalis Group',
+		employer: 'Buildbox',
+		period: '2024 – 2025',
+		href: roleAnchor('Software Engineer @Lactalis Group'),
+		stack: ['Node.js', 'TypeScript'],
+	},
+	{
+		metric: '0.5×',
+		unit: 'the estimated delivery time',
+		summary:
+			'Shipped the internal web and mobile gamification platform for MSD Brazil with near-zero production defects.',
+		role: 'Software Engineer',
+		client: 'MSD',
+		employer: 'Buildbox',
+		period: '2022 – 2023',
+		href: roleAnchor('Software Engineer @MSD'),
+		ratio: 0.5,
+	},
+	{
+		metric: '580+',
+		unit: 'teaching units served',
+		isScope: true,
+		summary:
+			'Go service that turns MP4 uploads into adaptive HLS streams for Poliedro, built for peak load.',
+		role: 'Software Engineer',
+		client: 'Poliedro',
+		employer: 'Nkey',
+		period: '2021 – 2022',
+		href: roleAnchor('Software Engineer @Poliedro Educação'),
+		stack: ['Go', 'HLS'],
+	},
+]
+
+export const STACK_GROUPS: IStackGroup[] = [
+	{
+		title: 'Interfaces',
+		techs: [
+			'React',
+			'Next.js',
+			'React Native',
+			'Expo',
+			'Tailwind CSS',
+			'Storybook',
+		],
+	},
+	{
+		title: 'Services',
+		techs: ['TypeScript', 'Node.js', 'Go', 'NestJS', 'GraphQL', 'Fastify'],
+	},
+	{
+		title: 'Data and messaging',
+		techs: [
+			'PostgreSQL',
+			'MongoDB',
+			'Redis',
+			'Apache Kafka',
+			'Prisma',
+			'MySQL',
+		],
+	},
+	{
+		title: 'Cloud and infrastructure',
+		techs: [
+			'AWS',
+			'Google Cloud',
+			'Azure',
+			'Terraform',
+			'Kubernetes',
+			'OpenTelemetry',
 		],
 	},
 ]

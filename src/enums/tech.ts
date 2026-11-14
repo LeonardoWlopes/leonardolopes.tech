@@ -5,8 +5,8 @@ export enum ETechCategory {
 	LIBRARY = 3,
 	DATABASE = 4,
 	TESTING = 5,
-	RUNTIME = 6,
 	CLOUD = 7,
 	OS = 8,
 	BUILD = 9,
+	OBSERVABILITY = 10,
 }

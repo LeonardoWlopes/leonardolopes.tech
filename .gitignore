@@ -35,3 +35,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.playwright-mcp
+temp
+# misc local
+coverage
+
+# Impeccable: keep the durable design records, drop local artifacts
+.impeccable/review/
+.impeccable/questions/
+.impeccable/hook.cache.json
+.impeccable/config.local.json
