@@ -77,4 +77,29 @@ describe('useNavLinksContainer', () => {
 
 		expect(observer.disconnect).toHaveBeenCalled()
 	})
+
+	it('moves the pill on client-side navigation, without a reload', () => {
+		usePathname.mockReturnValue('/')
+		const list = document.createElement('ul')
+		const link = document.createElement('a')
+		let left = 0
+		link.setAttribute('aria-current', 'page')
+		Object.defineProperty(link, 'offsetLeft', { get: () => left })
+		Object.defineProperty(link, 'offsetWidth', { value: 64 })
+		list.appendChild(link)
+
+		const { result, rerender } = renderHook(() => {
+			const container = useNavLinksContainer()
+			container.listRef.current = list
+			return container
+		})
+		expect(result.current.pill).toEqual({ x: 0, width: 64 })
+
+		// The next route's link is the active one now, further right
+		left = 120
+		usePathname.mockReturnValue('/about')
+		rerender()
+
+		expect(result.current.pill).toEqual({ x: 120, width: 64 })
+	})
 })

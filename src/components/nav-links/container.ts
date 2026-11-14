@@ -44,7 +44,9 @@ export function useNavLinksContainer() {
 
 		return () => observer.disconnect()
 	}
-	useEffect(followActiveLink, [])
+	// Re-measure on every route change: client navigation moves aria-current
+	// without resizing the list, so the observer alone never fires
+	useEffect(followActiveLink, [pathname])
 
 	return { links, listRef, pill }
 }
