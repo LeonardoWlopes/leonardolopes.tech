@@ -13,10 +13,6 @@ const GROUPS = groupTechsByCategory()
 	.filter(({ items }) => items.length > 0)
 	.map((group) => ({ ...group, id: toSlug(group.name) }))
 
-function pad(value: number) {
-	return String(value).padStart(2, '0')
-}
-
 export function TechnologiesScreen() {
 	return (
 		<div className="bleed flex w-full flex-col">
@@ -80,7 +76,7 @@ export function TechnologiesScreen() {
 				</dl>
 
 				<nav aria-label="Technology categories">
-					<ul className="-mx-[clamp(1.25rem,5vw,6rem)] flex gap-2 overflow-x-auto px-[clamp(1.25rem,5vw,6rem)] pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0">
+					<ul className="-mx-[clamp(1.25rem,5vw,6rem)] flex gap-2 overflow-x-auto [scrollbar-width:none] px-[clamp(1.25rem,5vw,6rem)] pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0">
 						{GROUPS.map(({ id, name, items }) => (
 							<li key={id}>
 								<a
@@ -89,7 +85,7 @@ export function TechnologiesScreen() {
 								>
 									{name}
 									<span className="font-mono text-muted-foreground text-xs tabular-nums">
-										{pad(items.length)}
+										{items.length}
 										<span className="sr-only"> technologies</span>
 									</span>
 								</a>
@@ -115,7 +111,7 @@ export function TechnologiesScreen() {
 							</h2>
 
 							<p className="shrink-0 font-mono text-neon-soft text-sm tabular-nums">
-								{pad(items.length)}
+								{items.length}
 								<span className="sr-only"> technologies</span>
 							</p>
 						</div>
@@ -159,7 +155,7 @@ export function TechnologiesScreen() {
 						href="/experiences"
 						className="group inline-flex w-fit items-center gap-2 text-neon-soft underline-offset-4 hover:underline"
 					>
-						Full experience history
+						See my experience
 						<ArrowRight
 							className="size-4 transition-transform group-hover:translate-x-0.5"
 							aria-hidden

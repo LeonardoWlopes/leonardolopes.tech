@@ -26,7 +26,7 @@ const CTA =
 
 const CURRENT = OUTCOMES.find(
 	(outcome): outcome is (typeof OUTCOMES)[number] & { ratio: number } =>
-		Boolean(outcome.isCurrent && outcome.ratio),
+		Boolean(outcome.isFeatured && outcome.ratio),
 )
 
 const BRAND = [
@@ -485,9 +485,10 @@ export async function StyleguideScreen() {
 						<div className="flex flex-col gap-2">
 							<h3 className={SPEC_NAME}>CostSlab</h3>
 							<p className="max-w-[56ch] text-muted-foreground text-sm">
-								The only emitter: the current job&apos;s cloud bill after the
-								migration, labelled Before 100% and Now 62% inside the bar. On
-								the home its rounded box is the surface the hero beam lands on.
+								The only emitter: the featured result, Linda Lifetech&apos;s
+								cloud bill after the migration, labelled Before 100% and Now 62%
+								inside the bar. On the home its rounded box is the surface the
+								hero beam lands on.
 							</p>
 						</div>
 						<CostSlab

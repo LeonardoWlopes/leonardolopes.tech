@@ -12,7 +12,6 @@ vi.mock('~/utils/env', () => ({
 	env: {
 		CV_URL: 'https://example.com/cv.pdf',
 		APP_URL: 'https://leonardolopes.tech',
-		GOOGLE_ANALYTICS_ID: 'G-TEST',
 		SCHEDULE_LINK: 'https://example.com/schedule',
 		NEXT_PUBLIC_CONTACT_NUMBER: '5500000000000',
 	},

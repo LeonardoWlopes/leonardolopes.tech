@@ -37,17 +37,9 @@
 		"README.md": "CHANGELOG*, CLAUDE.md"
 	},
 	"tailwindCSS.experimental.classRegex": [
-		[
-			"cva\\(([^)]*)\\)",
-			"[\"'`]([^\"'`]*).*?[\"'`]"
-		],
-		[
-			"cn\\(([^)]*)\\)",
-			"(?:'|\"|`)([^']*)(?:'|\"|`)"
-		]
+		["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+		["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
 	],
-	"coverage-gutters.coverageFileNames": [
-		"clover.xml"
-	],
+	"coverage-gutters.coverageFileNames": ["clover.xml"],
 	"typescript.tsdk": "node_modules/typescript/lib"
 }

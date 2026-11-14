@@ -4,6 +4,7 @@ import Link from 'next/link'
 import signature from '~/assets/icons/signature.svg'
 import type { IDefaultComponentProps } from '~/interfaces/component'
 import { cn } from '~/lib/utils'
+import { APP_RELEASE_URL, APP_VERSION } from '~/utils/app-version'
 import { getCachedNow } from '~/utils/clock'
 import { ELSE_WHERE_LINKS, HOME_HERO } from '~/utils/mock'
 import { NAV_LINKS } from '~/utils/navigation'
@@ -94,13 +95,25 @@ export async function Footer({
 			<div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-border/60 border-t pt-6 text-muted-foreground text-xs">
 				<p>© {currentYear} Leonardo Lopes. All rights reserved.</p>
 
-				<Link
-					href="/styleguide"
-					className="inline-flex min-h-6 items-center gap-2 transition-colors hover:text-neon-soft"
-				>
-					<Palette className="size-3.5" aria-hidden />
-					Styleguide
-				</Link>
+				<div className="flex items-center gap-6">
+					<a
+						href={APP_RELEASE_URL}
+						target="_blank"
+						rel="noreferrer"
+						className="inline-flex min-h-6 items-center font-mono transition-colors hover:text-neon-soft"
+					>
+						v{APP_VERSION}
+						<span className="sr-only"> release notes (opens in a new tab)</span>
+					</a>
+
+					<Link
+						href="/styleguide"
+						className="inline-flex min-h-6 items-center gap-2 transition-colors hover:text-neon-soft"
+					>
+						<Palette className="size-3.5" aria-hidden />
+						Styleguide
+					</Link>
+				</div>
 			</div>
 		</footer>
 	)

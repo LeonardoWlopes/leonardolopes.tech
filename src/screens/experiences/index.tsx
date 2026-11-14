@@ -8,6 +8,7 @@ import { getCachedNow } from '~/utils/clock'
 import { CONSTANTS } from '~/utils/constants'
 import { env } from '~/utils/env'
 import { EXPERIENCES, OUTCOMES } from '~/utils/mock'
+import { buildProfilePageJsonLd, serializeJsonLd } from '~/utils/seo'
 
 const GUTTER = 'px-[clamp(1.25rem,5vw,6rem)]'
 
@@ -22,6 +23,16 @@ export async function ExperiencesScreen() {
 
 	return (
 		<div className="bleed flex w-full flex-col">
+			<script
+				type="application/ld+json"
+				// biome-ignore lint/security/noDangerouslySetInnerHtml: escaped JSON-LD per the Next.js guide
+				dangerouslySetInnerHTML={{
+					__html: serializeJsonLd(
+						buildProfilePageJsonLd(env.APP_URL, '/experiences'),
+					),
+				}}
+			/>
+
 			<section
 				aria-labelledby="experiences-title"
 				className={`relative isolate flex flex-col gap-6 overflow-hidden pt-[clamp(2rem,5vw,4rem)] pb-[clamp(3rem,7vw,5rem)] ${GUTTER}`}
@@ -39,7 +50,7 @@ export async function ExperiencesScreen() {
 				<p className="max-w-[60ch] text-pretty text-lg text-muted-foreground">
 					Roles so far, most recent first. Since June 2020 I have worked as a
 					freelance mobile engineer, at Nkey for Poliedro, and at Buildbox for
-					MSD, Grupo Petrópolis, Lactalis Group and now Linda Lifetech.
+					MSD, Grupo Petrópolis, Lactalis Group, Linda Lifetech and now Callink.
 				</p>
 
 				<p className="font-mono text-foreground text-sm">

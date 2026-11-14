@@ -158,7 +158,7 @@ export const TECH_CARDS: ITech[] = [
 	{
 		name: 'JavaScript',
 		image: javascript,
-		link: 'https://developer.mozilla.org/pt-BR/docs/Web/JavaScript',
+		link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
 		category: ETechCategory.LANGUAGE,
 	},
 	{
@@ -806,11 +806,20 @@ export const EXPERIENCES: IExperience[] = [
 			name: 'Buildbox',
 			icon: build,
 		},
+		summary:
+			'Tech lead and member of the tech governance team. I start new projects on a solid foundation before handing them to a sustain team, and I fix projects with delivery, performance or technical problems. In governance, I help set the processes and technical decisions for the whole tech team and advise projects across the company.',
 		roles: [
 			{
-				title: 'Tech Lead @Linda Lifetech',
-				startDate: parseISO('2025-07-01'),
+				title: 'Tech Lead @Callink',
+				startDate: parseISO('2026-08-01'),
 				endDate: null,
+				description:
+					'Lead a team of 7 developers building Horizontes, the internal super app of Callink, one of Brazil’s largest contact-center groups with more than 14,000 employees. It starts with HR and will replace the systems of every other department; it is the largest and most robust system I have built. It runs on-premises on fault-tolerant Kubernetes, observable end to end with OpenTelemetry. A living documentation site, updated daily and semi-automatically, maps the code and the product and anchors our AI-assisted development framework. Built with NestJS, TypeScript, React and React Native.',
+			},
+			{
+				title: 'Tech Lead @Linda Lifetech',
+				startDate: parseISO('2025-08-01'),
+				endDate: parseISO('2026-08-01'),
 				description:
 					'Led the full modernization of a live healthtech platform for early breast-cancer detection, used by thousands, with zero downtime: from a monolith to Node.js/TypeScript microservices, micro frontends and React Native. Migrated the whole cloud infrastructure from AWS to GCP, cutting the monthly bill by about 38% while raising per-cluster service performance. Built and launched a clinical-trial version of the product for clinical studies in Canada. Defined the infrastructure as code with Terraform and built Kotlin native bridges so the React Native app talks to external diagnostic hardware.',
 			},
@@ -826,7 +835,7 @@ export const EXPERIENCES: IExperience[] = [
 				startDate: parseISO('2023-05-01'),
 				endDate: parseISO('2024-11-01'),
 				description:
-					'Cut the worst-case load time of the main app at Grupo Petrópolis from 8 minutes to 1 min 37 s (about 80%). It is the field-sales app behind about 97% of the revenue of Brazil’s largest Brazilian-owned brewer, around USD 4B a year. Also halved resource use on critical paths, improved latency, stability and mobile UX for high-volume B2B sales, and built an internal web platform for managers and supervisors. Built with React, React Native and Node.js.',
+					'Cut the worst-case load time of the main app at Grupo Petrópolis from 8 minutes to 1 min 37 s (about 80%). It is the field-sales app behind about 97% of the revenue of the largest brewer under Brazilian ownership, around USD 4B a year. Also halved resource use on critical paths, improved latency, stability and mobile UX for high-volume B2B sales, and built an internal web platform for managers and supervisors. Built with React, React Native and Node.js.',
 			},
 			{
 				title: 'Software Engineer @MSD',
@@ -872,8 +881,9 @@ export const EXPERIENCES: IExperience[] = [
 /** Home hero copy, from the owner's confirmed facts and EXPERIENCES */
 export const HOME_HERO = {
 	role: 'Tech Lead · Software Engineer & Architect',
-	current:
-		'Tech Lead at Buildbox, leading the Linda Lifetech platform modernization',
+	current: 'Tech Lead at Buildbox, leading Horizontes, the Callink super app',
+	/** Closing line of the home and the back of the badge */
+	closingLine: 'Send the role or the project.',
 	availability:
 		'Open to full-time, contract and freelance · Remote from Brazil (UTC−3) or relocation',
 	slabCaption:
@@ -884,6 +894,20 @@ const roleAnchor = (title: string) => `/experiences#${toSlug(title)}`
 
 export const OUTCOMES: IOutcome[] = [
 	{
+		metric: '7',
+		unit: 'developers I lead',
+		isScope: true,
+		summary:
+			'Internal super app for Callink, HR first and then every department, on on-premises Kubernetes.',
+		role: 'Tech Lead',
+		client: 'Callink',
+		employer: 'Buildbox',
+		period: '2026 – Present',
+		href: roleAnchor('Tech Lead @Callink'),
+		stack: ['NestJS', 'TypeScript', 'Kubernetes', 'OpenTelemetry'],
+		isCurrent: true,
+	},
+	{
 		metric: '−38%',
 		unit: 'cloud cost',
 		summary:
@@ -891,7 +915,7 @@ export const OUTCOMES: IOutcome[] = [
 		role: 'Tech Lead',
 		client: 'Linda Lifetech',
 		employer: 'Buildbox',
-		period: '2025 – Present',
+		period: '2025 – 2026',
 		href: roleAnchor('Tech Lead @Linda Lifetech'),
 		stack: [
 			'Node.js',
@@ -901,7 +925,7 @@ export const OUTCOMES: IOutcome[] = [
 			'Google Cloud',
 			'Terraform',
 		],
-		isCurrent: true,
+		isFeatured: true,
 		ratio: 0.62,
 	},
 	{
@@ -920,6 +944,7 @@ export const OUTCOMES: IOutcome[] = [
 	{
 		metric: '27',
 		unit: 'Brazilian states, one pricing platform',
+		isScope: true,
 		summary:
 			'National pricing platform with regional tax rules for Lactalis, the largest dairy group in the world.',
 		role: 'Software Engineer',
@@ -930,7 +955,7 @@ export const OUTCOMES: IOutcome[] = [
 		stack: ['Node.js', 'TypeScript'],
 	},
 	{
-		metric: '½',
+		metric: '0.5×',
 		unit: 'the estimated delivery time',
 		summary:
 			'Shipped the internal web and mobile gamification platform for MSD Brazil with near-zero production defects.',
@@ -944,6 +969,7 @@ export const OUTCOMES: IOutcome[] = [
 	{
 		metric: '580+',
 		unit: 'teaching units served',
+		isScope: true,
 		summary:
 			'Go service that turns MP4 uploads into adaptive HLS streams for Poliedro, built for peak load.',
 		role: 'Software Engineer',

@@ -5,7 +5,6 @@ export const env = createEnv({
 	server: {
 		CV_URL: z.url(),
 		APP_URL: z.url(),
-		GOOGLE_ANALYTICS_ID: z.string(),
 		SCHEDULE_LINK: z.url(),
 	},
 
@@ -17,7 +16,6 @@ export const env = createEnv({
 		CV_URL: process.env.CV_URL,
 		NEXT_PUBLIC_CONTACT_NUMBER: process.env.NEXT_PUBLIC_CONTACT_NUMBER,
 		APP_URL: process.env.APP_URL,
-		GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
 		SCHEDULE_LINK: process.env.NEXT_PUBLIC_SCHEDULE_LINK,
 	},
 })

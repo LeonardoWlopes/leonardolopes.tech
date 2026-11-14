@@ -1,9 +1,19 @@
 'use client'
 
-import { FloatingLines } from '~/components/ui/floating-lines'
+import dynamic from 'next/dynamic'
 import type { IDefaultComponentProps } from '~/interfaces/component'
 import { cn } from '~/lib/utils'
+import { LIGHT_GRADIENT } from '~/utils/palette'
 import { useSectionLinesContainer } from './container'
+
+// WebGL code loads only when the lines mount (desktop, on screen)
+const FloatingLines = dynamic(
+	() =>
+		import('~/components/ui/floating-lines').then(
+			(module) => module.FloatingLines,
+		),
+	{ ssr: false },
+)
 
 /** Cobalt light lines drifting behind a section; still under reduced motion */
 export function SectionLines({
@@ -21,7 +31,7 @@ export function SectionLines({
 		>
 			{shouldRender && (
 				<FloatingLines
-					linesGradient={['#1558c9', '#2f6bff', '#7aa6ff']}
+					linesGradient={[...LIGHT_GRADIENT]}
 					animationSpeed={reducedMotion ? 0 : 0.6}
 					interactive={!reducedMotion}
 					parallax={!reducedMotion}

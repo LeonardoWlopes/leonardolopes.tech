@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
-import { canRender3dBadge } from '~/utils/device'
+import { canRenderHeavyWebgl } from '~/utils/device'
 import {
 	DESKTOP_QUERY,
 	REDUCED_MOTION_QUERY,
@@ -77,7 +77,7 @@ export function useHeroSceneContainer(surfaceId: string) {
 		if (!isDesktop) return
 
 		let cancelled = false
-		const use3d = !reducedMotion && canRender3dBadge(navigator, createCanvas)
+		const use3d = !reducedMotion && canRenderHeavyWebgl(navigator, createCanvas)
 		const lightDone = wait(reducedMotion ? 0 : LIGHT_INTRO_MS)
 		const ready = use3d
 			? Promise.all([lightDone, loadLanyard()]).then(() => EBadgeMode.THREE_D)

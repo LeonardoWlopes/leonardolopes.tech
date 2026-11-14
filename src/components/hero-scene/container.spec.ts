@@ -3,8 +3,10 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { mockMatchMedia } from '~test/helpers'
 import { EBadgeMode, LIGHT_INTRO_MS, useHeroSceneContainer } from './container'
 
-const { canRender3dBadge } = vi.hoisted(() => ({ canRender3dBadge: vi.fn() }))
-vi.mock('~/utils/device', () => ({ canRender3dBadge }))
+const { canRenderHeavyWebgl } = vi.hoisted(() => ({
+	canRenderHeavyWebgl: vi.fn(),
+}))
+vi.mock('~/utils/device', () => ({ canRenderHeavyWebgl }))
 vi.mock('~/components/ui/lanyard', () => ({ Lanyard: () => null }))
 
 function mockMedia({ desktop = true, reduced = false } = {}) {
@@ -25,7 +27,7 @@ describe('useHeroSceneContainer', () => {
 
 	it('binds the beam to the surface element', () => {
 		mockMedia()
-		canRender3dBadge.mockReturnValue(false)
+		canRenderHeavyWebgl.mockReturnValue(false)
 		const { result } = renderHook(() => useHeroSceneContainer('slab'))
 
 		expect(result.current.surfaceRef.current?.id).toBe('slab')
@@ -33,7 +35,7 @@ describe('useHeroSceneContainer', () => {
 
 	it('shows the 3D badge only after the light intro', async () => {
 		mockMedia()
-		canRender3dBadge.mockReturnValue(true)
+		canRenderHeavyWebgl.mockReturnValue(true)
 		const { result } = renderHook(() => useHeroSceneContainer('slab'))
 
 		await flush(LIGHT_INTRO_MS - 100)
@@ -49,7 +51,7 @@ describe('useHeroSceneContainer', () => {
 
 	it('falls back to the static badge on weak devices', async () => {
 		mockMedia()
-		canRender3dBadge.mockReturnValue(false)
+		canRenderHeavyWebgl.mockReturnValue(false)
 		const { result } = renderHook(() => useHeroSceneContainer('slab'))
 
 		await flush(LIGHT_INTRO_MS)
@@ -62,7 +64,7 @@ describe('useHeroSceneContainer', () => {
 
 		await flush()
 		expect(result.current.badgeMode).toBe(EBadgeMode.STATIC)
-		expect(canRender3dBadge).not.toHaveBeenCalled()
+		expect(canRenderHeavyWebgl).not.toHaveBeenCalled()
 	})
 
 	it('shows no badge on small screens and ignores late results', async () => {
@@ -76,7 +78,7 @@ describe('useHeroSceneContainer', () => {
 
 	it('does not update after unmounting mid-intro', async () => {
 		mockMedia()
-		canRender3dBadge.mockReturnValue(false)
+		canRenderHeavyWebgl.mockReturnValue(false)
 		const { result, unmount } = renderHook(() => useHeroSceneContainer('slab'))
 
 		unmount()

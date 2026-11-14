@@ -1,5 +1,4 @@
 import { ArrowRight, ArrowUpRight, Mail } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { CareerRuler } from '~/components/career-ruler'
 import { CopyEmailButton } from '~/components/copy-email-button'
@@ -22,6 +21,7 @@ import {
 	STACK_GROUPS,
 } from '~/utils/mock'
 import { getFirstRole } from '~/utils/role'
+import { buildProfilePageJsonLd, serializeJsonLd } from '~/utils/seo'
 import { pickTechsByName } from '~/utils/tech'
 import { buildCareerTimeline } from '~/utils/timeline'
 
@@ -31,10 +31,12 @@ const CONTACT_ROWS = CONTACT_LINKS.filter(
 
 const CURRENT = OUTCOMES.find(
 	(outcome): outcome is (typeof OUTCOMES)[number] & { ratio: number } =>
-		Boolean(outcome.isCurrent && outcome.ratio),
+		Boolean(outcome.isFeatured && outcome.ratio),
 )
 
-const PAST_OUTCOMES = OUTCOMES.filter(({ isCurrent }) => !isCurrent)
+const PAST_OUTCOMES = OUTCOMES.filter(
+	({ isCurrent, isFeatured }) => !isCurrent && !isFeatured,
+)
 
 const SLAB_ID = 'current-cost-slab'
 
@@ -56,6 +58,14 @@ export async function HomeScreen() {
 
 	return (
 		<div className="bleed flex w-full flex-col">
+			<script
+				type="application/ld+json"
+				// biome-ignore lint/security/noDangerouslySetInnerHtml: escaped JSON-LD per the Next.js guide
+				dangerouslySetInnerHTML={{
+					__html: serializeJsonLd(buildProfilePageJsonLd(env.APP_URL, '')),
+				}}
+			/>
+
 			<section
 				aria-labelledby="home-title"
 				className={`relative isolate -mt-20 flex flex-col overflow-hidden pb-[clamp(5rem,14svh,10rem)] sm:-mt-32 ${GUTTER}`}
@@ -63,25 +73,14 @@ export async function HomeScreen() {
 				<HeroScene surfaceId={SLAB_ID} className="-z-10" />
 
 				{/* The first screen ends where the beam lands: only the lit edge of the slab shows below the fold */}
-				<div className="pointer-events-none flex min-h-[calc(100svh-3rem)] flex-col justify-end pt-28 pb-[clamp(3rem,8svh,5rem)] sm:pt-36">
+				<div className="pointer-events-none flex min-h-[calc(100svh-11rem)] flex-col sm:min-h-[calc(100svh-3rem)] justify-end pt-28 pb-[clamp(3rem,8svh,5rem)] sm:pt-36">
 					<div className="pointer-events-auto flex max-w-[min(100%,46rem)] flex-col gap-6 lg:max-w-[58%]">
-						<div className="flex items-center gap-4">
-							<Image
-								src={CONSTANTS.AVATAR_URL}
-								alt=""
-								width={56}
-								height={56}
-								preload
-								className="size-12 rounded-full bg-card object-cover ring-1 ring-neon-soft/40"
-							/>
-
-							<p className="flex flex-col">
-								<span className="font-medium text-foreground text-lg">
-									Leonardo Lopes
-								</span>
-								<span className="text-neon-soft text-sm">{HOME_HERO.role}</span>
-							</p>
-						</div>
+						<p className="flex flex-col">
+							<span className="font-medium text-foreground text-lg">
+								Leonardo Lopes
+							</span>
+							<span className="text-neon-soft text-sm">{HOME_HERO.role}</span>
+						</p>
 
 						<h1
 							id="home-title"
@@ -134,7 +133,7 @@ export async function HomeScreen() {
 						caption={HOME_HERO.slabCaption}
 						testId="home-cost-slab"
 						// The lit box only exists where the WebGL beam draws it (64rem+)
-						className="pt-12 lg:px-[clamp(1.25rem,3vw,3rem)] lg:pt-[clamp(3rem,4vw,4rem)] lg:pb-[clamp(1.5rem,3vw,3rem)]"
+						className="pt-6 lg:px-[clamp(1.25rem,3vw,3rem)] lg:pt-[clamp(3rem,4vw,4rem)] lg:pb-[clamp(1.5rem,3vw,3rem)]"
 					/>
 				)}
 			</section>
@@ -148,14 +147,14 @@ export async function HomeScreen() {
 						Earlier results, one client at a time.
 					</h2>
 					<p className="max-w-[44ch] text-pretty text-muted-foreground">
-						Numbers from systems I helped ship before Linda Lifetech. Full role
+						Numbers from systems I helped ship before my current role. Full role
 						descriptions are in the experience history.
 					</p>
 					<Link
 						href="/experiences"
 						className="group inline-flex w-fit items-center gap-2 text-neon-soft underline-offset-4 hover:underline"
 					>
-						Full experience history
+						See my experience
 						<ArrowRight
 							className="size-4 transition-transform group-hover:translate-x-0.5"
 							aria-hidden
@@ -197,12 +196,12 @@ export async function HomeScreen() {
 						Built across the whole system.
 					</h2>
 					<p className="max-w-[52ch] text-pretty text-muted-foreground">
-						Interfaces, services, data and the cloud they run on. These are the
-						tools in production right now; each system gets the ones it needs.
+						Interfaces, services, data and the cloud they run on: tools I've
+						used in production. Each system gets the ones it needs.
 					</p>
 				</div>
 
-				<div className="grid gap-10 sm:grid-cols-2 sm:gap-x-12 lg:grid-cols-4">
+				<div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-12 lg:grid-cols-4">
 					{STACK_GROUPS.map(({ title, techs }) => (
 						<div key={title} className="flex flex-col">
 							<h3 className="border-neon/60 border-b pb-3 font-medium text-neon-soft text-sm">
@@ -213,7 +212,7 @@ export async function HomeScreen() {
 								{pickTechsByName(techs).map(({ name }) => (
 									<li
 										key={name}
-										className="border-border/50 border-b py-4 text-foreground text-lg"
+										className="border-border/50 border-b py-3 text-base text-foreground sm:py-4 sm:text-lg"
 									>
 										{name}
 									</li>
@@ -244,9 +243,9 @@ export async function HomeScreen() {
 						Hiring, or have a product to build?
 					</h2>
 					<p className="max-w-[44ch] text-pretty text-muted-foreground">
-						Leonardo Lopes is a tech lead, software engineer and architect
-						working remotely from Brazil (UTC−3). Send the role or the project
-						and what you need from it.
+						I'm Leonardo Lopes, a tech lead, software engineer and architect
+						working remotely from Brazil (UTC−3). Every channel below reaches me
+						directly.
 					</p>
 				</div>
 
@@ -295,7 +294,7 @@ export async function HomeScreen() {
 				</div>
 			</section>
 
-			<SignatureFinale message="Let's build what's next.">
+			<SignatureFinale message={HOME_HERO.closingLine}>
 				<Link
 					href="/contact"
 					className={cn(buttonVariants({ variant: 'light', size: 'xl' }), CTA)}
@@ -303,14 +302,17 @@ export async function HomeScreen() {
 					Start a project
 				</Link>
 				<a
-					href={`mailto:${CONSTANTS.CONTACT_EMAIL}`}
+					href={env.CV_URL}
+					target="_blank"
+					rel="noreferrer"
 					className={cn(
 						buttonVariants({ variant: 'line', size: 'xl' }),
 						'glass-control',
 						CTA,
 					)}
 				>
-					Email me
+					Download resume
+					<span className="sr-only"> (PDF, opens in a new tab)</span>
 				</a>
 			</SignatureFinale>
 		</div>

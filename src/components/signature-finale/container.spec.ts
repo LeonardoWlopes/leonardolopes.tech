@@ -3,6 +3,11 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { mockMatchMedia } from '~test/helpers'
 import { useSignatureFinaleContainer } from './container'
 
+const { canRenderHeavyWebgl } = vi.hoisted(() => ({
+	canRenderHeavyWebgl: vi.fn(() => true),
+}))
+vi.mock('~/utils/device', () => ({ canRenderHeavyWebgl }))
+
 function buildScene(top: number) {
 	const scene = document.createElement('section')
 	vi.spyOn(scene, 'getBoundingClientRect').mockReturnValue({
@@ -70,5 +75,22 @@ describe('useSignatureFinaleContainer', () => {
 		act(() => result.current.attachScene(scene))
 
 		expect(scene.style.getPropertyValue('--p')).toBe('1')
+	})
+	it('mounts the WebGL layers only on capable desktops while visible', () => {
+		mockMatchMedia((query) => query.includes('min-width'))
+		const { result } = renderHook(() => useSignatureFinaleContainer())
+		act(() => result.current.attachScene(buildScene(0)))
+		act(() => observer.callback?.([{ isIntersecting: true }]))
+
+		expect(result.current.showWebgl).toBe(true)
+	})
+
+	it('keeps phones on the CSS scene', () => {
+		mockMatchMedia(false)
+		const { result } = renderHook(() => useSignatureFinaleContainer())
+		act(() => result.current.attachScene(buildScene(0)))
+		act(() => observer.callback?.([{ isIntersecting: true }]))
+
+		expect(result.current.showWebgl).toBe(false)
 	})
 })

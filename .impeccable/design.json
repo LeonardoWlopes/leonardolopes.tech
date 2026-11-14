@@ -1,0 +1,333 @@
+{
+	"schemaVersion": 2,
+	"generatedAt": "2026-11-14T00:00:00Z",
+	"title": "Design System: Leonardo Lopes",
+	"extensions": {
+		"colorMeta": {
+			"midnight": {
+				"role": "neutral",
+				"displayName": "Midnight",
+				"canonical": "#030407",
+				"tonalRamp": [
+					"oklch(15% 0.012 266)",
+					"oklch(25% 0.012 266)",
+					"oklch(35% 0.012 266)",
+					"oklch(48% 0.012 266)",
+					"oklch(60% 0.012 266)",
+					"oklch(72% 0.012 266)",
+					"oklch(84% 0.012 266)",
+					"oklch(95% 0.012 266)"
+				]
+			},
+			"cobalt": {
+				"role": "primary",
+				"displayName": "Cobalt",
+				"canonical": "#1558c9",
+				"tonalRamp": [
+					"oklch(15% 0.17 262)",
+					"oklch(25% 0.17 262)",
+					"oklch(35% 0.17 262)",
+					"oklch(48% 0.17 262)",
+					"oklch(60% 0.17 262)",
+					"oklch(72% 0.17 262)",
+					"oklch(84% 0.17 262)",
+					"oklch(95% 0.17 262)"
+				]
+			},
+			"neon": {
+				"role": "primary",
+				"displayName": "Neon",
+				"canonical": "#2f6bff",
+				"tonalRamp": [
+					"oklch(15% 0.21 264)",
+					"oklch(25% 0.21 264)",
+					"oklch(35% 0.21 264)",
+					"oklch(48% 0.21 264)",
+					"oklch(60% 0.21 264)",
+					"oklch(72% 0.21 264)",
+					"oklch(84% 0.21 264)",
+					"oklch(95% 0.21 264)"
+				]
+			},
+			"neon-soft": {
+				"role": "primary",
+				"displayName": "Neon Soft",
+				"canonical": "#7aa6ff",
+				"tonalRamp": [
+					"oklch(15% 0.13 264)",
+					"oklch(25% 0.13 264)",
+					"oklch(35% 0.13 264)",
+					"oklch(48% 0.13 264)",
+					"oklch(60% 0.13 264)",
+					"oklch(72% 0.13 264)",
+					"oklch(84% 0.13 264)",
+					"oklch(95% 0.13 264)"
+				]
+			},
+			"background": {
+				"role": "neutral",
+				"displayName": "Midnight Surface",
+				"canonical": "oklch(0.107 0.011 266.5)"
+			},
+			"foreground": {
+				"role": "neutral",
+				"displayName": "Cold White Ink",
+				"canonical": "oklch(0.948 0.016 262.8)"
+			},
+			"card": {
+				"role": "neutral",
+				"displayName": "Raised Midnight",
+				"canonical": "oklch(0.165 0.022 267.2)"
+			},
+			"primary": {
+				"role": "primary",
+				"displayName": "Semantic Primary",
+				"canonical": "oklch(0.581 0.229 263.9)"
+			},
+			"muted-foreground": {
+				"role": "neutral",
+				"displayName": "Muted Ink",
+				"canonical": "oklch(0.678 0.038 264.3)"
+			},
+			"border": {
+				"role": "neutral",
+				"displayName": "Hairline",
+				"canonical": "oklch(1 0 0 / 12%)"
+			},
+			"destructive": {
+				"role": "error",
+				"displayName": "Error",
+				"canonical": "oklch(0.704 0.191 22.216)"
+			}
+		},
+		"typographyMeta": {
+			"display": {
+				"displayName": "Display",
+				"purpose": "One page h1 per screen."
+			},
+			"headline": {
+				"displayName": "Headline",
+				"purpose": "Section h2 (shared SECTION_TITLE)."
+			},
+			"title": {
+				"displayName": "Title",
+				"purpose": "Roles, companies, category names."
+			},
+			"body": {
+				"displayName": "Body",
+				"purpose": "Prose at 44-68ch."
+			},
+			"label": {
+				"displayName": "Label",
+				"purpose": "Nav, buttons, status lines."
+			},
+			"figure": {
+				"displayName": "Figure",
+				"purpose": "Measured numbers in Geist Mono, tabular."
+			},
+			"meta": {
+				"displayName": "Meta",
+				"purpose": "Dates, durations, ruler ticks."
+			}
+		},
+		"shadows": [
+			{
+				"name": "neon",
+				"value": "0 0 28px rgb(47 107 255 / 0.55), 0 0 90px rgb(21 88 201 / 0.4)",
+				"purpose": "Glow button, static badge, tile hover."
+			},
+			{
+				"name": "neon-strong",
+				"value": "0 0 36px rgb(47 107 255 / 0.7), 0 0 110px rgb(21 88 201 / 0.5)",
+				"purpose": "Glow button hover."
+			},
+			{
+				"name": "neon-dot",
+				"value": "0 0 10px rgb(47 107 255 / 0.9)",
+				"purpose": "Live indicators."
+			},
+			{
+				"name": "glass-inset",
+				"value": "inset 0 1px 0 rgb(255 255 255 / 0.12)",
+				"purpose": "Lit top edge of glass; nav pill."
+			},
+			{
+				"name": "header-glass",
+				"value": "inset 0 1px 0 rgb(255 255 255 / 0.24), inset 0 -1px 0 rgb(255 255 255 / 0.05), inset 0 0 1.5rem rgb(122 166 255 / 0.07), 0 0.75rem 2rem rgb(3 4 7 / 0.45)",
+				"purpose": "Header frost (with blur 1.75rem saturate 180% brightness 1.06)."
+			}
+		],
+		"motion": [
+			{
+				"name": "ease-house",
+				"value": "cubic-bezier(0.16, 1, 0.3, 1)",
+				"purpose": "Entrances and UI transitions (slab, badge drop, nav pill, ledger)."
+			},
+			{
+				"name": "ease-overshoot",
+				"value": "cubic-bezier(0.34, 1.45, 0.64, 1)",
+				"purpose": "3D badge stage drop, 1100ms."
+			},
+			{
+				"name": "ui-fast",
+				"value": "180-320ms",
+				"purpose": "Ledger dim 180/260ms, tile hover 200ms, nav pill 320ms."
+			},
+			{
+				"name": "scene-entrance",
+				"value": "700-1200ms",
+				"purpose": "Slab retract 900ms, badge drop 700ms, badge stage 1100ms."
+			},
+			{
+				"name": "ambient-portrait",
+				"value": "9s ease-in-out infinite alternate",
+				"purpose": "About caricature breath."
+			},
+			{
+				"name": "saber-cycle",
+				"value": "3.2s",
+				"purpose": "404 clash loop."
+			},
+			{
+				"name": "motion-gate",
+				"value": "@media (prefers-reduced-motion: no-preference) { html:not([data-motion=\"paused\"]) ... } / useStillMotion()",
+				"purpose": "Required for every ambient or looping animation."
+			}
+		],
+		"breakpoints": [
+			{
+				"name": "sm",
+				"value": "40rem"
+			},
+			{
+				"name": "md",
+				"value": "48rem"
+			},
+			{
+				"name": "lg",
+				"value": "64rem"
+			},
+			{
+				"name": "xl",
+				"value": "80rem"
+			}
+		]
+	},
+	"components": [
+		{
+			"name": "Light Button",
+			"kind": "button",
+			"refersTo": "button-light",
+			"description": "Primary CTA on every screen.",
+			"html": "<button class=\"ds-btn-light\">Start a project</button>",
+			"css": ".ds-btn-light{display:inline-flex;align-items:center;gap:.5rem;height:3rem;padding:0 1.75rem;border-radius:9999px;border:1px solid transparent;background:#fff;color:#030407;font:500 1rem Geist,ui-sans-serif,system-ui,sans-serif;cursor:pointer;transition:background .2s,transform .2s}.ds-btn-light:hover{background:rgb(255 255 255/.9)}.ds-btn-light:active{transform:scale(.97)}.ds-btn-light:focus-visible{outline:2px solid #7aa6ff;outline-offset:2px}"
+		},
+		{
+			"name": "Line Button (glass)",
+			"kind": "button",
+			"refersTo": "button-line",
+			"description": "Secondary CTA over light; paired with glass-control.",
+			"html": "<button class=\"ds-btn-line\">Download resume</button>",
+			"css": ".ds-btn-line{display:inline-flex;align-items:center;height:3rem;padding:0 1.75rem;border-radius:9999px;border:1px solid rgb(255 255 255/.2);background:rgb(255 255 255/.06);backdrop-filter:blur(1.125rem) saturate(170%);box-shadow:inset 0 1px 0 rgb(255 255 255/.22);color:oklch(.948 .016 262.8);font:500 1rem Geist,ui-sans-serif,system-ui,sans-serif;cursor:pointer;transition:border-color .2s,background .2s}.ds-btn-line:hover{border-color:rgb(255 255 255/.4);background:rgb(255 255 255/.1)}.ds-btn-line:focus-visible{outline:2px solid #7aa6ff;outline-offset:2px}"
+		},
+		{
+			"name": "Glow Button",
+			"kind": "button",
+			"refersTo": "button-glow",
+			"description": "The contact screen's light source (WhatsApp submit).",
+			"html": "<button class=\"ds-btn-glow\">Send on WhatsApp</button>",
+			"css": ".ds-btn-glow{display:inline-flex;align-items:center;height:3rem;padding:0 1.75rem;border-radius:9999px;border:0;background:oklch(.581 .229 263.9);color:oklch(.985 0 0);font:500 1rem Geist,ui-sans-serif,system-ui,sans-serif;box-shadow:0 0 28px rgb(47 107 255/.55),0 0 90px rgb(21 88 201/.4);cursor:pointer;transition:box-shadow .2s,background .2s}.ds-btn-glow:hover{background:oklch(.581 .229 263.9/.9);box-shadow:0 0 36px rgb(47 107 255/.7),0 0 110px rgb(21 88 201/.5)}.ds-btn-glow:focus-visible{outline:2px solid #7aa6ff;outline-offset:2px}"
+		},
+		{
+			"name": "Input",
+			"kind": "input",
+			"refersTo": "input-field",
+			"description": "Contact form field.",
+			"html": "<input class=\"ds-input\" placeholder=\"Your name\">",
+			"css": ".ds-input{height:2.75rem;padding:0 .75rem;border-radius:.5rem;border:1px solid oklch(1 0 0/16%);background:oklch(.107 .011 266.5/.7);color:oklch(.948 .016 262.8);font:400 1rem Geist,ui-sans-serif,system-ui,sans-serif;caret-color:#7aa6ff;outline:none}.ds-input:focus-visible{border-color:#7aa6ff;box-shadow:0 0 0 3px rgb(122 166 255/.4)}"
+		},
+		{
+			"name": "Header Nav",
+			"kind": "nav",
+			"refersTo": null,
+			"description": "Glass capsule with sliding active pill.",
+			"html": "<nav class=\"ds-nav\"><a class=\"ds-nav-a ds-on\">Home</a><a class=\"ds-nav-a\">About</a><a class=\"ds-nav-a\">Experience</a><a class=\"ds-nav-a\">Contact</a></nav>",
+			"css": ".ds-nav{display:inline-flex;gap:.25rem;padding:.5rem;border-radius:9999px;background:oklch(.107 .011 266.5/.85);border:1px solid rgb(255 255 255/.16);backdrop-filter:blur(1.75rem) saturate(180%);box-shadow:inset 0 1px 0 rgb(255 255 255/.24),0 .75rem 2rem rgb(3 4 7/.45)}.ds-nav-a{padding:.5rem .75rem;border-radius:9999px;color:oklch(.678 .038 264.3);font:500 .875rem Geist,ui-sans-serif,sans-serif;cursor:pointer;transition:color .2s}.ds-nav-a:hover{color:oklch(.948 .016 262.8)}.ds-nav-a.ds-on{color:oklch(.948 .016 262.8);background:rgb(255 255 255/.1);box-shadow:inset 0 1px 0 rgb(255 255 255/.12)}"
+		},
+		{
+			"name": "Tag",
+			"kind": "chip",
+			"refersTo": "tag-pill",
+			"description": "Stack tags in the timeline.",
+			"html": "<span class=\"ds-tag\">TypeScript</span>",
+			"css": ".ds-tag{display:inline-block;padding:.25rem .75rem;border-radius:9999px;border:1px solid rgb(122 166 255/.2);background:oklch(.107 .011 266.5/.6);color:oklch(.948 .016 262.8/.85);font:400 .75rem Geist,ui-sans-serif,sans-serif}"
+		},
+		{
+			"name": "Tech Tile",
+			"kind": "card",
+			"refersTo": "tech-tile",
+			"description": "Technology catalog tile.",
+			"html": "<a class=\"ds-tile\"><span class=\"ds-tile-i\"></span><span><b>Node.js</b><br><small>Runtime</small></span></a>",
+			"css": ".ds-tile{display:flex;align-items:center;gap:.75rem;min-width:13rem;padding:.75rem;border-radius:.875rem;border:1px solid oklch(1 0 0/8.4%);background:oklch(.107 .011 266.5/.7);color:oklch(.948 .016 262.8);font:500 .875rem Geist,ui-sans-serif,sans-serif;transition:border-color .2s ease-out,box-shadow .2s ease-out}.ds-tile small{color:oklch(.678 .038 264.3);font-weight:400;font-size:.75rem}.ds-tile-i{width:2.5rem;height:2.5rem;border-radius:.625rem;background:rgb(255 255 255/.05);box-shadow:0 0 0 1px rgb(255 255 255/.1)}.ds-tile:hover{border-color:rgb(122 166 255/.5);box-shadow:0 0 28px rgb(47 107 255/.55),0 0 90px rgb(21 88 201/.4)}"
+		},
+		{
+			"name": "Status Marker",
+			"kind": "custom",
+			"refersTo": null,
+			"description": "Marks only what is running in production now.",
+			"html": "<p class=\"ds-status\"><span></span>Now · in production</p>",
+			"css": ".ds-status{display:flex;align-items:center;gap:.5rem;color:#7aa6ff;font:500 .75rem Geist,ui-sans-serif,sans-serif}.ds-status span{width:.375rem;height:.375rem;border-radius:9999px;background:#7aa6ff}"
+		}
+	],
+	"narrative": {
+		"northStar": "Light Means Production",
+		"overview": "**Creative North Star: \"Light Means Production\"**\n\nThe site is a midnight room with one light source in it at a time. In the home hero a laser beam (LaserFlow, WebGL) falls onto the cost slab, the bar that shows the current job's cloud bill after the migration. That lit surface is the thesis: light marks what is running in production now, and past work stays unlit. As you scroll, the slab's light moves into the glass header's rim and a \"· in production\" chip docks there. Section changes get faint drifting cobalt lines (FloatingLines). The home closes with a signature finale: the hand-drawn signature rising out of a light field (Lightfall + GhostFibers). The world is technical and calm. Measurements, ledgers, rulers and blueprint grids carry the proof. Neon is used for emphasis, never as decoration, so it reads as a professional tech brand and never as gaming or crypto.\n\nIt is always dark (`html.dark`), with no light theme. Density is editorial: large type over generous section spacing, then compact ledger rows and tiles where the facts live. There are no photos. Identity comes from two single-colour vectors drawn by the owner, the caricature portrait and the handwritten signature.",
+		"keyCharacteristics": [
+			"One light source or scene leads each viewport. Everything else is ink on midnight.",
+			"Cobalt → neon → neon-soft is the only light gradient, shared by CSS and WebGL (`src/utils/palette.ts` mirrors `@theme`; change both together).",
+			"Glass sits only on top of light: the header, the contact panel, and secondary CTAs over the hero.",
+			"Numbers are set in Geist Mono with tabular, slashed-zero figures. Prose is set in Geist.",
+			"Heavy WebGL (3D badge, finale) needs a desktop viewport (min-width 64rem) and a capable device (`canRenderHeavyWebgl`: WebGL2, 4+ cores, 4 GB+ memory, no data saver). Everything has a static or CSS fallback."
+		],
+		"rules": [
+			{
+				"name": "The Light-Is-Live Rule",
+				"body": "Saturated light marks something running in production now: the cost slab, the current role's lit timeline dot, the \"in production\" chip. Do not light past work or decoration.",
+				"section": "colors"
+			},
+			{
+				"name": "The No-Cobalt-Text Rule",
+				"body": "Small text is never pure cobalt or neon, because the contrast is too low. Use `neon-soft`, `foreground`, or `muted-foreground`.",
+				"section": "colors"
+			},
+			{
+				"name": "The Figures-In-Mono Rule",
+				"body": "Every measured number (cost, percent, years, dates) is set in Geist Mono with tabular figures. Words are never set in mono, except for the contact panel's title bar.",
+				"section": "typography"
+			},
+			{
+				"name": "The Glass-On-Light Rule",
+				"body": "Glass (`glass-control`, `header-glass`) is used only where there is light behind it to refract. Over plain midnight, use `bg-background/70` and a hairline instead.",
+				"section": "elevation"
+			}
+		],
+		"dos": [
+			"Do let exactly one light source or scene lead each viewport: the beam and slab, the timeline fill, the glow button, the finale, or the sabers.",
+			"Do take every colour, shadow, and radius from tokens. Use rem or the Tailwind multiplier in arbitrary values (`rounded-[2rem]`, `max-w-130`).",
+			"Do put reusable effects in `@layer components` in `globals.css`, and keep `src/utils/palette.ts` in sync with `@theme` for WebGL props.",
+			"Do gate every ambient or looping animation on both `prefers-reduced-motion` and the header pause. In CSS, wrap it in `@media (prefers-reduced-motion: no-preference) { html:not([data-motion=\"paused\"]) … }`. In JS, use `useStillMotion()`.",
+			"Do use the house easing `cubic-bezier(0.16, 1, 0.3, 1)` for entrances and UI transitions (slab, badge drop, nav pill, ledger). Durations are 180–320ms for UI and 700–1200ms for one-shot scene entrances. Scroll-linked effects use `animation-timeline: view()` or `--lit`.",
+			"Do ship a static or CSS fallback for every WebGL scene, and mount heavy scenes only after `canRenderHeavyWebgl` passes.",
+			"Do use the owner's vectors (portrait, signature) as the only imagery. Generate icons and OG from them in code. The OG image is a still of the hero (grid, beam, surface, badge) with no numbers."
+		],
+		"donts": [
+			"Don't use photos, stock imagery, invented testimonials, or client logos beyond the owner's employers.",
+			"Don't set small text in pure cobalt or neon.",
+			"Don't put glass over plain midnight, or stack two glowing elements competing in one viewport.",
+			"Don't use grey drop shadows or lift-on-hover cards. Depth comes from light.",
+			"Don't hard-code px in arbitrary values, or write CSS outside Tailwind and `globals.css` `@layer components`.",
+			"Don't make the portrait follow the cursor, or add pointer-reactive motion to identity art.",
+			"Don't add a light theme."
+		]
+	}
+}

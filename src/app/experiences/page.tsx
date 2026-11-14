@@ -1,9 +1,9 @@
 import { buildPageMetadata } from '~/utils/seo'
 
 export const metadata = buildPageMetadata({
-	title: 'Experience · Go, Node.js and React Native · Leonardo Lopes',
+	title: 'Experience · Tech Lead, Node.js and Go · Leonardo Lopes',
 	description:
-		'Roles and results since 2020: zero-downtime healthtech modernization, national pricing, field-sales app speed and HLS streaming in Go and TypeScript.',
+		'Roles since 2020, tech lead since 2025: Horizontes, the Callink super app, a zero-downtime healthtech rebuild that cut cloud cost 38%, national pricing.',
 	path: '/experiences',
 })
 

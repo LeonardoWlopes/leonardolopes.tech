@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
 	title: 'Page not found',
 	description: 'This address does not exist on leonardolopes.tech.',
-	robots: { index: false, follow: true },
 }
 
 export { NotFoundScreen as default } from '~/screens/not-found'

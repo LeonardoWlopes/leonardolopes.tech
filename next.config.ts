@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
 	cacheComponents: true,
 	partialPrefetching: true,
 	agentRules: false,
+	poweredByHeader: false,
 	turbopack: {
 		rules: {
 			'*.css': {
@@ -12,18 +13,6 @@ const nextConfig: NextConfig = {
 				as: '*.css',
 			},
 		},
-	},
-	images: {
-		remotePatterns: [
-			{
-				protocol: 'https',
-				hostname: 'github.com',
-			},
-			{
-				protocol: 'https',
-				hostname: 'avatars.githubusercontent.com',
-			},
-		],
 	},
 }
 

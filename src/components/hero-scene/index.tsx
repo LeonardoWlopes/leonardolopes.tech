@@ -1,13 +1,20 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { LaserFlow } from '~/components/ui/laser-flow'
 import { cn } from '~/lib/utils'
+import { PALETTE } from '~/utils/palette'
 import { EBadgeMode, useHeroSceneContainer } from './container'
 import type { IHeroSceneProps } from './types'
 
-const BADGE_FRONT = '/brand/badge-front.webp'
-const BADGE_BACK = '/brand/badge-back.webp'
+// Generated from code (src/app/badge/*/route.ts), prerendered at build time
+const BADGE_FRONT = '/badge/front'
+const BADGE_BACK = '/badge/back'
+
+// WebGL code loads only where the scene actually renders (desktop)
+const LaserFlow = dynamic(
+	() => import('~/components/ui/laser-flow').then((module) => module.LaserFlow),
+	{ ssr: false },
+)
 
 const Lanyard = dynamic(
 	() =>
@@ -47,7 +54,7 @@ export function HeroScene({
 				<LaserFlow
 					className="absolute inset-0 mask-[linear-gradient(to_bottom,#000_calc(100%-9rem),transparent_100%)]"
 					surfaceRef={surfaceRef}
-					color="#2f6bff"
+					color={PALETTE.neon}
 					beamPosition={isDesktop ? 0.75 : 0.93}
 					intensity={1.1}
 					fog={0.6}
@@ -59,7 +66,7 @@ export function HeroScene({
 				/>
 			) : (
 				// Phones get a CSS beam: no WebGL on the critical path
-				<span className="css-beam absolute inset-y-0 -right-5 w-12" />
+				<span className="css-beam absolute inset-y-0 -right-5 w-12 opacity-70" />
 			)}
 
 			{isDesktop && badgeMode !== EBadgeMode.NONE && (
@@ -75,8 +82,8 @@ export function HeroScene({
 						<Lanyard
 							frontImage={BADGE_FRONT}
 							backImage={BADGE_BACK}
-							cardColor="#04060c"
-							strapColor="#0b1a3a"
+							cardColor={PALETTE.badgeCard}
+							strapColor={PALETTE.badgeStrap}
 							metal="graphite"
 							finish="glossy"
 							size={0.375}

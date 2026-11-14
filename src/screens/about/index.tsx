@@ -2,7 +2,6 @@ import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import signature from '~/assets/icons/signature.svg'
-import me from '~/assets/images/me.jpg'
 import { SectionLines } from '~/components/section-lines'
 import { buttonVariants } from '~/components/ui/button/styles'
 import { cn } from '~/lib/utils'
@@ -32,12 +31,14 @@ const TEXT_LINK =
 
 /** Named in the "What I do" copy below; shown again as a scannable row */
 const CORE_STACK = [
-	'Go',
 	'Node.js',
 	'TypeScript',
+	'Go',
 	'React',
 	'React Native',
+	'Kotlin',
 	'AWS',
+	'Google Cloud',
 	'CI/CD',
 ]
 
@@ -75,9 +76,9 @@ export async function AboutScreen() {
 						data-testid="about-summary"
 						className="max-w-[56ch] text-pretty text-foreground/90 text-lg leading-relaxed sm:text-xl"
 					>
-						Leonardo Lopes is a tech lead at Buildbox, a software engineer and
-						architect who builds web, backend and mobile systems. He has been
-						shipping software professionally since June 2020 and works remotely
+						I'm Leonardo Lopes, a tech lead at Buildbox and a software engineer
+						and architect who builds web, backend and mobile systems. I've been
+						shipping software professionally since June 2020 and work remotely
 						from Brazil (UTC−3).
 					</p>
 
@@ -113,26 +114,16 @@ export async function AboutScreen() {
 						className="inset-x-[-20%] bottom-[-18%] -z-10 absolute h-3/4 bg-radial-[ellipse_at_50%_100%] from-neon/55 via-cobalt/20 to-transparent to-70% blur-2xl"
 					/>
 
-					<div className="relative overflow-hidden rounded-[2rem] border border-neon-soft/20">
-						<Image
-							src={me}
-							alt="Portrait of Leonardo Lopes"
-							sizes="(min-width: 1024px) 26rem, 90vw"
-							preload
-							placeholder="blur"
-							className="aspect-4/5 w-full object-cover object-top contrast-110 saturate-[0.85]"
-						/>
-
-						<div
+					<div className="blueprint relative isolate aspect-4/5 overflow-hidden rounded-[2rem] border border-neon-soft/20 bg-card/40">
+						<span
 							aria-hidden
-							className="absolute inset-0 bg-linear-to-t from-neon/70 via-cobalt/25 via-45% to-transparent mix-blend-screen"
-						/>
-
-						<div
-							aria-hidden
-							className="absolute inset-0 bg-linear-to-b from-background/75 via-background/10 via-50% to-transparent"
+							className="portrait-ink portrait-drift absolute inset-x-[8%] top-[8%] bottom-0"
 						/>
 					</div>
+
+					<figcaption className="sr-only">
+						Hand-drawn caricature of Leonardo Lopes
+					</figcaption>
 
 					<div
 						aria-hidden
@@ -150,8 +141,7 @@ export async function AboutScreen() {
 
 				<div className={PROSE}>
 					<p>
-						Hey! I'm Leo, a software engineer who builds web, backend and mobile
-						systems. I'm{' '}
+						Hey! I'm Leo. I'm{' '}
 						<span className="text-foreground">{age} years old</span>, with{' '}
 						<span className="text-neon-soft">{careerTime}</span> of professional
 						experience.
@@ -195,9 +185,10 @@ export async function AboutScreen() {
 					<div className={PROSE}>
 						<p>
 							I design and build systems end to end: architecture, technical
-							governance, cloud infrastructure (AWS) and CI/CD pipelines. Most
-							of my recent work runs on Go, Node.js and TypeScript on the
-							backend, with React and React Native on the client.
+							governance, cloud infrastructure on AWS and Google Cloud, and
+							CI/CD pipelines. Most of my recent work runs on Node.js and
+							TypeScript, with Go where it fits, and React and React Native on
+							the client.
 						</p>
 
 						<p>
@@ -207,15 +198,13 @@ export async function AboutScreen() {
 						</p>
 
 						<p className="text-foreground">
-							I'm the kind of professional you look for when your app or
-							infrastructure isn't delivering the value it should, or when your
-							tech team needs clear standards, processes and direction that
-							actually make a difference.
+							Teams usually bring me in when an app is slow, the cloud bill
+							keeps growing, or nobody owns the technical standards.
 						</p>
 					</div>
 
 					<Link href="/experiences" className={TEXT_LINK}>
-						Roles and results in the experience history
+						See my experience
 						<ArrowRight
 							className="size-4 transition-transform group-hover:translate-x-0.5"
 							aria-hidden
@@ -239,8 +228,7 @@ export async function AboutScreen() {
 						I believe that a strong body creates a healthy mind, which is why
 						I'm a dedicated capoeirista and keep a regular exercise routine.
 						When I'm not coding, you'll find me spending quality time with
-						friends, indulging my Siberian Husky's every whim or diving deep
-						into gaming.
+						friends, indulging my Siberian Husky's every whim or playing games.
 					</p>
 
 					<p>
@@ -265,10 +253,8 @@ export async function AboutScreen() {
 				<div className="flex flex-col gap-12">
 					<div className={PROSE}>
 						<p>
-							I aspire to create something truly impactful on a global scale. I
-							want to be able to look at something that everyone knows or uses
-							and say, "I was part of that." I dream of becoming a reference in
-							the tech community and, who knows, maybe one day becoming a GitHub
+							I want to help build something people everywhere use, and be able
+							to say, "I was part of that." Someday I'd like to be a GitHub
 							Star.
 						</p>
 
@@ -301,6 +287,16 @@ export async function AboutScreen() {
 							>
 								Start a project
 							</Link>
+
+							<a
+								href={env.CV_URL}
+								target="_blank"
+								rel="noreferrer"
+								className={TEXT_LINK}
+							>
+								Download resume
+								<span className="sr-only"> (PDF, opens in a new tab)</span>
+							</a>
 
 							<Link href="/experiences" className={TEXT_LINK}>
 								See my experience

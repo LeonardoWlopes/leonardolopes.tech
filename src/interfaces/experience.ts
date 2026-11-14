@@ -15,6 +15,8 @@ export interface IExperienceRole {
 
 export interface IExperience {
 	company: IExperienceCompany
+	/** What the work at this employer is about, above its roles */
+	summary?: string
 	roles: IExperienceRole[]
 }
 
@@ -38,6 +40,7 @@ export interface IExperienceGroup {
 	icon: StaticImageData
 	isFreelance: boolean
 	relation: string
+	summary: string | null
 	clients: string[]
 	period: string
 	duration: string

@@ -5,12 +5,14 @@ interface INavigatorHints {
 }
 
 /**
- * Whether the device can comfortably run the 3D badge: WebGL2, at least 4
+ * Whether the device can comfortably run the heavy WebGL scenes (3D badge,
+ * closing scene): WebGL2, at least 4
  * cores and 4 GB of memory (when the browser reports it), and no data saver.
  */
-export function canRender3dBadge(
+export function canRenderHeavyWebgl(
 	nav: INavigatorHints,
-	createCanvas: () => HTMLCanvasElement,
+	createCanvas: () => HTMLCanvasElement = () =>
+		document.createElement('canvas'),
 ) {
 	if (nav.connection?.saveData) return false
 	if ((nav.hardwareConcurrency ?? 0) < 4) return false

@@ -18,7 +18,7 @@ export function MotionToggle({
 			data-testid={testId}
 			aria-pressed={isPaused}
 			aria-label="Pause animations"
-			title="Pause animations"
+			title={isPaused ? 'Resume animations' : 'Pause animations'}
 			onClick={handleToggle}
 			className={cn(
 				'inline-flex size-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground',

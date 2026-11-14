@@ -14,6 +14,7 @@ const now = new Date(2026, 10, 13)
 const EXPERIENCES: IExperience[] = [
 	{
 		company: { name: 'Acme', icon },
+		summary: 'Builds foundations and rescues projects.',
 		roles: [
 			{
 				title: 'Engineer @Client Two',
@@ -113,6 +114,11 @@ describe('buildExperienceGroups', () => {
 		expect(acme.id).toBe('employer-acme')
 		expect(freelance.relation).toBe('Independent · multiple client projects')
 		expect(freelance.isFreelance).toBe(true)
+	})
+
+	it('carries the employer summary, or null without one', () => {
+		expect(acme.summary).toBe('Builds foundations and rescues projects.')
+		expect(studio.summary).toBeNull()
 	})
 
 	it('spans the employer from the first start to the latest end', () => {

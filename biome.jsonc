@@ -73,6 +73,8 @@
 		}
 	},
 	"overrides": [
+		// Vendored WebGL scenes: `gl.useProgram()` is a WebGL call, not a React hook,
+		// but its `use` prefix trips useHookAtTopLevel
 		{
 			"includes": [
 				"src/components/ui/laser-flow/**",

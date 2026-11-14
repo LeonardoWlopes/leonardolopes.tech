@@ -4,7 +4,7 @@ import { CONSTANTS } from './constants'
 export const SITE_NAME = 'Leonardo Lopes'
 
 export const SITE_DESCRIPTION =
-	'Tech lead, software engineer and architect in Brazil (UTC−3) building Go, Node.js, TypeScript and React Native systems since 2020. Cut a cloud bill ~38%.'
+	'Tech lead, software engineer and architect in Brazil (UTC−3) building Node.js, TypeScript, Go and React Native systems since 2020. Cut a cloud bill ~38%.'
 
 const OG_IMAGE = {
 	url: '/opengraph-image',
@@ -46,7 +46,7 @@ export function buildPageMetadata({
 			card: 'summary_large_image',
 			title,
 			description,
-			images: [OG_IMAGE.url],
+			images: [{ url: OG_IMAGE.url, alt: OG_IMAGE.alt }],
 		},
 	}
 }
@@ -64,20 +64,30 @@ export function buildPersonJsonLd(siteUrl: string) {
 				'@id': person,
 				name: SITE_NAME,
 				url,
-				image: CONSTANTS.AVATAR_URL,
+				image: `${url}/icon/512`,
 				jobTitle: 'Tech Lead',
+				email: `mailto:${CONSTANTS.CONTACT_EMAIL}`,
+				hasOccupation: {
+					'@type': 'Occupation',
+					name: 'Tech Lead, software engineer and architect',
+					occupationLocation: { '@type': 'Country', name: 'Brazil' },
+				},
 				description: SITE_DESCRIPTION,
 				worksFor: { '@type': 'Organization', name: 'Buildbox' },
 				address: { '@type': 'PostalAddress', addressCountry: 'BR' },
 				knowsLanguage: ['pt-BR', 'en'],
 				knowsAbout: [
-					'Go',
 					'Node.js',
 					'TypeScript',
+					'Go',
 					'React',
 					'React Native',
 					'Next.js',
+					'NestJS',
 					'Kotlin',
+					'AWS',
+					'Google Cloud',
+					'Kubernetes',
 					'OpenTelemetry',
 					'Terraform',
 					'Microservices',
@@ -107,6 +117,17 @@ export function buildProfilePageJsonLd(siteUrl: string, path: string) {
 		'@context': 'https://schema.org',
 		'@type': 'ProfilePage',
 		url: `${url}${path}`,
+		mainEntity: { '@id': `${url}/#person` },
+	}
+}
+
+export function buildContactPageJsonLd(siteUrl: string) {
+	const url = siteUrl.replace(/\/$/, '')
+
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'ContactPage',
+		url: `${url}/contact`,
 		mainEntity: { '@id': `${url}/#person` },
 	}
 }

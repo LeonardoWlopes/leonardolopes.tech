@@ -5,6 +5,7 @@ import { CopyEmailButton } from '~/components/copy-email-button'
 import { CONSTANTS } from '~/utils/constants'
 import { env } from '~/utils/env'
 import { CONTACT_LINKS } from '~/utils/mock'
+import { buildContactPageJsonLd, serializeJsonLd } from '~/utils/seo'
 
 const EMAIL_HREF = `mailto:${CONSTANTS.CONTACT_EMAIL}`
 
@@ -21,6 +22,14 @@ const TEXT_LINK =
 export function ContactScreen() {
 	return (
 		<div className="bleed flex w-full flex-col">
+			<script
+				type="application/ld+json"
+				// biome-ignore lint/security/noDangerouslySetInnerHtml: escaped JSON-LD per the Next.js guide
+				dangerouslySetInnerHTML={{
+					__html: serializeJsonLd(buildContactPageJsonLd(env.APP_URL)),
+				}}
+			/>
+
 			<section
 				aria-labelledby="contact-title"
 				className={`blueprint relative isolate grid gap-x-16 gap-y-12 pt-[clamp(1rem,4vw,3rem)] pb-[clamp(3rem,8vw,6rem)] lg:grid-cols-[minmax(0,6fr)_minmax(0,7fr)] ${GUTTER}`}
@@ -150,7 +159,7 @@ export function ContactScreen() {
 						</Link>
 
 						<Link href="/experiences" className={TEXT_LINK}>
-							Experience history
+							See my experience
 							<ArrowRight
 								className="size-4 transition-transform group-hover:translate-x-0.5"
 								aria-hidden

@@ -1,0 +1,89 @@
+name: CI
+
+# Pull requests only. A push to master runs the release workflow instead, and
+# Vercel builds and deploys on its own.
+on:
+  pull_request:
+
+# One run per PR: a new push cancels the run still going for the old commit.
+concurrency:
+  group: ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  # lefthook installs git hooks on `pnpm install`; CI has no hooks to install.
+  LEFTHOOK: "0"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - run: pnpm exec biome ci .
+
+  check-types:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - run: pnpm check-types
+
+  build:
+    runs-on: ubuntu-latest
+    # src/utils/env.ts validates these at build time. Placeholder values, not
+    # secrets: the real ones live in Vercel.
+    env:
+      APP_URL: https://leonardolopes.tech
+      CV_URL: https://example.com/resume.pdf
+      NEXT_PUBLIC_SCHEDULE_LINK: https://example.com/schedule
+      NEXT_PUBLIC_CONTACT_NUMBER: "+5500000000000"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      # next build also fails on type errors.
+      - run: pnpm build
+
+  pr-title:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      # The PR title becomes the commit message on master (squash), so it must
+      # follow Conventional Commits.
+      - env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: printf '%s\n' "$PR_TITLE" | pnpm exec commitlint
+
+  dependency-audit:
+    runs-on: ubuntu-latest
+    # Informational. Only critical advisories are reported, and they are written
+    # to the log without failing the job.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - run: pnpm audit --audit-level=critical || echo "critical advisories found (informational, see log)"
+
+  secret-scan:
+    runs-on: ubuntu-latest
+    steps:
+      # The scan reads the git history, so it needs the full clone.
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Gitleaks
+        run: |
+          docker run --rm -v "$PWD:/repo" -w /repo zricethezav/gitleaks:latest \
+            git . --redact -v
+
+  test-unit:
+    runs-on: ubuntu-latest
+    needs: [lint, check-types]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - run: pnpm test:cov

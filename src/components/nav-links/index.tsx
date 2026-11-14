@@ -34,20 +34,21 @@ export function NavLinks({
 				/>
 			)}
 
-			{links.map(({ href, label, Icon, active }) => (
-				<li key={href}>
+			{links.map(({ href, label, shortLabel, Icon, active }) => (
+				<li key={href} className="flex-1 sm:flex-none">
 					<Link
 						href={href}
 						aria-current={active ? 'page' : undefined}
 						className={cn(
-							'relative flex flex-col items-center gap-1 rounded-full px-0.5 py-1.5 sm:flex-row sm:px-3 sm:py-2 font-medium text-muted-foreground text-sm transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring',
+							'relative flex flex-col items-center gap-1 rounded-full px-0.5 py-1.5 max-sm:w-full sm:flex-row sm:px-3 sm:py-2 font-medium text-muted-foreground text-sm transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-ring',
 							active && 'text-foreground',
 							active && !pill && 'bg-white/10 shadow-glass-inset',
 						)}
 					>
 						<Icon className="size-5 sm:hidden" aria-hidden />
 
-						<span className="text-[0.625rem] leading-none sm:text-sm">
+						<span className="text-xs leading-none sm:hidden">{shortLabel}</span>
+						<span className="hidden text-sm leading-none sm:inline">
 							{label}
 						</span>
 					</Link>

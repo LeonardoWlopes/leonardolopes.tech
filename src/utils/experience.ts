@@ -52,7 +52,7 @@ export function buildExperienceGroups(
 	outcomes: IOutcome[],
 	now: Date,
 ): IExperienceGroup[] {
-	return experiences.map(({ company, roles }) => {
+	return experiences.map(({ company, summary, roles }) => {
 		const sorted = [...roles].sort(
 			(a, b) => b.startDate.getTime() - a.startDate.getTime(),
 		)
@@ -76,6 +76,7 @@ export function buildExperienceGroups(
 			icon: company.icon,
 			isFreelance: company.name === FREELANCE,
 			relation: describeRelation(company.name, clients),
+			summary: summary ?? null,
 			clients,
 			period: formatPeriod(start, end),
 			duration: formatDuration(start, end ?? now),

@@ -1,25 +1,50 @@
 name: Release
 
+# ---------------------------------------------------------------------------
+# release: only on a direct push to master (never on a PR). Generates the
+# version (semantic-release), creates the tag + "chore(release)" commit, and the
+# release on GitHub.
+# Needs GH_TOKEN (a token with contents: write on this repo, stored as a
+# repository secret): @semantic-release/git pushes a commit straight to master,
+# which the default GITHUB_TOKEN is not allowed to do on a protected branch.
+# It checks out the full history so semantic-release can read every tag.
+# ---------------------------------------------------------------------------
 on:
-  push: 
+  push:
     branches: [master]
   workflow_dispatch:
 
+concurrency:
+  group: release
+  cancel-in-progress: false
+
 permissions:
-  id-token: write
-  contents: write  
+  contents: write
   issues: write
   pull-requests: write
 
+env:
+  LEFTHOOK: "0"
+
 jobs:
-  generate-release:
+  release:
     runs-on: ubuntu-latest
-
+    # The release commit itself must not start another release.
+    if: ${{ !startsWith(github.event.head_commit.message, 'chore(release):') }}
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
 
-    - name: Semantic Release
-      uses: cycjimmy/semantic-release-action@v4
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - uses: ./.github/actions/setup
+
+      - name: Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: pnpm exec semantic-release

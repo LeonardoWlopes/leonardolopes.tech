@@ -7,12 +7,14 @@ import type { IExperiencesTimelineProps } from './types'
 function RoleResult({ role }: { role: IExperienceRoleEntry }) {
 	if (!role.outcome) return null
 
-	const { metric, unit } = role.outcome
+	const { metric, unit, isScope } = role.outcome
 
 	return (
 		<div className="flex flex-col gap-2 border-border/60 border-t pt-5 xl:border-t-0 xl:border-l xl:pt-1 xl:pl-8">
 			<p className="flex flex-col gap-1">
-				<span className="sr-only">Measured result: </span>
+				<span className="sr-only">
+					{isScope ? 'Scope: ' : 'Measured result: '}
+				</span>
 
 				<span
 					className={cn(
@@ -47,7 +49,7 @@ export function ExperiencesTimeline({
 					data-testid={`${testId}-employer`}
 					className="grid gap-10 border-border/60 border-t py-[clamp(3rem,7vw,5.5rem)] lg:grid-cols-[minmax(0,4fr)_minmax(0,10fr)] lg:gap-16"
 				>
-					<header className="flex flex-col gap-4 lg:sticky lg:top-32 lg:self-start">
+					<header className="flex flex-col gap-4 lg:self-start lg:[@media(min-height:44rem)]:sticky lg:[@media(min-height:44rem)]:top-32">
 						<div className="flex items-center gap-4">
 							<Image
 								src={group.icon}
@@ -77,7 +79,7 @@ export function ExperiencesTimeline({
 						</p>
 
 						{group.clients.length > 1 && (
-							<ul className="flex flex-wrap gap-2">
+							<ul aria-label="Clients" className="flex flex-wrap gap-2">
 								{group.clients.map((client) => (
 									<li
 										key={client}
@@ -88,6 +90,12 @@ export function ExperiencesTimeline({
 								))}
 							</ul>
 						)}
+
+						{group.summary && (
+							<p className="max-w-[44ch] text-pretty text-foreground/85 text-sm leading-relaxed">
+								{group.summary}
+							</p>
+						)}
 					</header>
 
 					<ol className="flex flex-col">
@@ -96,7 +104,7 @@ export function ExperiencesTimeline({
 								key={role.slug}
 								id={role.slug}
 								data-testid={`${testId}-role`}
-								className="relative scroll-mt-6 pb-14 pl-8 last:pb-0 sm:pl-12"
+								className="relative scroll-mt-28 pb-14 pl-8 last:pb-0 sm:pl-12"
 							>
 								<span
 									aria-hidden

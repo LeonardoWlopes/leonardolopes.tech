@@ -1,12 +1,26 @@
 'use client'
 
-import { GhostFibers } from '~/components/ui/ghost-fibers'
-import { LaserFlow } from '~/components/ui/laser-flow'
-import { Lightfall } from '~/components/ui/lightfall'
+import dynamic from 'next/dynamic'
 import { cn } from '~/lib/utils'
+import { LIGHT_GRADIENT, PALETTE } from '~/utils/palette'
 import { useSignatureFinaleContainer } from './container'
 import { SIGNATURE_PATHS, SIGNATURE_VIEWBOX } from './signature-paths'
 import type { ISignatureFinaleProps } from './types'
+
+// The three WebGL layers load only on capable desktops, while the scene is on screen
+const GhostFibers = dynamic(
+	() =>
+		import('~/components/ui/ghost-fibers').then((module) => module.GhostFibers),
+	{ ssr: false },
+)
+const LaserFlow = dynamic(
+	() => import('~/components/ui/laser-flow').then((module) => module.LaserFlow),
+	{ ssr: false },
+)
+const Lightfall = dynamic(
+	() => import('~/components/ui/lightfall').then((module) => module.Lightfall),
+	{ ssr: false },
+)
 
 /**
  * The page's closing scene, scrubbed by the scroll (parallax logic from the
@@ -21,7 +35,7 @@ export function SignatureFinale({
 	className,
 	testId = 'signature-finale',
 }: ISignatureFinaleProps) {
-	const { attachScene, surfaceRef, isVisible, isStill } =
+	const { attachScene, surfaceRef, showWebgl, isStill } =
 		useSignatureFinaleContainer()
 
 	return (
@@ -30,7 +44,7 @@ export function SignatureFinale({
 			aria-label="Signature"
 			data-testid={testId}
 			className={cn(
-				'signature-finale relative h-[240vh] [--end:clamp(0,calc((var(--p,1)-0.42)/0.1),1)] [--p:1] [--sea:clamp(0,calc(var(--p,1)/0.22),1)] [--sig:clamp(0,calc((var(--p,1)-0.15)/0.25),1)] [--sky:clamp(0,calc(var(--p,1)/0.3),1)]',
+				'signature-finale relative h-[130vh] lg:h-[240vh] has-focus-visible:[--end:1] [--end:clamp(0,calc((var(--p,1)-0.42)/0.1),1)] [--p:1] [--sea:clamp(0,calc(var(--p,1)/0.22),1)] [--sig:clamp(0,calc((var(--p,1)-0.15)/0.25),1)] [--sky:clamp(0,calc(var(--p,1)/0.3),1)]',
 				className,
 			)}
 		>
@@ -40,7 +54,7 @@ export function SignatureFinale({
 					className="finale-glow absolute inset-0 opacity-[calc(0.3+0.7*var(--sea))]"
 				/>
 
-				{isVisible && (
+				{showWebgl && (
 					<>
 						{/* Light raining through the scene, behind everything else */}
 						<div
@@ -48,7 +62,7 @@ export function SignatureFinale({
 							className="absolute inset-0 opacity-[calc(0.25+0.5*var(--sky))] mask-[radial-gradient(75%_70%_at_50%_45%,#000_35%,transparent_85%)]"
 						>
 							<Lightfall
-								colors={['#1558c9', '#2f6bff', '#7aa6ff']}
+								colors={[...LIGHT_GRADIENT]}
 								backgroundGlow={0}
 								speed={isStill ? 0 : 0.25}
 								density={0.3}
@@ -71,9 +85,9 @@ export function SignatureFinale({
 							className="absolute inset-x-0 top-[22%] h-[60%] translate-y-[calc((1-var(--sea))*20%)] opacity-(--sea) mask-[linear-gradient(to_bottom,transparent,#000_25%,#000_75%,transparent)]"
 						>
 							<GhostFibers
-								glowColor="#2f6bff"
-								lineColor="#7aa6ff"
-								secondaryColor="#1558c9"
+								glowColor={PALETTE.neon}
+								lineColor={PALETTE.neonSoft}
+								secondaryColor={PALETTE.cobalt}
 								speed={isStill ? 0 : 0.4}
 								vignette={0}
 								grain={0}
@@ -92,7 +106,7 @@ export function SignatureFinale({
 							<LaserFlow
 								className="absolute inset-0"
 								surfaceRef={surfaceRef}
-								color="#2f6bff"
+								color={PALETTE.neon}
 								beamPosition={0.5}
 								intensity={1.1}
 								fog={0.5}
@@ -132,7 +146,7 @@ export function SignatureFinale({
 				</div>
 
 				<div className="absolute inset-x-0 top-[64%] flex flex-col items-center gap-6 px-6">
-					<p className="translate-y-[calc((1-var(--end))*1.5rem)] font-medium text-[clamp(1.5rem,1.6vw+1rem,2.5rem)] text-foreground tracking-tight opacity-(--end) [text-shadow:0_0_1rem_rgb(3_4_7/0.95),0_0_2.5rem_rgb(3_4_7/0.85)]">
+					<p className="translate-y-[calc((1-var(--end))*1.5rem)] font-medium text-[clamp(1.5rem,1.6vw+1rem,2.5rem)] text-foreground tracking-tight opacity-(--end) [text-shadow:0_0_1rem_color-mix(in_oklab,var(--color-midnight)_95%,transparent),0_0_2.5rem_color-mix(in_oklab,var(--color-midnight)_85%,transparent)]">
 						{message}
 					</p>
 

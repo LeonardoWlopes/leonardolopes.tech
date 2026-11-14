@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
+import { canRenderHeavyWebgl } from '~/utils/device'
 import {
+	DESKTOP_QUERY,
 	REDUCED_MOTION_QUERY,
 	readMedia,
 	subscribeToMedia,
@@ -9,6 +11,8 @@ import { useStillMotion } from '~/utils/still-motion'
 
 const subscribeReducedMotion = subscribeToMedia(REDUCED_MOTION_QUERY)
 const readReducedMotion = readMedia(REDUCED_MOTION_QUERY)
+const subscribeDesktop = subscribeToMedia(DESKTOP_QUERY)
+const readDesktop = readMedia(DESKTOP_QUERY)
 
 function serverFalse() {
 	return false
@@ -22,6 +26,7 @@ function serverFalse() {
 export function useSignatureFinaleContainer() {
 	const [element, setElement] = useState<HTMLElement | null>(null)
 	const [isVisible, setIsVisible] = useState(false)
+	const [isCapable, setIsCapable] = useState(false)
 
 	const surfaceRef = useRef<HTMLSpanElement | null>(null)
 	const isStill = useStillMotion()
@@ -31,6 +36,18 @@ export function useSignatureFinaleContainer() {
 		readReducedMotion,
 		serverFalse,
 	)
+
+	const isDesktop = useSyncExternalStore(
+		subscribeDesktop,
+		readDesktop,
+		serverFalse,
+	)
+
+	// Phones and weak devices keep the CSS glow and the signature only
+	function checkCapability() {
+		setIsCapable(isDesktop && canRenderHeavyWebgl(navigator))
+	}
+	useEffect(checkCapability, [isDesktop])
 
 	// The beam is WebGL: render it only while the scene is on screen
 	function trackVisibility() {
@@ -85,6 +102,7 @@ export function useSignatureFinaleContainer() {
 		attachScene: setElement,
 		surfaceRef,
 		isVisible,
+		showWebgl: isVisible && isCapable,
 		reducedMotion,
 		isStill,
 	}

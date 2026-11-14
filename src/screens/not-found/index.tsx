@@ -10,7 +10,7 @@ const CTA =
 	'px-5 text-sm transition-transform active:scale-[0.97] sm:px-7 sm:text-base'
 
 const ROUTES = [
-	{ label: 'Experiences', href: '/experiences' },
+	{ label: 'Experience', href: '/experiences' },
 	{ label: 'Contact', href: '/contact' },
 ]
 

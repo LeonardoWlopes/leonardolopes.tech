@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import {
+	buildContactPageJsonLd,
 	buildPageMetadata,
 	buildPersonJsonLd,
 	buildProfilePageJsonLd,
@@ -43,5 +44,14 @@ describe('JSON-LD builders', () => {
 
 	it('escapes < when serializing', () => {
 		expect(serializeJsonLd({ a: '</script>' })).toBe('{"a":"\\u003c/script>"}')
+	})
+
+	it('points the contact page at the person', () => {
+		expect(buildContactPageJsonLd('https://example.com/')).toEqual({
+			'@context': 'https://schema.org',
+			'@type': 'ContactPage',
+			url: 'https://example.com/contact',
+			mainEntity: { '@id': 'https://example.com/#person' },
+		})
 	})
 })

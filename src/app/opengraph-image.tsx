@@ -1,5 +1,6 @@
 import { ImageResponse } from 'next/og'
 import {
+	gridDataUrl,
 	inkDataUrl,
 	loadImageFonts,
 	readPortraitSvg,
@@ -23,9 +24,7 @@ const MUTED = '#a9b4d6'
 const NEON = '#2f6bff'
 const NEON_SOFT = '#7aa6ff'
 
-const GRID = `data:image/svg+xml;base64,${Buffer.from(
-	'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><defs><pattern id="g" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="rgba(122,166,255,0.1)" stroke-width="1"/></pattern><linearGradient id="f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.2"/><stop offset="0.5" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0.35"/></linearGradient><mask id="m"><rect width="1200" height="630" fill="url(#f)"/></mask></defs><rect width="1200" height="630" fill="url(#g)" mask="url(#m)"/></svg>',
-).toString('base64')}`
+const GRID = gridDataUrl(1200, 630)
 
 /*
  * The home hero as a still: a cobalt grid, the beam falling behind the badge
